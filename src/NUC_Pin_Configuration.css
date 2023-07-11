@@ -28,8 +28,8 @@ input {
 	top: 0;
 	left: 0;
 	z-index: 3;
-	color: #0C00FF;
-	background-color: #FFFA3E;
+	color: #FFFFFF;
+	background-color: #000000;
 }
 
 .generateCodeByModule {
