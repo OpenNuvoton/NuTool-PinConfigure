@@ -4,6 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
+    const VERSION_CODE = 'v2.00.0001';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -129,6 +130,7 @@ var NUTOOL_PIN = {};
         if (isElectron()) {
             $('#ID_BUTTON_RUN_NUCAD').show();   // TODO: 開啟時會閃一下，很醜
         }
+        $('#versionCode').text(VERSION_CODE); // 設定版本號
     };
     // private functions
     function restoreAllchipPins() {

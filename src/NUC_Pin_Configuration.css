@@ -6,6 +6,28 @@ body {
 	width: 100%;
 	overflow: auto;
 	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	font-size: large;
+	font-weight: bolder;
+	position: relative;
+}
+
+.navbar .versionDiv {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.navbar .versionDiv .imgNuvoton {
+	height: 20px;
+}
+
+.navbar .versionDiv .versionCode {
+	font-size: medium;
 }
 
 .active {
