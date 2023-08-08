@@ -772,6 +772,8 @@ export class NuLink extends EventEmitter implements Proxy {
                     throw new Error(`Unsupported device`);
                 }
 
+                await this.send(NuLinkCommand.NULINK_MCU_STOP_RUN);
+
                 const result2 = await this.send(NuLinkCommand.NULINK_CHECK_ID, new Uint32Array([0x200]));
                 const id2: number = (result2.getUint8(0) + (result2.getUint8(1) << 8) + (result2.getUint8(2) << 16) + (result2.getUint8(3) << 24)) >>> 0;
                 if (id2 !== 0x5A5A) {

@@ -345,9 +345,12 @@ export class ADI implements DAP {
      * @returns Promise of register data
      */
     public async readMem8(register: number): Promise<number> {
-        if (this.mode === DAPProtocol.NULINK_CM_SWD || this.mode === DAPProtocol.NULINK_51_OCD) {
+        if (this.mode === DAPProtocol.NULINK_CM_SWD) {
             const result = await this.readMem32(register & ~0x3);
             return (result >>> ((register & 0x03) << 3)) & 0xFF;
+        } else if (this.mode === DAPProtocol.NULINK_51_OCD) {
+            const result = await this.readMem32(register);
+            return result & 0xFF;
         } else {
             const result = await this.proxy.transfer(this.readMem8Command(register));
             return result[0] as number >> ((register & 0x03) << 3) & 0xFF;
@@ -361,11 +364,13 @@ export class ADI implements DAP {
      * @returns Promise
      */
     public async writeMem8(register: number, value: number): Promise<void> {
-        if (this.mode === DAPProtocol.NULINK_CM_SWD || this.mode === DAPProtocol.NULINK_51_OCD) {
+        if (this.mode === DAPProtocol.NULINK_CM_SWD) {
             const result = await this.readMem32(register & ~0x3);
             const offset = (register & 0x03) << 3;
             const data = (((result & (~(0xFF << offset))) >>> 0) + (((value & 0xFF) << offset) >>> 0)) >>> 0;
             await this.proxy.transferCommand(NuLinkCommand.NULINK_WRITE_BLOCK, new Uint32Array([register & ~0x3, 4, data]));
+        } else if (this.mode === DAPProtocol.NULINK_51_OCD) {
+            await this.proxy.transferCommand(NuLinkCommand.NULINK_WRITE_BLOCK, new Uint32Array([register, 1, value]));
         } else {
             value = value as number << ((register & 0x03) << 3);
             await this.proxy.transfer(this.writeMem8Command(register, value));
@@ -378,9 +383,12 @@ export class ADI implements DAP {
      * @returns Promise of register data
      */
     public async readMem16(register: number): Promise<number> {
-        if (this.mode === DAPProtocol.NULINK_CM_SWD || this.mode === DAPProtocol.NULINK_51_OCD) {
+        if (this.mode === DAPProtocol.NULINK_CM_SWD) {
             const result = await this.readMem32(register & ~0x3);
             return (result >>> ((register & 0x02) << 3)) & 0xFFFF;
+        } else if (this.mode === DAPProtocol.NULINK_51_OCD) {
+            const result = await this.readMem32(register);
+            return result & 0xFFFF;
         } else {
             const result = await this.proxy.transfer(this.readMem16Command(register));
             return result[0] as number >> ((register & 0x02) << 3) & 0xFFFF;
@@ -394,11 +402,13 @@ export class ADI implements DAP {
      * @returns Promise
      */
     public async writeMem16(register: number, value: number): Promise<void> {
-        if (this.mode === DAPProtocol.NULINK_CM_SWD || this.mode === DAPProtocol.NULINK_51_OCD) {
+        if (this.mode === DAPProtocol.NULINK_CM_SWD) {
             const result = await this.readMem32(register & ~0x3);
             const offset = (register & 0x02) << 3;
             const data = (((result & (~(0xFFFF << offset))) >>> 0) + (((value & 0xFFFF) << offset) >>> 0)) >>> 0;
             await this.proxy.transferCommand(NuLinkCommand.NULINK_WRITE_BLOCK, new Uint32Array([register & ~0x3, 4, data]));
+        } else if (this.mode === DAPProtocol.NULINK_51_OCD) {
+            await this.proxy.transferCommand(NuLinkCommand.NULINK_WRITE_BLOCK, new Uint32Array([register, 2, value]));
         } else {
             value = value as number << ((register & 0x02) << 3);
             await this.proxy.transfer(this.writeMem16Command(register, value));

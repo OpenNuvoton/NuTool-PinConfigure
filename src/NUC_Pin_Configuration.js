@@ -123,7 +123,7 @@ var NUTOOL_PIN = {};
         changeUIlanguage();
         parsingPartNumID();
         if (window.Worker) {
-            worker = new Worker('./worker/webusb.worker-bundle.js');
+            worker = new Worker('./src/worker/webusb.worker-bundle.js');
             setWorkerListener();
         }
         if (isElectron()) {
@@ -752,7 +752,8 @@ var NUTOOL_PIN = {};
                         tooltipText = '(' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][pinNumber - 1] + ') ' + tooltipText;
                     }
                     if (tooltipText !== 'unknown') {
-                        $('#' + currentNode).simpletip({ content: tooltipText, fixed: false, offset: [100, -7] });
+                        // $('#' + currentNode).simpletip({ content: tooltipText, fixed: false, offset: [100, -7] });
+                        setTippy(currentNode, tooltipText, 'right');
                     }
                 }
             }
@@ -3518,9 +3519,9 @@ var NUTOOL_PIN = {};
         };
         $('html').addClass('ie10+');
         if (typeof NUTOOL_PER === 'undefined') {
-            replacejscssfile('', 'tabulator/promise-polyfill.js', 'js');
-            replacejscssfile('', 'tabulator/js/tabulator.js', 'js');
-            replacejscssfile('', 'tabulator/css/tabulator.css', 'css');
+            replacejscssfile('', '/tabulator/promise-polyfill.js', 'js');
+            replacejscssfile('', '/tabulator/js/tabulator.js', 'js');
+            replacejscssfile('', '/tabulator/css/tabulator.css', 'css');
         }
 
         return false;
@@ -5099,7 +5100,6 @@ var NUTOOL_PIN = {};
             stringH,
             bL;
 
-        console.log('register=' + register + ', ' + 'value=' + value);
         // 左上角的MFP register不需轉換，因為AS50版本會隱藏起來，所以有轉換過8bit格式的話先轉回成原本的格式
         if (NUTOOL_PIN.g_bSwitchSpeech8bitCPUMode) {
             code = parseInt(register.sliceAfterX('BP').slicePriorToX('.')) + 65;
@@ -8460,8 +8460,9 @@ var NUTOOL_PIN = {};
                     }
                 }
                 tooltipText = tooltipText + NUTOOL_PIN.g_cfg_regDescriptions[regName];
-                $('#' + currentNode).simpletip({ fixed: true, offset: [60, 0] });
-                $('#' + currentNode).eq(0).simpletip().update(tooltipText);
+                // $('#' + currentNode).simpletip({ fixed: true, offset: [60, 0] });
+                // $('#' + currentNode).eq(0).simpletip().update(tooltipText);
+                setTippy(regName, tooltipText, 'right');
             }
         }).bind("dblclick.jstree", function (e) {
             var node = $(e.target).closest("li"),
@@ -8473,8 +8474,8 @@ var NUTOOL_PIN = {};
             if (typeof (g_gpio_MFPs.ALT_MFP) === 'undefined' && g_chipType !== 'MINI55' && g_chipType !== 'NM1200') {
                 $mfpTree.jstree('rename', $("#" + id));
             }
-            $('#' + id).eq(0).simpletip().blockShow();
-            $('#' + id).eq(0).simpletip().hide();
+            // $('#' + id).eq(0).simpletip().blockShow();
+            // $('#' + id).eq(0).simpletip().hide();
         }).bind("rename.jstree", function (e, data) {
             var id = data.rslt.obj.attr("id"), //id of the selected node
                 oldText = data.rslt.old_name,
@@ -10504,24 +10505,6 @@ var NUTOOL_PIN = {};
         zoomFunction();
         zoomToBestFit();
 
-        if (deviceConnected) {
-            try {
-                if (g_partNumber_package.indexOf(connectedDevicePID) != -1) {
-                    // 紀錄各個register的預設位址
-                    var addrs = [];
-                    var regNames = [];
-                    regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
-                    for (i = 0; i < regNames.length; i++) {
-                        addrs.push(NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]]);
-                    }
-                    // 將預設位址送到worker讀值
-                    worker.postMessage({ 'action': 'getMFPValues', 'data': addrs });
-                }
-            } catch (e) {
-                console.log(e);
-            }
-        }
-
         destroyAllExistentDialogs();
     }
 
@@ -10547,13 +10530,24 @@ var NUTOOL_PIN = {};
         if (filetype === "js") { //if filename is a external JavaScript file
             fileref = document.createElement('script');
             fileref.setAttribute("type", "text/javascript");
-            fileref.setAttribute("src", filename);
+            if (typeof NUTOOL_PER !== 'undefined') {
+                fileref.setAttribute("src", filename);
+            }
+            else {
+                fileref.setAttribute("src", `./src/${filename}`);
+            }
         }
         else if (filetype === "css") { //if filename is an external CSS file
             fileref = document.createElement("link");
             fileref.setAttribute("rel", "stylesheet");
             fileref.setAttribute("type", "text/css");
-            fileref.setAttribute("href", filename);
+            if (typeof NUTOOL_PER !== 'undefined') {
+                fileref.setAttribute("href", filename);
+            }
+            else {
+                fileref.setAttribute("href", `./src/${filename}`);
+            }
+
         }
         return fileref;
     }
@@ -14491,49 +14485,8 @@ var NUTOOL_PIN = {};
                             // iterate radio buttons
                             $("input").each(function () {
                                 if (this.name === "UIlanguage" && this.checked === true) {
-                                    g_userSelectUIlanguage = $(this).val();
-
-                                    if (g_userSelectUIlanguage === "Simplified Chinese") {
-                                        chipType_inner = '芯片系列:';
-                                        mcu_inner = '型号:';
-                                        mfp_tree_inner = 'MFP寄存器';
-                                        supportedModules_inner = '支援模组';
-                                        searchInput_inner = '搜寻..';
-
-                                    }
-                                    else if (g_userSelectUIlanguage === "Traditional Chinese") {
-                                        chipType_inner = '晶片系列:';
-                                        mcu_inner = '型號:';
-                                        mfp_tree_inner = 'MFP暫存器';
-                                        supportedModules_inner = '支援模組';
-                                        searchInput_inner = '搜尋..';
-                                    }
-                                    else {
-                                        chipType_inner = 'Chip Series:';
-                                        mcu_inner = 'Part No.:';
-                                        mfp_tree_inner = 'MFP Registers';
-                                        supportedModules_inner = 'Supported Modules';
-                                        searchInput_inner = 'Search..';
-
-                                    }
-                                    $("#ChipType_span").text(chipType_inner);
-                                    $("#MCU_span").text(mcu_inner);
-                                    $("#mfpTree").jstree('rename_node', $("#mfp_tree"), mfp_tree_inner);
-                                    $("#supportedModules_span").text(supportedModules_inner);
-                                    $('#searchInput_Pin')[0].setAttribute('style', 'font-family:Times Arial; position:absolute; left:' + ($('#supportedModules_span').width() + 10) + 'px; width:' + (g_NUC_TreeView_Width - 16 - $('#supportedModules_span').width() - 10) + 'px; height: 16px;');
-                                    $('#searchInput_Pin').val(searchInput_inner);
-                                    $("#searchInput_Pin").change(function () {
-                                        searchNodesInModulesTree(this.value);
-                                    });
-                                    clearColorNotations();
-                                    drawColorNotations();
-
-                                    localStorage.setItem("UIlanguage", g_userSelectUIlanguage);
-
-                                    supportedModules_inner = null;
-                                    searchInput_inner = null;
-                                    chipType_inner = null;
-                                    mcu_inner = null;
+                                    localStorage.setItem("UIlanguage", $(this).val());
+                                    changeUIlanguage();
                                 }
                                 else if (this.name === "DisplayTooltip" && this.checked === true) {
                                     localStorage.setItem("DisplayTooltip", $(this).val());
@@ -14590,6 +14543,21 @@ var NUTOOL_PIN = {};
             mfp_tree_inner = 'MFP寄存器';
             supportedModules_inner = '支援模组';
             searchInput_inner = '搜寻..';
+            setTippy('ID_BUTTON_SHOW_REGISTERS', '开关选择区域和MFP寄存器树状图');
+            setTippy('ID_BUTTON_LOAD', '读取配置档');
+            setTippy('ID_BUTTON_SAVE', '存放配置档');
+            setTippy('ID_BUTTON_GENERATE_CODE', '产生程式码');
+            setTippy('ID_BUTTON_CONNECT_TO_TARGET', '连线到目标芯片');
+            setTippy('ID_BUTTON_PRINT_REPORT', '印出报告');
+            setTippy('ID_BUTTON_GENERATE_PIN_DESCRIPTIONS', '产生脚位描述报告');
+            setTippy('ID_BUTTON_RUN_NUCAD', '执行NuCAD');
+            setTippy('ID_BUTTON_SHOW_PIN_DESCRIPTIONS', '开关管脚描述');
+            setTippy('ID_BUTTON_ZOOM_IN', '放大');
+            setTippy('ID_BUTTON_BEST_FIT', '最适大小');
+            setTippy('ID_BUTTON_ZOOM_OUT', '缩小');
+            setTippy('ID_BUTTON_DISABLE', '取消所有已选模组');
+            setTippy('ID_BUTTON_LANGUAGE', '设定');
+            setTippy('ID_BUTTON_INSTRUCTION', '阅读用户手册');
         }
         else if (g_userSelectUIlanguage === "Traditional Chinese") {
             chipType_inner = '晶片系列:';
@@ -14597,6 +14565,21 @@ var NUTOOL_PIN = {};
             mfp_tree_inner = 'MFP暫存器';
             supportedModules_inner = '支援模組';
             searchInput_inner = '搜尋..';
+            setTippy('ID_BUTTON_SHOW_REGISTERS', '開關選擇區域和MFP暫存器樹狀圖');
+            setTippy('ID_BUTTON_LOAD', '讀取配置檔');
+            setTippy('ID_BUTTON_SAVE', '存放配置檔');
+            setTippy('ID_BUTTON_GENERATE_CODE', '產生程式碼');
+            setTippy('ID_BUTTON_CONNECT_TO_TARGET', '連線到目標晶片');
+            setTippy('ID_BUTTON_PRINT_REPORT', '印出報告');
+            setTippy('ID_BUTTON_GENERATE_PIN_DESCRIPTIONS', '產生腳位描述報告');
+            setTippy('ID_BUTTON_RUN_NUCAD', '執行NuCAD');
+            setTippy('ID_BUTTON_SHOW_PIN_DESCRIPTIONS', '開關腳位描述');
+            setTippy('ID_BUTTON_ZOOM_IN', '放大');
+            setTippy('ID_BUTTON_BEST_FIT', '最適大小');
+            setTippy('ID_BUTTON_ZOOM_OUT', '縮小');
+            setTippy('ID_BUTTON_DISABLE', '取消所有已選模組');
+            setTippy('ID_BUTTON_LANGUAGE', '設定');
+            setTippy('ID_BUTTON_INSTRUCTION', '閱讀用戶手冊');
         }
         else {
             chipType_inner = 'Chip Series:';
@@ -14604,6 +14587,21 @@ var NUTOOL_PIN = {};
             supportedModules_inner = 'Supported Modules';
             searchInput_inner = 'Search..';
             mfp_tree_inner = 'MFP Registers';
+            setTippy('ID_BUTTON_SHOW_REGISTERS', 'Switch Select Field and MFP-Registers TreeView');
+            setTippy('ID_BUTTON_LOAD', 'Load Configuration');
+            setTippy('ID_BUTTON_SAVE', 'Save Configuration');
+            setTippy('ID_BUTTON_GENERATE_CODE', 'Generate Code');
+            setTippy('ID_BUTTON_CONNECT_TO_TARGET', 'Connect to Target Chip');
+            setTippy('ID_BUTTON_PRINT_REPORT', 'Print Report');
+            setTippy('ID_BUTTON_GENERATE_PIN_DESCRIPTIONS', 'Generate Report of Pin Description');
+            setTippy('ID_BUTTON_RUN_NUCAD', 'Run NuCAD');
+            setTippy('ID_BUTTON_SHOW_PIN_DESCRIPTIONS', 'Switch Pin Description');
+            setTippy('ID_BUTTON_ZOOM_IN', 'Zoom In');
+            setTippy('ID_BUTTON_BEST_FIT', 'Best Fit');
+            setTippy('ID_BUTTON_ZOOM_OUT', 'Zoom Out');
+            setTippy('ID_BUTTON_DISABLE', 'Disable All Checked Modules');
+            setTippy('ID_BUTTON_LANGUAGE', 'Settings');
+            setTippy('ID_BUTTON_INSTRUCTION', 'Read User Manual');
         }
         $("#ChipType_span").text(chipType_inner);
         $("#MCU_span").text(mcu_inner);
@@ -14624,6 +14622,21 @@ var NUTOOL_PIN = {};
         mfp_tree_inner = null;
         supportedModules_inner = null;
         searchInput_inner = null;
+    }
+
+    function setTippy(id, content, placement) {
+        if (placement == null || placement == undefined) {
+            placement = 'top';
+        }
+        // 如果已經有tippy instance就destroy掉
+        if (document.querySelector(`#${id}`) != null && document.querySelector(`#${id}`) != undefined && document.querySelector(`#${id}`)._tippy) {
+            document.querySelector(`#${id}`)._tippy.destroy();
+        }
+        // 重新建立一個instance避免越疊越多
+        tippy(`#${id}`, {
+            content: `${content}`,
+            placement: `${placement}`,
+        });
     }
 
     function closeAPP() {
@@ -14934,7 +14947,7 @@ var NUTOOL_PIN = {};
         if (determineIEversion()) { return; } // determine the installed IE version
         decideUIlanguage(); // for toolbar tips
         decideDisplayTooltip(); // we need to know whether to enable the tooltip feature
-        decideMouseWheel(); // set the wheel behavior of the mouse related to zoomIn, bestFIt, and zoomOut.
+        //decideMouseWheel(); // set the wheel behavior of the mouse related to zoomIn, bestFIt, and zoomOut.
 
         if (!decidePartNumber_package()) { g_bCheckNodesBasedOnConfigFile = false; } // decide partnumber and package based on the auto-saved config.
         createGPIO_MFPs(); // this should be called prior to drawChipViewAppearance() and decideChipViewCanvasSize().
@@ -14966,7 +14979,7 @@ var NUTOOL_PIN = {};
         if (determineIEversion()) { return; } // determine the installed IE version
         decideUIlanguage(); // for toolbar tips
         decideDisplayTooltip(); // we need to know whether to enable the tooltip feature
-        decideMouseWheel(); // set the wheel behavior of the mouse related to zoomIn, bestFIt, and zoomOut.
+        //decideMouseWheel(); // set the wheel behavior of the mouse related to zoomIn, bestFIt, and zoomOut.
 
         //buildToolListSelect();
         // construct trees
@@ -15077,7 +15090,6 @@ var NUTOOL_PIN = {};
         }
 
         newPartNumber_package = newReadConfigFile.sliceBetweenXandX('MCU:', '\r');
-        console.log(newPartNumber_package);
 
         newPartNumber_package = newPartNumber_package.trim();
         newChipType = decideNewChipType(newPartNumber_package);
@@ -15160,22 +15172,42 @@ var NUTOOL_PIN = {};
                 // 取得PIDValue後換成PID
                 connectedDevicePID = getPIDFromPIDValue(data.value);
                 console.log('connected device: ' + connectedDevicePID);
-                // 把chipseries和chiptype換成連接的device
-                $("#ChipTypeSelect").val(chipTypeToChipSeries(connectedDevicePID)).change();
-                // !!! 由於replacejscssfile變成非同步的關係，下一步(getRegisterValue)會在afterMCUchangeAfterReplace()結束後做 !!!
-            } else if (action == 'returnRegisterValue') {
-                if (data.register == '0x40000030') {
-
+                // 確認連接的chip是否為現在畫面上呈現的chip
+                if (g_partNumber_package.indexOf(connectedDevicePID) != -1) {
+                    // 紀錄各個register的預設位址
+                    var addrs = [];
+                    var regNames = [];
                     regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
                     for (i = 0; i < regNames.length; i++) {
-                        if (NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]] == data.register) {
-                            console.log(regNames[i]);
+                        addrs.push(NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]]);
+                    }
+                    // 將預設位址送到worker讀值
+                    worker.postMessage({ 'action': 'getMFPValues', 'data': addrs });
+                } else {
+                    // 流程結束，斷開連結
+                    worker.postMessage({ 'action': 'connectComplete' });
+                    // 提示使用者選擇正確的型號
+                    decideUIlanguage();
+                    showAlertDialog("请切换至与连接芯片相符合的芯片系列与型号。",
+                        "請切換至與連接晶片相符合的晶片系列與型號。",
+                        `Please switch to the Chip Series and Part No. that matches the connected chip.`);
+                }
+            } else if (action == 'returnRegisterValue') {
+                if (data.type == 'CortexM') {
+                    regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
+                    for (i = 0; i < regNames.length; i++) {
+                        if (NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]] == data.addr) {
+                            checkNodesByMFPregister(`${regNames[i]}:0x${data.value}`);
+                            break;
                         }
                     }
-                    console.log(data.register + ', ' + data.value);
-                    // writeNewValueToGPIO_MFPs(data.register, data.value);
+                } else if (data.type == '8051') {
+                    checkNodesByMFPregister(`${data.register}:0x${data.value}`);
+                } else {
+                    console.log("returnRegisterValue: unknown type.");
                 }
             } else if (action == 'disconnect') {
+                console.log("webusb disconnected");
                 deviceConnected = false;
             }
         };
@@ -15208,7 +15240,7 @@ var NUTOOL_PIN = {};
     }
 
     function parsingPartNumID() {
-        var PartNumID = $.ajax({ url: 'PartNumID.cpp', async: false }).responseText;
+        var PartNumID = $.ajax({ url: './src/PartNumID.cpp', async: false }).responseText;
         PartNumID.split(/\r\n|\n/).filter(function (line) {
             var reg = new RegExp('.*[^\/]\{.*0x.*[PROJ].*\}');
             return reg.test(line);
