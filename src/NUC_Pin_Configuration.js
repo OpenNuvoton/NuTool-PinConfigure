@@ -6921,10 +6921,7 @@ var NUTOOL_PIN = {};
         else if (chipSeries === "M466") {
             stringChipType = "M466";
         }
-        else if (chipSeries === "M467") {
-            stringChipType = "M460HD";
-        }
-        else if (chipSeries === "M46") {
+        else if (chipSeries === "M460") {
             stringChipType = "M460LD";
         }
         else if (chipSeries === "M480") {
