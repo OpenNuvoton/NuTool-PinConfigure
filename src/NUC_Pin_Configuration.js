@@ -13115,7 +13115,8 @@ var NUTOOL_PIN = {};
         g_pin_descriptions = "Pin,Current Multi Function,Group\n";
         for (i = 0, j = 1; i < g_NUC_Pin_Total_Number; i += 1) {
             if (g_pinCurrentDescription[i] !== "") {
-                pinDescription = NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i] + '/' + updatePinDescription(g_pinCurrentDescription[i]).replace(/[.]/g, '').replace(/\s/g, '_').replace(/[`~!@#$%^&*()|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '_');
+                // Fix bug: avoid USB_D+/USB_D- trans to USB_D_/USB_D_ in .csv, so remove +/- from replace string.
+                pinDescription = NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i] + '/' + updatePinDescription(g_pinCurrentDescription[i]).replace(/[.]/g, '').replace(/\s/g, '_').replace(/[`~!@#$%^&*()|=?;:'",<>\{\}\[\]\\\/]/gi, '_');
             }
             else {
                 pinDescription = NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i];
