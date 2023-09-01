@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'V2.00.0001';
+    const VERSION_CODE = 'V1.26.0013';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -7073,7 +7073,7 @@ var NUTOOL_PIN = {};
                 g_chipType.indexOf("N9H30") === 0 ||
                 g_chipType.indexOf("NUC97") === 0 ||
                 g_chipType.indexOf("NUC98") === 0 ||
-                g_chipType.indexOf("M2A23") === 0) ) {
+                g_chipType.indexOf("M2A23") === 0) {
                 specialModuleNaming.specialModuleNames.push("INT");
                 specialModuleNaming.specialModuleNames.push("TAMPER");
                 specialModuleNaming.specialModuleNames.push("CFG");
