@@ -105,8 +105,8 @@ var NUTOOL_PIN = {};
         g_drawnMultiFunctionSeletions = [],
         g_pinsHighlightedByChipView = [],
         g_userDefinedPin = {},
-        g_cfg_chipSeries = ["ISD9100", "ISD9300", "KM1M4BF", "KM1M7AF", "KM1M7BF", "KM1M7CF", "M029G", "M030G", "M031", "M051", "M0518", "M0519", "M0564", "M071", "M091", "M0A21", "M2003C", "M2351", "M251", "M261", "M2L31", "M451", "M460", "M466", "M471", "M479", "M480", "M55M1", "MA35D1", "MINI51", "MG51", "ML51", "MS51", "MUG51", "N76S003", "N76E003", "N9H30", "NANO100", "NDA102", "NM1120", "NM1200", "NM1500", "NUC029", "NUC100", "NUC200", "NUC400", "NUC505", "NUC970", "NUC980"],
-        g_cfg_chipSeriesDeveloping = ["M55M1", "M2003C", "M466", "N9H30", "NUC970", "NUC980"],
+        g_cfg_chipSeries = ["ISD9100", "ISD9300", "KM1M4BF", "KM1M7AF", "KM1M7BF", "KM1M7CF", "M029G", "M030G", "M031", "M051", "M0518", "M0519", "M0564", "M071", "M091", "M0A21", "M2003C", "M2351", "M251", "M261", "M2A23", "M2L31", "M451", "M460", "M466", "M471", "M479", "M480", "M55M1", "MA35D1", "MINI51", "MG51", "ML51", "MS51", "MUG51", "N76S003", "N76E003", "N9H30", "NANO100", "NDA102", "NM1120", "NM1200", "NM1500", "NUC029", "NUC100", "NUC200", "NUC400", "NUC505", "NUC970", "NUC980"],
+        g_cfg_chipSeriesDeveloping = ["M55M1", "M2003C", "M466", "N9H30", "NUC970", "NUC980", "M2A23"],
         g_bShowPinDescriptions = false, // by default, the pin descriptions would be covert.
         g_bConnectToTarget = false, // by default, the pin descriptions would be covert.
         g_bLessThanOrEqualIE8 = false,
@@ -4542,6 +4542,9 @@ var NUTOOL_PIN = {};
         else if (newPartNumber_package.indexOf('NUC98') === 0) {
             newChipType = 'NUC980';
         }
+        else if (newPartNumber_package.indexOf('M2A23') === 0) {
+            newChipType = 'M2A23';
+        }
         else {
             newChipType = 'NUC400';
         }
@@ -4728,7 +4731,7 @@ var NUTOOL_PIN = {};
                 newChipType === "M261" || newChipType.indexOf("M235") === 0 ||
                 newChipType.indexOf("M029") === 0 || newChipType.indexOf("M030") === 0 || newChipType.indexOf("M031") === 0 || newChipType.indexOf("M091") === 0 ||
                 newChipType === "NANO103" || newChipType === "NUC505" || newChipType === "NUC123AE" ||
-                newChipType === "MA35D1" || newChipType.indexOf("M2003") === 0 || newChipType.indexOf("N9H30") === 0 || newChipType.indexOf("NUC97") === 0 || newChipType.indexOf("NUC98") === 0) {
+                newChipType === "MA35D1" || newChipType.indexOf("M2003") === 0 || newChipType.indexOf("N9H30") === 0 || newChipType.indexOf("NUC97") === 0 || newChipType.indexOf("NUC98") === 0 || newChipType.indexOf("M2A23") === 0) {
                 for (i = 0, max = tempGPIOs.length; i < max; i += 1) {
                     if (parseInt(tempGPIOs[i].sliceAfterX('.'), 10) < 8) {
                         pinName = 'G' + tempGPIOs[i].slicePriorToX('.') + '_MFPL';
@@ -4964,7 +4967,7 @@ var NUTOOL_PIN = {};
             g_chipType === "M261" || g_chipType.indexOf('M235') === 0 ||
             g_chipType.indexOf("M029") === 0 || g_chipType.indexOf('M030') === 0 || g_chipType.indexOf("M031") === 0 || g_chipType.indexOf("M091") === 0 ||
             g_chipType === "NANO103" || g_chipType === "NUC505" || g_chipType === "NUC123AE" ||
-            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0) {
+            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0 || g_chipType.indexOf('M2A23') === 0) {
             for (i = 0, max = tempGPIOs.length; i < max; i += 1) {
                 if (parseInt(tempGPIOs[i].sliceAfterX('.'), 10) < 8) {
                     pinName = 'G' + tempGPIOs[i].slicePriorToX('.') + '_MFPL';
@@ -5137,7 +5140,7 @@ var NUTOOL_PIN = {};
             g_chipType.indexOf('M029') === 0 || g_chipType.indexOf('M030') === 0 || g_chipType.indexOf("M031") === 0 || g_chipType.indexOf("M091") === 0 ||
             g_chipType === "M0564" || g_chipType === "M05641" ||
             g_chipType.indexOf('NUC126') === 0 || g_chipType === "M071QV" || g_chipType === "NUC029xGE" || g_chipType === "NUC029KGE" ||
-            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0) {
+            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0 || g_chipType.indexOf('M2A23') === 0) {
             groupName = register.slice(0, 2);
             registerNumber = parseInt(register.slice(3), 10);
 
@@ -5355,7 +5358,7 @@ var NUTOOL_PIN = {};
             g_chipType === "M0564" || g_chipType === "M05641" ||
             g_chipType.indexOf('NUC126') === 0 || g_chipType === "M071QV" || g_chipType === "NUC029xGE" || g_chipType === "NUC029KGE" ||
             g_chipType === "MINI57" || g_chipType === "NM1120" || g_chipType === "NDA102" ||
-            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0) {
+            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0 || g_chipType.indexOf('M2A23') === 0) {
             for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                 if (g_read_gpio_MFPs[gpio_MFPsNames[i]] !== 0) {
                     registerValue = g_read_gpio_MFPs[gpio_MFPsNames[i]];
@@ -6100,7 +6103,7 @@ var NUTOOL_PIN = {};
             g_chipType === "M0564" || g_chipType === "M05641" ||
             g_chipType.indexOf('NUC126') === 0 || g_chipType === "M071QV" || g_chipType === "NUC029xGE" || g_chipType === "NUC029KGE" ||
             g_chipType === "MINI57" || g_chipType === "NM1120" || g_chipType === "NDA102" ||
-            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0) {
+            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0 || g_chipType.indexOf('M2A23') === 0) {
             if (MFPregister.indexOf('MFPH') !== -1 || MFPregister.indexOf('_H_MFP') !== -1) {
                 bL = false;
             }
@@ -6499,7 +6502,7 @@ var NUTOOL_PIN = {};
             g_chipType === "M0564" || g_chipType === "M05641" ||
             g_chipType.indexOf('NUC126') === 0 || g_chipType === "M071QV" || g_chipType === "NUC029xGE" || g_chipType === "NUC029KGE" ||
             g_chipType === "MINI57" || g_chipType === "NM1120" || g_chipType === "NDA102" ||
-            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0) {
+            g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0 || g_chipType.indexOf('M2A23') === 0) {
             if (MFPregister.indexOf('MFPH') !== -1 || MFPregister.indexOf('_H_MFP') !== -1) {
                 bL = false;
             }
@@ -6867,6 +6870,9 @@ var NUTOOL_PIN = {};
         else if (chipType.indexOf("NUC98") === 0) {
             stringChipSeries = "NUC980";
         }
+        else if (chipType.indexOf("M2A23") === 0) {
+            stringChipSeries = "M2A23";
+        }
 
         return stringChipSeries;
     }
@@ -6969,6 +6975,9 @@ var NUTOOL_PIN = {};
         else if (chipSeries === "NUC98") {
             stringChipType = "NUC980";
         }
+        else if (chipSeries === "M2A23") {
+            stringChipType = "M2A23";
+        }
 
         return stringChipType;
     }
@@ -7066,7 +7075,8 @@ var NUTOOL_PIN = {};
                 g_chipType.indexOf("M2003") === 0 ||
                 g_chipType.indexOf("N9H30") === 0 ||
                 g_chipType.indexOf("NUC97") === 0 ||
-                g_chipType.indexOf("NUC98") === 0) {
+                g_chipType.indexOf("NUC98") === 0 ||
+                g_chipType.indexOf("M2A23") === 0) ) {
                 specialModuleNaming.specialModuleNames.push("INT");
                 specialModuleNaming.specialModuleNames.push("TAMPER");
                 specialModuleNaming.specialModuleNames.push("CFG");
@@ -7386,6 +7396,9 @@ var NUTOOL_PIN = {};
                 g_includeHeadFileString = '#include "NuMicro.h"\n';
             }
             else if (g_chipType.indexOf("NUC98") === 0) {
+                g_includeHeadFileString = '#include "NuMicro.h"\n';
+            }
+            else if (g_chipType.indexOf("M2A23") === 0) {
                 g_includeHeadFileString = '#include "NuMicro.h"\n';
             }
             else {
@@ -14891,7 +14904,7 @@ var NUTOOL_PIN = {};
                 g_chipType === "M261" || g_chipType.indexOf('M235') === 0 ||
                 g_chipType.indexOf("M029") === 0 || g_chipType.indexOf("M030") === 0 || g_chipType.indexOf("M031") === 0 || g_chipType.indexOf("M091") === 0 ||
                 g_chipType === "NANO103" || g_chipType === "NUC505" || g_chipType === "NUC123AE" ||
-                g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0) {
+                g_chipType === "MA35D1" || g_chipType.indexOf('M2003') === 0 || g_chipType.indexOf('N9H30') === 0 || g_chipType.indexOf('NUC97') === 0 || g_chipType.indexOf('NUC98') === 0 || g_chipType.indexOf('M2A23') === 0) {
                 if (parseInt(tempString2) < 8) {
                     tempString1 = 'G' + tempString1 + '_MFPL';
                 }
