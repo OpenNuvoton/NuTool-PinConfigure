@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'v2.00.0001';
+    const VERSION_CODE = 'V2.00.0001';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -12913,7 +12913,7 @@ var NUTOOL_PIN = {};
                 get_gpio_MFPsNames();
                 var text = `/****************************************************************************\n`
                     + ` * @file     ${g_partNumber_package}.ncfg\n`
-                    + ` * @version  ${NUTOOL_PIN.g_toolName.sliceAfterX("_")}\n`
+                    + ` * @version  ${VERSION_CODE}\n`
                     + ` * @Date     ${new Date()}\n`
                     + ` * @brief    ${g_briefName} config file\n`
                     + ` *\n`
@@ -13547,7 +13547,7 @@ var NUTOOL_PIN = {};
             getDataUsedToCreateText();
             var textdts = `/****************************************************************************\n`
                 + ` * @file     ${$('#inputText_projectName').val()}.c\n`
-                + ` * @version  ${NUTOOL_PIN.g_toolName.sliceAfterX("_")}\n`
+                + ` * @version  ${VERSION_CODE}\n`
                 + ` * @Date     ${new Date()}\n`
                 + ` * @brief    ${g_briefName} generated code file\n`
                 + ` *\n`
@@ -13576,7 +13576,7 @@ var NUTOOL_PIN = {};
             getModularizedDataUsedToCreateText();
             var textc = `/****************************************************************************\n`
                 + ` * @file     ${$('#inputText_projectName').val()}.c\n`
-                + ` * @version  ${NUTOOL_PIN.g_toolName.sliceAfterX("_")}\n`
+                + ` * @version  ${VERSION_CODE}\n`
                 + ` * @Date     ${new Date()}\n`
                 + ` * @brief    ${g_briefName} generated code file\n`
                 + ` *\n`
@@ -13600,7 +13600,7 @@ var NUTOOL_PIN = {};
 
             var texth = `/****************************************************************************\n`
                 + ` * @file     ${$('#inputText_projectName').val()}.h\n`
-                + ` * @version  ${NUTOOL_PIN.g_toolName.sliceAfterX("_")}\n`
+                + ` * @version  ${VERSION_CODE}\n`
                 + ` * @Date     ${new Date()}\n`
                 + ` * @brief    ${g_briefName} generated code file\n`
                 + ` *\n`
@@ -13623,7 +13623,7 @@ var NUTOOL_PIN = {};
             getDataUsedToCreateText();
             var textc = `/****************************************************************************\n`
                 + ` * @file     ${$('#inputText_projectName').val()}.c\n`
-                + ` * @version  ${NUTOOL_PIN.g_toolName.sliceAfterX("_")}\n`
+                + ` * @version  ${VERSION_CODE}\n`
                 + ` * @Date     ${new Date()}\n`
                 + ` * @brief    ${g_briefName} generated code file\n`
                 + ` *\n`
@@ -13657,7 +13657,7 @@ var NUTOOL_PIN = {};
         get_gpio_MFPsNames();
         var textcfg = `/****************************************************************************\n`
             + ` * @file     ${$('#inputText_projectName').val()}.ncfg\n`
-            + ` * @version  ${NUTOOL_PIN.g_toolName.sliceAfterX("_")}\n`
+            + ` * @version  ${VERSION_CODE}\n`
             + ` * @Date     ${new Date()}\n`
             + ` * @brief    ${g_briefName} config file\n`
             + ` *\n`
@@ -13958,7 +13958,7 @@ var NUTOOL_PIN = {};
                 get_pin_descriptions();
                 var text = `/****************************************************************************\n`
                     + ` * @file     ${g_partNumber_package}.csv\n`
-                    + ` * @version  ${NUTOOL_PIN.g_toolName.sliceAfterX("_")}\n`
+                    + ` * @version  ${VERSION_CODE}\n`
                     + ` * @Date     ${new Date()}\n`
                     + ` * @brief    ${g_briefName} pin descriptions file\n`
                     + ` *\n`
@@ -14365,9 +14365,9 @@ var NUTOOL_PIN = {};
             mcu_inner,
             mfp_tree_inner,
             searchInput_inner,
-            recordedCheckCriteriaPin = false,
-            recordedCheckCriteriaModule = false,
-            recordedCheckCriteriaGPIO = false;
+            recordedCheckCriteriaPin = "",
+            recordedCheckCriteriaModule = "",
+            recordedCheckCriteriaGPIO = "";
 
         recordedDispalyToolTip = localStorage.getItem("DisplayTooltip");
         recordedUIlanguage = localStorage.getItem("UIlanguage");
@@ -14926,12 +14926,6 @@ var NUTOOL_PIN = {};
     function loadPinConfigureTool() {
         // determine the tool content dynamically
         if (typeof NUTOOL_PER === 'undefined') {
-            if (typeof NUTOOL_PIN.g_toolName !== 'undefined' && NUTOOL_PIN.g_toolName !== '') {
-                try { external.changeDialogContentFromJS('dialogCaption:' + NUTOOL_PIN.g_toolName); } catch (err) { }
-            }
-            if (typeof NUTOOL_PIN.g_toolbarRemovedIndices !== 'undefined' && NUTOOL_PIN.g_toolbarRemovedIndices !== '') {
-                try { external.changeDialogContentFromJS('dialogToolbarRemovedIndices:' + NUTOOL_PIN.g_toolbarRemovedIndices.replace(/\s/g, '')); } catch (err) { }
-            }
             if (typeof NUTOOL_PIN.g_cfg_chipSeries !== 'undefined' && NUTOOL_PIN.g_cfg_chipSeries.length !== 0) {
                 g_cfg_chipSeries = NUTOOL_PIN.g_cfg_chipSeries;
             }
@@ -15199,12 +15193,12 @@ var NUTOOL_PIN = {};
                     regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
                     for (i = 0; i < regNames.length; i++) {
                         if (NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]] == data.addr) {
-                            checkNodesByMFPregister(`${regNames[i]}:0x${data.value}`);
+                            checkNodesByMFPregister(`${regNames[i]}:0x${data.value.toUpperCase()}`);
                             break;
                         }
                     }
                 } else if (data.type == '8051') {
-                    checkNodesByMFPregister(`${data.register}:0x${data.value}`);
+                    checkNodesByMFPregister(`${data.register}:0x${data.value.toUpperCase()}`);
                 } else {
                     console.log("returnRegisterValue: unknown type.");
                 }
@@ -15297,9 +15291,6 @@ var NUTOOL_PIN = {};
         },
         getg_generatedMFPFunctionList: function () {
             return g_generatedMFPFunctionList;
-        },
-        getg_toolName: function () {
-            return NUTOOL_PIN.g_toolName;
         },
         getg_anotherNameForNuCAD: function () {
             return NUTOOL_PIN.g_anotherNameForNuCAD;

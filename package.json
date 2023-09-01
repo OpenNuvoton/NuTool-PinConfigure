@@ -7,8 +7,9 @@
     "start": "electron .",
     "watch": "cross-env NODE_ENV=development electronmon ."
   },
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "NUVOTON TECHNOLOGY CORPORATION",
+  "copyright": "Copyright ©2008-2022 Nuvoton Technology Corporation",
+  "license": "UNLICENSED",
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
