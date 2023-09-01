@@ -34,7 +34,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13', 
         'PB.12', 'AVDD', 'VSS'
     ],
-    "UQFN48(USB1.1)(5*5)": [
+    "QFN48(PIN:D10R14U10L14)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
         'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 
         'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
@@ -748,19 +748,19 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'M2L31ZD4AE(UQFN33(USB1.1)(5*5))': {
         'ALL': ['EBI', 'I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31YG4AE(UQFN48(USB1.1)(5*5))': {
+    'M2L31YG4AE(QFN48(PIN:D10R14U10L14))': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31YE4AE(UQFN48(USB1.1)(5*5))': {
+    'M2L31YE4AE(QFN48(PIN:D10R14U10L14))': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31YD4AE(UQFN48(USB1.1)(5*5))': {
+    'M2L31YD4AE(QFN48(PIN:D10R14U10L14))': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31YIDAE(UQFN48(USB1.1)(5*5))': {
+    'M2L31YIDAE(QFN48(PIN:D10R14U10L14))': {
         'ALL': []
     },
-    'M2L31YGDAE(UQFN48(USB1.1)(5*5))': {
+    'M2L31YGDAE(QFN48(PIN:D10R14U10L14))': {
         'ALL': []
     },
     'M2L31LE4AE(ULQFP48(USB1.1)(7*7))': {
@@ -829,7 +829,7 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         NUTOOL_PIN.g_packageNumberIndex = "UQFN33(USB1.1)(5*5)";
         break;
     case 'QFN48':
-        NUTOOL_PIN.g_packageNumberIndex = "UQFN48(USB1.1)(5*5)";
+        NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
         break;
     case 'LQFP48':
         NUTOOL_PIN.g_packageNumberIndex = "ULQFP48(USB1.1)(7*7)";
