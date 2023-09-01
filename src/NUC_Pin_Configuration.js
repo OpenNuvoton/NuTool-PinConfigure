@@ -4571,6 +4571,7 @@ var NUTOOL_PIN = {};
             for (i = 0, max = g_cfg_chipSeries.length; i < max; i += 1) {
                 if (g_cfg_chipSeriesDeveloping.indexOf(g_cfg_chipSeries[i]) !== -1) {
                     g_cfg_chipSeries.splice(i, 1);
+                    i--;    // Fix bug: 沒有把i扣回來的話，會跳過下一個型號，可能導致沒有被濾掉
                 }
             }
         }
