@@ -105,7 +105,7 @@ var NUTOOL_PIN = {};
         g_drawnMultiFunctionSeletions = [],
         g_pinsHighlightedByChipView = [],
         g_userDefinedPin = {},
-        g_cfg_chipSeries = ["ISD9100", "ISD9300", "KM1M4BF", "KM1M7AF", "KM1M7BF", "KM1M7CF", "M029G", "M030G", "M031", "M051", "M0518", "M0519", "M0564", "M071", "M091", "M0A21", "M2003C", "M2351", "M251", "M261", "M2L31", "M451", "M460", "M466", "M471", "M479", "M480", "M55M1", "MA35D1", "MINI51", "ML51", "MS51", "MUG51", "NANO100", "NDA102", "NM1120", "NM1200", "NM1500", "NUC029", "NUC100", "NUC200", "NUC400", "NUC505"],
+        g_cfg_chipSeries = ["ISD9100", "ISD9300", "KM1M4BF", "KM1M7AF", "KM1M7BF", "KM1M7CF", "M029G", "M030G", "M031", "M051", "M0518", "M0519", "M0564", "M071", "M091", "M0A21", "M2003C", "M2351", "M251", "M261", "M2L31", "M451", "M460", "M466", "M471", "M479", "M480", "M55M1", "MA35D1", "MINI51", "MG51", "ML51", "MS51", "MUG51", "NANO100", "NDA102", "NM1120", "NM1200", "NM1500", "NUC029", "NUC100", "NUC200", "NUC400", "NUC505"],
         g_cfg_chipSeriesDeveloping = ["M55M1", "M2003C"],
         g_bShowPinDescriptions = false, // by default, the pin descriptions would be covert.
         g_bConnectToTarget = false, // by default, the pin descriptions would be covert.
@@ -4368,6 +4368,9 @@ var NUTOOL_PIN = {};
         else if (newPartNumber_package.indexOf('MS51') === 0 && newPartNumber_package.indexOf('A9AE(') !== -1) {
             newChipType = 'MS51_8K';
         }
+        else if (newPartNumber_package.indexOf('MG51') === 0) {
+            newChipType = 'MG51';
+        }
         else if (newPartNumber_package.indexOf('M0519') === 0) {
             newChipType = 'M0519';
         }
@@ -4760,7 +4763,7 @@ var NUTOOL_PIN = {};
                     }
                 }
             }
-            else if (newChipType.indexOf("ML5") === 0 || newChipType.indexOf("MS51") === 0 || newChipType.indexOf("MUG51") === 0) {
+            else if (newChipType.indexOf("ML5") === 0 || newChipType.indexOf("MS51") === 0 || newChipType.indexOf("MG51") === 0 || newChipType.indexOf("MUG51") === 0) {
                 for (i = 0, max = tempGPIOs.length; i < max; i += 1) {
                     pinName = tempGPIOs[i].slicePriorToX('.') + 'MF76543210';
 
@@ -4995,7 +4998,8 @@ var NUTOOL_PIN = {};
                 }
             }
         }
-        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MUG51") === 0) {
+        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0
+            || g_chipType.indexOf("MUG51") === 0) {
             for (i = 0, max = tempGPIOs.length; i < max; i += 1) {
                 pinName = tempGPIOs[i].slicePriorToX('.') + 'MF76543210';
 
@@ -5185,7 +5189,8 @@ var NUTOOL_PIN = {};
                 g_gpio_MFPs[stringH] = (backupValue | value) >>> 0;
             }
         }
-        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MUG51") === 0) {
+        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0
+            || g_chipType.indexOf("MUG51") === 0) {
             groupName = register.slice(0, 2);
             registerNumber = parseInt(register.slice(3), 10);
 
@@ -5495,8 +5500,8 @@ var NUTOOL_PIN = {};
                 }
             }
         }
-        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MUG51") === 0
-            || g_chipType.indexOf("KM1M7") === 0 || g_chipType.indexOf("KM1M4") === 0) {
+        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0
+        || g_chipType.indexOf("MUG51") === 0 || g_chipType.indexOf("KM1M7") === 0 || g_chipType.indexOf("KM1M4") === 0) {
             for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                 if (g_read_gpio_MFPs[gpio_MFPsNames[i]] !== 0) {
                     registerValue = g_read_gpio_MFPs[gpio_MFPsNames[i]];
@@ -6021,7 +6026,8 @@ var NUTOOL_PIN = {};
             g_chipType === "NM1200" || g_chipType === "NM1500") {
             returnResult = parseInt(pinName.slice(1, 2), 16) * 8 + parseInt(pinName.slice(3), 10);
         }
-        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MUG51") === 0) {
+        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0
+        || g_chipType.indexOf("MUG51") === 0) {
             returnResult = parseInt(pinName.slice(1, 2), 16) * 8 + pinNumber;
         }
         else if (g_chipType.indexOf("KM1M7") === 0 || g_chipType.indexOf("KM1M4") === 0) {
@@ -6207,8 +6213,8 @@ var NUTOOL_PIN = {};
                 }
             }
         }
-        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MUG51") === 0
-            || g_chipType.indexOf("KM1M7") === 0 || g_chipType.indexOf("KM1M4") === 0) {
+        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0
+        || g_chipType.indexOf("MUG51") === 0 || g_chipType.indexOf("KM1M7") === 0 || g_chipType.indexOf("KM1M4") === 0) {
             // iterate 8 sets of 4 bits
             for (j = 0; j < 8; j += 1) {
                 mask = (0xF << j * 4) >>> 0;
@@ -6563,8 +6569,8 @@ var NUTOOL_PIN = {};
                 }
             }
         }
-        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MUG51") === 0
-            || g_chipType.indexOf("KM1M7") === 0 || g_chipType.indexOf("KM1M4") === 0) {
+        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0
+        || g_chipType.indexOf("MUG51") === 0 || g_chipType.indexOf("KM1M7") === 0 || g_chipType.indexOf("KM1M4") === 0) {
             // iterate 8 sets of 4 bits
             for (j = 0; j < 8; j += 1) {
                 mask = (0xF << j * 4) >>> 0;
@@ -6810,6 +6816,9 @@ var NUTOOL_PIN = {};
         else if (chipType.indexOf("MS51") === 0) {
             stringChipSeries = "MS51";
         }
+        else if (chipType.indexOf("MG51") === 0) {
+            stringChipSeries = "MG51";
+        }
         else if (chipType.indexOf("ML5") === 0) {
             stringChipSeries = "ML51";
         }
@@ -6894,6 +6903,9 @@ var NUTOOL_PIN = {};
         else if (chipSeries === "MS51") {
             stringChipType = "MS51_8K";
         }
+        else if (chipSeries === "MG51") {
+            stringChipType = "MG51";
+        }
         else if (chipSeries === "ML51") {
             stringChipType = "ML51";
         }
@@ -6947,6 +6959,7 @@ var NUTOOL_PIN = {};
                 g_chipType.indexOf("M091") === 0 ||
                 g_chipType.indexOf("M2L31") === 0 ||
                 g_chipType.indexOf("MS51") === 0 ||
+                g_chipType.indexOf("MG51") === 0 ||
                 g_chipType === "M0564" ||
                 g_chipType === "M05641" ||
                 g_chipType === "M0515LDE" ||
@@ -7263,6 +7276,9 @@ var NUTOOL_PIN = {};
             else if (g_chipType.indexOf("MS51_8K") === 0) {
                 g_includeHeadFileString = '#include "MS51_8K.h"\n';
             }
+            else if (g_chipType.indexOf("MG51") === 0) {
+                g_includeHeadFileString = '#include "MG51.h"\n';
+            }
             else if (g_chipType === "NUC029AN" || g_chipType === "NUC029TAE") {
                 g_includeHeadFileString = '#include "NUC029xAN.h"\n';
             }
@@ -7506,7 +7522,7 @@ var NUTOOL_PIN = {};
                     }
                 }
             }
-            else if (g_chipType.indexOf("MS51") === 0) {
+            else if (g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0) {
                 // real value version
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                     g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
@@ -8231,7 +8247,8 @@ var NUTOOL_PIN = {};
                 bResult = true;
             }
         }
-        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MUG51") === 0) {
+        else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0
+        || g_chipType.indexOf("MUG51") === 0) {
             if (inputName.slice(inputName.toLowerCase().indexOf('0x') + 2).length === 8 &&
                 inputName.toLowerCase().lastIndexOf('p') === 0 &&
                 inputName.toLowerCase().lastIndexOf('mf') === 2 &&
@@ -13131,7 +13148,7 @@ var NUTOOL_PIN = {};
             projectLocationArray = [],
             checkboxModularize,
             checkboxModularizeType,
-            checkboxModularizeNotSupportedList = ['ML51', 'ML56', 'ML5156', 'MS51_8K', 'MS51_8KDB', 'MS51_16K', 'MS51_32K', 'MUG51'],
+            checkboxModularizeNotSupportedList = ['ML51', 'ML56', 'ML5156', 'MG51', 'MS51_8K', 'MS51_8KDB', 'MS51_16K', 'MS51_32K', 'MUG51'],
             checkboxReviewReport,
             buildReviewReportTable,
             sTitle_Pin_inner = "",
@@ -14825,7 +14842,8 @@ var NUTOOL_PIN = {};
                 g_chipType === "NM1200") {
                 tempString1 = tempString1 + '_MFP';
             }
-            else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MUG51") === 0) {
+            else if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MS51") === 0 || g_chipType.indexOf("MG51") === 0
+            || g_chipType.indexOf("MUG51") === 0) {
                 tempString1 = tempString1 + 'MF76543210';
             }
             else if (g_chipType.indexOf("KM1M7") === 0 || g_chipType.indexOf("KM1M4") === 0) {
