@@ -7,7 +7,7 @@ NUTOOL_PIN.g_cfg_chips = [
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
-    "QFN48(USB2.0)(5*5)": [
+    "QFN48(PIN:D10R14U10L14)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
         'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 
         'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0', 'HSUSB_VRES', 'HSUSB_VDD33', 
@@ -627,7 +627,7 @@ NUTOOL_PIN.g_cfg_regDescriptions.GPH_MFP2 = '';
 NUTOOL_PIN.g_cfg_regDescriptions.GPH_MFP3 = '';
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'M466YIGAE(QFN48(USB2.0)(5*5))': {
+    'M466YIGAE(QFN48(PIN:D10R14U10L14))': {
         'ALL': ['Vref', 'USB']
     },
     'M466LIGAE(LQFP48(USB2.0)(7*7))': {
@@ -661,7 +661,7 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     partNumber = partNumber_package.substring(0, partNumber_package.indexOf('('));
     switch (NUTOOL_PIN.g_packageNumber) {
     case 'QFN48':
-        NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB2.0)(5*5)";
+        NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
         break;
     case 'LQFP48':
         NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)(7*7)";
