@@ -50,7 +50,10 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "M460LGCAE", pkg: "LQFP48" },
     { name: "M460AGCAE", pkg: "QFN64" },
     { name: "M460SGCAE", pkg: "LQFP64" },
-    { name: "M460KGCAE", pkg: "LQFP128" }
+    { name: "M460KGCAE", pkg: "LQFP128" },
+    { name: "M463K3GCAC", pkg: "LQFP128" },
+    { name: "M463S3GCAC", pkg: "LQFP64" },
+    { name: "M463L3GCAC", pkg: "LQFP48" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -1062,7 +1065,7 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
         'ALL': ['EMAC0', 'UART9', 'HBI']
     },
     'M467SJHAN(LQFP64)': {
-        'ALL': ['EMAC0', 'UART9', 'HBI']
+        'ALL': ['UART9', 'HBI']
     },
     'M467VJHAE(LQFP100)': {
         'ALL': ['HBI']

@@ -4202,12 +4202,11 @@ var NUTOOL_PIN = {};
         else if (newPartNumber_package.indexOf('M466') === 0) {
             newChipType = 'M466';
         }
-        else if (newPartNumber_package.indexOf('M46') === 0 &&
-            (newPartNumber_package.lastIndexOf('GCAE') + 4 === newPartNumber_package.slicePriorToX('(').length)) {
-            newChipType = 'M460LD';
+        else if (newPartNumber_package.indexOf('M467') === 0) {
+            newChipType = 'M460HD';
         }
         else if (newPartNumber_package.indexOf('M46') === 0) {
-            newChipType = 'M460HD';
+            newChipType = 'M460LD';
         }
         else if (newPartNumber_package.indexOf('M471') === 0) {
             newChipType = 'M471';
@@ -6916,7 +6915,10 @@ var NUTOOL_PIN = {};
         else if (chipSeries === "M466") {
             stringChipType = "M466";
         }
-        else if (chipSeries === "M460") {
+        else if (chipSeries === "M467") {
+            stringChipType = "M460HD";
+        }
+        else if (chipSeries === "M46") {
             stringChipType = "M460LD";
         }
         else if (chipSeries === "M480") {
