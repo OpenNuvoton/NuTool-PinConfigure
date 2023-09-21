@@ -123,9 +123,14 @@ var NUTOOL_PIN = {};
         initListeners();
         changeUIlanguage();
         parsingPartNumID();
-        if (window.Worker) {
-            worker = new Worker('./src/worker/webusb.worker-bundle.js');
-            setWorkerListener();
+        // 由於Electron無法get navigator.usb，所以Electron就在main讀，web就在worker讀
+        if (isElectron()) {
+            setIPCListener();
+        } else {
+            if (window.Worker) {
+                worker = new Worker('./src/worker/webusb.worker-bundle.js');
+                setWorkerListener();
+            }
         }
         if (isElectron()) {
             $('#ID_BUTTON_RUN_NUCAD').show();   // TODO: 開啟時會閃一下，很醜
@@ -15108,7 +15113,11 @@ var NUTOOL_PIN = {};
             generateCode();
         });
         $('#ID_BUTTON_CONNECT_TO_TARGET').on('click', function () {
-            connectToChip();
+            if (isElectron()) {
+                window.electronAPI.send('connect');
+            } else {
+                connectToChipWeb();
+            }
         });
         $('#ID_BUTTON_PRINT_REPORT').on('click', function () {
             printReport();
@@ -15230,7 +15239,121 @@ var NUTOOL_PIN = {};
         }
     }
 
-    async function connectToChip() {
+    // IPC Renderer
+    // 趕時間，所以直接複製webusb的flow過來，有機會再合併
+    function setIPCListener() {
+        window.electronAPI.onConnected((event, value) => {
+            console.log('electronAPI: onConnected');
+            // 確認連接後取PIDValue
+            deviceConnected = true;
+            window.electronAPI.send('getPIDValue');
+        });
+        window.electronAPI.onReturnPIDValue((event, pidValue) => {
+            console.log('electronAPI: onReturnPIDValue');
+            // 取得PIDValue後換成PID
+            connectedDevicePID = getPIDFromPIDValue(pidValue);
+            console.log('connected device: ' + connectedDevicePID);
+            // 確認連接的chip是否為現在畫面上呈現的chip
+            if (g_partNumber_package.toUpperCase().indexOf(connectedDevicePID.toUpperCase()) != -1) {
+                // 紀錄各個register的預設位址
+                var addrs = [];
+                var regNames = [];
+                regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
+                for (i = 0; i < regNames.length; i++) {
+                    addrs.push(NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]]);
+                }
+                // 將預設位址送到worker讀值
+                window.electronAPI.send('getMFPValues', addrs);
+            } else {
+                // 流程結束，斷開連結
+                window.electronAPI.send('connectComplete');
+                // 提示使用者選擇正確的型號
+                decideUIlanguage();
+                showAlertDialog("请切换至与连接芯片相符合的芯片系列与型号。",
+                    "請切換至與連接晶片相符合的晶片系列與型號。",
+                    `Please switch to the Chip Series and Part No. that matches the connected chip.`);
+            }
+        });
+        // 接收到斷線通知
+        window.electronAPI.onReturnRegisterValue((event, result, type) => {
+            console.log('electronAPI: onReturnRegisterValue');
+            onReturnRegisterValue(result, type);
+        });
+        // 接收到斷線通知
+        window.electronAPI.onDisconnect((event, value) => {
+            console.log("electronAPI: onDisconnect");
+            deviceConnected = false;
+        });
+        // 接收到警告訊息
+        window.electronAPI.onWarning((event, value) => {
+            console.warn(value);
+        });
+    }
+
+    function setWorkerListener() {
+        worker.onmessage = async function (e) {
+            let action = e.data.action;
+            let data = e.data;
+            if (action == 'connected') {
+                console.log('worker: connected');
+                // 確認連接後取PIDValue
+                deviceConnected = true;
+                worker.postMessage({ 'action': 'getPIDValue' });
+            } else if (action == 'returnPIDValue') {
+                console.log('worker: returnPIDValue');
+                // 取得PIDValue後換成PID
+                connectedDevicePID = getPIDFromPIDValue(data.value);
+                console.log('connected device: ' + connectedDevicePID);
+                // 確認連接的chip是否為現在畫面上呈現的chip
+                if (g_partNumber_package.toUpperCase().indexOf(connectedDevicePID.toUpperCase()) != -1) {
+                    // 紀錄各個register的預設位址
+                    var addrs = [];
+                    var regNames = [];
+                    regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
+                    for (i = 0; i < regNames.length; i++) {
+                        addrs.push(NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]]);
+                    }
+                    // 將預設位址送到worker讀值
+                    worker.postMessage({ 'action': 'getMFPValues', 'data': addrs });
+                } else {
+                    // 流程結束，斷開連結
+                    worker.postMessage({ 'action': 'connectComplete' });
+                    // 提示使用者選擇正確的型號
+                    decideUIlanguage();
+                    showAlertDialog("请切换至与连接芯片相符合的芯片系列与型号。",
+                        "請切換至與連接晶片相符合的晶片系列與型號。",
+                        `Please switch to the Chip Series and Part No. that matches the connected chip.`);
+                }
+            } else if (action == 'returnRegisterValue') {
+                console.log('worker: returnRegisterValue');
+                onReturnRegisterValue(data.result, data.type);
+            } else if (action == 'disconnect') {
+                console.log('worker: disconnect');
+                deviceConnected = false;
+            }
+        };
+    }
+
+    function onReturnRegisterValue(result, type) {
+        var regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
+        if (type == 'CortexM') {
+            for (var m in result) {
+                for (var n = 0; n < regNames.length; n++) {
+                    if (NUTOOL_PIN.g_cfg_regDescriptions[regNames[n]] == Object.keys(result[m])[0]) {
+                        var value = result[m][Object.keys(result[m])[0]];
+                        checkNodesByMFPregister(`${regNames[n]}:0x${value.toUpperCase()}`);
+                        break;
+                    }
+                }
+            }
+        } else if (type == '8051') {
+            checkNodesByMFPregister(`${data.register}:0x${result.toUpperCase()}`);
+        } else {
+            console.log("returnRegisterValue: unknown type.");
+        }
+    }
+
+    async function connectToChipWeb() {
         var connDevice;
         if (worker != undefined) {
             // 先確認現在有沒有連上device
@@ -15256,59 +15379,6 @@ var NUTOOL_PIN = {};
                 worker.postMessage({ 'action': 'connect' });
             }
         }
-    }
-
-    function setWorkerListener() {
-        worker.onmessage = async function (e) {
-            let action = e.data.action;
-            let data = e.data;
-            if (action == 'connected') {
-                // 確認連接後取PIDValue
-                deviceConnected = true;
-                worker.postMessage({ 'action': 'getPIDValue' });
-            } else if (action == 'returnPIDValue') {
-                // 取得PIDValue後換成PID
-                connectedDevicePID = getPIDFromPIDValue(data.value);
-                console.log('connected device: ' + connectedDevicePID);
-                // 確認連接的chip是否為現在畫面上呈現的chip
-                if (g_partNumber_package.indexOf(connectedDevicePID) != -1) {
-                    // 紀錄各個register的預設位址
-                    var addrs = [];
-                    var regNames = [];
-                    regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
-                    for (i = 0; i < regNames.length; i++) {
-                        addrs.push(NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]]);
-                    }
-                    // 將預設位址送到worker讀值
-                    worker.postMessage({ 'action': 'getMFPValues', 'data': addrs });
-                } else {
-                    // 流程結束，斷開連結
-                    worker.postMessage({ 'action': 'connectComplete' });
-                    // 提示使用者選擇正確的型號
-                    decideUIlanguage();
-                    showAlertDialog("请切换至与连接芯片相符合的芯片系列与型号。",
-                        "請切換至與連接晶片相符合的晶片系列與型號。",
-                        `Please switch to the Chip Series and Part No. that matches the connected chip.`);
-                }
-            } else if (action == 'returnRegisterValue') {
-                if (data.type == 'CortexM') {
-                    regNames = getPropertyNames(NUTOOL_PIN.g_cfg_regDescriptions);
-                    for (i = 0; i < regNames.length; i++) {
-                        if (NUTOOL_PIN.g_cfg_regDescriptions[regNames[i]] == data.addr) {
-                            checkNodesByMFPregister(`${regNames[i]}:0x${data.value.toUpperCase()}`);
-                            break;
-                        }
-                    }
-                } else if (data.type == '8051') {
-                    checkNodesByMFPregister(`${data.register}:0x${data.value.toUpperCase()}`);
-                } else {
-                    console.log("returnRegisterValue: unknown type.");
-                }
-            } else if (action == 'disconnect') {
-                console.log("webusb disconnected");
-                deviceConnected = false;
-            }
-        };
     }
 
     function getPIDFromPIDValue(PIDValue) {

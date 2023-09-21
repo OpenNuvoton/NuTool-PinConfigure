@@ -127,11 +127,16 @@ const getRegisterValue = async () => {
             try {
                 await processor.resume();
 
+                let result = [];
                 for (let i = 0; i < addrs.length; i++) {
                     showing_buffer = await processor.readBlock(0x00000000 + Number(addrs[i]), 1);
                     let value = ('00000000' + showing_buffer[0].toString(16)).slice(-8);
-                    postMessage({ 'action': 'returnRegisterValue', 'addr': addrs[i], 'value': value, 'type': 'CortexM' });
+                    var obj = {};
+                    obj[`${addrs[i]}`] = value;
+                    console.log(`${addrs[i]}, ${value}`);
+                    result.push(obj);
                 }
+                postMessage({ 'action': 'returnRegisterValue', 'result': result, 'type': 'CortexM' });
                 await disconnect();
             } catch (error) {
                 console.log(error);

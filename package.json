@@ -1,20 +1,23 @@
 {
-  "name": "NuTool-PinConfig2",
-  "version": "1.0.0",
+  "name": "nutool-pinconfigure",
+  "version": "1.27.0001",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "watch": "cross-env NODE_ENV=development electronmon ."
+    "start": "gulp && cross-env NODE_ENV=development electron .",
+    "watch": "concurrently \"gulp watch\" \"cross-env NODE_ENV=development electronmon .\"",
+    "dir": "gulp && cross-env NODE_ENV=production electron-builder --win --x64 --dir",
+    "build": "gulp && cross-env NODE_ENV=production electron-builder --win --x64"
   },
   "author": "NUVOTON TECHNOLOGY CORPORATION",
-  "copyright": "Copyright ©2008-2022 Nuvoton Technology Corporation",
+  "copyright": "Copyright ©2008-2023 Nuvoton Technology Corporation",
   "license": "UNLICENSED",
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
+    "concurrently": "^8.2.1",
     "cross-env": "^7.0.3",
     "electron": "^24.3.0",
     "electron-builder": "^24.4.0",
@@ -23,13 +26,50 @@
     "gulp-babel": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-terser": "^2.1.0",
-    "terser": "^5.18.2",
     "vinyl-source-stream": "^2.0.0",
     "worker-plugin": "^5.0.1"
   },
   "dependencies": {
-    "core-js": "^3.30.2",
     "dapjs": "file:local_modules/dapjs-yc",
-    "install": "^0.13.0"
+    "usb": "^2.10.0"
+  },
+  "build": {
+    "productName": "NuTool-PinConfigure",
+    "appId": "com.nuvoton.pinconfigure",
+    "npmRebuild": false,
+    "files": [
+      "index.htm",
+      "main.js",
+      "preload.js",
+      "src",
+      "local_modules",
+      "node_modules",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ],
+      "icon": "build/app.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "NuTool-ClockConfigure",
+      "include": "release/script/installer.nsh"
+    },
+    "directories": {
+      "buildResources": "assets",
+      "output": "release/build"
+    },
+    "extraResources": [
+      "./src/res/**",
+      "./assets/**"
+    ]
   }
 }
