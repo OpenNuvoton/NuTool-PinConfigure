@@ -15519,7 +15519,17 @@ var NUTOOL_PIN = {};
         g_readConfigFileContentText: "",
         g_pinFunctionString: "", // for DISPATCH_PROPERTYPUT
         g_bFunctionalTesting: false,
-        g_bModuleTreeLoaded: false
+        g_bModuleTreeLoaded: false,
+        // 以下From NuTool_Content.js
+        g_horizontalIndexArray: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'T', 'U', 'V', 'W', 'Y'],
+        g_toolbarRemovedIndices: '4',
+        g_chipType_default: '',
+        g_partNumber_package_default: '',
+        g_chipSilkScreenPrint_default: '',
+        g_briefName_default: '',
+        g_copyrightCompanyName_default: '',
+        g_anotherNameForNuCAD: '',
+        g_bSwitchSpeech8bitCPUMode: false
     };
 }());
 // timer code
