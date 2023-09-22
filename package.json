@@ -60,7 +60,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "NuTool-ClockConfigure",
+      "shortcutName": "NuTool-PinConfigure",
       "include": "release/script/installer.nsh"
     },
     "directories": {
