@@ -65,6 +65,7 @@ NUTOOL_PIN.g_cfg_chips = [
 	{ name: "NUC1261SG4AE", pkg: "LQFP64" },
 	{ name: "NUC1261SE4AE", pkg: "LQFP64" },
 	// NUC1262
+    { name: "NUC1262YE4AE", pkg: "QFN48" },
 	{ name: "NUC1262NE4AE", pkg: "QFN48" },
 	{ name: "NUC1262LE4AE", pkg: "LQFP48" },
 	{ name: "NUC1262SE4AE", pkg: "LQFP64" },

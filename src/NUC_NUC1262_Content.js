@@ -65,6 +65,7 @@ NUTOOL_PIN.g_cfg_chips = [
 	{ name: "NUC1261SG4AE", pkg: "LQFP64" },
 	{ name: "NUC1261SE4AE", pkg: "LQFP64" },
 	// NUC1262
+    { name: "NUC1262YE4AE", pkg: "QFN48" },
 	{ name: "NUC1262NE4AE", pkg: "QFN48" },
 	{ name: "NUC1262LE4AE", pkg: "LQFP48" },
 	{ name: "NUC1262SE4AE", pkg: "LQFP64" },
@@ -87,6 +88,16 @@ NUTOOL_PIN.g_cfg_chips = [
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
+    "QFN48(PIN:D10R14U10L14)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4',
+        'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'VSS', 'PA.3', 'PA.2', 'PA.1', 'PA.0',
+        'PF.15', 'nRESET',
+        'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0', 'USB_VBUS', 'USB_D-',
+        'USB_D+', 'USB_VDD33_CAP',
+        'VSS', 'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'PB.11',
+        'PB.7', 'PB.6'
+    ],
 	"UQFN48(7*7)": [
 		'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
 		'PF.5', 'PF.4',
@@ -415,9 +426,16 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
 
 	partNumber = partNumber_package.substring(0, partNumber_package.indexOf('('));
 	switch (NUTOOL_PIN.g_packageNumber) {
-	case 'QFN48':
-		NUTOOL_PIN.g_packageNumberIndex = "UQFN48(7*7)";
-		break;
+    case 'QFN48':
+        switch (partNumber) {
+        case "NUC1262YE4AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
+            break;
+        default:
+            NUTOOL_PIN.g_packageNumberIndex = "UQFN48(7*7)";
+            break;
+        }
+        break;
 	case 'LQFP48':
 		NUTOOL_PIN.g_packageNumberIndex = "ULQFP48(7*7)";
 		break;
