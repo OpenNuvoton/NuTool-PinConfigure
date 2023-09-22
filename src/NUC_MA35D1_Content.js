@@ -1411,16 +1411,16 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     "MA35D16F987C(LQFP216)": {
         "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
     },
-    "MA35D16H8A7C(BGA324)": {
+    "MA35D16H8A7C(BGA312)": {
         "ALL": ["TSI"]
     },
-    "MA35D16A887C(BGA324)": {
+    "MA35D16A887C(BGA312)": {
         "ALL": ["TSI"]
     },
-    "MA35D16H0A7C(BGA400)": {
+    "MA35D16H0A7C(BGA364)": {
         "ALL": ["TSI"]
     },
-    "MA35D16A087C(BGA400)": {
+    "MA35D16A087C(BGA364)": {
         "ALL": ["TSI"]
     }
 };
