@@ -67,10 +67,12 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "M258KE3AE", pkg: "LQFP128" },
     //M258G
     { name: "M254SG6AE", pkg: "LQFP64" },
+    { name: "M256SG6AE", pkg: "LQFP64" },
     { name: "M258SG6AE", pkg: "LQFP64" },
     //{ name: "M256QG6AE", pkg: "LQFP80" }, // Remove LQFP80 pkg
     //{ name: "M258QG6AE", pkg: "LQFP80" }, // Remove LQFP80 pkg
     { name: "M254KG6AE", pkg: "LQFP128" },
+    { name: "M256KG6AE", pkg: "LQFP128" },
     { name: "M258KG6AE", pkg: "LQFP128" }
 ];
 
@@ -588,6 +590,12 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     },
     "M256QG6AE(LQFP80)": {
         "ALL": ["USB"],
+    },
+    "M256KG6AE(LQFP128)": {
+        "ALL": ["USB"],
+    },
+    "M256SG6AE(LQFP64)": {
+        "ALL": ["USB"],
     }
 };
 NUTOOL_PIN.g_cfg_WPPin = [];
@@ -611,21 +619,21 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     default:
     case 'LQFP64':
         switch (partNumber) {
-        case "M254SG6AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64";
+        case "M258SG6AE":
+            NUTOOL_PIN.g_packageNumberIndex = "ULQFP64";
             break;
         default:
-            NUTOOL_PIN.g_packageNumberIndex = "ULQFP64";
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP64";
             break;
         }
         break;
     case 'LQFP80':
         switch (partNumber) {
-        case "M256QG6AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP80";
+        case "M258QG6AE":
+            NUTOOL_PIN.g_packageNumberIndex = "ULQFP80";
             break;
         default:
-            NUTOOL_PIN.g_packageNumberIndex = "ULQFP80";
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP80";
             break;
         }
         break;
