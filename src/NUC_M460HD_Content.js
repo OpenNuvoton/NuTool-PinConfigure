@@ -51,9 +51,9 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "M460AGCAE", pkg: "QFN64" },
     { name: "M460SGCAE", pkg: "LQFP64" },
     { name: "M460KGCAE", pkg: "LQFP128" },
-    { name: "M463K3GCAC", pkg: "LQFP128" },
-    { name: "M463S3GCAC", pkg: "LQFP64" },
-    { name: "M463L3GCAC", pkg: "LQFP48" }
+    { name: "M463K2GCAC", pkg: "LQFP128" },
+    { name: "M463S2GCAC", pkg: "LQFP64" },
+    { name: "M463L2GCAC", pkg: "LQFP48" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {

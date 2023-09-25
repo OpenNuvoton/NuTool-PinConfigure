@@ -51,9 +51,9 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "M460AGCAE", pkg: "QFN64" },
     { name: "M460SGCAE", pkg: "LQFP64" },
     { name: "M460KGCAE", pkg: "LQFP128" },
-    { name: "M463K3GCAC", pkg: "LQFP128" },
-    { name: "M463S3GCAC", pkg: "LQFP64" },
-    { name: "M463L3GCAC", pkg: "LQFP48" }
+    { name: "M463K2GCAC", pkg: "LQFP128" },
+    { name: "M463S2GCAC", pkg: "LQFP64" },
+    { name: "M463L2GCAC", pkg: "LQFP48" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -1035,13 +1035,13 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'M460KGCAE(LQFP128)': {
         'ALL': ['CAN0', 'CAN1']
     },
-    'M463K3GCAC(LQFP128)': {
+    'M463K2GCAC(LQFP128)': {
         'ALL': ['SPI4', 'SPI5', 'SPI6', 'SPI7', 'SPI8', 'SPI9', 'SPI10', 'BMC0', 'BMC1', 'BMC2', 'BMC3', 'BMC4', 'BMC5', 'BMC6', 'BMC7', 'BMC8', 'BMC9', 'BMC10', 'BMC11', 'BMC12', 'BMC13', 'BMC14', 'BMC15','BMC16', 'BMC17', 'BMC18', 'BMC19', 'BMC20', 'BMC21', 'BMC22', 'BMC23', 'BMC24', 'BMC25', 'BMC26', 'BMC27', 'BMC28', 'BMC29', 'BMC30', 'BMC31']
     },
-    'M463S3GCAC(LQFP64)': {
+    'M463S2GCAC(LQFP64)': {
         'ALL': ['SPI4', 'SPI5', 'SPI6', 'SPI7', 'SPI8', 'SPI9', 'SPI10', 'BMC0', 'BMC1', 'BMC2', 'BMC3', 'BMC4', 'BMC5', 'BMC6', 'BMC7', 'BMC8', 'BMC9', 'BMC10', 'BMC11', 'BMC12', 'BMC13', 'BMC14', 'BMC15','BMC16', 'BMC17', 'BMC18', 'BMC19', 'BMC20', 'BMC21', 'BMC22', 'BMC23', 'BMC24', 'BMC25', 'BMC26', 'BMC27', 'BMC28', 'BMC29', 'BMC30', 'BMC31']
     },
-    'M463L3GCAC(LQFP48)': {
+    'M463L2GCAC(LQFP48)': {
         'ALL': ['VBAT', 'Tamper', 'Vref', 'SPI4', 'SPI5', 'SPI6', 'SPI7', 'SPI8', 'SPI9', 'SPI10', 'BMC0', 'BMC1', 'BMC2', 'BMC3', 'BMC4', 'BMC5', 'BMC6', 'BMC7', 'BMC8', 'BMC9', 'BMC10', 'BMC11', 'BMC12', 'BMC13', 'BMC14', 'BMC15','BMC16', 'BMC17', 'BMC18', 'BMC19', 'BMC20', 'BMC21', 'BMC22', 'BMC23', 'BMC24', 'BMC25', 'BMC26', 'BMC27', 'BMC28', 'BMC29', 'BMC30', 'BMC31']
     }
 };
