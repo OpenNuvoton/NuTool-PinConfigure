@@ -333,6 +333,7 @@ function createWindow() {
     width: 1600,
     height: 900,
     autoHideMenuBar: true,
+    show: false,
     webPreferences: {
       devTools: true,
       preload: path.join(__dirname, "preload.js") // use a preload script
@@ -394,6 +395,9 @@ function createWindow() {
       }
     });
   }
+
+  mainWindow.maximize()
+  mainWindow.show()
 }
 
 // This method will be called when Electron has finished

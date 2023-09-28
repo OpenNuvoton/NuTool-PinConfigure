@@ -9864,7 +9864,7 @@ var NUTOOL_PIN = {};
                         y,
                         legalInner,
                         colorBeingUsed,
-                        newLineThreshold = 20;
+                        newLineThreshold = 10;
 
                     if (me.currentPinIndex !== -1) {
                         // clear old selections
