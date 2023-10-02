@@ -7,4 +7,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   onReturnPIDValue: (callback) => ipcRenderer.on('returnPIDValue', callback),
   onReturnRegisterValue: (callback) => ipcRenderer.on('returnRegisterValue', callback),
   onWarning: (callback) => ipcRenderer.on('warning', callback),
+  onRunNuCADError: (callback) => ipcRenderer.on('runNuCADError', callback),
 })

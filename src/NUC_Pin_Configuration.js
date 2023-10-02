@@ -14176,14 +14176,34 @@ var NUTOOL_PIN = {};
                             // iterate radio buttons
                             $("input").each(function () {
                                 if (this.name === "RunAnotherTool" && this.checked === true) {
-                                    $(this).val();
-
+                                    var bUseNCPin = false;
                                     if ($('#checkbox_useNCpin').is(':checked')) {
-                                        window.external.runAnotherTool($(this).val() + "_UseNCPin");
+                                        bUseNCPin = true
                                     }
-                                    else {
-                                        window.external.runAnotherTool($(this).val());
+                                    // Generate .csv
+                                    get_pin_descriptions();
+                                    var sToolName = "NuCAD";
+                                    if (NUTOOL_PIN.g_anotherNameForNuCAD.indexOf('CAD') != -1) {
+                                        sToolName = NUTOOL_PIN.g_anotherNameForNuCAD;
                                     }
+                                    var textCAD = `/****************************************************************************\n`
+                                        + ` * @file     ${sToolName}.csv\n`
+                                        + ` * @version  ${VERSION_CODE}\n`
+                                        + ` * @Date     ${new Date()}\n`
+                                        + ` * @brief    ${g_briefName} generated code file\n`
+                                        + ` *\n`
+                                        + ` * SPDX-License-Identifier: Apache-2.0\n`
+                                        + ` *\n`
+                                        + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
+                                        + `*****************************************************************************/\n`
+                                        + `MCU:${g_partNumber_package}\n`
+                                        + `${g_pin_descriptions}`
+                                        + (bUseNCPin ? `UseNCPin\n` : ``)
+                                        + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`;
+                                    var blobdts = new Blob([textCAD], { type: "text/plain;charset=utf-8" });
+                                    saveAs(blobdts, `${sToolName}.csv`);
+                                    // Execute "NuCAD_OrCAD.exe" from Main
+                                    window.electronAPI.send('runNuCAD');
                                 }
                             });
 
@@ -15126,7 +15146,7 @@ var NUTOOL_PIN = {};
             generatePinDescriptions();
         });
         $('#ID_BUTTON_RUN_NUCAD').on('click', function () {
-            runAnotherTool();   // TODO: web版本需取消
+            runAnotherTool();
         });
         $('#ID_BUTTON_SHOW_PIN_DESCRIPTIONS').on('click', function () {
             showPinDescriptions();
@@ -15287,6 +15307,10 @@ var NUTOOL_PIN = {};
         // 接收到警告訊息
         window.electronAPI.onWarning((event, value) => {
             console.warn(value);
+        });
+        // NuCAD無法正確執行
+        window.electronAPI.onRunNuCADError((event, value) => {
+            executeNuCADfail();
         });
     }
 

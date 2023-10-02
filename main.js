@@ -3,6 +3,7 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const webusb = require('usb').webusb;
 const DAPjs = require('dapjs');
+const child = require('child_process').execFile;
 const PROCESSOR_TYPE_ARM_CM0 = 'PROCESSOR_TYPE_ARM_CM0';
 const PROCESSOR_TYPE_ARM_CM4 = 'PROCESSOR_TYPE_ARM_CM4';
 const PROCESSOR_TYPE_ARM_CM23 = 'PROCESSOR_TYPE_ARM_CM23'
@@ -378,6 +379,16 @@ function createWindow() {
     ipcMain.on('connectComplete', async (event, arg) => {
       console.log('ipcMain: connectComplete');
       await disconnect();
+    });
+    ipcMain.on('runNuCAD', async (event, arg) => {
+      console.log('ipcMain: runNuCAD');
+      child(`${__dirname}\\src\\NuCAD_OrCAD.exe`, function (err, data) {
+        if (err) {
+          console.error(err);
+          windows.mainWindow.webContents.send('runNuCADError');
+          return;
+        }
+      });
     });
   });
 
