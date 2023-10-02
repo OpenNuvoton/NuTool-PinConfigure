@@ -13016,25 +13016,25 @@ var NUTOOL_PIN = {};
         if (checkPinCorrectness(showPinError)) {
             try {
                 get_gpio_MFPsNames();
-                var text = `/****************************************************************************\n`
-                    + ` * @file     ${g_partNumber_package}.ncfg\n`
-                    + ` * @version  ${VERSION_CODE}\n`
-                    + ` * @Date     ${new Date()}\n`
-                    + ` * @brief    ${g_briefName} config file\n`
-                    + ` *\n`
-                    + ` * @note Please do not modify this file.\n`
-                    + ` *       Otherwise, it may not be loaded successfully.\n`
-                    + ` *\n`
-                    + ` * SPDX-License-Identifier: Apache-2.0\n`
-                    + ` *\n`
-                    + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
-                    + `*****************************************************************************/\n`
-                    + `MCU:${g_partNumber_package}\n`
+                var text = `/****************************************************************************\r\n`
+                    + ` * @file     ${g_partNumber_package}.ncfg\r\n`
+                    + ` * @version  ${VERSION_CODE}\r\n`
+                    + ` * @Date     ${new Date()}\r\n`
+                    + ` * @brief    ${g_briefName} config file\r\n`
+                    + ` *\r\n`
+                    + ` * @note Please do not modify this file.\r\n`
+                    + ` *       Otherwise, it may not be loaded successfully.\r\n`
+                    + ` *\r\n`
+                    + ` * SPDX-License-Identifier: Apache-2.0\r\n`
+                    + ` *\r\n`
+                    + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\r\n`
+                    + `*****************************************************************************/\r\n`
+                    + `MCU:${g_partNumber_package}\r\n`
                     + `${g_pinCurrentStateString}`
                     + `${g_pinsConfiguredByGPIOstring}` // TODO: no show
                     + `${g_userDefinedPinString}`
                     + `${g_gpio_MFPsString}`
-                    + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`
+                    + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
                 var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
                 saveAs(blob, `${g_partNumber_package}.ncfg`);
             } catch (err) {
@@ -13651,27 +13651,27 @@ var NUTOOL_PIN = {};
         getIncludeHeadFile();
         if (g_includeHeadFileString.indexOf('.h') == -1) {
             getDataUsedToCreateText();
-            var textdts = `/****************************************************************************\n`
-                + ` * @file     ${$('#inputText_projectName').val()}.c\n`
-                + ` * @version  ${VERSION_CODE}\n`
-                + ` * @Date     ${new Date()}\n`
-                + ` * @brief    ${g_briefName} generated code file\n`
-                + ` *\n`
-                + ` * SPDX-License-Identifier: Apache-2.0\n`
-                + ` *\n`
-                + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
-                + `*****************************************************************************/\n`
-                + ` *\n`
-                + `/********************\n`
-                + `MCU:${g_partNumber_package}\n`
+            var textdts = `/****************************************************************************\r\n`
+                + ` * @file     ${$('#inputText_projectName').val()}.c\r\n`
+                + ` * @version  ${VERSION_CODE}\r\n`
+                + ` * @Date     ${new Date()}\r\n`
+                + ` * @brief    ${g_briefName} generated code file\r\n`
+                + ` *\r\n`
+                + ` * SPDX-License-Identifier: Apache-2.0\r\n`
+                + ` *\r\n`
+                + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\r\n`
+                + `*****************************************************************************/\r\n`
+                + ` *\r\n`
+                + `/********************\r\n`
+                + `MCU:${g_partNumber_package}\r\n`
                 + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\n${g_generatedCodeByPinString}`)
                 + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\n${g_generatedCodeByModuleString}`)
                 + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\n${g_generatedCodeByGPIOstring}`)
-                + `********************/\n\n`
+                + `********************/\r\n\r\n`
                 + `${g_includeHeadFileString}`
-                + `\n`
+                + `\r\n`
                 + `${g_gpio_MFPsString}`
-                + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`
+                + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
             var blobdts = new Blob([textdts], { type: "text/plain;charset=utf-8" });
             saveAs(blobdts, `${$('#inputText_projectName').val()}.dts`);
 
@@ -13680,106 +13680,106 @@ var NUTOOL_PIN = {};
         // Generate .c + .h
         if ($("#checkbox_ModularizeCode").is(":checked")) {
             getModularizedDataUsedToCreateText();
-            var textc = `/****************************************************************************\n`
-                + ` * @file     ${$('#inputText_projectName').val()}.c\n`
-                + ` * @version  ${VERSION_CODE}\n`
-                + ` * @Date     ${new Date()}\n`
-                + ` * @brief    ${g_briefName} generated code file\n`
-                + ` *\n`
-                + ` * SPDX-License-Identifier: Apache-2.0\n`
-                + ` *\n`
-                + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
-                + `*****************************************************************************/\n`
-                + `\n`
-                + `/********************\n`
-                + `MCU:${g_partNumber_package}\n`
+            var textc = `/****************************************************************************\r\n`
+                + ` * @file     ${$('#inputText_projectName').val()}.c\r\n`
+                + ` * @version  ${VERSION_CODE}\r\n`
+                + ` * @Date     ${new Date()}\r\n`
+                + ` * @brief    ${g_briefName} generated code file\r\n`
+                + ` *\r\n`
+                + ` * SPDX-License-Identifier: Apache-2.0\r\n`
+                + ` *\r\n`
+                + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\r\n`
+                + `*****************************************************************************/\r\n`
+                + `\r\n`
+                + `/********************\r\n`
+                + `MCU:${g_partNumber_package}\r\n`
                 + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\n${g_generatedCodeByPinString}`)
                 + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\n${g_generatedCodeByModuleString}`)
                 + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\n${g_generatedCodeByGPIOstring}`)
-                + `********************/\n\n`
+                + `********************/\r\n\r\n`
                 + `${g_includeHeadFileString}`
                 + (g_userDefinedPinString == undefined ? "" : `\n${g_userDefinedPinString}`)
                 + `${g_gpio_MFPsString}`
-                + `\n\n/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`
+                + `\r\n\r\n/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
             var blobc = new Blob([textc], { type: "text/plain;charset=utf-8" });
             saveAs(blobc, `${$('#inputText_projectName').val()}.c`);
 
-            var texth = `/****************************************************************************\n`
-                + ` * @file     ${$('#inputText_projectName').val()}.h\n`
-                + ` * @version  ${VERSION_CODE}\n`
-                + ` * @Date     ${new Date()}\n`
-                + ` * @brief    ${g_briefName} generated code file\n`
-                + ` *\n`
-                + ` * SPDX-License-Identifier: Apache-2.0\n`
-                + ` *\n`
-                + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
-                + `*****************************************************************************/\n\n`
-                + `#ifndef __${$('#inputText_projectName').val().toUpperCase()}_H__\n`
-                + `#define __${$('#inputText_projectName').val().toUpperCase()}_H__\n\n`
-                + `#ifdef __cplusplus\nextern \"C\"\n{\n#endif\n`
+            var texth = `/****************************************************************************\r\n`
+                + ` * @file     ${$('#inputText_projectName').val()}.h\r\n`
+                + ` * @version  ${VERSION_CODE}\r\n`
+                + ` * @Date     ${new Date()}\r\n`
+                + ` * @brief    ${g_briefName} generated code file\r\n`
+                + ` *\r\n`
+                + ` * SPDX-License-Identifier: Apache-2.0\r\n`
+                + ` *\r\n`
+                + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\r\n`
+                + `*****************************************************************************/\r\n\r\n`
+                + `#ifndef __${$('#inputText_projectName').val().toUpperCase()}_H__\r\n`
+                + `#define __${$('#inputText_projectName').val().toUpperCase()}_H__\r\n\r\n`
+                + `#ifdef __cplusplus\nextern \"C\"\n{\n#endif\r\n`
                 + `${g_gpio_MFPsString1}`
-                + `#ifdef __cplusplus\n}\n#endif\n`
-                + `#endif /*__${$('#inputText_projectName').val().toUpperCase()}_H__*/\n\n`
-                + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`
+                + `#ifdef __cplusplus\n}\n#endif\r\n`
+                + `#endif /*__${$('#inputText_projectName').val().toUpperCase()}_H__*/\r\n\r\n`
+                + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
             var blobh = new Blob([texth], { type: "text/plain;charset=utf-8" });
             saveAs(blobh, `${$('#inputText_projectName').val()}.h`);
         }
         // Generate .c
         else {
             getDataUsedToCreateText();
-            var textc = `/****************************************************************************\n`
-                + ` * @file     ${$('#inputText_projectName').val()}.c\n`
-                + ` * @version  ${VERSION_CODE}\n`
-                + ` * @Date     ${new Date()}\n`
-                + ` * @brief    ${g_briefName} generated code file\n`
-                + ` *\n`
-                + ` * SPDX-License-Identifier: Apache-2.0\n`
-                + ` *\n`
-                + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
-                + `*****************************************************************************/\n`
-                + `\n`
-                + `/********************\n`
-                + `MCU:${g_partNumber_package}\n`
+            var textc = `/****************************************************************************\r\n`
+                + ` * @file     ${$('#inputText_projectName').val()}.c\r\n`
+                + ` * @version  ${VERSION_CODE}\r\n`
+                + ` * @Date     ${new Date()}\r\n`
+                + ` * @brief    ${g_briefName} generated code file\r\n`
+                + ` *\r\n`
+                + ` * SPDX-License-Identifier: Apache-2.0\r\n`
+                + ` *\r\n`
+                + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\r\n`
+                + `*****************************************************************************/\r\n`
+                + `\r\n`
+                + `/********************\r\n`
+                + `MCU:${g_partNumber_package}\r\n`
                 + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\n${g_generatedCodeByPinString}`)
                 + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\n${g_generatedCodeByModuleString}`)
                 + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\n${g_generatedCodeByGPIOstring}`)
-                + `********************/\n\n`
+                + `********************/\r\n\r\n`
                 + `${g_includeHeadFileString}`
                 + (g_userDefinedPinString == undefined ? "" : `\n${g_userDefinedPinString}`)
-                + `/*\n`
-                + ` * @brief This function provides the configured MFP registers\n`
-                + ` * @param None\n`
-                + ` * @return None\n`
-                + ` */\n`
-                + `void SYS_Init(void)\n{\n`
+                + `/*\r\n`
+                + ` * @brief This function provides the configured MFP registers\r\n`
+                + ` * @param None\r\n`
+                + ` * @return None\r\n`
+                + ` */\r\n`
+                + `void SYS_Init(void)\r\n{\r\n`
                 + `${g_gpio_MFPsString}`
-                + `\n    return;\n}\n\n`
-                + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`
+                + `\r\n    return;\r\n}\r\n\r\n`
+                + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
             var blobc = new Blob([textc], { type: "text/plain;charset=utf-8" });
             saveAs(blobc, `${$('#inputText_projectName').val()}.c`);
         }
 
         // Generate .ncfg (因為.cfg無法藉由瀏覽器存到local端)
         get_gpio_MFPsNames();
-        var textcfg = `/****************************************************************************\n`
-            + ` * @file     ${$('#inputText_projectName').val()}.ncfg\n`
-            + ` * @version  ${VERSION_CODE}\n`
-            + ` * @Date     ${new Date()}\n`
-            + ` * @brief    ${g_briefName} config file\n`
-            + ` *\n`
-            + ` * @note Please do not modify this file.\n`
-            + ` *       Otherwise, it may not be loaded successfully.\n`
-            + ` *\n`
-            + ` * SPDX-License-Identifier: Apache-2.0\n`
-            + ` *\n`
-            + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
-            + `*****************************************************************************/\n`
-            + `MCU:${g_partNumber_package}\n`
+        var textcfg = `/****************************************************************************\r\n`
+            + ` * @file     ${$('#inputText_projectName').val()}.ncfg\r\n`
+            + ` * @version  ${VERSION_CODE}\r\n`
+            + ` * @Date     ${new Date()}\r\n`
+            + ` * @brief    ${g_briefName} config file\r\n`
+            + ` *\r\n`
+            + ` * @note Please do not modify this file.\r\n`
+            + ` *       Otherwise, it may not be loaded successfully.\r\n`
+            + ` *\r\n`
+            + ` * SPDX-License-Identifier: Apache-2.0\r\n`
+            + ` *\r\n`
+            + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\r\n`
+            + `*****************************************************************************/\r\n`
+            + `MCU:${g_partNumber_package}\r\n`
             + `${g_pinCurrentStateString}`
             + `${g_pinsConfiguredByGPIOstring}` // TODO: no show
             + `${g_userDefinedPinString}`
             + `${g_gpio_MFPsString}`
-            + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`
+            + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
         var blobcfg = new Blob([textcfg], { type: "text/plain;charset=utf-8" });
         saveAs(blobcfg, `${$('#inputText_projectName').val()}.ncfg`);
     }
@@ -14062,19 +14062,19 @@ var NUTOOL_PIN = {};
         if (checkPinCorrectness(showPinError)) {
             try {
                 get_pin_descriptions();
-                var text = `/****************************************************************************\n`
-                    + ` * @file     ${g_partNumber_package}.csv\n`
-                    + ` * @version  ${VERSION_CODE}\n`
-                    + ` * @Date     ${new Date()}\n`
-                    + ` * @brief    ${g_briefName} pin descriptions file\n`
-                    + ` *\n`
-                    + ` * SPDX-License-Identifier: Apache-2.0\n`
-                    + ` *\n`
-                    + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
-                    + `*****************************************************************************/\n`
-                    + `MCU:${g_partNumber_package}\n`
+                var text = `/****************************************************************************\r\n`
+                    + ` * @file     ${g_partNumber_package}.csv\r\n`
+                    + ` * @version  ${VERSION_CODE}\r\n`
+                    + ` * @Date     ${new Date()}\r\n`
+                    + ` * @brief    ${g_briefName} pin descriptions file\r\n`
+                    + ` *\r\n`
+                    + ` * SPDX-License-Identifier: Apache-2.0\r\n`
+                    + ` *\r\n`
+                    + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\r\n`
+                    + `*****************************************************************************/\r\n`
+                    + `MCU:${g_partNumber_package}\r\n`
                     + `${g_pin_descriptions}`
-                    + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`
+                    + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
                 var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
                 saveAs(blob, `${g_partNumber_package}.csv`);
             } catch (err) {
@@ -14186,20 +14186,20 @@ var NUTOOL_PIN = {};
                                     if (NUTOOL_PIN.g_anotherNameForNuCAD.indexOf('CAD') != -1) {
                                         sToolName = NUTOOL_PIN.g_anotherNameForNuCAD;
                                     }
-                                    var textCAD = `/****************************************************************************\n`
-                                        + ` * @file     ${sToolName}.csv\n`
-                                        + ` * @version  ${VERSION_CODE}\n`
-                                        + ` * @Date     ${new Date()}\n`
-                                        + ` * @brief    ${g_briefName} generated code file\n`
-                                        + ` *\n`
-                                        + ` * SPDX-License-Identifier: Apache-2.0\n`
-                                        + ` *\n`
-                                        + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\n`
-                                        + `*****************************************************************************/\n`
-                                        + `MCU:${g_partNumber_package}\n`
+                                    var textCAD = `/****************************************************************************\r\n`
+                                        + ` * @file     ${sToolName}.csv\r\n`
+                                        + ` * @version  ${VERSION_CODE}\r\n`
+                                        + ` * @Date     ${new Date()}\r\n`
+                                        + ` * @brief    ${g_briefName} generated code file\r\n`
+                                        + ` *\r\n`
+                                        + ` * SPDX-License-Identifier: Apache-2.0\r\n`
+                                        + ` *\r\n`
+                                        + ` * Copyright (C) 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} All rights reserved.\r\n`
+                                        + `*****************************************************************************/\r\n`
+                                        + `MCU:${g_partNumber_package}\r\n`
                                         + `${g_pin_descriptions}`
-                                        + (bUseNCPin ? `UseNCPin\n` : ``)
-                                        + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\n`;
+                                        + (bUseNCPin ? `UseNCPin\r\n` : ``)
+                                        + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`;
                                     var blobdts = new Blob([textCAD], { type: "text/plain;charset=utf-8" });
                                     saveAs(blobdts, `${sToolName}.csv`);
                                     // Execute "NuCAD_OrCAD.exe" from Main
@@ -15184,8 +15184,8 @@ var NUTOOL_PIN = {};
     function loadConfiguration() {
         if (this.files[0] == undefined || this.files[0] == null) return;
         var extension = this.files[0].name.split('.').pop().toLowerCase();  // file extension from input file
-        if (extension.indexOf('ncfg') == -1) {
-            alert("Please select a file with a valid file type. (.ncfg)")
+        if (extension.indexOf('ncfg') != 0 && extension.indexOf('cfg') != 0) {
+            alert("Please select a file with a valid file type. (.cfg/.ncfg)")
             return;
         }
         var uploadedFile = this.files[0];
