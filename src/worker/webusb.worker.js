@@ -340,7 +340,7 @@ onmessage = async (e) => {
         console.log('worker: getMFPValues');
         getRegisterValue();
         addrs = data;
-    } else if (action == 'connectComplete') {    // TODO: not checked yet
+    } else if (action == 'connectComplete') {
         console.log('worker: connectComplete');
         await disconnect();
     } else if (action == 'setRefreshTime') {    // TODO: not checked yet

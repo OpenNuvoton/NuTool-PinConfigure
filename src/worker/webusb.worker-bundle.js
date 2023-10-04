@@ -2743,7 +2743,6 @@ onmessage = /*#__PURE__*/function () {
             _context8.next = 26;
             break;
           }
-          // TODO: not checked yet
           console.log('worker: connectComplete');
           _context8.next = 24;
           return disconnect();
