@@ -1,14 +1,7 @@
 // chip content
 NUTOOL_PIN.g_cfg_chips = [
-    //{ name: "MA35D11K764C", pkg: "LQFP128" },
-    { name: "MA35D16F787C", pkg: "LQFP216" },
-    { name: "MA35D16F887C", pkg: "LQFP216" },
-    { name: "MA35D16F987C", pkg: "LQFP216" },
-    //{ name: "MA35D16H8A7C", pkg: "BGA312" },
-    { name: "MA35D16A887C", pkg: "BGA312" },
-    //{ name: "MA35D16H0A7C", pkg: "BGA364" },
-    //{ name: "MA35D15A087C", pkg: "BGA364" },  For PPC only
-    { name: "MA35D16A087C", pkg: "BGA364" }
+    { name: "MA35D03F867C", pkg: "LQFP216" },
+    { name: "MA35D03F767C", pkg: "LQFP216" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -1400,29 +1393,11 @@ NUTOOL_PIN.g_cfg_gpioMatrix = [];
 NUTOOL_PIN.g_cfg_shareBits = [];
 NUTOOL_PIN.g_cfg_addGPIO = {};
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    "MA35D11K764C(LQFP128)": {
-        "ALL": ["TSI", "EADC0", "RMII1", "RGMII1" , "VCAP0" , "LCM" , "NAND" , "SC0" , "SPI1" , "CAN2" , "ECAP2" , "QEI1" , "KPI" , "RTC", "TAMPER", "TRACE", "UART10", "UART11"]
+    "MA35D03F867C(LQFP216)": {
+        "ALL": ["TSI", "EADC0", "RGMII0", "RGMII1", "CCAP0", "CCAP1", "QSPI1", "SPI2", "SPI3", "I2C1", "I2C2", "I2C3", "I2S1", "CAN2", "ECAP0", "ECAP1", "ECAP2", "QEI0", "QEI1", "QEI2", "TAMPER", "TRACE", "UART1", "UART2", "UART3", "UART7", "UART11", "UART13"]
     },
-    "MA35D16F787C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
-    },
-    "MA35D16F887C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
-    },
-    "MA35D16F987C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
-    },
-    "MA35D16H8A7C(BGA324)": {
-        "ALL": ["TSI"]
-    },
-    "MA35D16A887C(BGA324)": {
-        "ALL": ["TSI"]
-    },
-    "MA35D16H0A7C(BGA400)": {
-        "ALL": ["TSI"]
-    },
-    "MA35D16A087C(BGA400)": {
-        "ALL": ["TSI"]
+    "MA35D03F767C(LQFP216)": {
+        "ALL": ["TSI", "EADC0", "RGMII0", "RGMII1", "CCAP0", "CCAP1", "QSPI1", "SPI2", "SPI3", "I2C1", "I2C2", "I2C3", "I2S1", "CAN2", "ECAP0", "ECAP1", "ECAP2", "QEI0", "QEI1", "QEI2", "TAMPER", "TRACE", "UART1", "UART2", "UART3", "UART7", "UART11", "UART13"]
     }
 };
 NUTOOL_PIN.g_cfg_WPPin = [];
