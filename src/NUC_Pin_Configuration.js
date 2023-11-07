@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'V1.27.0001';
+    const VERSION_CODE = 'V1.27.0002';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -18,6 +18,7 @@ var NUTOOL_PIN = {};
         g_NUC_Pin_Vertial_Number = 0,
         g_commonStringFont = '12px Arial',
         g_NUC_TreeView_Width = 275,
+        g_NUC_Taskbar_height = 48,
         g_NUC_Pin_Width = 16,
         g_NUC_Pin_Height = 40,
         g_NUC_Pin_Radius = 30,
@@ -166,7 +167,7 @@ var NUTOOL_PIN = {};
             pxCounter,
             pxCounter1;
 
-        $panel[0].setAttribute('style', 'width:' + (g_Dialog_Width - g_NUC_TreeView_Width - 8) + 'px; height:' + (g_Dialog_Height - 8) + 'px; border: 1px solid white; position:absolute; left:' + g_NUC_TreeView_Width + 'px; top:0px;');
+        $panel[0].setAttribute('style', 'width:' + (window.innerWidth - g_NUC_TreeView_Width - 8) + 'px; height:' + (window.innerHeight - g_NUC_Taskbar_height - 8) + 'px; border: 1px solid white; position:absolute; left:' + g_NUC_TreeView_Width + 'px; top:0px;');
         if (g_partNumber_package.indexOf('WLCSP') !== -1 || g_partNumber_package.indexOf('BGA') !== -1) {
             if (g_bLessThanOrEqualIE8) {
                 $panel.hover(function () { $(this).css('opacity', '1'); $('#pin_side_0').show(); $('#NUC_PinConfiguration_Canvas_Lining').hide(); withdrawAllGreenPins(); }, function () { $(this).css('opacity', g_opacity_min); $('#pin_side_0').hide(); $('#NUC_PinConfiguration_Canvas_Lining').show(); });
@@ -11156,8 +11157,8 @@ var NUTOOL_PIN = {};
         var $panel = $('#panel');
         if (!g_bLessThanOrEqualIE8) {
             $('#parentOfPanel').css('zoom', ' ' + g_currIEZoom + '%');
-            $panel.width((g_Dialog_Width - g_NUC_TreeView_Width - 8) / g_currIEZoom * 100);
-            $panel.height((g_Dialog_Height - 8) / g_currIEZoom * 100);
+            $panel.width((window.innerWidth - g_NUC_TreeView_Width - 8) / g_currIEZoom * 100);
+            $panel.height((window.innerHeight - g_NUC_Taskbar_height - 8) / g_currIEZoom * 100);
 
             $panel.css({
                 position: "absolute",
@@ -11167,7 +11168,7 @@ var NUTOOL_PIN = {};
         else {
             $panel.find('canvas').css('zoom', ' ' + g_currIEZoom + '%');
             $panel.width(g_Dialog_Width - g_NUC_TreeView_Width - 8);
-            $panel.height(g_Dialog_Height - 8);
+            $panel.height(window.innerHeight - g_NUC_Taskbar_height - 8);
             $('#NUC_PinConfiguration_Canvas').width(g_Canvas_Width * g_currIEZoom / 100);
             $('#NUC_PinConfiguration_Canvas').height(g_Canvas_Height * g_currIEZoom / 100);
             $('#NUC_PinConfiguration_Canvas_Lining').width(g_Canvas_Width * g_currIEZoom / 100);
@@ -11219,7 +11220,7 @@ var NUTOOL_PIN = {};
         }
         // adjust the size of the relevant UI elements
         $('#panel').width(g_Dialog_Width - g_NUC_TreeView_Width - 8);
-        $('#panel').height(g_Dialog_Height - 8);
+        $('#panel').height(window.innerHeight - g_NUC_Taskbar_height - 8);
         // adjust the height of mfpTree and moduleTree
         if ($('#mfpTree').css('display') === 'none') {
             $('#moduleTree').height(g_NUC_rootTree_Height - $("#supportedModules").height());
