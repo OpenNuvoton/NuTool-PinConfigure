@@ -1027,7 +1027,7 @@ var NUTOOL_PIN = {};
             // initially hide these to accommodate more nodes of the module tree
             $('#ChipType').show();
             $('#MCU').show();
-            $('#moduleTree').height(g_NUC_rootTree_Height - $("#ChipType").height() - $("#MCU").height() - g_MFPTreeHeight - 6 - $("#supportedModules").height());
+            $('#moduleTree').height(window.innerHeight - 8 - $("#navbar").height() - $("#ChipType").height() - $("#MCU").height() - g_MFPTreeHeight - 8 - $("#supportedModules").height() - g_NUC_Taskbar_height);
             // after the loading is finished
             allowClicking();
             // the opacity adjustment for the BGA package
@@ -11207,8 +11207,8 @@ var NUTOOL_PIN = {};
     function redrawForResizingDialog() {
         // determine the dialog's size
         //目前沒存recordedDialogSize，不知道怎麼調整，先都預設為792*590
-        g_Dialog_Width = g_Canvas_Width;
-        g_Dialog_Height = g_Canvas_Height;
+        g_Dialog_Width = window.innerWidth;
+        g_Dialog_Height = window.innerHeight;
 
         // determine the height of the treeview
         g_NUC_rootTree_Height = g_Dialog_Height - 10; // the redundant height derives from the select of chip type and MCU.
