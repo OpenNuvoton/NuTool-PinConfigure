@@ -8777,8 +8777,19 @@ var NUTOOL_PIN = {};
                     for (j = 0, maxJ = unusedObject[GPIOProperties[i]].length; j < maxJ; j = j + 1) {
                         GPIOName = unusedObject[GPIOProperties[i]][j].toUpperCase();
                         for (n = NUTOOL_PIN.g_cfg_gpios[m].f.length - 1; n >= 0; n -= 1) {
-                            if (NUTOOL_PIN.g_cfg_gpios[m].f[n].toUpperCase().indexOf(GPIOName) === 0) {
-                                NUTOOL_PIN.g_cfg_gpios[m].f.splice(n, 1);
+                            /**
+                             * Bug root cause: 當g_cfg_unusedGPIO設定為UART1時，會把UART10, UART11,...一起擋掉
+                             * 由於GPIO的格式都是"UARTX_XXX"，所以加上"_"來判斷是否一致
+                             * 可能其他series也會有同樣問題，但目前先針對MA35D0/MA35H0來修改就好，避免不必要的bug
+                             */
+                            if (g_chipType.indexOf('MA35D0') === 0 || g_chipType.indexOf('MA35H0') === 0) {
+                                if (NUTOOL_PIN.g_cfg_gpios[m].f[n].toUpperCase().indexOf(GPIOName + "_") === 0) {
+                                    NUTOOL_PIN.g_cfg_gpios[m].f.splice(n, 1);
+                                }
+                            } else {
+                                if (NUTOOL_PIN.g_cfg_gpios[m].f[n].toUpperCase().indexOf(GPIOName) === 0) {
+                                    NUTOOL_PIN.g_cfg_gpios[m].f.splice(n, 1);
+                                }
                             }
                         }
                     }
