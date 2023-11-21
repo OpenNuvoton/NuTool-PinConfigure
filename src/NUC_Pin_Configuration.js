@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'V1.28.0002';
+    const VERSION_CODE = 'V1.28.0003';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -3649,8 +3649,11 @@ var NUTOOL_PIN = {};
             pinName.slice(1, 2) === 'P' &&
             isNumeric(pinName.sliceAfterX('.'))) {
             return true;
-        }
-        else {
+        } else if (g_chipType === 'N9H30K63IIM' &&
+            typeof (pinName) !== 'undefined' &&
+            pinName.indexOf('ADC') != -1) {  // N9H30K63IIM有特別的pin為ADCX
+            return true;
+        } else {
             return false;
         }
     }
@@ -9897,7 +9900,90 @@ var NUTOOL_PIN = {};
                         // clear old selections
                         restoreAllPinMultiFunctionSelections();
                         // restricted to GPIOs
-                        if (isGPIOPin(pinName)) {
+                        if (g_chipType === 'N9H30K63IIM' &&
+                            pinName.indexOf('ADC') != -1) {  // 有特別的pin為ADCX
+                            gpioNumber = parseInt(pinName.sliceAfterX('.'), 10);
+                            pinName += ':0';
+                            cfg_gpiosIndex = decide_cfg_gpiosIndex(pinName, parseInt(pinName.sliceAfterX('.'), 10));//(pinName.slice(1, 2).charCodeAt(0) - 'A'.charCodeAt(0)) * 16 + parseInt(pinName.slice(3), 10);
+
+                            x = me.x[me.currentPinIndex];
+                            y = me.y[me.currentPinIndex];
+
+                            // decide multiFunction_Width
+                            multiFunction_Width = 60;
+                            switch (pinName.slicePriorToX(':')) {
+                                case 'ADC3':
+                                    multiFunctionLabels.push("VSENSE");
+                                    break;
+                                case 'ADC4':
+                                    multiFunctionLabels.push("YM");
+                                    break;
+                                case 'ADC5':
+                                    multiFunctionLabels.push("YP");
+                                    break;
+                                case 'ADC6':
+                                    multiFunctionLabels.push("XM");
+                                    break;
+                                case 'ADC7':
+                                    multiFunctionLabels.push("XP");
+                                    break;
+                                default:
+                                    break;
+                            }
+
+                            multiFunctionLabels.push("Reset");
+
+                            g_drawnMultiFunctionSeletions = [];
+                            for (j = 0, maxJ = multiFunctionLabels.length; j < maxJ; j += 1) {
+                                if (!g_bLessThanOrEqualIE8 && g_currIEZoom > 100) {
+                                    yPosition = y + j * g_NUC_MultiFunction_Height;
+                                }
+                                else {
+                                    yPosition = y + j * g_NUC_MultiFunction_Height / g_currIEZoom * 100;
+                                }
+
+                                // highlight the selection of the used module
+                                colorBeingUsed = '#6495ED';
+                                if (j !== maxJ - 1 && multiFunctionLabels[j] === g_pinCurrentDescription[me.pin[me.currentPinIndex] - 1]) {
+                                    if ($.inArray(me.pin[me.currentPinIndex], g_pinsHighlightedByChipView) !== -1) {
+                                        colorBeingUsed = g_colorForConfiguredByUser;
+                                    }
+                                    else {
+                                        colorBeingUsed = g_colorForConfiguredByUser;
+                                    }
+                                }
+
+                                if (g_chipType.indexOf('KM1M7CF') !== -1) {
+                                    var lineNumber = Math.floor(j / newLineThreshold);
+                                    g_drawnMultiFunctionSeletions[j] = drawPinMultiFunctionSelections().init(
+                                        me.pin[me.currentPinIndex],
+                                        j.toString(),
+                                        multiFunctionLabels[j],
+                                        multiFunction_Width,
+                                        x + me.w + multiFunction_Width * lineNumber / g_currIEZoom * 100 + 3 * g_NUC_MultiFunction_Padding * lineNumber,
+                                        yPosition - newLineThreshold * lineNumber * g_NUC_MultiFunction_Height / g_currIEZoom * 100,
+                                        colorBeingUsed,
+                                        true);
+                                } else {
+                                    g_drawnMultiFunctionSeletions[j] = drawPinMultiFunctionSelections().init(
+                                        me.pin[me.currentPinIndex],
+                                        j.toString(),
+                                        multiFunctionLabels[j],
+                                        multiFunction_Width,
+                                        x + me.w,
+                                        yPosition,
+                                        colorBeingUsed,
+                                        true);
+                                }
+
+                                legalInner = j.toString();
+                                legalInner = legalInner.replaceSpecialCharacters();
+
+                                $('#Pin_MultiFunction_Selection_' + legalInner).hover(g_drawnMultiFunctionSeletions[j].mouseEnter, g_drawnMultiFunctionSeletions[j].mouseLeave);
+                                g_drawnMultiFunctionSeletions[j].draw();
+                            }
+
+                        } else if (isGPIOPin(pinName)) {
                             gpioNumber = parseInt(pinName.sliceAfterX('.'), 10);
                             pinName += ':0';
                             cfg_gpiosIndex = decide_cfg_gpiosIndex(pinName, parseInt(pinName.sliceAfterX('.'), 10));//(pinName.slice(1, 2).charCodeAt(0) - 'A'.charCodeAt(0)) * 16 + parseInt(pinName.slice(3), 10);

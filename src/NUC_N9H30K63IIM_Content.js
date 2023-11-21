@@ -189,7 +189,13 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['PJ.12:0']},
     { f: ['PJ.13:0']},
     { f: ['PJ.14:0']},
-    { f: ['PJ.15:0']}
+    { f: ['PJ.15:0']},
+    
+    { f: ['ADC3:0', 'VSENSE:0']},
+    { f: ['ADC4:0', 'YM:0']},
+    { f: ['ADC5:0', 'YP:0']},
+    { f: ['ADC6:0', 'XM:0']},
+    { f: ['ADC7:0', 'XP:0']}
 ];
 
 NUTOOL_PIN.g_cfg_gpiosDefines = [
