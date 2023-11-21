@@ -7401,6 +7401,9 @@ var NUTOOL_PIN = {};
                 g_chipType === "M071M" || g_chipType === "M071QV" || g_chipType === "M071R1S") {
                 g_includeHeadFileString = '#include "NuMicro.h"\n';
             }
+            else if (g_chipType.indexOf("MA35D0") === 0 || g_chipType.indexOf("MA35H0") === 0) {
+                g_includeHeadFileString = '#include "NuMicro.h"\n';
+            }
             else if (g_chipType.indexOf("MA35") === 0) {
                 g_includeHeadFileString = '#include "' + g_chipType.toLowerCase() + '.dtsi"\n';
             }
