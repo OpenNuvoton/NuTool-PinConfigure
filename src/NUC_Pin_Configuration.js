@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'V1.28.0003';
+    const VERSION_CODE = 'V1.28.0004';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -107,7 +107,7 @@ var NUTOOL_PIN = {};
         g_pinsHighlightedByChipView = [],
         g_userDefinedPin = {},
         g_cfg_chipSeries = ["ISD9100", "ISD9300", "KM1M4BF", "KM1M7AF", "KM1M7BF", "KM1M7CF", "M029G", "M030G", "M031", "M051", "M0518", "M0519", "M0564", "M071", "M091", "M0A21", "M2003C", "M2351", "M251", "M261", "M2A23", "M2L31", "M451", "M460", "M466", "M471", "M479", "M480", "M55M1", "MA35D0", "MA35D1", "MA35H0", "MINI51", "MG51", "ML51", "MS51", "MUG51", "N76S003", "N76E003", "N9H30", "N9H30K63IIM", "NANO100", "NDA102", "NM1120", "NM1200", "NM1500", "NUC029", "NUC100", "NUC200", "NUC400", "NUC505", "NUC970", "NUC980"],
-        g_cfg_chipSeriesDeveloping = ["M55M1", "M466", "M2A23"],
+        g_cfg_chipSeriesDeveloping = ["M466", "M2A23"],
         g_bShowPinDescriptions = false, // by default, the pin descriptions would be covert.
         g_bConnectToTarget = false, // by default, the pin descriptions would be covert.
         g_bLessThanOrEqualIE8 = false,
