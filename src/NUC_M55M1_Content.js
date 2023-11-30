@@ -1,15 +1,10 @@
 NUTOOL_PIN.g_cfg_chips = [
-    //{ name: "M55M1A", pkg: "LQFP48" },
-    { name: "M55M1B", pkg: "LQFP64" },
-    //{ name: "M55M1C", pkg: "LQFP64" },
-    //{ name: "M55M1D", pkg: "LQFP64" },
-    //{ name: "M55M1E", pkg: "LQFP100" },
-    { name: "M55M1F", pkg: "LQFP128" },
-    { name: "M55M1G", pkg: "LQFP128" },
-    //{ name: "M55M1H", pkg: "LQFP144" },
-    //{ name: "M55M1I", pkg: "LQFP144" },
-    { name: "M55M1J", pkg: "LQFP176" },
-    { name: "M55M1K", pkg: "LQFP176" }
+    { name: "M5551S2LJAE", pkg: "LQFP64" },
+    { name: "M5551S2JHAE", pkg: "LQFP64" },
+    { name: "M55M1S2LJAE", pkg: "LQFP64" },
+    { name: "M55M1K2LJAE", pkg: "LQFP128" },
+    { name: "M5551K2LIAE", pkg: "LQFP128" },
+    { name: "M55M1H2LJAE", pkg: "LQFP176" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -107,8 +102,8 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PH.4', 'PH.5', 'PH.6', 'PH.7', 'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9', 
         'PE.10', 'PE.11', 'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'VSS', 
         'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO0', 'PE.14', 
-        'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
-        'PC.1', 'PC.0', 'VSS', 'VDD/VDDIO1', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 'PG.13', 'PG.14', 
+        'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PJ.2', 'PJ.3', 'PJ.4', 'PJ.5', 
+        'PJ.6', 'PJ.7', 'VSS', 'VDD/VDDIO1', 'PH.12', 'PH.13', 'PH.14', 'PH.15', 'PG.13', 'PG.14', 
         'PG.15', 'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
         'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 
         'PE.5', 'PE.4', 'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 
@@ -888,40 +883,27 @@ NUTOOL_PIN.g_cfg_regDescriptions.GPJ_MFP2 = '0x40000398';
 NUTOOL_PIN.g_cfg_regDescriptions.GPJ_MFP3 = '0x4000039C';
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'M55M1A(LQFP48)': {
-        'ALL': []
+    'M5551S2LJAE(LQFP64)': {
+        'ALL': ['ECAP1', 'ECAP2', 'ECAP3', 'Tamper1', 'Tamper2', 'Tamper3', 'Tamper4', 'Tamper5', 'SPIM0', 'SPIM1', 'QSPI1', 'I2C3', 'I2C3', 'EBI', 'USB 1.1', 'UTCPD']
     },
-    'M55M1B(LQFP64)': {
-        'ALL': []
+    'M5551S2JHAE(LQFP64)': {
+        'ALL': ['ECAP1', 'ECAP2', 'ECAP3', 'Tamper1', 'Tamper2', 'Tamper3', 'Tamper4', 'Tamper5', 'SPIM0', 'SPIM1', 'QSPI1', 'I2C3', 'I2C3', 'EBI', 'USB 1.1', 'UTCPD']
     },
-    'M55M1C(LQFP64)': {
-        'ALL': []
+    'M55M1S2LJAE(LQFP64)': {
+        'ALL': ['ECAP1', 'ECAP2', 'ECAP3', 'Tamper1', 'Tamper2', 'Tamper3', 'Tamper4', 'Tamper5', 'SPIM0', 'SPIM1', 'I2C3', 'EBI', 'USB 1.1']
     },
-    'M55M1D(LQFP64)': {
-        'ALL': []
+    'M55M1K2LJAE(LQFP128)': {
+        'ALL': ['ECAP3', 'SPIM1', 'I2C3', 'EBI', 'UTCPD']
     },
-    'M55M1E(LQFP100)': {
-        'ALL': []
+    'M5551K2LIAE(LQFP128)': {
+        'ALL': ['SPIM0', 'SPIM1', 'I2C3']
     },
-    'M55M1F(LQFP128)': {
-        'ALL': []
-    },
-    'M55M1G(LQFP128)': {
-        'ALL': []
-    },
-    'M55M1H(LQFP144)': {
-        'ALL': []
-    },
-    'M55M1I(LQFP144)': {
-        'ALL': []
-    },
-    'M55M1J(LQFP176)': {
-        'ALL': []
-    },
-    'M55M1K(LQFP176)': {
-        'ALL': []
+    'M55M1H2LJAE(LQFP176)': {
+        'ALL': ['SPIM1', 'I2C3']
     }
 };
+
+//NUTOOL_PIN.g_cfg_WPPin = ['PA.6', 'PD.13'];   // internal use
 
 NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     var partNumber_package,
@@ -939,55 +921,34 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
 
     partNumber = partNumber_package.substring(0, partNumber_package.indexOf('('));
     switch (NUTOOL_PIN.g_packageNumber) {
-    case 'LQFP48':
-        NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)(5*5)";
-        break;
     case 'LQFP64':
         switch (partNumber) {
-        case "M55M1B":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64_MCP(USB2.0)(7*7)";
-            break;
-        case "M55M1C":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)(7*7)";
-            break;
-        case "M55M1D":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0+1.1)(7*7)";
-            break;
+            case "M5551S2LJAE":
+            case "M5551S2JHAE":
+                NUTOOL_PIN.g_packageNumberIndex = "LQFP64_MCP(USB2.0)(7*7)";
+                break;
+            case "M55M1S2LJAE":
+                NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)(7*7)";
+                break;
         }
-        break;
-    case 'LQFP100':
-        NUTOOL_PIN.g_packageNumberIndex = "LQFP100(USB2.0+1.1)(14*14)";
         break;
     case 'LQFP128':
         switch (partNumber) {
-        case "M55M1F":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB2.0+1.1)(14*14)";
-            break;
-        case "M55M1G":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP128_MCP(USB2.0+1.1)(14*14)";
-            break;
-        }
-        break;
-    case 'LQFP144':
-        switch (partNumber) {
-        case "M55M1H":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP144_MCP(USB2.0+1.1)(20*20)";
-            break;
-        case "M55M1I":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP144(USB2.0+1.1)(20*20)";
-            break;
+            case "M55M1K2LJAE":
+                NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB2.0+1.1)(14*14)";
+                break;
+            case "M5551K2LIAE":
+                NUTOOL_PIN.g_packageNumberIndex = "LQFP128_MCP(USB2.0+1.1)(14*14)";
+                break;
         }
         break;
     case 'LQFP176':
         switch (partNumber) {
-        case "M55M1J":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP176_MCP(USB2.0+1.1)(24*24)";
+            case "M55M1H2LJAE":
+                NUTOOL_PIN.g_packageNumberIndex = "LQFP176(USB2.0+1.1)(24*24)";
+                break;
+            }
             break;
-        case "M55M1K":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP176(USB2.0+1.1)(24*24)";
-            break;
-        }
-        break;
     default:
         break;
     }

@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'V1.28.0004';
+    const VERSION_CODE = 'V1.28.0005';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -4545,7 +4545,7 @@ var NUTOOL_PIN = {};
         else if (newPartNumber_package.indexOf('MA35H0') === 0) {
             newChipType = 'MA35H0';
         }
-        else if (newPartNumber_package.indexOf('M55M1') === 0) {
+        else if (newPartNumber_package.indexOf('M55M1') === 0 || newPartNumber_package.indexOf('M5551') === 0) {
             newChipType = 'M55M1';
         }
         else if (newPartNumber_package.indexOf('N9H30K63IIM') === 0) {
@@ -6867,7 +6867,7 @@ var NUTOOL_PIN = {};
         else if (chipType.indexOf("M2L31") === 0) {
             stringChipSeries = "M2L31";
         }
-        else if (chipType.indexOf("M55M1") === 0) {
+        else if (chipType.indexOf("M55M1") === 0 || chipType.indexOf('M5551') === 0) {
             stringChipSeries = "M55M1";
         }
         else if (chipType.indexOf("M2003C") === 0) {
@@ -6975,7 +6975,7 @@ var NUTOOL_PIN = {};
         else if (chipSeries === "M2L31") {
             stringChipType = "M2L31";
         }
-        else if (chipSeries === "M55M1") {
+        else if (chipSeries === "M55M1" || chipSeries === "M5551") {
             stringChipType = "M55M1";
         }
         else if (chipSeries === "N76S003") {
