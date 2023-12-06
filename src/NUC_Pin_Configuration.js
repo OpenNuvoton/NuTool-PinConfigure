@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'V1.28.0005';
+    const VERSION_CODE = 'V1.28.0006';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -9665,7 +9665,7 @@ var NUTOOL_PIN = {};
                                 if (g_chipType.indexOf('M2L31') === 0) {
                                     tooltipText = 'Can change function to Write_Protect_Pin by chip configuration';
                                 } else if (g_chipType.indexOf('KM1M4BF0') === 0) {
-                                    tooltipText = 'When NDMOD pin input is H level, SWDCLK would be selected. Configurable only when NDMOD pin input is L level.';
+                                    tooltipText = 'When NDMOD pin input is L level, SWDCLK would be selected. Configurable only when NDMOD pin input is H level.';
                                 } else if (g_chipType.indexOf('KM1M4BF5') === 0) {
                                     tooltipText = 'When SELSWD.SWDEN = 1, SWDCLK would be selected. Configurable only when SELSWD.SWDEN = 0.';
                                 }
