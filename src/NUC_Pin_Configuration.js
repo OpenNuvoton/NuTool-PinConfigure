@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'V1.28.0006';
+    const VERSION_CODE = 'V1.28.0007';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -106,6 +106,7 @@ var NUTOOL_PIN = {};
         g_drawnMultiFunctionSeletions = [],
         g_pinsHighlightedByChipView = [],
         g_userDefinedPin = {},
+        g_lockedPin = [],
         g_cfg_chipSeries = ["ISD9100", "ISD9300", "KM1M4BF", "KM1M7AF", "KM1M7BF", "KM1M7CF", "M029G", "M030G", "M031", "M051", "M0518", "M0519", "M0564", "M071", "M091", "M0A21", "M2003C", "M2351", "M251", "M261", "M2A23", "M2L31", "M433", "M451", "M460", "M466", "M471", "M479", "M480", "M55M1", "MA35D0", "MA35D1", "MA35H0", "MINI51", "MG51", "ML51", "MS51", "MUG51", "N76S003", "N76E003", "N9H30", "N9H30K63IIM", "NANO100", "NDA102", "NM1120", "NM1200", "NM1500", "NUC029", "NUC100", "NUC200", "NUC400", "NUC505", "NUC970", "NUC980"],
         g_cfg_chipSeriesDeveloping = ["M466", "M2A23"],
         g_bShowPinDescriptions = false, // by default, the pin descriptions would be covert.
@@ -114,6 +115,7 @@ var NUTOOL_PIN = {};
         g_bCheckNodesBasedOnConfigFile = true,
         g_bUsingSpeedupCheck = true,
         deviceConnected = false,
+        g_bLockPin = false,
         connectedDevicePID,
         completePIDList = [],
         worker;
@@ -736,7 +738,8 @@ var NUTOOL_PIN = {};
                 "case_insensitive": true
             },
             'core': {
-                'animation': 0
+                'animation': 0,
+                'html_titles': true
             },
             "plugins": ["themes", "json_data", "types", "search", "checkbox", "ui"]
         }).bind("hover_node.jstree", function (e, data) {
@@ -873,6 +876,19 @@ var NUTOOL_PIN = {};
                 module = specialModuleNaming(parentNode.slicePriorToX('_'));
             }
             treeView_checkbox_handler(false, currentNode, module, modulePins);
+
+            // 如果有鎖的話就解鎖
+            for (var l = 0; l < g_lockedPin.length; l++) {
+                var lockedPin = g_lockedPin[l].sliceAfterX('Pin');
+                if (lockedPin == currentNode.sliceAfterX('Pin')) {
+                    var index = g_lockedPin.indexOf(currentNode);
+                    if (index > -1) { // only splice array when item is found
+                        g_lockedPin.splice(index, 1); // 2nd parameter means remove one item only
+                        document.querySelector(`#${currentNode}`).style.background = 'transparent';
+                    }
+                }
+            }
+
             // de-reference
             currentNode = null;
             currentNodeSliceRoot = null;
@@ -998,6 +1014,49 @@ var NUTOOL_PIN = {};
             currentNode = null;
             childNode = null;
             childOfChildNode = null;
+        }).bind("dblclick.jstree", function (event) {
+            var usedPinNumbers = [];
+            var li = $(event.target).closest("li");
+            var id = li[0].id;
+            var pin = id.sliceAfterX('Pin');
+            var bLockWarning = false;
+            for (i = 0, max = g_usedPins.length; i < max; i += 1) {
+                usedPinNumbers[i] = g_usedPins[i].slicePriorToX(':');
+            }
+            // 如果此pin沒有被選擇的話，就沒辦法被鎖定
+            if (usedPinNumbers.indexOf(pin) != -1 && id.indexOf('Pin') != -1) {
+                for (var l = 0; l < g_lockedPin.length; l++) {
+                    var lockedPin = g_lockedPin[l].sliceAfterX('Pin');
+                    if (lockedPin == pin) {
+                        bLockWarning = true;
+                    }
+                }
+                // 同一個IP+pin重複點擊，取消鎖定狀態
+                if (g_lockedPin.includes(id)) {
+                    var index = g_lockedPin.indexOf(id);
+                    if (index > -1) { // only splice array when item is found
+                        g_lockedPin.splice(index, 1); // 2nd parameter means remove one item only
+                        document.querySelector(`#${id}`).style.background = 'transparent';
+                    }
+                }
+                // 同一個pin但不同IP，跳通知提醒使用者已經鎖定
+                else if (bLockWarning) {
+                    if (g_userSelectUIlanguage === "Simplified Chinese") {
+                        alert("目标脚位已被锁定")
+                    }
+                    else if (g_userSelectUIlanguage === "Traditional Chinese") {
+                        alert("目標腳位已被鎖定")
+                    }
+                    else {
+                        alert("This pin is already locked")
+                    }
+                }
+                // 新增lockedPin
+                else {
+                    g_lockedPin.push(id);
+                    document.querySelector(`#${id}`).style.background = 'orange';
+                }
+            }
         }).bind('loaded.jstree', function () { // invoked after jstree has loaded
             // handle the semi-disabled nodes
             for (i = 0, max = disabledModuleNodesArray.length; i < max; i += 1) {
@@ -1089,6 +1148,7 @@ var NUTOOL_PIN = {};
             j,
             max,
             maxJ,
+            bLockWarning = false,
             bConfllict = false,
             usedPinNumbers = [],
             newModulePins = [],
@@ -1140,22 +1200,95 @@ var NUTOOL_PIN = {};
                 if ($.inArray(parseInt(usedPinNumbers[i], 10), modulePins) !== -1 &&
                     ((modulePins.length !== 1 && g_usedPins[i] !== usedPinNumbers[i] + ':' + module) ||
                         (modulePins.length === 1 && g_pinCurrentDescription[usedPinNumbers[i] - 1].replaceSpecialCharacters() !== currentNode.restorePinTreeNodeName()))) {
-                    if (g_userSelectUIlanguage === "Simplified Chinese") {
+                    for (var l = 0; l < g_lockedPin.length; l++) {
+                        var pin = g_lockedPin[l].sliceAfterX('Pin');
+                        if (pin == usedPinNumbers[i]) {
+                            bLockWarning = true;
+                        }
+                    }
+                    if (bLockWarning) {
                         warningMessage += "第" + updatePinName(usedPinNumbers[i]) + "脚位已被" +
-                            updatePinDescription(g_pinCurrentDescription[usedPinNumbers[i] - 1]) + "使用。<br />";
+                            updatePinDescription(g_pinCurrentDescription[usedPinNumbers[i] - 1]) + "鎖定。<br />";
+                    } else {
+                        if (g_userSelectUIlanguage === "Simplified Chinese") {
+                            warningMessage += "第" + updatePinName(usedPinNumbers[i]) + "脚位已被" +
+                                updatePinDescription(g_pinCurrentDescription[usedPinNumbers[i] - 1]) + "使用。<br />";
+                        }
+                        else if (g_userSelectUIlanguage === "Traditional Chinese") {
+                            warningMessage += "第" + updatePinName(usedPinNumbers[i]) + "腳位已被" +
+                                updatePinDescription(g_pinCurrentDescription[usedPinNumbers[i] - 1]) + "使用。<br />";
+                        }
+                        else {
+                            warningMessage += "Pin" + updatePinName(usedPinNumbers[i]) + " has been asserted by " +
+                                updatePinDescription(g_pinCurrentDescription[usedPinNumbers[i] - 1]) + ".<br />";
+                        }
+                        bConfllict = true;
                     }
-                    else if (g_userSelectUIlanguage === "Traditional Chinese") {
-                        warningMessage += "第" + updatePinName(usedPinNumbers[i]) + "腳位已被" +
-                            updatePinDescription(g_pinCurrentDescription[usedPinNumbers[i] - 1]) + "使用。<br />";
-                    }
-                    else {
-                        warningMessage += "Pin" + updatePinName(usedPinNumbers[i]) + " has been asserted by " +
-                            updatePinDescription(g_pinCurrentDescription[usedPinNumbers[i] - 1]) + ".<br />";
-                    }
-                    bConfllict = true;
                 }
             }
-            if (bConfllict) {
+            if (bLockWarning) {
+                if (g_userSelectUIlanguage === "Simplified Chinese") {
+                    title = '警告';
+                    content = '目标脚位已被锁定，请重新确认';
+                    okButton = "好";
+                }
+                else if (g_userSelectUIlanguage === "Traditional Chinese") {
+                    title = '警告';
+                    content = '目標腳位已被鎖定，請重新確認';
+                    okButton = "好";
+                }
+                else {
+                    title = 'Conflict Occurred';
+                    content = 'The target Pin has been locked. Please confirm again.';
+                    okButton = "OK";
+                }
+
+                // close the last dialog
+                destroyAllExistentDialogs();
+                // JQuery sets the autofocus on the first input that is found. So play it sneaky by creating a "fake" input at the last line of your dialog
+                dialog = $('<div id="LockWarningDialog"><p>' + content + '<br />' + warningMessage + '</p><input type="text" size="1" style="position:relative;top:-5000px;"/></div>').dialog({
+                    modal: false,
+                    resizable: false,
+                    title: title,
+                    width: 500,
+                    height: 400,
+                    show: 'fade',
+                    hide: 'fade',
+                    close: function () {
+                        $("#LockWarningDialog").dialog("destroy");
+                    },
+                    buttons: [
+                        {
+                            text: okButton,
+                            click: function () {
+                                for (i = 0, max = modulePins.length; i < max; i += 1) {
+                                    if ($.inArray(modulePins[i].toString(), usedPinNumbers) === -1) {
+                                        newModulePins.push(modulePins[i]);
+                                    }
+                                }
+
+                                if ($("#LockWarningDialog").dialog("isOpen")) {
+                                    $("#LockWarningDialog").dialog("destroy");
+                                }
+
+                                for (i = 0, max = newModulePins.length; i < max; i += 1) {
+                                    currentNode_local = g_module_functions[module][$.inArray(newModulePins[i], g_module_pins[module])] + '_Pin' + newModulePins[i];
+                                    currentNode_local = currentNode_local.replaceSpecialCharacters();
+                                    $("#moduleTree").jstree('check_node', $('#' + currentNode_local));
+                                }
+                            }
+                        }
+                    ]
+                });
+
+                $("#LockWarningDialog").dialog('widget').draggable('option', 'axis', 'x y');
+                $("#LockWarningDialog").dialog('widget').draggable({ containment: 'window', scroll: false });
+
+                title = null;
+                content = null;
+                okButton = null;
+                cancelButton = null;
+            } else if (bConfllict) {
                 if (g_userSelectUIlanguage === "Simplified Chinese") {
                     title = '冲突发生';
                     content = '預期的' + module + '和别的模组冲突。请问你要调整旧的且改设置到现在的模组吗?';
@@ -1251,7 +1384,7 @@ var NUTOOL_PIN = {};
         }
 
         // remove the check symbols
-        if (bConfllict && bChecked) {
+        if ((bConfllict || bLockWarning) && bChecked) {
             if (modulePins.length === 1 && currentNode.indexOf('_Pin') !== -1) {
                 $("#" + currentNode).removeClass('jstree-checked jstree-undetermined').addClass('jstree-unchecked');
                 if (currentNode.indexOf('_') !== -1) {
@@ -9910,9 +10043,30 @@ var NUTOOL_PIN = {};
                         y,
                         legalInner,
                         colorBeingUsed,
+                        bLockWarning = false,
                         newLineThreshold = 10;
 
-                    if (me.currentPinIndex !== -1) {
+                    var pin = NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex].indexOf(pinName) + 1;
+                    for (var l = 0; l < g_lockedPin.length; l++) {
+                        var lockedPin = g_lockedPin[l].sliceAfterX('Pin');
+                        if (lockedPin == pin) {
+                            bLockWarning = true;
+                        }
+                    }
+                    // 同一個pin但不同IP，跳通知提醒使用者已經鎖定
+                    if (me.currentPinIndex !== -1 && bLockWarning) {
+                        if (g_userSelectUIlanguage === "Simplified Chinese") {
+                            alert("目标脚位已被锁定")
+                        }
+                        else if (g_userSelectUIlanguage === "Traditional Chinese") {
+                            alert("目標腳位已被鎖定")
+                        }
+                        else {
+                            alert("This pin is already locked")
+                        }
+                    }
+                    // 正常流程
+                    else if (me.currentPinIndex !== -1) {
                         // clear old selections
                         restoreAllPinMultiFunctionSelections();
                         // restricted to GPIOs
@@ -13261,7 +13415,8 @@ var NUTOOL_PIN = {};
                     g_pinCurrentDescription[i] !== "") {
                     tableData = {};
                     tableData.id = j;
-                    tableData.pin = updatePinName(i + 1) + ' (' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i] + ')';
+                    tableData.pin = updatePinName(i + 1);
+                    tableData.pinName = NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i];
                     tableData.pinNumber = i + 1;
                     tableData.description = g_pinCurrentDescription[i];
                     if (typeof g_userDefinedPin[g_pinCurrentDescription[i]] !== 'undefined' &&
@@ -13370,6 +13525,7 @@ var NUTOOL_PIN = {};
             checkboxReviewReport,
             buildReviewReportTable,
             sTitle_Pin_inner = "",
+            sTitle_PinName_inner = "",
             sTitle_Description_inner = "",
             sTitle_UserDefined_inner = "",
             sTooltip_inner = "",
@@ -13438,6 +13594,7 @@ var NUTOOL_PIN = {};
         buildReviewReportTable = function () {
             if (g_userSelectUIlanguage.indexOf("Simplified") !== -1) {
                 sTitle_Pin_inner = "脚位";
+                sTitle_PinName_inner = "脚位名称";
                 sTitle_Description_inner = "描述";
                 sTitle_UserDefined_inner = "用户定义";
                 sTooltip_inner = "仅限英文字母、数字和底线。\n最大输入长度为30。";
@@ -13445,6 +13602,7 @@ var NUTOOL_PIN = {};
             }
             else if (g_userSelectUIlanguage.indexOf("Traditional") !== -1) {
                 sTitle_Pin_inner = "腳位";
+                sTitle_PinName_inner = "腳位名稱";
                 sTitle_Description_inner = "描述";
                 sTitle_UserDefined_inner = "用戶定義";
                 sTooltip_inner = "僅限英文字母、數字和底線。\n最大輸入長度為30。";
@@ -13452,6 +13610,7 @@ var NUTOOL_PIN = {};
             }
             else {
                 sTitle_Pin_inner = "Pin";
+                sTitle_PinName_inner = "Pin Name";
                 sTitle_Description_inner = "Description";
                 sTitle_UserDefined_inner = "User Defined";
                 sTooltip_inner = "English letters, digits and underscores only.\nMaximum length of input is 30.";
@@ -13475,6 +13634,7 @@ var NUTOOL_PIN = {};
                     layout: "fitColumns", //fit columns to width of table
                     columns: [ //Define Table Columns
                         { title: sTitle_Pin_inner, field: "pin", headerFilter: true },
+                        { title: sTitle_PinName_inner, field: "pinName", headerFilter: true },
                         { title: sTitle_Description_inner, field: "description", headerFilter: true },
                         { title: sTitle_UserDefined_inner, field: "userDefined", headerFilter: true, editor: true, validator: ["regex:^[a-zA-Z0-9 _]+$", "maxLength:30"], tooltip: sTooltip_inner }
                     ],
@@ -14589,6 +14749,42 @@ var NUTOOL_PIN = {};
         recordConfig();
     }
 
+    function lockPin() {
+        var usedPinNumbers = [];
+        for (i = 0, max = g_usedPins.length; i < max; i += 1) {
+            usedPinNumbers[i] = g_usedPins[i].slicePriorToX(':');
+        }
+        g_bLockPin = !g_bLockPin;
+        for (var pin = 0; pin < usedPinNumbers.length; pin++) {
+            g_usedPins.forEach((usedPin) => {
+                var pin = usedPin.slicePriorToX(':');
+                var mfp = usedPin.sliceAfterX(':');
+                var rootNodeName = mfp + '_Root';
+                $("#moduleTree").jstree("open_node", $('#' + rootNodeName));
+                $("#" + rootNodeName).find("li").each(function (index1, listItem1) {
+                    var childOfChildNode = $(listItem1).attr("id");
+                    parentNode = specialModuleNaming(childOfChildNode.slicePriorToX('_'));
+                    if (g_bLockPin) {
+                        $('#ID_IMAGE_LOCK_PIN').attr("src", "./src/res/lock.png");
+                        // 如果mfp name 和 pin對得起來，就存入g_lockedPin
+                        if (childOfChildNode.indexOf(pin) != -1 && childOfChildNode.indexOf(mfp) != -1) {
+                            g_lockedPin.push(childOfChildNode);
+                            document.querySelector(`#${childOfChildNode}`).style.background = 'orange';
+                        }
+                    } else {
+                        $('#ID_IMAGE_LOCK_PIN').attr("src", "./src/res/unlock.png");
+                        // 如果有鎖的話就解鎖
+                        var index = g_lockedPin.indexOf(childOfChildNode);
+                        if (index > -1) { // only splice array when item is found
+                            g_lockedPin.splice(index, 1); // 2nd parameter means remove one item only
+                            document.querySelector(`#${childOfChildNode}`).style.background = 'transparent';
+                        }
+                    }
+                });
+            });
+        }
+    }
+
     function settings() {
         var title,
             content1,
@@ -14812,6 +15008,7 @@ var NUTOOL_PIN = {};
             setTippy('ID_BUTTON_ZOOM_IN', '放大');
             setTippy('ID_BUTTON_BEST_FIT', '最适大小');
             setTippy('ID_BUTTON_ZOOM_OUT', '缩小');
+            setTippy('ID_BUTTON_LOCK_PIN', '锁定脚位');
             setTippy('ID_BUTTON_DISABLE', '取消所有已选模组');
             setTippy('ID_BUTTON_LANGUAGE', '设定');
             setTippy('ID_BUTTON_INSTRUCTION', '阅读用户手册');
@@ -14834,6 +15031,7 @@ var NUTOOL_PIN = {};
             setTippy('ID_BUTTON_ZOOM_IN', '放大');
             setTippy('ID_BUTTON_BEST_FIT', '最適大小');
             setTippy('ID_BUTTON_ZOOM_OUT', '縮小');
+            setTippy('ID_BUTTON_LOCK_PIN', '鎖定腳位');
             setTippy('ID_BUTTON_DISABLE', '取消所有已選模組');
             setTippy('ID_BUTTON_LANGUAGE', '設定');
             setTippy('ID_BUTTON_INSTRUCTION', '閱讀用戶手冊');
@@ -14856,6 +15054,7 @@ var NUTOOL_PIN = {};
             setTippy('ID_BUTTON_ZOOM_IN', 'Zoom In');
             setTippy('ID_BUTTON_BEST_FIT', 'Best Fit');
             setTippy('ID_BUTTON_ZOOM_OUT', 'Zoom Out');
+            setTippy('ID_BUTTON_LOCK_PIN', 'Lock Pin');
             setTippy('ID_BUTTON_DISABLE', 'Disable All Checked Modules');
             setTippy('ID_BUTTON_LANGUAGE', 'Settings');
             setTippy('ID_BUTTON_INSTRUCTION', 'Read User Manual');
@@ -15288,6 +15487,9 @@ var NUTOOL_PIN = {};
         });
         $('#ID_BUTTON_ZOOM_OUT').on('click', function () {
             zoomOut();
+        });
+        $('#ID_BUTTON_LOCK_PIN').on('click', function () {
+            lockPin();
         });
         $('#ID_BUTTON_DISABLE').on('click', function () {
             uncheckAllNodes();
