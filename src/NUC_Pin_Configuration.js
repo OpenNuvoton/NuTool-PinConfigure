@@ -15297,8 +15297,8 @@ var NUTOOL_PIN = {};
             settings();
         });
         $('#ID_BUTTON_INSTRUCTION').on('click', function () {
-            window.location.href = 'https://www.nuvoton.com/resource-download.jsp?tp_GUID=UG1320220401093634';
-            // TODO: 改成直接顯示不要下載/目前只有開UM，沒有support chips
+            window.open('https://www.nuvoton.com/resource-download.jsp?tp_GUID=UG1320220401093634');
+            window.open('./assets/Supported_Chips.htm');
         });
     }
 
