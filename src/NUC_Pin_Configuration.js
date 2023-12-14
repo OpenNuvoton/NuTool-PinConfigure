@@ -4060,7 +4060,7 @@ var NUTOOL_PIN = {};
             g_pinsConfiguredByGPIO = [];
             while (readConfigFile.indexOf('GPIOpin:') !== -1) {
                 GPIOpins = readConfigFile.slice(readConfigFile.indexOf('GPIOpin:'));
-                thePin = GPIOpins.slice(GPIOpins.indexOf('GPIOpin:') + 8, GPIOpins.indexOf('\r'));
+                thePin = GPIOpins.slice(GPIOpins.indexOf('GPIOpin:') + 8, GPIOpins.indexOf('\n'));
                 // stash the pins configured by the GPIO.
                 tempString = NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][parseInt(thePin, 10)];
                 if (isGPIOPin(tempString)) {
@@ -4078,7 +4078,7 @@ var NUTOOL_PIN = {};
             g_userDefinedPin = {};
             while (readConfigFile.indexOf('UserDefined:') !== -1) {
                 userDefined = readConfigFile.slice(readConfigFile.indexOf('UserDefined:'));
-                thePin = userDefined.slice(userDefined.indexOf('UserDefined:') + 12, userDefined.indexOf('\r'));
+                thePin = userDefined.slice(userDefined.indexOf('UserDefined:') + 12, userDefined.indexOf('\n'));
                 // stash the user-defined description
                 tempString = thePin.sliceAfterX('=>');
                 thePin = thePin.slicePriorToX('=>');
@@ -4091,7 +4091,7 @@ var NUTOOL_PIN = {};
             while (readConfigFile.indexOf(parentRegisterAccess) !== -1) {
                 mfpRegister = readConfigFile.sliceAfterX(parentRegisterAccess);
                 //if (mfpRegister.indexOf('GPIO') !== 0) { // to filter out the case of GPIOpin:
-                mfpValue = mfpRegister.slice(mfpRegister.indexOf(' = ') + 3, mfpRegister.indexOf('\r'));
+                mfpValue = mfpRegister.slice(mfpRegister.indexOf(' = ') + 3, mfpRegister.indexOf('\n'));
                 if (!isNaN(parseInt(mfpValue.slice(2), 16))) {
                     // mfpValue should be in the format of decimal.
                     g_read_gpio_MFPs[mfpRegister.slicePriorToX(' = ')] = parseInt(mfpValue.slice(2), 16);
