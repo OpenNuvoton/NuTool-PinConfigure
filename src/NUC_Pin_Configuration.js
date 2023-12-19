@@ -1349,7 +1349,7 @@ var NUTOOL_PIN = {};
                                 g_readConfigFile = "";
                                 for (i = 0, max = g_pinCurrentDescription.length; i < max; i += 1) {
                                     if (g_pinCurrentDescription[i] !== "") {
-                                        g_readConfigFile += "Pin" + (i + 1) + ":" + updatePinDescription(g_pinCurrentDescription[i]) + "\r";
+                                        g_readConfigFile += "Pin" + (i + 1) + ":" + updatePinDescription(g_pinCurrentDescription[i]) + "\r\n";
                                     }
                                 }
 
@@ -2720,7 +2720,7 @@ var NUTOOL_PIN = {};
                                 g_readConfigFile = "";
                                 for (i = 0, max = g_pinCurrentDescription.length; i < max; i += 1) {
                                     if (g_pinCurrentDescription[i] !== "") {
-                                        g_readConfigFile += "Pin" + (i + 1) + ":" + updatePinDescription(g_pinCurrentDescription[i]) + "\r";
+                                        g_readConfigFile += "Pin" + (i + 1) + ":" + updatePinDescription(g_pinCurrentDescription[i]) + "\r\n";
                                     }
                                 }
 
@@ -4253,7 +4253,7 @@ var NUTOOL_PIN = {};
             readConfigFile = readConfigFileBackup;
             while (readConfigFile.indexOf('ALT_MFP') !== -1) {
                 mfpRegister = readConfigFile.slice(readConfigFile.indexOf('ALT_MFP'));
-                mfpValue = mfpRegister.slice(mfpRegister.indexOf(' = ') + 3, mfpRegister.indexOf('\r'));
+                mfpValue = mfpRegister.slice(mfpRegister.indexOf(' = ') + 3, mfpRegister.indexOf('\n'));
                 if (!isNaN(parseInt(mfpValue.slice(2), 16))) {
                     // mfpValue should be in the format of decimal.
                     g_read_gpio_MFPs[mfpRegister.slicePriorToX(' = ')] = parseInt(mfpValue.slice(2), 16);
