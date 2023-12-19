@@ -81,6 +81,7 @@ var NUTOOL_PIN = {};
         g_generatedMFPFunctionList,
         g_adjustedModulesMessageString,
         g_userDefinedPinString,
+        g_lockededPinString,
         g_unPrintedCharacters,
         g_currIEZoom = 100,
         g_bestFitIEZoom = 100,
@@ -982,6 +983,14 @@ var NUTOOL_PIN = {};
                     $moduleTree.jstree("close_node", $('#' + childNode));
                 }
             });
+
+            // work-around: 由於讀完檔案後，replaceJS的動作尚未完成，所以在module jstree還沒出來前，無法對其修改背景顏色，所以等到check node時再來判定需不需要修改
+            g_lockedPin.forEach((pin) => {
+                if (pin.indexOf(currentNode.slicePriorToX('_')) != -1) {
+                    document.querySelector(`#${pin}`).style.background = 'orange';
+                }
+            });
+
             // de-reference
             currentNode = null;
             currentNodeSliceRoot = null;
@@ -997,6 +1006,8 @@ var NUTOOL_PIN = {};
                 childOfChildNode;
 
             $moduleTree.jstree("open_node", $('#' + currentNode));
+            console.log('#' + currentNode);
+            console.log($('#' + currentNode));
             $("#" + currentNode).find("li").each(function (index, listItem) {
                 childNode = $(listItem).attr("id");
                 if (childNode.indexOf('_Pin') !== -1) {
@@ -13285,6 +13296,10 @@ var NUTOOL_PIN = {};
             $('#MCUselect').val(g_partNumber_package);
             g_selectedPartNoValue = g_partNumber_package;
 
+            // 讀取 locked pin
+            var newReadConfigFile = NUTOOL_PIN.g_readConfigFileContentText;
+            g_lockedPin = JSON.parse(newReadConfigFile.sliceAfterX('LockedPins=').slicePriorToX('\n'));
+
             destroyAllExistentDialogs();
 
             g_bUsingSpeedupCheck = false;
@@ -13317,6 +13332,7 @@ var NUTOOL_PIN = {};
                     + `${g_pinsConfiguredByGPIOstring}` // TODO: no show
                     + `${g_userDefinedPinString}`
                     + `${g_gpio_MFPsString}`
+                    + `${g_lockededPinString}`
                     + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
                 var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
                 saveAs(blob, `${g_partNumber_package}.ncfg`);
@@ -13376,6 +13392,10 @@ var NUTOOL_PIN = {};
                 g_userDefinedPinString += 'UserDefined:' + pinDescription + '=>' + g_userDefinedPin[pinDescription] + '\n';
             }
         }
+
+        // concatenate g_lockededPin into a string
+        g_lockededPinString = "LockedPins=" + JSON.stringify(g_lockedPin) + '\n';
+
         // de-reference
         i = null;
         max = null;
@@ -14068,6 +14088,7 @@ var NUTOOL_PIN = {};
             + `${g_pinsConfiguredByGPIOstring}` // TODO: no show
             + `${g_userDefinedPinString}`
             + `${g_gpio_MFPsString}`
+            + `${g_lockededPinString}`
             + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
         var blobcfg = new Blob([textcfg], { type: "text/plain;charset=utf-8" });
         saveAs(blobcfg, `${$('#inputText_projectName').val()}.ncfg`);
@@ -14755,34 +14776,32 @@ var NUTOOL_PIN = {};
             usedPinNumbers[i] = g_usedPins[i].slicePriorToX(':');
         }
         g_bLockPin = !g_bLockPin;
-        for (var pin = 0; pin < usedPinNumbers.length; pin++) {
-            g_usedPins.forEach((usedPin) => {
-                var pin = usedPin.slicePriorToX(':');
-                var mfp = usedPin.sliceAfterX(':');
-                var rootNodeName = mfp + '_Root';
-                $("#moduleTree").jstree("open_node", $('#' + rootNodeName));
-                $("#" + rootNodeName).find("li").each(function (index1, listItem1) {
-                    var childOfChildNode = $(listItem1).attr("id");
-                    parentNode = specialModuleNaming(childOfChildNode.slicePriorToX('_'));
-                    if (g_bLockPin) {
-                        $('#ID_IMAGE_LOCK_PIN').attr("src", "./src/res/lock.png");
-                        // 如果mfp name 和 pin對得起來，就存入g_lockedPin
-                        if (childOfChildNode.indexOf(pin) != -1 && childOfChildNode.indexOf(mfp) != -1) {
-                            g_lockedPin.push(childOfChildNode);
-                            document.querySelector(`#${childOfChildNode}`).style.background = 'orange';
-                        }
-                    } else {
-                        $('#ID_IMAGE_LOCK_PIN').attr("src", "./src/res/unlock.png");
-                        // 如果有鎖的話就解鎖
-                        var index = g_lockedPin.indexOf(childOfChildNode);
-                        if (index > -1) { // only splice array when item is found
-                            g_lockedPin.splice(index, 1); // 2nd parameter means remove one item only
-                            document.querySelector(`#${childOfChildNode}`).style.background = 'transparent';
-                        }
+        g_usedPins.forEach((usedPin) => {
+            var pin = usedPin.slicePriorToX(':');
+            var mfp = usedPin.sliceAfterX(':');
+            var rootNodeName = mfp + '_Root';
+            $("#moduleTree").jstree("open_node", $('#' + rootNodeName));
+            $("#" + rootNodeName).find("li").each(function (index1, listItem1) {
+                var childOfChildNode = $(listItem1).attr("id");
+                parentNode = specialModuleNaming(childOfChildNode.slicePriorToX('_'));
+                if (g_bLockPin) {
+                    $('#ID_IMAGE_LOCK_PIN').attr("src", "./src/res/lock.png");
+                    // 如果mfp name 和 pin對得起來，就存入g_lockedPin
+                    if (childOfChildNode.indexOf(pin) != -1 && childOfChildNode.indexOf(mfp) != -1) {
+                        g_lockedPin.push(childOfChildNode);
+                        document.querySelector(`#${childOfChildNode}`).style.background = 'orange';
                     }
-                });
+                } else {
+                    $('#ID_IMAGE_LOCK_PIN').attr("src", "./src/res/unlock.png");
+                    // 如果有鎖的話就解鎖
+                    var index = g_lockedPin.indexOf(childOfChildNode);
+                    if (index > -1) { // only splice array when item is found
+                        g_lockedPin.splice(index, 1); // 2nd parameter means remove one item only
+                        document.querySelector(`#${childOfChildNode}`).style.background = 'transparent';
+                    }
+                }
             });
-        }
+        });
     }
 
     function settings() {
