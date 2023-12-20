@@ -8050,6 +8050,16 @@ var NUTOOL_PIN = {};
                 }
             }
         }
+        else if (g_chipType.indexOf("M55M1") === 0) {
+            g_gpio_MFPsString += '\n';
+            g_gpio_MFPsStringForFunctionalTest = "";
+            for (i = 0, max = g_pinCurrentDescription.length; i < max; i += 1) {
+                if (g_pinCurrentDescription[i] != '') {
+                    g_gpio_MFPsString += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();\n';
+                    g_gpio_MFPsStringForFunctionalTest += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();\n';
+                }
+            }
+        }
         else {
             for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                 g_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
