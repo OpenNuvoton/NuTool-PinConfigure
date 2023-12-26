@@ -8258,92 +8258,171 @@ var NUTOOL_PIN = {};
         // concatenate g_gpio_MFPsString into a string
         g_gpio_MFPsString = "";
         g_gpio_MFPsStringForFunctionalTest1 = "";
-        for (m = 0, maxM = usedModules.length; m < maxM; m += 1) {
-            if (isGPIOPin(usedModules[m] + ".0")) {
-                usedModuleName = "GPIO";
-            }
-            else {
-                usedModuleName = usedModules[m];
-            }
-            local_gpio_MFPsString = "void " + reocrdedPorjectName + "_init_" + usedModules[m].toLowerCase() + "(void)\n{\n";
-            // using defines
-            bHasCode = false;
-            // gpio_MFPsNames: MFP registers的名稱(e.g. GPA_MFPH)
-            for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-                // gpio_MFPsArray[gpio_MFPsNames[i]]:GPIO define(TM09B:GPIO_P60MD_TM09B)
-                if (gpio_MFPsArray[gpio_MFPsNames[i]].length > 0 &&
-                    gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]].join(), usedModuleName, usedModules[m])) {
-                    bNotFirst = false;
-                    bHasCode = true;
-                    local_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' &= ~(';
-                    g_gpio_MFPsStringForFunctionalTest1 += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' &= ~(';
-                    for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
-                        if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
-                            if (bNotFirst) {
-                                local_gpio_MFPsString += ' | ';
-                                g_gpio_MFPsStringForFunctionalTest1 += ' | ';
-                            }
-                            defineName = gpio_MFPsArray[gpio_MFPsNames[i]][j].sliceAfterX(':');
-                            local_gpio_MFPsString += gpio_MFPsMskGenerator(defineName);
-                            g_gpio_MFPsStringForFunctionalTest1 += gpio_MFPsMskGenerator(defineName);
-                            bNotFirst = true;
-                        }
-                    }
-                    local_gpio_MFPsString += ');\n';
-                    g_gpio_MFPsStringForFunctionalTest1 += ');<br />';
 
-                    bNotFirst = false;
-                    local_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' |= (';
-                    g_gpio_MFPsStringForFunctionalTest1 += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' |= (';
-                    for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
-                        if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
-                            if (bNotFirst) {
-                                local_gpio_MFPsString += ' | ';
-                                g_gpio_MFPsStringForFunctionalTest1 += ' | ';
+        if (g_chipType.indexOf("M55M1") === 0) {
+            for (m = 0, maxM = usedModules.length; m < maxM; m += 1) {
+                if (isGPIOPin(usedModules[m] + ".0")) {
+                    usedModuleName = "GPIO";
+                }
+                else {
+                    usedModuleName = usedModules[m];
+                }
+                // init
+                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_init_" + usedModules[m].toLowerCase() + "(void)\n{\n";
+                // using defines
+                bHasCode = false;
+                // gpio_MFPsNames: MFP registers的名稱(e.g. GPA_MFPH)
+                for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
+                    // gpio_MFPsArray[gpio_MFPsNames[i]]:GPIO define(TM09B:GPIO_P60MD_TM09B)
+                    if (gpio_MFPsArray[gpio_MFPsNames[i]].length > 0 &&
+                        gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]].join(), usedModuleName, usedModules[m])) {
+                        bNotFirst = false;
+                        bHasCode = true;
+                        // 設定IP
+                        for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
+                            if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
+                                if (bNotFirst) {
+                                    local_gpio_MFPsString += '();\n';
+                                    g_gpio_MFPsStringForFunctionalTest1 += '();<br />';
+                                }
+                                defineName = gpio_MFPsArray[gpio_MFPsNames[i]][j].slicePriorToX(':');
+                                console.log(defineName);
+                                var pin = gpio_MFPsArray[gpio_MFPsNames[i]][j].slicePriorToX('MFP_').sliceAfterX('_MFP').sliceAfterX('_');
+                                console.log(pin);
+                                local_gpio_MFPsString += '    SET_' + defineName + '_' + pin;
+                                g_gpio_MFPsStringForFunctionalTest1 += '    SET_' + defineName + '_' + pin;
+                                bNotFirst = true;
                             }
-                            defineName = gpio_MFPsArray[gpio_MFPsNames[i]][j].sliceAfterX(':');
-                            local_gpio_MFPsString += defineName;
-                            g_gpio_MFPsStringForFunctionalTest1 += defineName;
-                            bNotFirst = true;
                         }
+                        local_gpio_MFPsString += '();\n';
+                        g_gpio_MFPsStringForFunctionalTest1 += '();<br />';
                     }
-                    local_gpio_MFPsString += ');\n';
-                    g_gpio_MFPsStringForFunctionalTest1 += ');<br />';
+                }
+                local_gpio_MFPsString += "\n    return;\n}\n\n";
+                if (!bHasCode) {
+                    g_gpio_MFPsStringForFunctionalTest1 += usedModules[m] + ' did not generate modularized code!!<br />';
+                }
+                else {
+                    g_gpio_MFPsString += local_gpio_MFPsString;
+                }
+
+                // deinit
+                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_deinit_" + usedModules[m].toLowerCase() + "(void)\n{\n";
+                // using defines
+                bHasCode = false;
+                for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
+                    if (gpio_MFPsArray[gpio_MFPsNames[i]].length > 0 &&
+                        gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]].join(), usedModuleName, usedModules[m])) {
+                        bNotFirst = false;
+                        bHasCode = true;
+                        for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
+                            if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
+                                if (bNotFirst) {
+                                    local_gpio_MFPsString += '();\n';
+                                }
+                                var pin = gpio_MFPsArray[gpio_MFPsNames[i]][j].slicePriorToX('MFP_').sliceAfterX('_MFP').sliceAfterX('_');
+                                // 預設deinit都回到GPIO
+                                local_gpio_MFPsString += '    SET_GPIO_' + pin;
+                                g_gpio_MFPsStringForFunctionalTest1 += '    SET_GPIO_' + pin;
+                                bNotFirst = true;
+                            }
+                        }
+                        local_gpio_MFPsString += '();\n';
+                    }
+                }
+                local_gpio_MFPsString += "\n    return;\n}\n\n";
+                if (bHasCode) {
+                    g_gpio_MFPsString += local_gpio_MFPsString;
                 }
             }
-            local_gpio_MFPsString += "\n    return;\n}\n\n";
-            if (!bHasCode) {
-                g_gpio_MFPsStringForFunctionalTest1 += usedModules[m] + ' did not generate modularized code!!<br />';
-            }
-            else {
-                g_gpio_MFPsString += local_gpio_MFPsString;
-            }
-
-            local_gpio_MFPsString = "void " + reocrdedPorjectName + "_deinit_" + usedModules[m].toLowerCase() + "(void)\n{\n";
-            // using defines
-            bHasCode = false;
-            for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-                if (gpio_MFPsArray[gpio_MFPsNames[i]].length > 0 &&
-                    gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]].join(), usedModuleName, usedModules[m])) {
-                    bNotFirst = false;
-                    bHasCode = true;
-                    local_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' &= ~(';
-                    for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
-                        if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
-                            if (bNotFirst) {
-                                local_gpio_MFPsString += ' | ';
-                            }
-                            defineName = gpio_MFPsArray[gpio_MFPsNames[i]][j].sliceAfterX(':');
-                            local_gpio_MFPsString += gpio_MFPsMskGenerator(defineName);
-                            bNotFirst = true;
-                        }
-                    }
-                    local_gpio_MFPsString += ');\n';
+        } else {
+            for (m = 0, maxM = usedModules.length; m < maxM; m += 1) {
+                if (isGPIOPin(usedModules[m] + ".0")) {
+                    usedModuleName = "GPIO";
                 }
-            }
-            local_gpio_MFPsString += "\n    return;\n}\n\n";
-            if (bHasCode) {
-                g_gpio_MFPsString += local_gpio_MFPsString;
+                else {
+                    usedModuleName = usedModules[m];
+                }
+                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_init_" + usedModules[m].toLowerCase() + "(void)\n{\n";
+                // using defines
+                bHasCode = false;
+                // gpio_MFPsNames: MFP registers的名稱(e.g. GPA_MFPH)
+                for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
+                    // gpio_MFPsArray[gpio_MFPsNames[i]]:GPIO define(TM09B:GPIO_P60MD_TM09B)
+                    if (gpio_MFPsArray[gpio_MFPsNames[i]].length > 0 &&
+                        gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]].join(), usedModuleName, usedModules[m])) {
+                        bNotFirst = false;
+                        bHasCode = true;
+                        local_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' &= ~(';
+                        g_gpio_MFPsStringForFunctionalTest1 += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' &= ~(';
+                        for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
+                            if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
+                                if (bNotFirst) {
+                                    local_gpio_MFPsString += ' | ';
+                                    g_gpio_MFPsStringForFunctionalTest1 += ' | ';
+                                }
+                                defineName = gpio_MFPsArray[gpio_MFPsNames[i]][j].sliceAfterX(':');
+                                local_gpio_MFPsString += gpio_MFPsMskGenerator(defineName);
+                                g_gpio_MFPsStringForFunctionalTest1 += gpio_MFPsMskGenerator(defineName);
+                                bNotFirst = true;
+                            }
+                        }
+                        local_gpio_MFPsString += ');\n';
+                        g_gpio_MFPsStringForFunctionalTest1 += ');<br />';
+
+                        bNotFirst = false;
+                        local_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' |= (';
+                        g_gpio_MFPsStringForFunctionalTest1 += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' |= (';
+                        for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
+                            if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
+                                if (bNotFirst) {
+                                    local_gpio_MFPsString += ' | ';
+                                    g_gpio_MFPsStringForFunctionalTest1 += ' | ';
+                                }
+                                defineName = gpio_MFPsArray[gpio_MFPsNames[i]][j].sliceAfterX(':');
+                                local_gpio_MFPsString += defineName;
+                                g_gpio_MFPsStringForFunctionalTest1 += defineName;
+                                bNotFirst = true;
+                            }
+                        }
+                        local_gpio_MFPsString += ');\n';
+                        g_gpio_MFPsStringForFunctionalTest1 += ');<br />';
+                    }
+                }
+                local_gpio_MFPsString += "\n    return;\n}\n\n";
+                if (!bHasCode) {
+                    g_gpio_MFPsStringForFunctionalTest1 += usedModules[m] + ' did not generate modularized code!!<br />';
+                }
+                else {
+                    g_gpio_MFPsString += local_gpio_MFPsString;
+                }
+
+                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_deinit_" + usedModules[m].toLowerCase() + "(void)\n{\n";
+                // using defines
+                bHasCode = false;
+                for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
+                    if (gpio_MFPsArray[gpio_MFPsNames[i]].length > 0 &&
+                        gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]].join(), usedModuleName, usedModules[m])) {
+                        bNotFirst = false;
+                        bHasCode = true;
+                        local_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' &= ~(';
+                        for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
+                            if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
+                                if (bNotFirst) {
+                                    local_gpio_MFPsString += ' | ';
+                                }
+                                defineName = gpio_MFPsArray[gpio_MFPsNames[i]][j].sliceAfterX(':');
+                                local_gpio_MFPsString += gpio_MFPsMskGenerator(defineName);
+                                bNotFirst = true;
+                            }
+                        }
+                        local_gpio_MFPsString += ');\n';
+                    }
+                }
+                local_gpio_MFPsString += "\n    return;\n}\n\n";
+                if (bHasCode) {
+                    g_gpio_MFPsString += local_gpio_MFPsString;
+                }
             }
         }
 
@@ -13713,12 +13792,14 @@ var NUTOOL_PIN = {};
             projectLocationHistorySelect += '</select></label>';
         }
 
-        if (checkboxModularizeNotSupportedList.indexOf(g_chipType) === -1 &&
+        // Special Case For MS70
+        if (g_chipType.indexOf("M55M1") === 0) {
+            checkboxModularizeType = "checkbox";
+        } else if (checkboxModularizeNotSupportedList.indexOf(g_chipType) === -1 &&
             NUTOOL_PIN.g_cfg_gpiosDefines.length !== 0 &&
             (NUTOOL_PIN.g_cfg_gpiosDefines[0].f.length > 1 && NUTOOL_PIN.g_cfg_gpiosDefines[0].f[1].indexOf("GPIO:") === 0)) {
             checkboxModularizeType = "checkbox";
-        }
-        else {
+        } else {
             checkboxModularize = "";
             checkboxModularizeType = "hidden";
             checkbox_ModularizeCodeChecked = "";
