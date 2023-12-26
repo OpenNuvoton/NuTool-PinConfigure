@@ -31,7 +31,7 @@ function buildWorker() {
 function buildMain() {
     return gulp.src(path.NUC_PIN_CONF)
         .pipe(rename(path.NUC_PIN_CONF_OUT))
-        // .pipe(terser({}, terser.minify))
+        .pipe(terser({}, terser.minify))
         .pipe(gulp.dest(path.NUC_PIN_CONF_DEST));
 }
 
