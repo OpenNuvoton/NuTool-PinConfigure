@@ -4,7 +4,7 @@ var NUTOOL_PIN = {};
 
 (function () {
     //private variables
-    const VERSION_CODE = 'V1.28.0008';
+    const VERSION_CODE = 'V1.28.0009';
     var g_bReadyForRelease = true, // should be true For Release
         g_bDevelopingTool = false,  // should be false For Release
         g_bTestingConflict = false,
@@ -4122,7 +4122,7 @@ var NUTOOL_PIN = {};
             g_pinsConfiguredByGPIO = [];
             while (readConfigFile.indexOf('GPIOpin:') !== -1) {
                 GPIOpins = readConfigFile.slice(readConfigFile.indexOf('GPIOpin:'));
-                thePin = GPIOpins.slice(GPIOpins.indexOf('GPIOpin:') + 8, GPIOpins.indexOf('\n'));
+                thePin = GPIOpins.slice(GPIOpins.indexOf('GPIOpin:') + 8, GPIOpins.indexOf('\r\n'));
                 // stash the pins configured by the GPIO.
                 tempString = NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][parseInt(thePin, 10)];
                 if (isGPIOPin(tempString)) {
@@ -4140,7 +4140,7 @@ var NUTOOL_PIN = {};
             g_userDefinedPin = {};
             while (readConfigFile.indexOf('UserDefined:') !== -1) {
                 userDefined = readConfigFile.slice(readConfigFile.indexOf('UserDefined:'));
-                thePin = userDefined.slice(userDefined.indexOf('UserDefined:') + 12, userDefined.indexOf('\n'));
+                thePin = userDefined.slice(userDefined.indexOf('UserDefined:') + 12, userDefined.indexOf('\r\n'));
                 // stash the user-defined description
                 tempString = thePin.sliceAfterX('=>');
                 thePin = thePin.slicePriorToX('=>');
@@ -4153,7 +4153,7 @@ var NUTOOL_PIN = {};
             while (readConfigFile.indexOf(parentRegisterAccess) !== -1) {
                 mfpRegister = readConfigFile.sliceAfterX(parentRegisterAccess);
                 //if (mfpRegister.indexOf('GPIO') !== 0) { // to filter out the case of GPIOpin:
-                mfpValue = mfpRegister.slice(mfpRegister.indexOf(' = ') + 3, mfpRegister.indexOf('\n'));
+                mfpValue = mfpRegister.slice(mfpRegister.indexOf(' = ') + 3, mfpRegister.indexOf('\r\n'));
                 if (!isNaN(parseInt(mfpValue.slice(2), 16))) {
                     // mfpValue should be in the format of decimal.
                     g_read_gpio_MFPs[mfpRegister.slicePriorToX(' = ')] = parseInt(mfpValue.slice(2), 16);
@@ -4171,7 +4171,7 @@ var NUTOOL_PIN = {};
             readConfigFile = readConfigFileBackup;
             while (readConfigFile.indexOf('ALT_MFP') !== -1) {
                 mfpRegister = readConfigFile.slice(readConfigFile.indexOf('ALT_MFP'));
-                mfpValue = mfpRegister.slice(mfpRegister.indexOf(' = ') + 3, mfpRegister.indexOf('\n'));
+                mfpValue = mfpRegister.slice(mfpRegister.indexOf(' = ') + 3, mfpRegister.indexOf('\r\n'));
                 if (!isNaN(parseInt(mfpValue.slice(2), 16))) {
                     // mfpValue should be in the format of decimal.
                     g_read_gpio_MFPs[mfpRegister.slicePriorToX(' = ')] = parseInt(mfpValue.slice(2), 16);
@@ -7344,168 +7344,168 @@ var NUTOOL_PIN = {};
 
         if (typeof NUTOOL_PER === 'undefined') {
             if (g_chipType === "NUC200AE") {
-                g_includeHeadFileString = '#include "NUC230_240.h"\n';
+                g_includeHeadFileString = '#include "NUC230_240.h"\r\n';
             }
             else if (g_chipType === "NUC200AN") {
-                g_includeHeadFileString = '#include "NUC200Series.h"\n';
+                g_includeHeadFileString = '#include "NUC200Series.h"\r\n';
             }
             else if (g_chipType === "NANO100AN" || g_chipType === "NANO100BN") {
-                g_includeHeadFileString = '#include "Nano100Series.h"\n';
+                g_includeHeadFileString = '#include "Nano100Series.h"\r\n';
             }
             else if (g_chipType === "NANO103") {
-                g_includeHeadFileString = '#include "Nano103.h"\n';
+                g_includeHeadFileString = '#include "Nano103.h"\r\n';
             }
             else if (g_chipType === "NANO112") {
-                g_includeHeadFileString = '#include "Nano1X2Series.h"\n';
+                g_includeHeadFileString = '#include "Nano1X2Series.h"\r\n';
             }
             else if (g_chipType === "NUC100AN_BN" || g_chipType === "NUC100CN" || g_chipType === "NUC100DN") {
-                g_includeHeadFileString = '#include "NUC100Series.h"\n';
+                g_includeHeadFileString = '#include "NUC100Series.h"\r\n';
             }
             else if (g_chipType === "NUC121AE") {
-                g_includeHeadFileString = '#include "NUC121.h"\n';
+                g_includeHeadFileString = '#include "NUC121.h"\r\n';
             }
             else if (g_chipType === "NUC122AN") {
-                g_includeHeadFileString = '#include "NUC122.h"\n';
+                g_includeHeadFileString = '#include "NUC122.h"\r\n';
             }
             else if (g_chipType === "NUC123AN" || g_chipType === "NUC123AE") {
-                g_includeHeadFileString = '#include "NUC123.h"\n';
+                g_includeHeadFileString = '#include "NUC123.h"\r\n';
             }
             else if (g_chipType.indexOf("M029G") === 0) {
-                g_includeHeadFileString = '#include "M029G.h"\n';
+                g_includeHeadFileString = '#include "M029G.h"\r\n';
             }
             else if (g_chipType.indexOf("M030G") === 0) {
-                g_includeHeadFileString = '#include "M030G.h"\n';
+                g_includeHeadFileString = '#include "M030G.h"\r\n';
             }
             else if (g_chipType.indexOf("M091") === 0) {
-                g_includeHeadFileString = '#include "M091Series.h"\n';
+                g_includeHeadFileString = '#include "M091Series.h"\r\n';
             }
             else if (g_chipType.indexOf("M030") === 0 || g_chipType.indexOf("M031") === 0) {
-                g_includeHeadFileString = '#include "M031Series.h"\n';
+                g_includeHeadFileString = '#include "M031Series.h"\r\n';
             }
             else if (g_chipType.indexOf("M256D") === 0 || g_chipType.indexOf("M258") === 0 || g_chipType.indexOf("M258G") === 0) {
-                g_includeHeadFileString = '#include "M251.h"\n';
+                g_includeHeadFileString = '#include "M251.h"\r\n';
             }
             else if (g_chipType.indexOf("M433") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("M46") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("M480") === 0) {
-                g_includeHeadFileString = '#include "M480.h"\n';
+                g_includeHeadFileString = '#include "M480.h"\r\n';
             }
             else if (g_chipType.indexOf("KM1M4") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("KM1M7") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType === "NUC505") {
-                g_includeHeadFileString = '#include "NUC505Series.h"\n';
+                g_includeHeadFileString = '#include "NUC505Series.h"\r\n';
             }
             else if (g_chipType === "M051DN_DE" || g_chipType === "M051BN" || g_chipType === "M051AN") {
-                g_includeHeadFileString = '#include "M051Series.h"\n';
+                g_includeHeadFileString = '#include "M051Series.h"\r\n';
             }
             else if (g_chipType === "M451LD" || g_chipType === "M451HD") {
-                g_includeHeadFileString = '#include "M451Series.h"\n';
+                g_includeHeadFileString = '#include "M451Series.h"\r\n';
             }
             else if (g_chipType === "MINI51AN") {
-                g_includeHeadFileString = '#include "Mini51.h"\n';
+                g_includeHeadFileString = '#include "Mini51.h"\r\n';
             }
             else if (g_chipType === "MINI51DE") {
-                g_includeHeadFileString = '#include "Mini51Series.h"\n';
+                g_includeHeadFileString = '#include "Mini51Series.h"\r\n';
             }
             else if (g_chipType === "MINI55") {
-                g_includeHeadFileString = '#include "Mini55Series.h"\n';
+                g_includeHeadFileString = '#include "Mini55Series.h"\r\n';
             }
             else if (g_chipType === "MINI57" || g_chipType === "NM1120") {
-                g_includeHeadFileString = '#include "Mini57Series.h"\n';
+                g_includeHeadFileString = '#include "Mini57Series.h"\r\n';
             }
             else if (g_chipType === "MINI58") {
-                g_includeHeadFileString = '#include "Mini58Series.h"\n';
+                g_includeHeadFileString = '#include "Mini58Series.h"\r\n';
             }
             else if (g_chipType === "ML5156") {
-                g_includeHeadFileString = '#include "Function_Define_ML51.h"\n';
+                g_includeHeadFileString = '#include "Function_Define_ML51.h"\r\n';
             }
             else if (g_chipType.indexOf("ML51") === 0) {
-                g_includeHeadFileString = '#include "Function_Define_ML51.h"\n';
+                g_includeHeadFileString = '#include "Function_Define_ML51.h"\r\n';
             }
             else if (g_chipType.indexOf("ML56") === 0) {
-                g_includeHeadFileString = '#include "Function_Define_ML51.h"\n';
+                g_includeHeadFileString = '#include "Function_Define_ML51.h"\r\n';
             }
             else if (g_chipType.indexOf("MUG51") === 0) {
-                g_includeHeadFileString = '#include "Function_Define_MUG51.h"\n';
+                g_includeHeadFileString = '#include "Function_Define_MUG51.h"\r\n';
             }
             else if (g_chipType.indexOf("MS51_8K") === 0) {
-                g_includeHeadFileString = '#include "MS51_8K.h"\n';
+                g_includeHeadFileString = '#include "MS51_8K.h"\r\n';
             }
             else if (g_chipType.indexOf("MG51") === 0) {
-                g_includeHeadFileString = '#include "MG51.h"\n';
+                g_includeHeadFileString = '#include "MG51.h"\r\n';
             }
             else if (g_chipType.indexOf("N76S003") === 0) {
-                g_includeHeadFileString = '#include "N76S003.h"\n';
+                g_includeHeadFileString = '#include "N76S003.h"\r\n';
             }
             else if (g_chipType.indexOf("N76E003") === 0) {
-                g_includeHeadFileString = '#include "N76E003.h"\n';
+                g_includeHeadFileString = '#include "N76E003.h"\r\n';
             }
             else if (g_chipType === "NUC029AN" || g_chipType === "NUC029TAE") {
-                g_includeHeadFileString = '#include "NUC029xAN.h"\n';
+                g_includeHeadFileString = '#include "NUC029xAN.h"\r\n';
             }
             else if (g_chipType === "NUC029AE") {
-                g_includeHeadFileString = '#include "NUC029FAE.h"\n';
+                g_includeHeadFileString = '#include "NUC029FAE.h"\r\n';
             }
             else if (g_chipType === "NUC029KGE" || g_chipType === "NUC029xGE") {
-                g_includeHeadFileString = '#include "NUC029xGE.h"\n';
+                g_includeHeadFileString = '#include "NUC029xGE.h"\r\n';
             }
             else if (g_chipType === "NUC029xDE") {
-                g_includeHeadFileString = '#include "NUC029xDE.h"\n';
+                g_includeHeadFileString = '#include "NUC029xDE.h"\r\n';
             }
             else if (g_chipType === "NUC029xEE") {
-                g_includeHeadFileString = '#include "NUC029xEE.h"\n';
+                g_includeHeadFileString = '#include "NUC029xEE.h"\r\n';
             }
             else if (g_chipType === "NM1200") {
-                g_includeHeadFileString = '#include "Mini51.h"\n';
+                g_includeHeadFileString = '#include "Mini51.h"\r\n';
             }
             else if (g_chipType === "NM1500") {
-                g_includeHeadFileString = '#include "MT500Series.h"\n';
+                g_includeHeadFileString = '#include "MT500Series.h"\r\n';
             }
             else if (g_chipType === "NUC400") {
-                g_includeHeadFileString = '#include "NUC472_442.h"\n';
+                g_includeHeadFileString = '#include "NUC472_442.h"\r\n';
             }
             else if (g_chipType === "M0515LDE" || g_chipType === "NDA102" ||
                 g_chipType === "M071M" || g_chipType === "M071QV" || g_chipType === "M071R1S") {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("MA35D0") === 0 || g_chipType.indexOf("MA35H0") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("MA35") === 0) {
-                g_includeHeadFileString = '#include "' + g_chipType.toLowerCase() + '.dtsi"\n';
+                g_includeHeadFileString = '#include "' + g_chipType.toLowerCase() + '.dtsi"\r\n';
             }
             else if (g_chipType.indexOf("M55M1") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("M2003") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("N9H30") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("NUC97") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("NUC98") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else if (g_chipType.indexOf("M2A23") === 0) {
-                g_includeHeadFileString = '#include "NuMicro.h"\n';
+                g_includeHeadFileString = '#include "NuMicro.h"\r\n';
             }
             else {
-                g_includeHeadFileString = '#include "' + g_chipType + '.h"\n';
+                g_includeHeadFileString = '#include "' + g_chipType + '.h"\r\n';
             }
         }
         else {
-            g_includeHeadFileString = '#include "NuCodeGenProj.h"\n';
+            g_includeHeadFileString = '#include "NuCodeGenProj.h"\r\n';
         }
     }
 
@@ -7545,7 +7545,7 @@ var NUTOOL_PIN = {};
         }
         if ((NUTOOL_PIN.g_pinFunctionString === 'h' || NUTOOL_PIN.g_pinFunctionString === 'dtsi') &&
             g_includeHeadFileString.sliceAfterX('.') !== NUTOOL_PIN.g_pinFunctionString) {
-            g_includeHeadFileString = g_includeHeadFileString.slicePriorToX('.') + '.' + NUTOOL_PIN.g_pinFunctionString + '"\n';
+            g_includeHeadFileString = g_includeHeadFileString.slicePriorToX('.') + '.' + NUTOOL_PIN.g_pinFunctionString + '"\r\n';
         }
         // concatenate gpio_MFP into a string
         g_gpio_MFPsString = "";
@@ -7688,19 +7688,19 @@ var NUTOOL_PIN = {};
             if (g_chipType.indexOf("ML5") === 0 || g_chipType.indexOf("MUG51") === 0) {
                 // real value version
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-                    g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+                    g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
                 }
 
-                g_gpio_MFPsString += '\n';
+                g_gpio_MFPsString += '\r\n';
                 if (typeof NUTOOL_PER === 'undefined') {
-                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\n';
+                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\r\n';
                 }
                 g_gpio_MFPsStringForFunctionalTest = "";
                 // using defines
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                     if (gpio_MFPsArray[gpio_MFPsNames[i]].length > 0) {
                         for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
-                            g_gpio_MFPsString += '    ' + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\n';
+                            g_gpio_MFPsString += '    ' + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\r\n';
                             g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + '    ' + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';';
                         }
                     }
@@ -7710,12 +7710,12 @@ var NUTOOL_PIN = {};
                 || g_chipType.indexOf("N76S003") === 0 || g_chipType.indexOf("N76E003") === 0) {
                 // real value version
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-                    g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+                    g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
                 }
 
-                g_gpio_MFPsString += '\n';
+                g_gpio_MFPsString += '\r\n';
                 if (typeof NUTOOL_PER === 'undefined') {
-                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\n';
+                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\r\n';
                 }
                 g_gpio_MFPsStringForFunctionalTest = "";
                 // using defines
@@ -7726,7 +7726,7 @@ var NUTOOL_PIN = {};
                             for (m = 0, maxM = gpio_MFPsArray1.length; m < maxM; m += 1) {
                                 if (gpio_MFPsArray1[m] !== "") {
                                     if (gpio_MFPsArray1[m].toString().toUpperCase() !== "NULL") {
-                                        g_gpio_MFPsString += '    ' + gpio_MFPsArray1[m] + ';\n';
+                                        g_gpio_MFPsString += '    ' + gpio_MFPsArray1[m] + ';\r\n';
                                     }
                                     g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + '    ' + gpio_MFPsArray1[m] + ';';
                                 }
@@ -7738,12 +7738,12 @@ var NUTOOL_PIN = {};
             else if (g_chipType.indexOf("KM1M7AF") === 0 || g_chipType.indexOf("KM1M7BF") === 0) {
                 // real value version
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-                    g_gpio_MFPsString += '    //' + parentRegisterAccess + "GPIO_MD(0x" + gpio_MFPsNames[i][3] + ')->IOPnMD = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+                    g_gpio_MFPsString += '    //' + parentRegisterAccess + "GPIO_MD(0x" + gpio_MFPsNames[i][3] + ')->IOPnMD = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
                 }
 
-                g_gpio_MFPsString += '\n';
+                g_gpio_MFPsString += '\r\n';
                 if (typeof NUTOOL_PER === 'undefined') {
-                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\n';
+                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\r\n';
                 }
                 g_gpio_MFPsStringForFunctionalTest = "";
                 // using defines
@@ -7758,13 +7758,13 @@ var NUTOOL_PIN = {};
                                 g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ' | ';
                             }
                             else {
-                                g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\n';
+                                g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\r\n';
                                 g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';';
                             }
                         }
                     }
                     else {
-                        g_gpio_MFPsString += '    ' + parentRegisterAccess + "GPIO_MD(0x" + gpio_MFPsNames[i][3] + ')->IOPnMD = 0x00000000;\n';
+                        g_gpio_MFPsString += '    ' + parentRegisterAccess + "GPIO_MD(0x" + gpio_MFPsNames[i][3] + ')->IOPnMD = 0x00000000;\r\n';
                     }
                 }
             }
@@ -7773,17 +7773,17 @@ var NUTOOL_PIN = {};
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                     // GPIO_MDx->IOPnMD
                     if (gpio_MFPsNames[i].indexOf('IOP') !== -1) {
-                        g_gpio_MFPsString += '    //' + parentRegisterAccess + "GPIO_MD" + gpio_MFPsNames[i][3] + '->IOPnMD = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+                        g_gpio_MFPsString += '    //' + parentRegisterAccess + "GPIO_MD" + gpio_MFPsNames[i][3] + '->IOPnMD = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
                     }
                     // DBG->SELSWD
                     else {
-                        g_gpio_MFPsString += '    //' + parentRegisterAccess + 'DBG->SELSWD = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase().slice(-2) + 'UL;\n';
+                        g_gpio_MFPsString += '    //' + parentRegisterAccess + 'DBG->SELSWD = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase().slice(-2) + 'UL;\r\n';
                     }
                 }
 
-                g_gpio_MFPsString += '\n';
+                g_gpio_MFPsString += '\r\n';
                 if (typeof NUTOOL_PER === 'undefined') {
-                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\n';
+                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\r\n';
                 }
                 g_gpio_MFPsStringForFunctionalTest = "";
                 // using defines
@@ -7800,21 +7800,21 @@ var NUTOOL_PIN = {};
                                     g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ' | ';
                                 }
                                 else {
-                                    g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\n';
+                                    g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\r\n';
                                     g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';';
                                 }
                             }
                         }
                         else {
-                            g_gpio_MFPsString += '    ' + parentRegisterAccess + "GPIO_MD" + gpio_MFPsNames[i][3] + '->IOPnMD = 0x00000000;\n';
+                            g_gpio_MFPsString += '    ' + parentRegisterAccess + "GPIO_MD" + gpio_MFPsNames[i][3] + '->IOPnMD = 0x00000000;\r\n';
                         }
                     }
                     // DBG->SELSWD
                     else {
                         if (decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]) == 0) {
-                            g_gpio_MFPsString += '    ' + parentRegisterAccess + 'DBG->SELSWD = DEBUG_INTERFACE_DISABLE;\n';
+                            g_gpio_MFPsString += '    ' + parentRegisterAccess + 'DBG->SELSWD = DEBUG_INTERFACE_DISABLE;\r\n';
                         } else {
-                            g_gpio_MFPsString += '    ' + parentRegisterAccess + 'DBG->SELSWD = DEBUG_INTERFACE_ENABLE;\n';
+                            g_gpio_MFPsString += '    ' + parentRegisterAccess + 'DBG->SELSWD = DEBUG_INTERFACE_ENABLE;\r\n';
                         }
                     }
                 }
@@ -7824,17 +7824,17 @@ var NUTOOL_PIN = {};
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                     // GPIO_MDx->IOPnMD
                     if (gpio_MFPsNames[i].indexOf('IOP') !== -1) {
-                        g_gpio_MFPsString += '    //' + parentRegisterAccess + "GPIO_MD" + gpio_MFPsNames[i][3] + '->IOPnMD = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+                        g_gpio_MFPsString += '    //' + parentRegisterAccess + "GPIO_MD" + gpio_MFPsNames[i][3] + '->IOPnMD = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
                     }
                     // FPSA/Bxx->FPSA/Bn_SEL
                     else {
-                        g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i].slicePriorToX('_') + '->FPS' + gpio_MFPsNames[i][3] + 'n_SEL = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+                        g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i].slicePriorToX('_') + '->FPS' + gpio_MFPsNames[i][3] + 'n_SEL = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
                     }
                 }
 
-                g_gpio_MFPsString += '\n';
+                g_gpio_MFPsString += '\r\n';
                 if (typeof NUTOOL_PER === 'undefined') {
-                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\n';
+                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\r\n';
                 }
                 g_gpio_MFPsStringForFunctionalTest = "";
                 // using defines
@@ -7851,13 +7851,13 @@ var NUTOOL_PIN = {};
                                     g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ' | ';
                                 }
                                 else {
-                                    g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\n';
+                                    g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\r\n';
                                     g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';';
                                 }
                             }
                         }
                         else {
-                            g_gpio_MFPsString += '    ' + parentRegisterAccess + "GPIO_MD" + gpio_MFPsNames[i][3] + '->IOPnMD = 0x00000000;\n';
+                            g_gpio_MFPsString += '    ' + parentRegisterAccess + "GPIO_MD" + gpio_MFPsNames[i][3] + '->IOPnMD = 0x00000000;\r\n';
                         }
                     }
                     // FPSA/Bxx->FPSA/Bn_SEL
@@ -7872,19 +7872,19 @@ var NUTOOL_PIN = {};
                                     g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ' | ';
                                 }
                                 else {
-                                    g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\n';
+                                    g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\r\n';
                                     g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';';
                                 }
                             }
                         }
                         else {
-                            g_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i].slicePriorToX('_') + '->FPS' + gpio_MFPsNames[i][3] + 'n_SEL = 0x00000000;\n';
+                            g_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i].slicePriorToX('_') + '->FPS' + gpio_MFPsNames[i][3] + 'n_SEL = 0x00000000;\r\n';
                         }
                     }
                 }
             }
             else if (g_includeHeadFileString.indexOf(".dtsi") !== -1) {
-                g_gpio_MFPsString += '/ {\n    model = "Nuvoton ' + g_chipType + '";\n};\n\n';
+                g_gpio_MFPsString += '/ {\r\n    model = "Nuvoton ' + g_chipType + '";\r\n};\r\n\r\n';
                 g_gpio_MFPsStringForFunctionalTest = "";
 
                 gpio_MFPsNames = getPropertyNames(gpio_MFPsArray);
@@ -7892,9 +7892,9 @@ var NUTOOL_PIN = {};
                 // using defines
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                     functionName = gpio_MFPsNames[i].toLowerCase();
-                    g_gpio_MFPsString += '&' + functionName + ' {\n    pinctrl-names = "default";\n    pinctrl-0 = <&pinctrl_' + functionName + '>;\n};\n\n';
+                    g_gpio_MFPsString += '&' + functionName + ' {\r\n    pinctrl-names = "default";\r\n    pinctrl-0 = <&pinctrl_' + functionName + '>;\r\n};\r\n\r\n';
                 }
-                g_gpio_MFPsString += '&pinctrl {\n';
+                g_gpio_MFPsString += '&pinctrl {\r\n';
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
                     defineName = 0;
                     for (j = 0, maxJ = gpio_MFPsArray[gpio_MFPsNames[i]].length; j < maxJ; j += 1) {
@@ -7905,8 +7905,8 @@ var NUTOOL_PIN = {};
                     defineName += 1;
 
                     functionName = gpio_MFPsNames[i].toLowerCase();
-                    g_gpio_MFPsString += '    ' + functionName + ' {\n        pinctrl_' + functionName + ': ' + functionName + 'grp {\n            nuvoton,pins =\n';
-                    g_gpio_MFPsStringForFunctionalTest += '    ' + functionName + ' {\n        pinctrl_' + functionName + ': ' + functionName + 'grp {\n            nuvoton,pins =\n';
+                    g_gpio_MFPsString += '    ' + functionName + ' {\r\n        pinctrl_' + functionName + ': ' + functionName + 'grp {\r\n            nuvoton,pins =\r\n';
+                    g_gpio_MFPsStringForFunctionalTest += '    ' + functionName + ' {\r\n        pinctrl_' + functionName + ': ' + functionName + 'grp {\r\n            nuvoton,pins =\r\n';
                     for (j = 0, maxJ = gpio_MFPsArray[gpio_MFPsNames[i]].length; j < maxJ; j += 1) {
                         g_gpio_MFPsString += '                <' + gpio_MFPsArray[gpio_MFPsNames[i]][j];
                         g_gpio_MFPsStringForFunctionalTest += '                <' + gpio_MFPsArray[gpio_MFPsNames[i]][j];
@@ -7917,32 +7917,32 @@ var NUTOOL_PIN = {};
                         g_gpio_MFPsString += '&pcfg_default>';
                         g_gpio_MFPsStringForFunctionalTest += '&pcfg_default>';
                         if (j !== maxJ - 1) {
-                            g_gpio_MFPsString += ',\n';
-                            g_gpio_MFPsStringForFunctionalTest += ',\n';
+                            g_gpio_MFPsString += ',\r\n';
+                            g_gpio_MFPsStringForFunctionalTest += ',\r\n';
                         }
                         else {
-                            g_gpio_MFPsString += ';\n';
-                            g_gpio_MFPsStringForFunctionalTest += ',\n';
+                            g_gpio_MFPsString += ';\r\n';
+                            g_gpio_MFPsStringForFunctionalTest += ',\r\n';
                         }
                     }
                     if (i !== max - 1) {
-                        g_gpio_MFPsString += '        };\n    };\n\n';
+                        g_gpio_MFPsString += '        };\r\n    };\r\n\r\n';
                     }
                     else {
-                        g_gpio_MFPsString += '        };\n    };\n';
+                        g_gpio_MFPsString += '        };\r\n    };\r\n';
                     }
                 }
-                g_gpio_MFPsString += '};\n\n';
+                g_gpio_MFPsString += '};\r\n\r\n';
             }
             else {
                 // real value version
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-                    g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+                    g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
                 }
 
-                g_gpio_MFPsString += '\n';
+                g_gpio_MFPsString += '\r\n';
                 if (typeof NUTOOL_PER === 'undefined') {
-                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\n';
+                    g_gpio_MFPsString += '    /* If the macros do not exist in your project, please refer to the corresponding header file in Header folder of the tool package */\r\n';
                 }
                 g_gpio_MFPsStringForFunctionalTest = "";
                 // using defines
@@ -7957,30 +7957,30 @@ var NUTOOL_PIN = {};
                                 g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ' | ';
                             }
                             else {
-                                g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\n';
+                                g_gpio_MFPsString += gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';\r\n';
                                 g_gpio_MFPsStringForFunctionalTest = g_gpio_MFPsStringForFunctionalTest + gpio_MFPsArray[gpio_MFPsNames[i]][j] + ';';
                             }
                         }
                     }
                     else {
-                        g_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x00000000;\n';
+                        g_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x00000000;\r\n';
                     }
                 }
             }
         }
         else if (g_chipType.indexOf("M55M1") === 0) {
-            g_gpio_MFPsString += '\n';
+            g_gpio_MFPsString += '\r\n';
             g_gpio_MFPsStringForFunctionalTest = "";
             for (i = 0, max = g_pinCurrentDescription.length; i < max; i += 1) {
                 if (g_pinCurrentDescription[i] != '') {
-                    g_gpio_MFPsString += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();  // Pin: ' + (i + 1) + '\n';
-                    g_gpio_MFPsStringForFunctionalTest += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();  // Pin: ' + (i + 1) + '\n';
+                    g_gpio_MFPsString += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();  // Pin: ' + (i + 1) + '\r\n';
+                    g_gpio_MFPsStringForFunctionalTest += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();  // Pin: ' + (i + 1) + '\r\n';
                 }
             }
         }
         else {
             for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-                g_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+                g_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
             }
             // reset innerHTML
             $("#NUC_PinConfiguration_Canvas")[0].setAttribute('innerHTML', ""); // for functional test
@@ -7989,17 +7989,17 @@ var NUTOOL_PIN = {};
         g_pinCurrentStateString = "";
         for (i = 1; i <= g_NUC_Pin_Total_Number; i += 1) {
             if (g_pinCurrentDescription[i - 1] !== "") {
-                g_pinCurrentStateString += 'Pin' + updatePinName(i) + ':' + updatePinDescription(g_pinCurrentDescription[i - 1]) + '\n';
+                g_pinCurrentStateString += 'Pin' + updatePinName(i) + ':' + updatePinDescription(g_pinCurrentDescription[i - 1]) + '\r\n';
             }
             else {
                 pinDescription = g_chipPinDescriptions[i - 1].slice(g_chipPinDescriptions[i - 1].indexOf(g_pinCurrentModule[i - 1]));
                 pinDescription = pinDescription.slicePriorToX('/');
 
-                g_pinCurrentStateString += 'Pin' + updatePinName(i) + ':' + pinDescription + '\n';
+                g_pinCurrentStateString += 'Pin' + updatePinName(i) + ':' + pinDescription + '\r\n';
             }
         }
         // concatenate g_userDefinedPin into a string
-        g_userDefinedPinString = "/* User-defined pins */\n";
+        g_userDefinedPinString = "/* User-defined pins */\r\n";
         for (pinDescription in g_userDefinedPin) {
             if (g_userDefinedPin.hasOwnProperty(pinDescription) &&
                 g_userDefinedPin[pinDescription].trim() !== '') {
@@ -8007,10 +8007,10 @@ var NUTOOL_PIN = {};
                 if (isNumeric(defineName.charAt(0))) {
                     defineName = '_' + defineName;
                 }
-                g_userDefinedPinString += '#define ' + defineName + ' ' + pinDescription.replace(/[.]/g, '').replace(/\s/g, '_').replace(/[`~!@#$%^&*()|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '_') + '\n';
+                g_userDefinedPinString += '#define ' + defineName + ' ' + pinDescription.replace(/[.]/g, '').replace(/\s/g, '_').replace(/[`~!@#$%^&*()|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '_') + '\r\n';
             }
         }
-        if (g_userDefinedPinString === "/* User-defined pins */\n") {
+        if (g_userDefinedPinString === "/* User-defined pins */\r\n") {
             g_userDefinedPinString = "";
         }
         // for functional test
@@ -8144,7 +8144,7 @@ var NUTOOL_PIN = {};
         }
         if ((NUTOOL_PIN.g_pinFunctionString === 'h' || NUTOOL_PIN.g_pinFunctionString === 'dtsi') &&
             g_includeHeadFileString.sliceAfterX('.') !== NUTOOL_PIN.g_pinFunctionString) {
-            g_includeHeadFileString = g_includeHeadFileString.slicePriorToX('.') + '.' + NUTOOL_PIN.g_pinFunctionString + '"\n';
+            g_includeHeadFileString = g_includeHeadFileString.slicePriorToX('.') + '.' + NUTOOL_PIN.g_pinFunctionString + '"\r\n';
         }
         gpio_MFPsNames = getPropertyNames(g_gpio_MFPs);
         gpio_MFPsNames.sort();
@@ -8268,7 +8268,7 @@ var NUTOOL_PIN = {};
                     usedModuleName = usedModules[m];
                 }
                 // init
-                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_init_" + usedModules[m].toLowerCase() + "(void)\n{\n";
+                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_init_" + usedModules[m].toLowerCase() + "(void)\r\n{\r\n";
                 // using defines
                 bHasCode = false;
                 // gpio_MFPsNames: MFP registers的名稱(e.g. GPA_MFPH)
@@ -8282,7 +8282,7 @@ var NUTOOL_PIN = {};
                         for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
                             if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
                                 if (bNotFirst) {
-                                    local_gpio_MFPsString += '();\n';
+                                    local_gpio_MFPsString += '();\r\n';
                                     g_gpio_MFPsStringForFunctionalTest1 += '();<br />';
                                 }
                                 defineName = gpio_MFPsArray[gpio_MFPsNames[i]][j].slicePriorToX(':');
@@ -8294,11 +8294,11 @@ var NUTOOL_PIN = {};
                                 bNotFirst = true;
                             }
                         }
-                        local_gpio_MFPsString += '();\n';
+                        local_gpio_MFPsString += '();\r\n';
                         g_gpio_MFPsStringForFunctionalTest1 += '();<br />';
                     }
                 }
-                local_gpio_MFPsString += "\n    return;\n}\n\n";
+                local_gpio_MFPsString += "\r\n    return;\r\n}\r\n\r\n";
                 if (!bHasCode) {
                     g_gpio_MFPsStringForFunctionalTest1 += usedModules[m] + ' did not generate modularized code!!<br />';
                 }
@@ -8307,7 +8307,7 @@ var NUTOOL_PIN = {};
                 }
 
                 // deinit
-                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_deinit_" + usedModules[m].toLowerCase() + "(void)\n{\n";
+                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_deinit_" + usedModules[m].toLowerCase() + "(void)\r\n{\r\n";
                 // using defines
                 bHasCode = false;
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
@@ -8318,7 +8318,7 @@ var NUTOOL_PIN = {};
                         for (j = gpio_MFPsArray[gpio_MFPsNames[i]].length - 1; j >= 0; j = j - 1) {
                             if (gpio_MFPsArrayCheck(gpio_MFPsArray[gpio_MFPsNames[i]][j], usedModuleName, usedModules[m])) {
                                 if (bNotFirst) {
-                                    local_gpio_MFPsString += '();\n';
+                                    local_gpio_MFPsString += '();\r\n';
                                 }
                                 var pin = gpio_MFPsArray[gpio_MFPsNames[i]][j].slicePriorToX('MFP_').sliceAfterX('_MFP').sliceAfterX('_');
                                 // 預設deinit都回到GPIO
@@ -8327,10 +8327,10 @@ var NUTOOL_PIN = {};
                                 bNotFirst = true;
                             }
                         }
-                        local_gpio_MFPsString += '();\n';
+                        local_gpio_MFPsString += '();\r\n';
                     }
                 }
-                local_gpio_MFPsString += "\n    return;\n}\n\n";
+                local_gpio_MFPsString += "\r\n    return;\r\n}\r\n\r\n";
                 if (bHasCode) {
                     g_gpio_MFPsString += local_gpio_MFPsString;
                 }
@@ -8343,7 +8343,7 @@ var NUTOOL_PIN = {};
                 else {
                     usedModuleName = usedModules[m];
                 }
-                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_init_" + usedModules[m].toLowerCase() + "(void)\n{\n";
+                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_init_" + usedModules[m].toLowerCase() + "(void)\r\n{\r\n";
                 // using defines
                 bHasCode = false;
                 // gpio_MFPsNames: MFP registers的名稱(e.g. GPA_MFPH)
@@ -8367,7 +8367,7 @@ var NUTOOL_PIN = {};
                                 bNotFirst = true;
                             }
                         }
-                        local_gpio_MFPsString += ');\n';
+                        local_gpio_MFPsString += ');\r\n';
                         g_gpio_MFPsStringForFunctionalTest1 += ');<br />';
 
                         bNotFirst = false;
@@ -8385,11 +8385,11 @@ var NUTOOL_PIN = {};
                                 bNotFirst = true;
                             }
                         }
-                        local_gpio_MFPsString += ');\n';
+                        local_gpio_MFPsString += ');\r\n';
                         g_gpio_MFPsStringForFunctionalTest1 += ');<br />';
                     }
                 }
-                local_gpio_MFPsString += "\n    return;\n}\n\n";
+                local_gpio_MFPsString += "\r\n    return;\r\n}\r\n\r\n";
                 if (!bHasCode) {
                     g_gpio_MFPsStringForFunctionalTest1 += usedModules[m] + ' did not generate modularized code!!<br />';
                 }
@@ -8397,7 +8397,7 @@ var NUTOOL_PIN = {};
                     g_gpio_MFPsString += local_gpio_MFPsString;
                 }
 
-                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_deinit_" + usedModules[m].toLowerCase() + "(void)\n{\n";
+                local_gpio_MFPsString = "void " + reocrdedPorjectName + "_deinit_" + usedModules[m].toLowerCase() + "(void)\r\n{\r\n";
                 // using defines
                 bHasCode = false;
                 for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
@@ -8416,10 +8416,10 @@ var NUTOOL_PIN = {};
                                 bNotFirst = true;
                             }
                         }
-                        local_gpio_MFPsString += ');\n';
+                        local_gpio_MFPsString += ');\r\n';
                     }
                 }
-                local_gpio_MFPsString += "\n    return;\n}\n\n";
+                local_gpio_MFPsString += "\r\n    return;\r\n}\r\n\r\n";
                 if (bHasCode) {
                     g_gpio_MFPsString += local_gpio_MFPsString;
                 }
@@ -8427,48 +8427,48 @@ var NUTOOL_PIN = {};
         }
 
         if (typeof NUTOOL_PER === 'undefined') {
-            g_gpio_MFPsString += "void " + reocrdedPorjectName + "_init(void)\n{\n";
+            g_gpio_MFPsString += "void " + reocrdedPorjectName + "_init(void)\r\n{\r\n";
         }
         else {
-            g_gpio_MFPsString += "void Pin_Init(void)\n{\n";
+            g_gpio_MFPsString += "void Pin_Init(void)\r\n{\r\n";
         }
         // real value version
         for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-            g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\n';
+            g_gpio_MFPsString += '    //' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + 'UL;\r\n';
         }
-        g_gpio_MFPsString += "\n";
+        g_gpio_MFPsString += "\r\n";
         for (i = 0, max = usedModules.length; i < max; i += 1) {
-            g_gpio_MFPsString += "    " + reocrdedPorjectName + "_init_" + usedModules[i].toLowerCase() + "();\n";
+            g_gpio_MFPsString += "    " + reocrdedPorjectName + "_init_" + usedModules[i].toLowerCase() + "();\r\n";
         }
-        g_gpio_MFPsString += "\n    return;\n}\n\n";
+        g_gpio_MFPsString += "\r\n    return;\r\n}\r\n\r\n";
 
         if (typeof NUTOOL_PER === 'undefined') {
-            g_gpio_MFPsString += "void " + reocrdedPorjectName + "_deinit(void)\n{\n";
+            g_gpio_MFPsString += "void " + reocrdedPorjectName + "_deinit(void)\r\n{\r\n";
         }
         else {
-            g_gpio_MFPsString += "void Pin_Deinit(void)\n{\n";
+            g_gpio_MFPsString += "void Pin_Deinit(void)\r\n{\r\n";
         }
         for (i = 0, max = usedModules.length; i < max; i += 1) {
-            g_gpio_MFPsString += "    " + reocrdedPorjectName + "_deinit_" + usedModules[i].toLowerCase() + "();\n";
+            g_gpio_MFPsString += "    " + reocrdedPorjectName + "_deinit_" + usedModules[i].toLowerCase() + "();\r\n";
         }
-        g_gpio_MFPsString += "\n    return;\n}";
+        g_gpio_MFPsString += "\r\n    return;\r\n}";
 
         // concatenate g_gpio_MFPsString1 into a string
         g_gpio_MFPsString1 = "";
         for (i = 0, max = usedModules.length; i < max; i += 1) {
-            g_gpio_MFPsString1 += "void " + reocrdedPorjectName + "_init_" + usedModules[i].toLowerCase() + "(void);\n";
-            g_gpio_MFPsString1 += "void " + reocrdedPorjectName + "_deinit_" + usedModules[i].toLowerCase() + "(void);\n";
+            g_gpio_MFPsString1 += "void " + reocrdedPorjectName + "_init_" + usedModules[i].toLowerCase() + "(void);\r\n";
+            g_gpio_MFPsString1 += "void " + reocrdedPorjectName + "_deinit_" + usedModules[i].toLowerCase() + "(void);\r\n";
         }
         if (typeof NUTOOL_PER === 'undefined') {
-            g_gpio_MFPsString1 += "void " + reocrdedPorjectName + "_init(void);\n";
-            g_gpio_MFPsString1 += "void " + reocrdedPorjectName + "_deinit(void);\n";
+            g_gpio_MFPsString1 += "void " + reocrdedPorjectName + "_init(void);\r\n";
+            g_gpio_MFPsString1 += "void " + reocrdedPorjectName + "_deinit(void);\r\n";
         }
         else {
-            g_gpio_MFPsString1 += "void Pin_Init(void);\n";
-            g_gpio_MFPsString1 += "void Pin_Deinit(void);\n";
+            g_gpio_MFPsString1 += "void Pin_Init(void);\r\n";
+            g_gpio_MFPsString1 += "void Pin_Deinit(void);\r\n";
         }
         // concatenate g_userDefinedPin into a string
-        g_userDefinedPinString = "/* User-defined pins */\n";
+        g_userDefinedPinString = "/* User-defined pins */\r\n";
         for (pinDescription in g_userDefinedPin) {
             if (g_userDefinedPin.hasOwnProperty(pinDescription) &&
                 g_userDefinedPin[pinDescription].trim() !== '') {
@@ -8476,10 +8476,10 @@ var NUTOOL_PIN = {};
                 if (isNumeric(defineName.charAt(0))) {
                     defineName = '_' + defineName;
                 }
-                g_userDefinedPinString += '#define ' + defineName + ' ' + pinDescription.replace(/[.]/g, '').replace(/\s/g, '_').replace(/[`~!@#$%^&*()|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '_') + '\n';
+                g_userDefinedPinString += '#define ' + defineName + ' ' + pinDescription.replace(/[.]/g, '').replace(/\s/g, '_').replace(/[`~!@#$%^&*()|+\-=?;:'",<>\{\}\[\]\\\/]/gi, '_') + '\r\n';
             }
         }
-        if (g_userDefinedPinString === "/* User-defined pins */\n") {
+        if (g_userDefinedPinString === "/* User-defined pins */\r\n") {
             g_userDefinedPinString = "";
         }
         // de-reference
@@ -13290,7 +13290,7 @@ var NUTOOL_PIN = {};
 
             // 讀取 locked pin
             var newReadConfigFile = NUTOOL_PIN.g_readConfigFileContentText;
-            g_lockedPin = JSON.parse(newReadConfigFile.sliceAfterX('LockedPins=').slicePriorToX('\n'));
+            g_lockedPin = JSON.parse(newReadConfigFile.sliceAfterX('LockedPins=').slicePriorToX('\r\n'));
 
             destroyAllExistentDialogs();
 
@@ -13353,27 +13353,27 @@ var NUTOOL_PIN = {};
         gpio_MFPsNames.sort();
 
         for (i = 0, max = gpio_MFPsNames.length; i < max; i += 1) {
-            g_gpio_MFPsString += parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + '\n';
+            g_gpio_MFPsString += parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x' + decimalToHex(g_gpio_MFPs[gpio_MFPsNames[i]]).toUpperCase() + '\r\n';
         }
 
         // concatenate g_pinCurrentModule into a string
         g_pinCurrentStateString = "";
         for (i = 1; i <= g_NUC_Pin_Total_Number; i += 1) {
             if (g_pinCurrentDescription[i - 1] !== "") {
-                g_pinCurrentStateString += 'Pin' + updatePinName(i) + ':' + g_pinCurrentDescription[i - 1] + '\n';
+                g_pinCurrentStateString += 'Pin' + updatePinName(i) + ':' + g_pinCurrentDescription[i - 1] + '\r\n';
             }
             else {
                 pinDescription = g_chipPinDescriptions[i - 1].slice(g_chipPinDescriptions[i - 1].indexOf(g_pinCurrentModule[i - 1]));
                 pinDescription = pinDescription.slicePriorToX('/');
 
-                g_pinCurrentStateString += 'Pin' + updatePinName(i) + ':' + pinDescription + '\n';
+                g_pinCurrentStateString += 'Pin' + updatePinName(i) + ':' + pinDescription + '\r\n';
             }
         }
 
         // concatenate g_pinsConfiguredByGPIO into a string
         g_pinsConfiguredByGPIOstring = "";
         for (i = 0, max = g_pinsConfiguredByGPIO.length; i < max; i += 1) {
-            g_pinsConfiguredByGPIOstring += 'GPIOpin:' + g_pinsConfiguredByGPIO[i] + '\n';
+            g_pinsConfiguredByGPIOstring += 'GPIOpin:' + g_pinsConfiguredByGPIO[i] + '\r\n';
         }
 
         // concatenate g_userDefinedPin into a string
@@ -13381,12 +13381,12 @@ var NUTOOL_PIN = {};
         for (pinDescription in g_userDefinedPin) {
             if (g_userDefinedPin.hasOwnProperty(pinDescription) &&
                 g_userDefinedPin[pinDescription].trim() !== '') {
-                g_userDefinedPinString += 'UserDefined:' + pinDescription + '=>' + g_userDefinedPin[pinDescription] + '\n';
+                g_userDefinedPinString += 'UserDefined:' + pinDescription + '=>' + g_userDefinedPin[pinDescription] + '\r\n';
             }
         }
 
         // concatenate g_lockededPin into a string
-        g_lockededPinString = "LockedPins=" + JSON.stringify(g_lockedPin) + '\n';
+        g_lockededPinString = "LockedPins=" + JSON.stringify(g_lockedPin) + '\r\n';
 
         // de-reference
         i = null;
@@ -13409,7 +13409,7 @@ var NUTOOL_PIN = {};
             tableDataArray = [];
 
         // for current multi-function
-        g_pin_descriptions = "Pin,Current Multi Function,Group\n";
+        g_pin_descriptions = "Pin,Current Multi Function,Group\r\n";
         for (i = 0, j = 1; i < g_NUC_Pin_Total_Number; i += 1) {
             if (g_pinCurrentDescription[i] !== "") {
                 // Fix bug: avoid USB_D+/USB_D- trans to USB_D_/USB_D_ in .csv, so remove +/- from replace string.
@@ -13421,7 +13421,7 @@ var NUTOOL_PIN = {};
             pinGroup = NUTOOL_PIN.g_cfg_OrCAD[NUTOOL_PIN.g_packageNumberIndex] == undefined ?
                 '' : NUTOOL_PIN.g_cfg_OrCAD[NUTOOL_PIN.g_packageNumberIndex][i];
             if (pinDescription.indexOf('NC_ToolNotShow') === -1) {
-                g_pin_descriptions += updatePinName(i + 1) + ',' + pinDescription + ',' + pinGroup + '\n';
+                g_pin_descriptions += updatePinName(i + 1) + ',' + pinDescription + ',' + pinGroup + '\r\n';
                 // Review Report
                 if (isGPIOPin(NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i]) &&
                     g_pinCurrentDescription[i] !== "") {
@@ -13444,7 +13444,7 @@ var NUTOOL_PIN = {};
             }
         }
         // concatenate g_chipPinDescriptions into a string
-        g_pin_descriptions += "\nPin,Description,Group\n";
+        g_pin_descriptions += "\r\nPin,Description,Group\r\n";
         for (i = 0; i < g_NUC_Pin_Total_Number; i += 1) {
             pinDescription = "";
             pinName = NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i];
@@ -13467,7 +13467,7 @@ var NUTOOL_PIN = {};
             pinGroup = NUTOOL_PIN.g_cfg_OrCAD[NUTOOL_PIN.g_packageNumberIndex] == undefined ?
                 '' : NUTOOL_PIN.g_cfg_OrCAD[NUTOOL_PIN.g_packageNumberIndex][i];
             if (pinDescription.indexOf('NC_ToolNotShow') === -1) {
-                g_pin_descriptions += updatePinName(i + 1) + ',' + pinDescription + ',' + pinGroup + '\n';
+                g_pin_descriptions += updatePinName(i + 1) + ',' + pinDescription + ',' + pinGroup + '\r\n';
             }
         }
         return tableDataArray;
@@ -13609,7 +13609,7 @@ var NUTOOL_PIN = {};
                 sTitle_PinName_inner = "脚位名称";
                 sTitle_Description_inner = "描述";
                 sTitle_UserDefined_inner = "用户定义";
-                sTooltip_inner = "仅限英文字母、数字和底线。\n最大输入长度为30。";
+                sTooltip_inner = "仅限英文字母、数字和底线。\r\n最大输入长度为30。";
                 sNoData_inner = "没有可用数据，因为尚未配置。";
             }
             else if (g_userSelectUIlanguage.indexOf("Traditional") !== -1) {
@@ -13617,7 +13617,7 @@ var NUTOOL_PIN = {};
                 sTitle_PinName_inner = "腳位名稱";
                 sTitle_Description_inner = "描述";
                 sTitle_UserDefined_inner = "用戶定義";
-                sTooltip_inner = "僅限英文字母、數字和底線。\n最大輸入長度為30。";
+                sTooltip_inner = "僅限英文字母、數字和底線。\r\n最大輸入長度為30。";
                 sNoData_inner = "沒有可用數據，因為尚未配置。";
             }
             else {
@@ -13625,7 +13625,7 @@ var NUTOOL_PIN = {};
                 sTitle_PinName_inner = "Pin Name";
                 sTitle_Description_inner = "Description";
                 sTitle_UserDefined_inner = "User Defined";
-                sTooltip_inner = "English letters, digits and underscores only.\nMaximum length of input is 30.";
+                sTooltip_inner = "English letters, digits and underscores only.\r\nMaximum length of input is 30.";
                 sNoData_inner = "No data available because not configured yet.";
             }
             // build the new table
@@ -13967,9 +13967,9 @@ var NUTOOL_PIN = {};
                 + ` *\r\n`
                 + `/********************\r\n`
                 + `MCU:${g_partNumber_package}\r\n`
-                + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\n${g_generatedCodeByPinString}`)
-                + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\n${g_generatedCodeByModuleString}`)
-                + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\n${g_generatedCodeByGPIOstring}`)
+                + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\r\n${g_generatedCodeByPinString}`)
+                + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\r\n${g_generatedCodeByModuleString}`)
+                + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\r\n${g_generatedCodeByGPIOstring}`)
                 + `********************/\r\n\r\n`
                 + `${g_includeHeadFileString}`
                 + `\r\n`
@@ -13996,12 +13996,12 @@ var NUTOOL_PIN = {};
                 + `\r\n`
                 + `/********************\r\n`
                 + `MCU:${g_partNumber_package}\r\n`
-                + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\n${g_generatedCodeByPinString}`)
-                + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\n${g_generatedCodeByModuleString}`)
-                + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\n${g_generatedCodeByGPIOstring}`)
+                + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\r\n${g_generatedCodeByPinString}`)
+                + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\r\n${g_generatedCodeByModuleString}`)
+                + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\r\n${g_generatedCodeByGPIOstring}`)
                 + `********************/\r\n\r\n`
                 + `${g_includeHeadFileString}`
-                + (g_userDefinedPinString == undefined ? "" : `\n${g_userDefinedPinString}`)
+                + (g_userDefinedPinString == undefined ? "" : `\r\n${g_userDefinedPinString}`)
                 + `${g_gpio_MFPsString}`
                 + `\r\n\r\n/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
             var blobc = new Blob([textc], { type: "text/plain;charset=utf-8" });
@@ -14019,9 +14019,9 @@ var NUTOOL_PIN = {};
                 + `*****************************************************************************/\r\n\r\n`
                 + `#ifndef __${$('#inputText_projectName').val().toUpperCase()}_H__\r\n`
                 + `#define __${$('#inputText_projectName').val().toUpperCase()}_H__\r\n\r\n`
-                + `#ifdef __cplusplus\nextern \"C\"\n{\n#endif\r\n`
+                + `#ifdef __cplusplus\r\nextern \"C\"\r\n{\r\n#endif\r\n`
                 + `${g_gpio_MFPsString1}`
-                + `#ifdef __cplusplus\n}\n#endif\r\n`
+                + `#ifdef __cplusplus\r\n}\r\n#endif\r\n`
                 + `#endif /*__${$('#inputText_projectName').val().toUpperCase()}_H__*/\r\n\r\n`
                 + `/*** (C) COPYRIGHT 2013-${(new Date()).getFullYear()}${g_copyrightCompanyName} ***/\r\n`
             var blobh = new Blob([texth], { type: "text/plain;charset=utf-8" });
@@ -14043,12 +14043,12 @@ var NUTOOL_PIN = {};
                 + `\r\n`
                 + `/********************\r\n`
                 + `MCU:${g_partNumber_package}\r\n`
-                + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\n${g_generatedCodeByPinString}`)
-                + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\n${g_generatedCodeByModuleString}`)
-                + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\n${g_generatedCodeByGPIOstring}`)
+                + (g_generatedCodeByPinString == undefined ? "" : `Pin Configuration:\r\n${g_generatedCodeByPinString}`)
+                + (g_generatedCodeByModuleString == undefined ? "" : `Module Configuration:\r\n${g_generatedCodeByModuleString}`)
+                + (g_generatedCodeByGPIOstring == undefined ? "" : `GPIO Configuration:\r\n${g_generatedCodeByGPIOstring}`)
                 + `********************/\r\n\r\n`
                 + `${g_includeHeadFileString}`
-                + (g_userDefinedPinString == undefined ? "" : `\n${g_userDefinedPinString}`)
+                + (g_userDefinedPinString == undefined ? "" : `\r\n${g_userDefinedPinString}`)
                 + `/*\r\n`
                 + ` * @brief This function provides the configured MFP registers\r\n`
                 + ` * @param None\r\n`
@@ -14095,10 +14095,10 @@ var NUTOOL_PIN = {};
         for (i = 1; i <= g_NUC_Pin_Total_Number; i += 1) {
             if (g_pinCurrentDescription[i - 1] !== "") {
                 if (typeof mode !== 'undefined' && mode === 'primitiveDescription') {
-                    g_generatedCodeByPinString += 'Pin' + updatePinName(i) + ':' + g_pinCurrentDescription[i - 1] + '\n';
+                    g_generatedCodeByPinString += 'Pin' + updatePinName(i) + ':' + g_pinCurrentDescription[i - 1] + '\r\n';
                 }
                 else {
-                    g_generatedCodeByPinString += 'Pin' + updatePinName(i) + ':' + updatePinDescription(g_pinCurrentDescription[i - 1]) + '\n';
+                    g_generatedCodeByPinString += 'Pin' + updatePinName(i) + ':' + updatePinDescription(g_pinCurrentDescription[i - 1]) + '\r\n';
                 }
             }
         }
@@ -14140,7 +14140,7 @@ var NUTOOL_PIN = {};
         for (i = 0, max = moduleNames.length; i < max; i += 1) {
             usedPinsCatalogedByModule[moduleNames[i]].sort(natualSort);
             for (j = 0, maxJ = usedPinsCatalogedByModule[moduleNames[i]].length; j < maxJ; j += 1) {
-                g_generatedCodeByModuleString += usedPinsCatalogedByModule[moduleNames[i]][j] + '\n';
+                g_generatedCodeByModuleString += usedPinsCatalogedByModule[moduleNames[i]][j] + '\r\n';
             }
         }
         // de-reference
@@ -14187,7 +14187,7 @@ var NUTOOL_PIN = {};
         for (i = 0, max = gpioNames.length; i < max; i += 1) {
             usedPinsCatalogedByGPIO[gpioNames[i]].sort(natualSort);
             for (j = 0, maxJ = usedPinsCatalogedByGPIO[gpioNames[i]].length; j < maxJ; j += 1) {
-                g_generatedCodeByGPIOstring += usedPinsCatalogedByGPIO[gpioNames[i]][j] + '\n';
+                g_generatedCodeByGPIOstring += usedPinsCatalogedByGPIO[gpioNames[i]][j] + '\r\n';
             }
         }
         // de-reference
