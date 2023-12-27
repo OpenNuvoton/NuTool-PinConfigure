@@ -1,15 +1,15 @@
 NUTOOL_PIN.g_cfg_chips = [
-    { name: "M55M1A", pkg: "LQFP48" },
-    { name: "M55M1B", pkg: "LQFP64" },
-    { name: "M55M1C", pkg: "LQFP64" },
-    { name: "M55M1D", pkg: "LQFP64" },
-    { name: "M55M1E", pkg: "LQFP100" },
-    { name: "M55M1F", pkg: "LQFP128" },
-    { name: "M55M1G", pkg: "LQFP128" },
-    { name: "M55M1H", pkg: "LQFP144" },
-    { name: "M55M1I", pkg: "LQFP144" },
-    { name: "M55M1J", pkg: "LQFP176" },
-    { name: "M55M1K", pkg: "LQFP176" },
+    //{ name: "M55M1A", pkg: "LQFP48" },
+    //{ name: "M55M1B", pkg: "LQFP64" },
+    //{ name: "M55M1C", pkg: "LQFP64" },
+    //{ name: "M55M1D", pkg: "LQFP64" },
+    //{ name: "M55M1E", pkg: "LQFP100" },
+    //{ name: "M55M1F", pkg: "LQFP128" },
+    //{ name: "M55M1G", pkg: "LQFP128" },
+    //{ name: "M55M1H", pkg: "LQFP144" },
+    //{ name: "M55M1I", pkg: "LQFP144" },
+    //{ name: "M55M1J", pkg: "LQFP176" },
+    //{ name: "M55M1K", pkg: "LQFP176" },
     { name: "M55M1H2ES", pkg: "LQFP176" }
 ];
 
