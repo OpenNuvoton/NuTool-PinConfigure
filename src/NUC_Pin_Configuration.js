@@ -1018,32 +1018,31 @@ var NUTOOL_PIN = {};
             childNode = null;
             childOfChildNode = null;
         }).bind("dblclick.jstree", function (event) {
-            var li = $(event.target).closest("li");
-            var id = li[0].id;
-            var pin = id.sliceAfterX('Pin');
+            // var li = $(event.target).closest("li");
+            // var id = li[0].id;
+            // var pin = id.sliceAfterX('Pin');
 
-            // 目錄不能被lock
-            if (id.indexOf('Root') != -1 || id.indexOf('Intermediate') != -1) {
-                return;
-            }
-            // 同一個IP+pin重複點擊，取消鎖定狀態
-            if (g_lockedPin.includes(id)) {
-                var index = g_lockedPin.indexOf(id);
-                if (index > -1) { // only splice array when item is found
-                    g_lockedPin.splice(index, 1); // 2nd parameter means remove one item only
-                    document.querySelector(`#${id}`).style.background = 'transparent';
-                }
-            }
-            // 不同IP使用同Pin，或是同IP使用不同Pin，跳通知提醒使用者已經鎖定
-            else if (bLockWarning(id)) {
-                showLockedWarningDialog();
-            }
-            // 新增lockedPin
-            else {
-                g_lockedPin.push(id);
-                document.querySelector(`#${id}`).style.background = 'orange';
-            }
-            console.log(g_lockedPin);
+            // // 目錄不能被lock
+            // if (id.indexOf('Root') != -1 || id.indexOf('Intermediate') != -1) {
+            //     return;
+            // }
+            // // 同一個IP+pin重複點擊，取消鎖定狀態
+            // if (g_lockedPin.includes(id)) {
+            //     var index = g_lockedPin.indexOf(id);
+            //     if (index > -1) { // only splice array when item is found
+            //         g_lockedPin.splice(index, 1); // 2nd parameter means remove one item only
+            //         document.querySelector(`#${id}`).style.background = 'transparent';
+            //     }
+            // }
+            // // 不同IP使用同Pin，或是同IP使用不同Pin，跳通知提醒使用者已經鎖定
+            // else if (bLockWarning(id)) {
+            //     showLockedWarningDialog();
+            // }
+            // // 新增lockedPin
+            // else {
+            //     g_lockedPin.push(id);
+            //     document.querySelector(`#${id}`).style.background = 'orange';
+            // }
         }).bind('loaded.jstree', function () { // invoked after jstree has loaded
             // handle the semi-disabled nodes
             for (i = 0, max = disabledModuleNodesArray.length; i < max; i += 1) {
