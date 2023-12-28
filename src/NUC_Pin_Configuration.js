@@ -1211,10 +1211,6 @@ var NUTOOL_PIN = {};
                     }
                 }
             }
-            console.log('currentNode=' + currentNode);
-            console.log('module=' + module);
-            console.log('modulePins=' + modulePins);
-            console.log('usedPinNumbers=' + usedPinNumbers);
             if (bConfllict) {
                 if (g_userSelectUIlanguage === "Simplified Chinese") {
                     title = '冲突发生';
@@ -7882,6 +7878,16 @@ var NUTOOL_PIN = {};
                     }
                 }
             }
+            else if (g_chipType.indexOf("M55M1") === 0) {
+                g_gpio_MFPsString += '\r\n';
+                g_gpio_MFPsStringForFunctionalTest = "";
+                for (i = 0, max = g_pinCurrentDescription.length; i < max; i += 1) {
+                    if (g_pinCurrentDescription[i] != '') {
+                        g_gpio_MFPsString += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();  // Pin: ' + (i + 1) + '\r\n';
+                        g_gpio_MFPsStringForFunctionalTest += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();  // Pin: ' + (i + 1) + '\r\n';
+                    }
+                }
+            }
             else if (g_includeHeadFileString.indexOf(".dtsi") !== -1) {
                 g_gpio_MFPsString += '/ {\r\n    model = "Nuvoton ' + g_chipType + '";\r\n};\r\n\r\n';
                 g_gpio_MFPsStringForFunctionalTest = "";
@@ -7964,16 +7970,6 @@ var NUTOOL_PIN = {};
                     else {
                         g_gpio_MFPsString += '    ' + parentRegisterAccess + gpio_MFPsNames[i] + ' = 0x00000000;\r\n';
                     }
-                }
-            }
-        }
-        else if (g_chipType.indexOf("M55M1") === 0) {
-            g_gpio_MFPsString += '\r\n';
-            g_gpio_MFPsStringForFunctionalTest = "";
-            for (i = 0, max = g_pinCurrentDescription.length; i < max; i += 1) {
-                if (g_pinCurrentDescription[i] != '') {
-                    g_gpio_MFPsString += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();  // Pin: ' + (i + 1) + '\r\n';
-                    g_gpio_MFPsStringForFunctionalTest += '    SET_' + g_pinCurrentDescription[i] + '_' + NUTOOL_PIN.g_cfg_pkgs[NUTOOL_PIN.g_packageNumberIndex][i].replace('.', '') + '();  // Pin: ' + (i + 1) + '\r\n';
                 }
             }
         }
