@@ -1,0 +1,117 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+	width: 100%;
+	overflow: auto;
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	font-size: large;
+	font-weight: bolder;
+	position: relative;
+}
+
+.navbar .versionDiv {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.navbar .versionDiv .imgNuvoton {
+	height: 20px;
+}
+
+.navbar .versionDiv .versionCode {
+	font-size: medium;
+}
+
+.active {
+	background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+	.navbar a {
+		float: none;
+		display: block;
+	}
+}
+
+input {
+	outline: none;
+}
+
+.tooltip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	color: #FFFFFF;
+	background-color: #000000;
+}
+
+.generateCodeByModule {
+	float: left;
+	display: inline-block;
+	margin-top: 1em;
+}
+
+.hidden {
+	display: none
+}
+
+button {
+	padding: 3px;
+	margin: 2px;
+	border: 2px solid #FFFFFF;
+	background-color: #FFFFFF;
+}
+
+button:hover {
+	border: 2px solid #66b7dd;
+}
+
+.btnimage {
+	width: 32px;
+	height: 32px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	background-color: #FFFFFF;
+}
+
+.cookies-eu-banner {
+	background: #444;
+	color: #fff;
+	padding: 6px;
+	font-size: 18px;
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.cookies-eu-banner button {
+	text-decoration: none;
+	background: #D00600;
+	color: #fff;
+	border: 1px solid #000;
+	cursor: pointer;
+	padding: 4px 7px;
+	margin: 10px 20px;
+	font-size: 16px;
+	font-weight: 700;
+	height: 40px;
+	width: 80px;
+	transition: background 0.07s, color 0.07s, border-color 0.07s;
+}
+
+.cookies-eu-banner button:hover {
+	background: #fff;
+	color: #222;
+}

@@ -1,0 +1,75 @@
+{
+  "name": "nutool-pinconfigure",
+  "version": "1.29.0006",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "gulp && cross-env NODE_ENV=development electron .",
+    "watch": "concurrently \"gulp watch\" \"cross-env NODE_ENV=development electronmon .\"",
+    "dir": "gulp && cross-env NODE_ENV=production electron-builder --win --x64 --dir",
+    "build": "gulp && cross-env NODE_ENV=production electron-builder --win --x64"
+  },
+  "author": "NUVOTON TECHNOLOGY CORPORATION",
+  "copyright": "Copyright ©2008-2023 Nuvoton Technology Corporation",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "concurrently": "^8.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^24.3.0",
+    "electron-builder": "^24.4.0",
+    "electronmon": "^2.0.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-terser": "^2.1.0",
+    "vinyl-source-stream": "^2.0.0",
+    "worker-plugin": "^5.0.1"
+  },
+  "dependencies": {
+    "dapjs": "file:local_modules/dapjs-yc",
+    "usb": "^2.10.0"
+  },
+  "build": {
+    "productName": "NuTool-PinConfigure",
+    "appId": "com.nuvoton.pinconfigure",
+    "npmRebuild": false,
+    "files": [
+      "index.htm",
+      "main.js",
+      "preload.js",
+      "src",
+      "local_modules",
+      "node_modules",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ],
+      "icon": "build/app.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "NuTool-PinConfigure",
+      "include": "release/script/installer.nsh"
+    },
+    "directories": {
+      "buildResources": "assets",
+      "output": "release/build"
+    },
+    "extraResources": [
+      "./src/res/**",
+      "./assets/**"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+node_modules
+dist
+release/build
+vba
+src/NUC_Pin_Configuration.js
+src/NuTool_PinConfigure_Test.js
+src/NuTool_PinConfigure_Test.htm
+src/worker/webusb.worker.js
