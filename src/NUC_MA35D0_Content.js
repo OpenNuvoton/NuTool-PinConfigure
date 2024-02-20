@@ -1393,10 +1393,10 @@ NUTOOL_PIN.g_cfg_gpioMatrix = [];
 NUTOOL_PIN.g_cfg_shareBits = [];
 NUTOOL_PIN.g_cfg_addGPIO = {};
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    "MA35D03F867C(LQFP216)": {
+    "MA35D03F864C(LQFP216)": {
         "ALL": ["TSI", "EADC0", "RGMII0", "RGMII1", "CCAP0", "CCAP1", "QSPI1", "SPI2", "SPI3", "I2C1", "I2C2", "I2C3", "I2S1", "CAN2", "ECAP0", "ECAP1", "ECAP2", "QEI0", "QEI1", "QEI2", "TAMPER", "TRACE", "UART1", "UART2", "UART3", "UART7", "UART11", "UART13"]
     },
-    "MA35D03F767C(LQFP216)": {
+    "MA35D03F764C(LQFP216)": {
         "ALL": ["TSI", "EADC0", "RGMII0", "RGMII1", "CCAP0", "CCAP1", "QSPI1", "SPI2", "SPI3", "I2C1", "I2C2", "I2C3", "I2S1", "CAN2", "ECAP0", "ECAP1", "ECAP2", "QEI0", "QEI1", "QEI2", "TAMPER", "TRACE", "UART1", "UART2", "UART3", "UART7", "UART11", "UART13"]
     }
 };
