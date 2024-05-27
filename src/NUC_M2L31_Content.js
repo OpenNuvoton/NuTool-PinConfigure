@@ -739,67 +739,67 @@ NUTOOL_PIN.g_cfg_regDescriptions.GPH_MFP2 = '0x40000578';
 //NUTOOL_PIN.g_cfg_regDescriptions.GPH_MFP3 = '0x4000057C';
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'M2L31XD4AE(UWLCSP25(USB1.1))': {
+    'M2L31XD4AE': {
         'ALL': ['ACMP2', 'EBI', 'I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31ZE4AE(UQFN33(USB1.1)(5*5))': {
+    'M2L31ZE4AE': {
         'ALL': ['EBI', 'I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31ZD4AE(UQFN33(USB1.1)(5*5))': {
+    'M2L31ZD4AE': {
         'ALL': ['EBI', 'I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31YG4AE(QFN48(PIN:D10R14U10L14))': {
+    'M2L31YG4AE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31YE4AE(QFN48(PIN:D10R14U10L14))': {
+    'M2L31YE4AE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31YD4AE(QFN48(PIN:D10R14U10L14))': {
+    'M2L31YD4AE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31YIDAE(QFN48(PIN:D10R14U10L14))': {
+    'M2L31YIDAE': {
         'ALL': []
     },
-    'M2L31YGDAE(QFN48(PIN:D10R14U10L14))': {
+    'M2L31YGDAE': {
         'ALL': []
     },
-    'M2L31LE4AE(ULQFP48(USB1.1)(7*7))': {
+    'M2L31LE4AE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31LG4AE(ULQFP48(USB1.1)(7*7))': {
+    'M2L31LG4AE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31LD4AE(ULQFP48(USB1.1)(7*7))': {
+    'M2L31LD4AE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31LIDAE(ULQFP48(USB1.1)(7*7))': {
+    'M2L31LIDAE': {
         'ALL': []
     },
-    'M2L31LGDAE(ULQFP48(USB1.1)(7*7))': {
+    'M2L31LGDAE': {
         'ALL': []
     },
-    'M2L31CIDAE(UWLCSP49(USB1.1))': {
+    'M2L31CIDAE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31CGDAE(UWLCSP49(USB1.1))': {
+    'M2L31CGDAE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31SG4AE(ULQFP64(USB1.1)(7*7))': {
+    'M2L31SG4AE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31SE4AE(ULQFP64(USB1.1)(7*7))': {
+    'M2L31SE4AE': {
         'ALL': ['I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
     },
-    'M2L31SIDAE(ULQFP64(USB1.1)(7*7))': {
+    'M2L31SIDAE': {
         'ALL': []
     },
-    'M2L31SGDAE(ULQFP64(USB1.1)(7*7))': {
+    'M2L31SGDAE': {
         'ALL': []
     },
-    'M2L31KIDAE(ULQFP128(USB1.1)(14*14))': {
+    'M2L31KIDAE': {
         'ALL': []
     },
-    'M2L31KGDAE(ULQFP128(USB1.1)(14*14))': {
+    'M2L31KGDAE': {
         'ALL': []
     }
 };
