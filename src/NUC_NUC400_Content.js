@@ -1024,7 +1024,6 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
 	}
 };
 NUTOOL_PIN.g_cfg_WPPin = [];
-NUTOOL_PIN.g_cfg_Tooltip_Pin = [];
 
 NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
 	var partNumber_package,

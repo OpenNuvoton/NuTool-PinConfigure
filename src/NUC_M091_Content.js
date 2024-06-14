@@ -227,7 +227,15 @@ NUTOOL_PIN.g_cfg_regDescriptions.GPC_MFPH = '';
 NUTOOL_PIN.g_cfg_regDescriptions.GPF_MFPL = '';
 NUTOOL_PIN.g_cfg_regDescriptions.GPF_MFPH = '';
 
-NUTOOL_PIN.g_cfg_Tooltip_Pin = ['AVDD/OPA_VDD'];
+NUTOOL_PIN.g_cfg_wppin = {
+    "QFN33": [
+        'AVDD/OPA_VDD'
+    ],
+};
+
+NUTOOL_PIN.g_cfg_wppin_comment = {
+    "AVDD/OPA_VDD" : [ 'AVDD + OPA_VDD' ],
+};
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
     'M0912TC2AE(QFN33)': {

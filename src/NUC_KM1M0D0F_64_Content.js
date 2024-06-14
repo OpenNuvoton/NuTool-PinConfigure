@@ -1,12 +1,12 @@
 NUTOOL_PIN.g_cfg_chips = [
-    { name: "KM1M0DF02N/K", pkg: "LQFP100_D0x(14*14)" },
-    { name: "KM1M0DF03N/K", pkg: "LQFP80_D0x(12*12)" },
-    { name: "KM1M0DF13N/K", pkg: "LQFP80_D1x(12*12)" },
-    { name: "KM1M0DF04N/K", pkg: "TQFP64_D0x(10*10)" }
+    { name: "KM1M0DF02N/K", pkg: "LQFP100_D0x" },
+    { name: "KM1M0DF03N/K", pkg: "LQFP80_D0x" },
+    { name: "KM1M0DF13N/K", pkg: "LQFP80_D1x" },
+    { name: "KM1M0DF04N/K", pkg: "TQFP64_D0x" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
-    "LQFP64_D0x(14*14)": [
+    "LQFP64_D0x": [
         'PA.4', 'PA.5', 'PA.6', 'PA.7', 'RON', 'NDMOD', 'NRST', 'P9.0', 'P9.1', 'VSS', 
         'P2.5', 'P2.6', 'VDD', 'BOOT', 'VOUT12', 'VOUT33', 'VDD', 'VSS', 'P0.0', 'P0.1', 
         'P0.2', 'P0.3', 'P0.4', 'P0.5', 'P2.0', 'P2.1', 'P2.2', 'P2.3', 'P2.4', 'P8.7', 
@@ -15,7 +15,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'P6.2', 'P5.0', 'P5.1', 'P5.2', 'P5.3', 'P5.4', 'P5.5', 'P5.6', 'P5.7', 'P9.4', 
         'PA.0', 'PA.1', 'PA.2', 'PA.3'
     ],
-    "TQFP64_D0x(10*10)": [
+    "TQFP64_D0x": [
         'PA.4', 'PA.5', 'PA.6', 'PA.7', 'RON', 'NDMOD', 'NRST', 'P9.0', 'P9.1', 'VSS', 
         'P2.5', 'P2.6', 'VDD', 'BOOT', 'VOUT12', 'VOUT33', 'VDD', 'VSS', 'P0.0', 'P0.1', 
         'P0.2', 'P0.3', 'P0.4', 'P0.5', 'P2.0', 'P2.1', 'P2.2', 'P2.3', 'P2.4', 'P8.7', 
@@ -78,7 +78,7 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['P5.3:0', 'TM07OUT3:1', 'SIF1_SBC1A:4']},
     { f: ['P5.4:0', 'TM07OUT4:1']},
     { f: ['P5.5:0', 'TM07OUT5:1', 'AN11:7']},
-    { f: ['P5.6:0', 'BZ_NBUZZERA:1', 'AN10:1', 'DAC0_DA0OUT0:1', 'AN10:1', 'DAC0_DA0OUT0:1']},
+    { f: ['P5.6:0', 'BZ_NBUZZERA:1', 'AN10:1', 'DAC0_DA0OUT0:1']},
     { f: ['P5.7:0', 'BZ_BUZZERA:1', 'AN9:7']},
 
     { f: ['P6.0:0']},
@@ -100,10 +100,10 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['P7.7:0', 'SIF1_SBT1B:4', 'CMP1_CMPIN1A:8', 'KEY7:10']},
 
     { f: ['P8.0:0', 'SDO0:1', 'PWM0_PWM0A:2', 'CMP1_CMPOT1:8']},
-    { f: ['P8.1:0', 'SDO1:1', 'PWM0_NPWM0A:2', 'PWM0_PWM1A:2']},
-    { f: ['P8.2:0', 'SDO2:1', 'PWM0_PWM1A:2', 'PWM0_PWM2A:2']},
-    { f: ['P8.3:0', 'SDO3:1', 'PWM0_NPWM1A:2', 'PWM0_NPWM0A:2']},
-    { f: ['P8.4:0', 'SDO4:1', 'PWM0_PWM2A:2', 'PWM0_NPWM1A:2']},
+    { f: ['P8.1:0', 'SDO1:1', 'PWM0_NPWM0A:2']},
+    { f: ['P8.2:0', 'SDO2:1', 'PWM0_PWM1A:2']},
+    { f: ['P8.3:0', 'SDO3:1', 'PWM0_NPWM1A:2']},
+    { f: ['P8.4:0', 'SDO4:1', 'PWM0_PWM2A:2']},
     { f: ['P8.5:0', 'SDO5:1', 'PWM0_NPWM2A:2']},
     { f: ['P8.6:0', 'SDO6:1', 'PWM0_PWMBCSTA:2']},
     { f: ['P8.7:0', 'SDO7:1', 'TM15IOC:2']},
@@ -119,7 +119,7 @@ NUTOOL_PIN.g_cfg_gpios = [
 
     { f: ['PA.0:0', 'TM00IOA:2', 'AN0:7']},
     { f: ['PA.1:0', 'TM01IOA:2', 'AN1:7']},
-    { f: ['PA.2:0', 'TM02IOA:2', 'AN2:1', 'DAC0_DA0OUT1:1', 'CMP0_CMPREF0B:8', 'AN2:1', 'DAC0_DA0OUT1:1']},
+    { f: ['PA.2:0', 'TM02IOA:2', 'AN2:1', 'DAC0_DA0OUT1:1', 'CMP0_CMPREF0B:8']},
     { f: ['PA.3:0', 'TM03IOA:2', 'AN3:7', 'CMP0_CMPIN0B:8']},
     { f: ['PA.4:0', 'TM04IOA:1', 'SIF5_SBI5:4', 'AN4:7', 'CMP0_CMPREF0A:8']},
     { f: ['PA.5:0', 'TM07IOA:1', 'SIF5_SBO5:4', 'AN5:7', 'CMP0_CMPIN0A:8']},
@@ -432,22 +432,22 @@ NUTOOL_PIN.g_cfg_regDescriptions.IOPAMD = '0x400042A0';
 NUTOOL_PIN.g_cfg_regDescriptions.IOPBMD = '0x400042B0';
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'KM1M0DF02N/K(LQFP100_D0x(14*14))': {
+    'KM1M0DF02N/K(LQFP100_D0x)': {
         'ALL': []
     },
-    'KM1M0DF03N/K(LQFP80_D0x(12*12))': {
+    'KM1M0DF03N/K(LQFP80_D0x)': {
         'ALL': []
     },
-    'KM1M0DF13N/K(LQFP80_D1x(12*12))': {
+    'KM1M0DF13N/K(LQFP80_D1x)': {
         'ALL': []
     },
-    'KM1M0DF04N/K(TQFP64_D0x(10*10))': {
+    'KM1M0DF04N/K(TQFP64_D0x)': {
         'ALL': []
     }
 };
 
 NUTOOL_PIN.g_cfg_OrCAD = {
-    "LQFP64_D0x(14*14)": [
+    "LQFP64_D0x": [
         '', '', '', '', '', '', '', '', '', '', 
         '', '', '', '', '', '', '', '', '', '', 
         '', '', '', '', '', '', '', '', '', '', 
@@ -456,7 +456,7 @@ NUTOOL_PIN.g_cfg_OrCAD = {
         '', '', '', '', '', '', '', '', '', '', 
         '', '', '', ''
     ],
-    "TQFP64_D0x(10*10)": [
+    "TQFP64_D0x": [
         '', '', '', '', '', '', '', '', '', '', 
         '', '', '', '', '', '', '', '', '', '', 
         '', '', '', '', '', '', '', '', '', '', 
@@ -467,7 +467,7 @@ NUTOOL_PIN.g_cfg_OrCAD = {
     ]
 };
 NUTOOL_PIN.g_cfg_WPPin = ['P0.0', 'P0.1'];
-// [Workaround] Sometime NUTOOL_PIN.g_cfg_WPPin will be reset. 
+// [Workaround] Sometimes NUTOOL_PIN.g_cfg_WPPin will be reset. 
 setTimeout(function() {
     NUTOOL_PIN.g_cfg_WPPin = ['P0.0', 'P0.1'];
 }, 100);

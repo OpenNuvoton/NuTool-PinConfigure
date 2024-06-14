@@ -6,6 +6,9 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "MA35D16F987C", pkg: "LQFP216" },
     //{ name: "MA35D16H8A7C", pkg: "BGA312" },
     { name: "MA35D16A887C", pkg: "BGA312" },
+    { name: "MA35D16AH87C", pkg: "BGA312" },
+    { name: "MA35D16AI87C", pkg: "BGA312" },
+    { name: "MA35D16AJ87C", pkg: "BGA312" },
     //{ name: "MA35D16H0A7C", pkg: "BGA364" },
     //{ name: "MA35D15A087C", pkg: "BGA364" },  For PPC only
     { name: "MA35D16A087C", pkg: "BGA364" }

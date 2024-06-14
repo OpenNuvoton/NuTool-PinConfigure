@@ -11,8 +11,8 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {};
 
 NUTOOL_PIN.g_cfg_WPPin = [];
 
-NUTOOL_PIN.g_cfg_Tooltip_Pin = [];
-
+NUTOOL_PIN.g_cfg_wppin = {};
+NUTOOL_PIN.g_cfg_wppin_comment = {};
 // KM1M7CF
 g_cfg_gpios_FPS_key = {};
 g_cfg_gpios_FPS_mapping = [];

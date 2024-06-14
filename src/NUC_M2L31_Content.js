@@ -34,12 +34,12 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13', 
         'PB.12', 'AVDD', 'VSS'
     ],
-    "QFN48(PIN:D10R14U10L14)": [
+    "UQFN48(USB1.1)(5*5)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
         'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 
         'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
         'PC.1', 'PC.0', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PC.14', 
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6'
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
     ],
     "ULQFP48(USB1.1)(7*7)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
@@ -738,6 +738,44 @@ NUTOOL_PIN.g_cfg_regDescriptions.GPH_MFP1 = '0x40000574';
 NUTOOL_PIN.g_cfg_regDescriptions.GPH_MFP2 = '0x40000578';
 //NUTOOL_PIN.g_cfg_regDescriptions.GPH_MFP3 = '0x4000057C';
 
+NUTOOL_PIN.g_cfg_wppin = {
+    "UWLCSP25(USB1.1)": [
+        'PB.2', 'PC.1', 'PC.0'
+    ],
+    "UQFN33(USB1.1)(5*5)": [
+        'PB.2', 'PC.1', 'PC.0'
+    ],
+    "UQFN48(USB1.1)(5*5)": [
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PC.14'
+    ],
+    "ULQFP48(USB1.1)(7*7)": [
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PC.14'
+    ],
+    "UWLCSP49(USB1.1)": [
+        'PB.2', 'PA.6', 'PC.3', 'PC.2'
+    ],
+    "ULQFP64(USB1.1)(7*7)": [
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PC.14'
+    ],
+    "UQFN68(USB1.1)(8*8)": [
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PC.14'
+    ],
+    "ULQFP128(USB1.1)(14*14)": [
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PD.13', 'PC.14'
+    ],
+};
+
+NUTOOL_PIN.g_cfg_wppin_comment = {
+    "PB.2" : [ 'Can change function to  Write_Protect_Pin by chip configuration' ],
+    "PC.1" : [ 'This pin includes CCDB function with a pull-low resistor(Rd_ccdb) that cannot be disabled. When this pin isn’t used for UTCPD, please check Rd_ccdb influence.' ],
+    "PC.0" : [ 'This pin includes CCDB function with a pull-low resistor(Rd_ccdb) that cannot be disabled. When this pin isn’t used for UTCPD, please check Rd_ccdb influence.' ],
+    "PA.6" : [ 'Can change function to  Write_Protect_Pin by chip configuration' ],
+    "PC.3" : [ 'This pin includes CCDB function with a pull-low resistor(Rd_ccdb) that cannot be disabled. When this pin isn’t used for UTCPD, please check Rd_ccdb influence.' ],
+    "PC.2" : [ 'This pin includes CCDB function with a pull-low resistor(Rd_ccdb) that cannot be disabled. When this pin isn’t used for UTCPD, please check Rd_ccdb influence.' ],
+    "PC.14" : [ 'Can change function to  Write_Protect_Pin by chip configuration' ],
+    "PD.13" : [ 'Can change function to  Write_Protect_Pin by chip configuration' ],
+};
+
 NUTOOL_PIN.g_cfg_unusedGPIO = {
     'M2L31XD4AE': {
         'ALL': ['ACMP2', 'EBI', 'I2C2', 'I2C3', 'PWM0', 'PWM1', 'SPI2', 'SPI3', 'UART6', 'UART7', 'USCI1', 'CANFD1', 'DAC1', 'OPA2', 'TK']
@@ -804,8 +842,6 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     }
 };
 
-NUTOOL_PIN.g_cfg_WPPin = ['PB.2', 'PA.6', 'PD.13', 'PC.14'];
-
 NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     var partNumber_package,
         partNumber;
@@ -829,7 +865,7 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         NUTOOL_PIN.g_packageNumberIndex = "UQFN33(USB1.1)(5*5)";
         break;
     case 'QFN48':
-        NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
+        NUTOOL_PIN.g_packageNumberIndex = "UQFN48(USB1.1)(5*5)";
         break;
     case 'LQFP48':
         NUTOOL_PIN.g_packageNumberIndex = "ULQFP48(USB1.1)(7*7)";
