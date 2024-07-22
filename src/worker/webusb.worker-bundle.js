@@ -2620,45 +2620,54 @@ var getBaseAddress = /*#__PURE__*/function () {
       while (1) switch (_context6.prev = _context6.next) {
         case 0:
           _context6.t0 = proecssorType;
-          _context6.next = _context6.t0 === PROCESSOR_TYPE_ARM_CM0 ? 3 : _context6.t0 === PROCESSOR_TYPE_ARM_CM4 ? 6 : _context6.t0 === PROCESSOR_TYPE_ARM_CM23 ? 8 : 17;
+          _context6.next = _context6.t0 === PROCESSOR_TYPE_ARM_CM0 ? 3 : _context6.t0 === PROCESSOR_TYPE_ARM_CM4 ? 12 : _context6.t0 === PROCESSOR_TYPE_ARM_CM23 ? 14 : 23;
           break;
         case 3:
           baseAddr = 0x50000000;
-          try {
-            if (processor.readMem32(0x40003FFC).toString(16) == '20171011') {
+          _context6.prev = 4;
+          _context6.next = 7;
+          return processor.readMem32(0x40003FFC).then(function (result) {
+            if (result.toString(16) == '20171011') {
               baseAddr = 0x40000000;
             }
-          } catch (error) {}
-          return _context6.abrupt("break", 18);
-        case 6:
-          baseAddr = 0x40000000;
-          return _context6.abrupt("break", 18);
-        case 8:
-          baseAddr = 0x40000000;
+          });
+        case 7:
+          _context6.next = 11;
+          break;
+        case 9:
           _context6.prev = 9;
-          _context6.next = 12;
+          _context6.t1 = _context6["catch"](4);
+        case 11:
+          return _context6.abrupt("break", 24);
+        case 12:
+          baseAddr = 0x40000000;
+          return _context6.abrupt("break", 24);
+        case 14:
+          baseAddr = 0x40000000;
+          _context6.prev = 15;
+          _context6.next = 18;
           return processor.readMem32(0x50003FFC).then(function (result) {
             if (result.toString(16) == '20201130') {
               baseAddr = 0x50000000;
             }
           });
-        case 12:
-          _context6.next = 16;
-          break;
-        case 14:
-          _context6.prev = 14;
-          _context6.t1 = _context6["catch"](9);
-        case 16:
-          return _context6.abrupt("break", 18);
-        case 17:
-          throw 'getBaseAddress() Unsupported processor type!';
         case 18:
+          _context6.next = 22;
+          break;
+        case 20:
+          _context6.prev = 20;
+          _context6.t2 = _context6["catch"](15);
+        case 22:
+          return _context6.abrupt("break", 24);
+        case 23:
+          throw 'getBaseAddress() Unsupported processor type!';
+        case 24:
           return _context6.abrupt("return", baseAddr);
-        case 19:
+        case 25:
         case "end":
           return _context6.stop();
       }
-    }, _callee6, null, [[9, 14]]);
+    }, _callee6, null, [[4, 9], [15, 20]]);
   }));
   return function getBaseAddress(_x) {
     return _ref6.apply(this, arguments);

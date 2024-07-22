@@ -284,9 +284,11 @@ const getBaseAddress = async (proecssorType) => {
     case PROCESSOR_TYPE_ARM_CM0:
       baseAddr = 0x50000000;
       try {
-        if (processor.readMem32(0x40003FFC).toString(16) == '20171011') {
-          baseAddr = 0x40000000;
-        }
+        await processor.readMem32(0x40003FFC).then(function (result) {
+          if ((result).toString(16) == '20171011') {
+            baseAddr = 0x40000000;
+          }
+        });
       }
       catch (error) {
       }
