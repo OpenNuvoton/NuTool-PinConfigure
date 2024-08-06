@@ -746,36 +746,63 @@ NUTOOL_PIN.g_cfg_gpioMatrix = [];
 NUTOOL_PIN.g_cfg_shareBits = [];
 NUTOOL_PIN.g_cfg_addGPIO = {};
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-	'QFN33(5*5)': {
-		'ALL': ['EADC1', 'QEI0', 'ECAP0', 'ECAP1', 'TAMPER', 'CCAP', 'QSPI1', 'UART6', 'UART7', 'CAN0', 'CAN1', 'CAN2', 'EBI', 'USB', 'ETM']
-	},
-	'QFN33(USB1.1)(5*5)': {
-		'ALL': ['EADC1', 'QEI0', 'ECAP0', 'ECAP1', 'TAMPER', 'CCAP', 'QSPI1', 'UART6', 'UART7', 'CAN0', 'CAN1', 'CAN2', 'EBI', 'ETM']
-	},
-	'LQFP48(7*7)': {
-		'ALL': ['EADC1', 'ECAP1', 'TAMPER', 'CAN0', 'CAN1', 'CAN2', 'USB', 'ETM']
-	},
-	'LQFP48(USB1.1)(7*7)': {
-		'ALL': ['EADC1', 'ECAP1', 'TAMPER', 'CAN0', 'CAN1', 'CAN2', 'ETM']
-	},
-	'LQFP64(7*7)': {
-		'ALL': ['EADC1', 'ECAP1', 'CAN0', 'CAN1', 'CAN2', 'USB', 'ETM']
-	},
-	'LQFP64(USB1.1)(7*7)': {
-		'ALL': ['EADC1', 'ECAP1', 'ETM']
-	},
-	'LQFP64(USB1.1+EADC1)(7*7)': {
-		'ALL': ['ECAP1', 'ETM']
-	},
-	'LQFP64(EADC1)(7*7)': {
-		'ALL': ['ECAP1', 'CAN0', 'CAN1', 'CAN2', 'USB', 'ETM']
-	},
-	'LQFP128(USB1.1)(14*14)': {
-		'ALL': ['EADC1', 'ETM']
-	},
-	'LQFP128(USB1.1+EADC1)(14*14)': {
-		'ALL': ['ETM']
-	}
+    'M481ZGCAE': {
+        'ALL': ['EADC1', 'QEI0', 'ECAP0', 'ECAP1', 'TAMPER', 'CCAP', 'QSPI1', 'UART6', 'UART7', 'CAN0', 'CAN1', 'CAN2', 'EBI', 'USB', 'ETM']
+    },
+    'M481ZE8AE': {
+        'ALL': ['EADC1', 'QEI0', 'ECAP0', 'ECAP1', 'TAMPER', 'CCAP', 'QSPI1', 'UART6', 'UART7', 'CAN0', 'CAN1', 'CAN2', 'EBI', 'USB', 'ETM']
+    },
+    'M482ZGCAE': {
+        'ALL': ['EADC1', 'QEI0', 'ECAP0', 'ECAP1', 'TAMPER', 'CCAP', 'QSPI1', 'UART6', 'UART7', 'CAN0', 'CAN1', 'CAN2', 'EBI', 'ETM']
+    },
+    'M482ZE8AE': {
+        'ALL': ['EADC1', 'QEI0', 'ECAP0', 'ECAP1', 'TAMPER', 'CCAP', 'QSPI1', 'UART6', 'UART7', 'CAN0', 'CAN1', 'CAN2', 'EBI', 'ETM']
+    },
+    'M481LGCAE': {
+        'ALL': ['EADC1', 'ECAP1', 'TAMPER', 'CAN0', 'CAN1', 'CAN2', 'USB', 'ETM']
+    },
+    'M481LE8AE': {
+        'ALL': ['EADC1', 'ECAP1', 'TAMPER', 'CAN0', 'CAN1', 'CAN2', 'USB', 'ETM']
+    },
+    'M482LGCAE': {
+        'ALL': ['EADC1', 'ECAP1', 'TAMPER', 'CAN0', 'CAN1', 'CAN2', 'ETM']
+    },
+    'M482LE8AE': {
+        'ALL': ['EADC1', 'ECAP1', 'TAMPER', 'CAN0', 'CAN1', 'CAN2', 'ETM']
+    },
+    'M481SGCAE': {
+        'ALL': ['EADC1', 'ECAP1', 'CAN0', 'CAN1', 'CAN2', 'USB', 'ETM']
+    },
+    'M481SE8AE': {
+        'ALL': ['EADC1', 'ECAP1', 'CAN0', 'CAN1', 'CAN2', 'USB', 'ETM']
+    },
+    'M481SGCAE2A': {
+        'ALL': ['EADC1', 'ECAP1', 'CAN0', 'CAN1', 'CAN2', 'USB', 'ETM']
+    },
+    'M482SGCAE': {
+        'ALL': ['EADC1', 'ECAP1', 'CAN0', 'CAN1', 'CAN2', 'ETM']
+    },
+    'M482SE8AE': {
+        'ALL': ['EADC1', 'ECAP1', 'CAN0', 'CAN1', 'CAN2', 'ETM']
+    },
+    'M483SGCAE': {
+        'ALL': ['EADC1', 'ECAP1', 'ETM']
+    },
+    'M483SGCAE2A': {
+        'ALL': ['ECAP1', 'ETM']
+    },
+    'M483SE8AE': {
+        'ALL': ['EADC1', 'ECAP1', 'ETM']
+    },
+    'M482KGCAE': {
+        'ALL': ['EADC1', 'CAN0', 'CAN1', 'CAN2', 'ETM']
+    },
+    'M483KGCAE': {
+        'ALL': ['EADC1', 'ETM']
+    },
+    'M483KGCAE2A': {
+        'ALL': ['ETM']
+    }
 };
 
 NUTOOL_PIN.g_cfg_WPPin = [];
