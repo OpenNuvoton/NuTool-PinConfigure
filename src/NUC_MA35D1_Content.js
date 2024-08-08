@@ -1,7 +1,7 @@
 // chip content
 NUTOOL_PIN.g_cfg_chips = [
-    { name: "MA35D16F884", pkg: "LQFP216" },
-    { name: "MA35D16F984", pkg: "LQFP216" },
+    { name: "MA35D14F884", pkg: "LQFP216" },
+    { name: "MA35D14F984", pkg: "LQFP216" },
     //{ name: "MA35D15A087C", pkg: "BGA364" },  For PPC only
     { name: "MA35D16A087C", pkg: "BGA364" },
     { name: "MA35D16A887C", pkg: "BGA312" },
@@ -1405,10 +1405,10 @@ NUTOOL_PIN.g_cfg_gpioMatrix = [];
 NUTOOL_PIN.g_cfg_shareBits = [];
 NUTOOL_PIN.g_cfg_addGPIO = {};
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'MA35D16F884(LQFP216)': {
+    'MA35D14F884(LQFP216)': {
         'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'TAMPER', 'TRACE']
     },
-    'MA35D16F984(LQFP216)': {
+    'MA35D14F984(LQFP216)': {
         'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'TAMPER', 'TRACE']
     },
     "MA35D11K764C(LQFP128)": {
