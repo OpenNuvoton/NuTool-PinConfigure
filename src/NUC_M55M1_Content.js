@@ -1031,43 +1031,45 @@ NUTOOL_PIN.g_cfg_regDescriptions.GPJ_MFP1 = '0x40000394';
 NUTOOL_PIN.g_cfg_regDescriptions.GPJ_MFP2 = '0x40000398';
 NUTOOL_PIN.g_cfg_regDescriptions.GPJ_MFP3 = '0x4000039C';
 
-NUTOOL_PIN.g_cfg_wppin_comment = {
-    "PB.2" : [ '' ],
-    "PA.6" : [ '' ],
-    "PD.13" : [ '' ],
-};
-
 NUTOOL_PIN.g_cfg_wppin = {
     "LQFP64_MCP(USB2.0)(10*10)": [
         'PB.2', 'PA.6'
     ],
     "LQFP64(USB2.0)(10*10)": [
-        'PB.2', 'PA.6'
+        'PB.2', 'PA.6', 'PC.3', 'PC.2'
     ],
     "LQFP64(USB2.0+1.1)(10*10)": [
         'PB.2', 'PA.6'
     ],
     "LQFP100(USB2.0+1.1)(14*14)": [
-        'PB.2', 'PA.6', 'PD.13'
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PD.13'
     ],
     "LQFP128(USB2.0+1.1)(14*14)": [
         'PB.2', 'PA.6', 'PD.13'
     ],
     "LQFP128_MCP(USB2.0+1.1)(14*14)": [
-        'PB.2', 'PA.6', 'PD.13'
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PD.13'
     ],
     "LQFP144_MCP(USB2.0+1.1)(20*20)": [
-        'PB.2', 'PA.6', 'PD.13'
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PD.13'
     ],
     "LQFP144(USB2.0+1.1)(20*20)": [
         'PB.2', 'PA.6', 'PD.13'
     ],
     "LQFP176_MCP(USB2.0+1.1)(24*24)": [
-        'PB.2', 'PA.6', 'PD.13'
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PD.13'
     ],
     "LQFP176(USB2.0+1.1)(24*24)": [
-        'PB.2', 'PA.6', 'PD.13'
+        'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PD.13'
     ],
+};
+
+NUTOOL_PIN.g_cfg_wppin_comment = {
+    "PB.2" : [ 'Can change function to  Write_Protect_Pin by chip configuration' ],
+    "PA.6" : [ 'Can change function to  Write_Protect_Pin by chip configuration' ],
+    "PC.3" : [ 'This pin includes CCDB function with a pull-low resistor(Rd_ccdb) that cannot be disabled. When this pin isn’t used for UTCPD, please check Rd_ccdb influence.' ],
+    "PC.2" : [ 'This pin includes CCDB function with a pull-low resistor(Rd_ccdb) that cannot be disabled. When this pin isn’t used for UTCPD, please check Rd_ccdb influence.' ],
+    "PD.13" : [ 'Can change function to  Write_Protect_Pin by chip configuration' ],
 };
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
