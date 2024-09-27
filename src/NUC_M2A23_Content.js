@@ -14,7 +14,7 @@ NUTOOL_PIN.g_cfg_chips = [
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
-    "QFN48": [
+    "QFN48(PIN:D10R14U10L14)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
         'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 
         'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
@@ -337,6 +337,15 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
 
     NUTOOL_PIN.g_packageNumber = partNumber_package.substring(partNumber_package.indexOf('(') + 1);
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.g_packageNumber.substring(0, NUTOOL_PIN.g_packageNumber.lastIndexOf(')'));
-    NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;
+
+    switch (NUTOOL_PIN.g_packageNumber) {
+        case 'QFN48':
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
+            break;
+        default:
+            NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;
+            break;
+    }
+    partNumber = null;
     partNumber_package = null;
 };
