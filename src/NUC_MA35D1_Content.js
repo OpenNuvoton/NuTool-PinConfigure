@@ -1405,14 +1405,14 @@ NUTOOL_PIN.g_cfg_gpioMatrix = [];
 NUTOOL_PIN.g_cfg_shareBits = [];
 NUTOOL_PIN.g_cfg_addGPIO = {};
 NUTOOL_PIN.g_cfg_unusedGPIO = {
+    "BGA324": {
+        "ALL": ["TSI"]
+    },
     'MA35D14F884(LQFP216)': {
         'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'TAMPER', 'TRACE']
     },
     'MA35D14F984(LQFP216)': {
         'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'TAMPER', 'TRACE']
-    },
-    "MA35D11K764C(LQFP128)": {
-        "ALL": ["TSI", "EADC0", "RMII1", "RGMII1" , "VCAP0" , "LCM" , "NAND" , "SC0" , "SPI1" , "CAN2" , "ECAP2" , "QEI1" , "KPI" , "RTC", "TAMPER", "TRACE", "UART10", "UART11"]
     },
     "MA35D16F787C(LQFP216)": {
         "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
@@ -1423,16 +1423,7 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     "MA35D16F987C(LQFP216)": {
         "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
     },
-    "MA35D16H8A7C(BGA324)": {
-        "ALL": ["TSI"]
-    },
-    "MA35D16A887C(BGA324)": {
-        "ALL": ["TSI"]
-    },
-    "MA35D16H0A7C(BGA400)": {
-        "ALL": ["TSI"]
-    },
-    "MA35D16A087C(BGA400)": {
+    "MA35D16A087C(BGA364)": {
         "ALL": ["TSI"]
     }
 };
