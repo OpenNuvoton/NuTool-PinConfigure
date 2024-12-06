@@ -34,12 +34,12 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13', 
         'PB.12', 'AVDD', 'VSS'
     ],
-    "UQFN48(USB1.1)(5*5)": [
+    "QFN48(PIN:D10R14U10L14)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
         'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 
         'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
         'PC.1', 'PC.0', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PC.14', 
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6'
     ],
     "ULQFP48(USB1.1)(7*7)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
@@ -745,7 +745,7 @@ NUTOOL_PIN.g_cfg_wppin = {
     "UQFN33(USB1.1)(5*5)": [
         'PB.2', 'PC.1', 'PC.0'
     ],
-    "UQFN48(USB1.1)(5*5)": [
+    "QFN48(PIN:D10R14U10L14)": [
         'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PC.14'
     ],
     "ULQFP48(USB1.1)(7*7)": [
@@ -865,7 +865,7 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         NUTOOL_PIN.g_packageNumberIndex = "UQFN33(USB1.1)(5*5)";
         break;
     case 'QFN48':
-        NUTOOL_PIN.g_packageNumberIndex = "UQFN48(USB1.1)(5*5)";
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
         break;
     case 'LQFP48':
         NUTOOL_PIN.g_packageNumberIndex = "ULQFP48(USB1.1)(7*7)";

@@ -442,10 +442,6 @@ NUTOOL_PIN.g_cfg_OrCAD = {
     ]
 };
 NUTOOL_PIN.g_cfg_WPPin = ['P0.1', 'P0.2'];
-// [Workaround] Sometimes NUTOOL_PIN.g_cfg_WPPin will be reset. 
-setTimeout(function() {
-    NUTOOL_PIN.g_cfg_WPPin = ['P0.1', 'P0.2'];
-}, 100);
 
 NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     var partNumber_package;

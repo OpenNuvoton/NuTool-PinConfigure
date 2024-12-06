@@ -1,0 +1,1847 @@
+{
+    "LQFP216": {
+        "213": {
+            "MFP0": "PB.14",
+            "MFP1": "EPWM2_CH2",
+            "MFP2": "UART4_RXD",
+            "MFP3": "CAN1_RXD",
+            "MFP5": "I2C4_SDA",
+            "MFP6": "I2S1_DI",
+            "MFP8": "ADC0_CH6",
+            "MFP9": "EBI_ADR18",
+            "MFP14": "ECAP2_IC2",
+            "VDDIO_GROUP": "AVDD_ADC0 (3.3V)",
+            "ORCAD_GROUP": "U1M"
+        },
+        "214": {
+            "MFP0": "PB.15",
+            "MFP1": "EPWM2_CH3",
+            "MFP2": "UART4_TXD",
+            "MFP3": "CAN1_TXD",
+            "MFP5": "I2C4_SCL",
+            "MFP6": "I2S1_DO",
+            "MFP8": "ADC0_CH7",
+            "MFP9": "EBI_ADR19",
+            "VDDIO_GROUP": "AVDD_ADC0 (3.3V)",
+            "ORCAD_GROUP": "U1M"
+        },
+        "215": {
+            "MFP0": [
+                "VDDIO0",
+                "AVDD"
+            ],
+            "ORCAD_GROUP": "U1C"
+        },
+        "216": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "1": {
+            "MFP0": "nRESET",
+            "MFP1": "WDT_nRST",
+            "VDDIO_GROUP": "VDDIO0 (3.3V)",
+            "ORCAD_GROUP": "U1C"
+        },
+        "2": {
+            "MFP0": "HSUSB0_ID ",
+            "VDDIO_GROUP": "VDDIO0 (3.3V)",
+            "ORCAD_GROUP": "U1C"
+        },
+        "3": {
+            "MFP0": "PF.15",
+            "MFP1": "HSUSB0_VBUSVLD",
+            "VDDIO_GROUP": "VDDIO0 (3.3V)",
+            "ORCAD_GROUP": "U1C"
+        },
+        "4": {
+            "MFP0": "PL.12",
+            "MFP1": "EPWM0_SYNC_IN",
+            "MFP2": "UART7_nCTS",
+            "MFP3": "ECAP1_IC0",
+            "MFP4": "UART14_RXD",
+            "MFP5": "SPI0_SS0",
+            "MFP6": "I2S1_LRCK",
+            "MFP7": "SC1_CLK",
+            "MFP8": "EBI_AD0",
+            "MFP9": "HSUSBH_PWREN",
+            "MFP10": "I2C2_SDA",
+            "MFP11": "TM0",
+            "MFP12": "EPWM0_CH2",
+            "MFP13": "EBI_AD11",
+            "MFP14": "RGMII0_PPS",
+            "MFP15": "RMII0_PPS",
+            "VDDIO_GROUP": "VDDIO0 (3.3V)",
+            "ORCAD_GROUP": "U1C"
+        },
+        "5": {
+            "MFP0": "PL.13",
+            "MFP1": "EPWM0_SYNC_OUT",
+            "MFP2": "UART7_nRTS",
+            "MFP3": "ECAP1_IC1",
+            "MFP4": "UART14_TXD",
+            "MFP5": "SPI0_CLK",
+            "MFP6": "I2S1_BCLK",
+            "MFP7": "SC1_DAT",
+            "MFP8": "EBI_AD1",
+            "MFP9": "HSUSBH_OVC",
+            "MFP10": "I2C2_SCL",
+            "MFP11": "TM0_EXT",
+            "MFP12": "EPWM0_CH3",
+            "MFP13": "EBI_AD12",
+            "MFP14": "RGMII1_PPS",
+            "MFP15": "RMII1_PPS",
+            "VDDIO_GROUP": "VDDIO0 (3.3V)",
+            "ORCAD_GROUP": "U1C"
+        },
+        "6": {
+            "MFP0": "PL.14",
+            "MFP1": "EPWM0_CH2",
+            "MFP2": "UART7_RXD",
+            "MFP4": "CAN1_RXD",
+            "MFP5": "SPI0_MOSI",
+            "MFP6": "I2S1_DI",
+            "MFP7": "SC1_RST",
+            "MFP8": "EBI_AD2",
+            "MFP11": "TM2",
+            "MFP12": "INT0",
+            "MFP13": "EBI_AD13",
+            "VDDIO_GROUP": "VDDIO0 (3.3V)",
+            "ORCAD_GROUP": "U1C"
+        },
+        "7": {
+            "MFP0": "PL.15",
+            "MFP1": "EPWM0_CH1",
+            "MFP2": "UART7_TXD",
+            "MFP3": "TRACE_CLK",
+            "MFP4": "CAN1_TXD",
+            "MFP5": "SPI0_MISO",
+            "MFP6": "I2S1_DO",
+            "MFP7": "SC1_PWR",
+            "MFP8": "EBI_AD3",
+            "MFP11": "TM2_EXT",
+            "MFP12": "INT2",
+            "MFP13": "EBI_AD14",
+            "VDDIO_GROUP": "VDDIO0 (3.3V)",
+            "ORCAD_GROUP": "U1C"
+        },
+        "8": {
+            "MFP0": "VDD_OTP",
+            "ORCAD_GROUP": "U1O"
+        },
+        "9": {
+            "MFP0": "RTC_RPWR",
+            "VDDIO_GROUP": "VBAT (3.3V)",
+            "ORCAD_GROUP": "U1A"
+        },
+        "10": {
+            "MFP0": "VBAT",
+            "ORCAD_GROUP": "U1A"
+        },
+        "11": {
+            "MFP0": "RTC_nRWAKE",
+            "VDDIO_GROUP": "VBAT (3.3V)",
+            "ORCAD_GROUP": "U1A"
+        },
+        "12": {
+            "MFP0": "X32_IN",
+            "VDDIO_GROUP": "VBAT (3.3V)",
+            "ORCAD_GROUP": "U1A"
+        },
+        "13": {
+            "MFP0": "X32_OUT",
+            "VDDIO_GROUP": "VBAT (3.3V)",
+            "ORCAD_GROUP": "U1A"
+        },
+        "14": {
+            "MFP0": "VDD_HSUSB1",
+            "ORCAD_GROUP": "U1B"
+        },
+        "15": {
+            "MFP0": "HSUSB1_D-",
+            "ORCAD_GROUP": "U1B"
+        },
+        "16": {
+            "MFP0": "HSUSB1_D+",
+            "ORCAD_GROUP": "U1B"
+        },
+        "17": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "18": {
+            "MFP0": [
+                "VDD_HSUSB1",
+                "VDD_HSUSB0"
+            ],
+            "ORCAD_GROUP": "U1B"
+        },
+        "19": {
+            "MFP0": "HSUSB0_D-",
+            "ORCAD_GROUP": "U1B"
+        },
+        "20": {
+            "MFP0": "HSUSB0_D+",
+            "ORCAD_GROUP": "U1B"
+        },
+        "21": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "22": {
+            "MFP0": "VDD_HSUSB0",
+            "ORCAD_GROUP": "U1B"
+        },
+        "23": {
+            "MFP0": [
+                "VDD_CORE",
+                "VDD_CPU"
+            ],
+            "ORCAD_GROUP": "U1O"
+        },
+        "24": {
+            "MFP0": "PA.0",
+            "MFP2": "UART1_nCTS",
+            "MFP3": "UART16_RXD",
+            "MFP6": "NAND_DATA0",
+            "MFP7": "EBI_AD0",
+            "MFP9": "EBI_ADR0",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "25": {
+            "MFP0": "PA.1",
+            "MFP2": "UART1_nRTS",
+            "MFP3": "UART16_TXD",
+            "MFP6": "NAND_DATA1",
+            "MFP7": "EBI_AD1",
+            "MFP9": "EBI_ADR1",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "26": {
+            "MFP0": "PA.2",
+            "MFP2": "UART1_RXD",
+            "MFP6": "NAND_DATA2",
+            "MFP7": "EBI_AD2",
+            "MFP9": "EBI_ADR2",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "27": {
+            "MFP0": "PA.3",
+            "MFP2": "UART1_TXD",
+            "MFP6": "NAND_DATA3",
+            "MFP7": "EBI_AD3",
+            "MFP9": "EBI_ADR3",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "28": {
+            "MFP0": "PA.4",
+            "MFP2": "UART3_nCTS",
+            "MFP3": "UART2_RXD",
+            "MFP6": "NAND_DATA4",
+            "MFP7": "EBI_AD4",
+            "MFP9": "EBI_ADR4",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "29": {
+            "MFP0": "PA.5",
+            "MFP2": "UART3_nRTS",
+            "MFP3": "UART2_TXD",
+            "MFP6": "NAND_DATA5",
+            "MFP7": "EBI_AD5",
+            "MFP9": "EBI_ADR5",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "30": {
+            "MFP0": "PA.6",
+            "MFP2": "UART3_RXD",
+            "MFP6": "NAND_DATA6",
+            "MFP7": "EBI_AD6",
+            "MFP9": "EBI_ADR6",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "31": {
+            "MFP0": "PA.7",
+            "MFP2": "UART3_TXD",
+            "MFP6": "NAND_DATA7",
+            "MFP7": "EBI_AD7",
+            "MFP9": "EBI_ADR7",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "32": {
+            "MFP0": "PA.8",
+            "MFP2": "UART5_nCTS",
+            "MFP3": "UART4_RXD",
+            "MFP6": "NAND_RDY0",
+            "MFP7": "EBI_AD8",
+            "MFP9": "EBI_ADR8",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "33": {
+            "MFP0": "PA.9",
+            "MFP2": "UART5_nRTS",
+            "MFP3": "UART4_TXD",
+            "MFP6": "NAND_nRE",
+            "MFP7": "EBI_AD9",
+            "MFP9": "EBI_ADR9",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "34": {
+            "MFP0": "PA.10",
+            "MFP2": "UART5_RXD",
+            "MFP6": "NAND_nWE",
+            "MFP7": "EBI_AD10",
+            "MFP9": "EBI_ADR10",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "35": {
+            "MFP0": "PA.11",
+            "MFP2": "UART5_TXD",
+            "MFP6": "NAND_CLE",
+            "MFP7": "EBI_AD11",
+            "MFP9": "EBI_ADR11",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "36": {
+            "MFP0": "PA.12",
+            "MFP2": "UART7_nCTS",
+            "MFP3": "UART8_RXD",
+            "MFP6": "NAND_ALE",
+            "MFP7": "EBI_AD12",
+            "MFP9": "EBI_ADR12",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "37": {
+            "MFP0": "PA.13",
+            "MFP2": "UART7_nRTS",
+            "MFP3": "UART8_TXD",
+            "MFP6": "NAND_nCS0",
+            "MFP7": "EBI_AD13",
+            "MFP9": "EBI_ADR13",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "38": {
+            "MFP0": "VDDIO1",
+            "ORCAD_GROUP": "U1D"
+        },
+        "39": {
+            "MFP0": "PA.14",
+            "MFP2": "UART7_RXD",
+            "MFP3": "CAN3_RXD",
+            "MFP6": "NAND_nWP",
+            "MFP7": "EBI_AD14",
+            "MFP9": "EBI_ADR14",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "40": {
+            "MFP0": "PG.0",
+            "MFP1": "EPWM0_CH0",
+            "MFP2": "UART7_TXD",
+            "MFP3": "CAN3_TXD",
+            "MFP5": "SPI0_SS0",
+            "MFP6": "EADC0_ST",
+            "MFP7": "EBI_AD15",
+            "MFP9": "I2S1_MCLK",
+            "MFP10": "QEI0_INDEX",
+            "MFP11": "TM1",
+            "MFP12": "CLKO",
+            "MFP13": "INT0",
+            "MFP15": "EBI_ADR15",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "41": {
+            "MFP0": "PA.15",
+            "MFP1": "EPWM0_CH2",
+            "MFP2": "UART9_nCTS",
+            "MFP3": "UART6_RXD",
+            "MFP4": "I2C4_SDA",
+            "MFP5": "CAN2_RXD",
+            "MFP7": "EBI_ALE",
+            "MFP9": "QEI0_A",
+            "MFP11": "TM1",
+            "MFP14": "RGMII0_PPS",
+            "MFP15": "RMII0_PPS",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "42": {
+            "MFP0": "PG.1",
+            "MFP1": "EPWM0_CH3",
+            "MFP2": "UART9_nRTS",
+            "MFP3": "UART6_TXD",
+            "MFP4": "I2C4_SCL",
+            "MFP5": "CAN2_TXD",
+            "MFP7": "EBI_nCS0",
+            "MFP9": "QEI0_B",
+            "MFP11": "TM1_EXT",
+            "MFP14": "RGMII1_PPS",
+            "MFP15": "RMII1_PPS",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "43": {
+            "MFP0": "PG.2",
+            "MFP1": "EPWM0_CH4",
+            "MFP2": "UART9_RXD",
+            "MFP3": "CAN0_RXD",
+            "MFP5": "SPI0_SS1",
+            "MFP6": "TSI_SWD_DAT",
+            "MFP7": "EBI_ADR16",
+            "MFP8": "EBI_nCS2",
+            "MFP10": "QEI0_A",
+            "MFP11": "TM3",
+            "MFP13": "INT1",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "44": {
+            "MFP0": "PG.3",
+            "MFP1": "EPWM0_CH5",
+            "MFP2": "UART9_TXD",
+            "MFP3": "CAN0_TXD",
+            "MFP5": "SPI0_I2SMCLK",
+            "MFP6": "TSI_SWD_CLK",
+            "MFP7": "EBI_ADR17",
+            "MFP8": "EBI_nCS1",
+            "MFP9": "EBI_MCLK",
+            "MFP10": "QEI0_B",
+            "MFP11": "TM3_EXT",
+            "MFP12": "I2S1_MCLK",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "45": {
+            "MFP0": "PG.4",
+            "MFP1": "EPWM1_CH0",
+            "MFP2": "UART5_nCTS",
+            "MFP3": "UART6_RXD",
+            "MFP5": "SPI3_SS0",
+            "MFP6": "QEI1_INDEX",
+            "MFP7": "EBI_ADR18",
+            "MFP8": "EBI_nCS0",
+            "MFP9": "I2S1_DO",
+            "MFP10": "SC1_CLK",
+            "MFP11": "TM4",
+            "MFP12": "TSI_UART_RXD",
+            "MFP13": "INT2",
+            "MFP14": "ECAP1_IC2",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "46": {
+            "MFP0": "PG.5",
+            "MFP1": "EPWM1_CH1",
+            "MFP2": "UART5_nRTS",
+            "MFP3": "UART6_TXD",
+            "MFP5": "SPI3_CLK",
+            "MFP6": "ECAP0_IC0",
+            "MFP7": "EBI_ADR19",
+            "MFP8": "EBI_ALE",
+            "MFP9": "I2S1_DI",
+            "MFP10": "SC1_DAT",
+            "MFP11": "TM4_EXT",
+            "MFP12": "TSI_UART_TXD",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "47": {
+            "MFP0": "PG.6",
+            "MFP1": "EPWM1_CH2",
+            "MFP2": "UART5_RXD",
+            "MFP3": "CAN1_RXD",
+            "MFP5": "SPI3_MOSI",
+            "MFP6": "ECAP0_IC1",
+            "MFP7": "EBI_nRD",
+            "MFP9": "I2S1_BCLK",
+            "MFP10": "SC1_RST",
+            "MFP11": "TM7",
+            "MFP13": "INT3",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "48": {
+            "MFP0": "PG.7",
+            "MFP1": "EPWM1_CH3",
+            "MFP2": "UART5_TXD",
+            "MFP3": "CAN1_TXD",
+            "MFP5": "SPI3_MISO",
+            "MFP6": "ECAP0_IC2",
+            "MFP7": "EBI_nWR",
+            "MFP9": "I2S1_LRCK",
+            "MFP10": "SC1_PWR",
+            "MFP11": "TM7_EXT",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "49": {
+            "MFP0": [
+                "VDD_CORE",
+                "VDD_CPU"
+            ],
+            "ORCAD_GROUP": "U1O"
+        },
+        "50": {
+            "MFP0": "PG.11",
+            "MFP3": "JTAG_TDO",
+            "MFP5": "I2S0_MCLK",
+            "MFP6": "NAND_RDY1",
+            "MFP7": "EBI_nWRH",
+            "MFP8": "EBI_nCS1",
+            "MFP10": "EBI_AD0",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "51": {
+            "MFP0": "PG.12",
+            "MFP3": "JTAG_TCK/SW_CLK",
+            "MFP5": "I2S0_LRCK",
+            "MFP7": "EBI_nWRL",
+            "MFP10": "EBI_AD1",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "52": {
+            "MFP0": "PG.13",
+            "MFP3": "JTAG_TMS/SW_DIO",
+            "MFP5": "I2S0_BCLK",
+            "MFP7": "EBI_MCLK",
+            "MFP10": "EBI_AD2",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "53": {
+            "MFP0": "PG.14",
+            "MFP3": "JTAG_TDI",
+            "MFP5": "I2S0_DI",
+            "MFP6": "NAND_nCS1",
+            "MFP7": "EBI_ALE",
+            "MFP10": "EBI_AD3",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "54": {
+            "MFP0": "PG.15",
+            "MFP3": "JTAG_nTRST",
+            "MFP5": "I2S0_DO",
+            "MFP7": "EBI_nCS0",
+            "MFP10": "EBI_AD4",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "55": {
+            "MFP0": [
+                "VDD_CORE",
+                "VDD_CPU"
+            ],
+            "ORCAD_GROUP": "U1O"
+        },
+        "56": {
+            "MFP0": "PE.14",
+            "MFP1": "UART0_TXD",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "57": {
+            "MFP0": "PE.15",
+            "MFP1": "UART0_RXD",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "58": {
+            "MFP0": "PD.6",
+            "MFP1": "EPWM0_SYNC_IN",
+            "MFP2": "UART1_RXD",
+            "MFP5": "QSPI1_MOSI1",
+            "MFP6": "I2C0_SDA",
+            "MFP7": "I2S0_MCLK",
+            "MFP8": "EPWM0_CH0",
+            "MFP9": "EBI_AD5",
+            "MFP10": "SPI3_SS1",
+            "MFP11": "TRACE_CLK",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "59": {
+            "MFP0": "PD.7",
+            "MFP1": "EPWM0_SYNC_OUT",
+            "MFP2": "UART1_TXD",
+            "MFP5": "QSPI1_MISO1",
+            "MFP6": "I2C0_SCL",
+            "MFP7": "I2S1_MCLK",
+            "MFP8": "EPWM0_CH1",
+            "MFP9": "EBI_AD6",
+            "MFP10": "SC1_nCD",
+            "MFP11": "EADC0_ST",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "60": {
+            "MFP0": "PD.8",
+            "MFP1": "EPWM0_BRAKE0",
+            "MFP2": "UART16_nCTS",
+            "MFP3": "UART15_RXD",
+            "MFP5": "QSPI1_SS0",
+            "MFP7": "I2S1_LRCK",
+            "MFP8": "EPWM0_CH2",
+            "MFP9": "EBI_AD7",
+            "MFP10": "SC1_CLK",
+            "MFP11": "TM0",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "61": {
+            "MFP0": "PD.9",
+            "MFP1": "EPWM0_BRAKE1",
+            "MFP2": "UART16_nRTS",
+            "MFP3": "UART15_TXD",
+            "MFP5": "QSPI1_CLK",
+            "MFP7": "I2S1_BCLK",
+            "MFP8": "EPWM0_CH3",
+            "MFP9": "EBI_AD8",
+            "MFP10": "SC1_DAT",
+            "MFP11": "TM0_EXT",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "62": {
+            "MFP0": "PD.10",
+            "MFP1": "EPWM1_BRAKE0",
+            "MFP2": "UART16_RXD",
+            "MFP5": "QSPI1_MOSI0",
+            "MFP7": "I2S1_DI",
+            "MFP8": "EPWM0_CH4",
+            "MFP9": "EBI_AD9",
+            "MFP10": "SC1_RST",
+            "MFP11": "TM2",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "63": {
+            "MFP0": "PD.11",
+            "MFP1": "EPWM1_BRAKE1",
+            "MFP2": "UART16_TXD",
+            "MFP5": "QSPI1_MISO0",
+            "MFP7": "I2S1_DO",
+            "MFP8": "EPWM0_CH5",
+            "MFP9": "EBI_AD10",
+            "MFP10": "SC1_PWR",
+            "MFP11": "TM2_EXT",
+            "VDDIO_GROUP": "VDDIO1 (3.3V)",
+            "ORCAD_GROUP": "U1D"
+        },
+        "64": {
+            "MFP0": "VDDIO1",
+            "ORCAD_GROUP": "U1D"
+        },
+        "65": {
+            "MFP0": "PK.9",
+            "MFP4": "I2C3_SCL",
+            "MFP6": "CCAP0_SCLK",
+            "MFP8": "EBI_AD0",
+            "MFP10": "EBI_ADR0",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "66": {
+            "MFP0": "PK.10",
+            "MFP3": "CAN1_RXD",
+            "MFP6": "CCAP0_PIXCLK",
+            "MFP8": "EBI_AD1",
+            "MFP10": "EBI_ADR1",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "67": {
+            "MFP0": "PK.11",
+            "MFP3": "CAN1_TXD",
+            "MFP6": "CCAP0_HSYNC",
+            "MFP8": "EBI_AD2",
+            "MFP10": "EBI_ADR2",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "68": {
+            "MFP0": "PM.0",
+            "MFP4": "I2C4_SDA",
+            "MFP6": "CCAP0_VSYNC",
+            "MFP8": "EBI_AD3",
+            "MFP10": "EBI_ADR3",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "69": {
+            "MFP0": "PM.1",
+            "MFP4": "I2C4_SCL",
+            "MFP5": "SPI3_I2SMCLK",
+            "MFP6": "CCAP0_SFIELD",
+            "MFP8": "EBI_AD4",
+            "MFP10": "EBI_ADR4",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "70": {
+            "MFP0": "PM.2",
+            "MFP3": "CAN3_RXD",
+            "MFP6": "CCAP0_DATA0",
+            "MFP8": "EBI_AD5",
+            "MFP10": "EBI_ADR5",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "71": {
+            "MFP0": "PM.3",
+            "MFP3": "CAN3_TXD",
+            "MFP6": "CCAP0_DATA1",
+            "MFP8": "EBI_AD6",
+            "MFP10": "EBI_ADR6",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "72": {
+            "MFP0": "PM.4",
+            "MFP4": "I2C5_SDA",
+            "MFP6": "CCAP0_DATA2",
+            "MFP8": "EBI_AD7",
+            "MFP10": "EBI_ADR7",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "73": {
+            "MFP0": "PM.5",
+            "MFP4": "I2C5_SCL",
+            "MFP6": "CCAP0_DATA3",
+            "MFP8": "EBI_AD8",
+            "MFP10": "EBI_ADR8",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "74": {
+            "MFP0": "PM.6",
+            "MFP3": "CAN0_RXD",
+            "MFP6": "CCAP0_DATA4",
+            "MFP8": "EBI_AD9",
+            "MFP10": "EBI_ADR9",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "75": {
+            "MFP0": "PM.7",
+            "MFP3": "CAN0_TXD",
+            "MFP6": "CCAP0_DATA5",
+            "MFP8": "EBI_AD10",
+            "MFP10": "EBI_ADR10",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "76": {
+            "MFP0": "VDDIO2",
+            "ORCAD_GROUP": "U1E"
+        },
+        "77": {
+            "MFP0": "PM.8",
+            "MFP4": "I2C0_SDA",
+            "MFP6": "CCAP0_DATA6",
+            "MFP8": "EBI_AD11",
+            "MFP10": "EBI_ADR11",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "78": {
+            "MFP0": "PM.9",
+            "MFP4": "I2C0_SCL",
+            "MFP6": "CCAP0_DATA7",
+            "MFP8": "EBI_AD12",
+            "MFP10": "EBI_ADR12",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "79": {
+            "MFP0": "PM.10",
+            "MFP1": "EPWM1_CH2",
+            "MFP3": "CAN2_RXD",
+            "MFP5": "SPI3_SS0",
+            "MFP6": "CCAP0_DATA8",
+            "MFP7": "SPI2_I2SMCLK",
+            "MFP8": "EBI_AD13",
+            "MFP10": "EBI_ADR13",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "80": {
+            "MFP0": "PM.11",
+            "MFP1": "EPWM1_CH3",
+            "MFP3": "CAN2_TXD",
+            "MFP5": "SPI3_SS1",
+            "MFP6": "CCAP0_DATA9",
+            "MFP7": "SPI2_SS1",
+            "MFP8": "EBI_AD14",
+            "MFP10": "EBI_ADR14",
+            "VDDIO_GROUP": "VDDIO2 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1E"
+        },
+        "81": {
+            "MFP0": [
+                "VDD_CORE",
+                "VDD_CPU"
+            ],
+            "ORCAD_GROUP": "U1O"
+        },
+        "82": {
+            "MFP0": "PJ.4",
+            "MFP4": "I2C3_SDA",
+            "MFP6": "SD1_WP",
+            "VDDIO_GROUP": "VDDIO3 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1F"
+        },
+        "83": {
+            "MFP0": "PJ.5",
+            "MFP4": "I2C3_SCL",
+            "MFP6": "SD1_nCD",
+            "VDDIO_GROUP": "VDDIO3 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1F"
+        },
+        "84": {
+            "MFP0": "VDDIO3",
+            "ORCAD_GROUP": "U1F"
+        },
+        "85": {
+            "MFP0": "PJ.6",
+            "MFP3": "CAN3_RXD",
+            "MFP6": "SD1_CMD/eMMC1_CMD",
+            "VDDIO_GROUP": "VDDIO3 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1F"
+        },
+        "86": {
+            "MFP0": "PJ.7",
+            "MFP3": "CAN3_TXD",
+            "MFP6": "SD1_CLK/eMMC1_CLK",
+            "VDDIO_GROUP": "VDDIO3 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1F"
+        },
+        "87": {
+            "MFP0": "PJ.8",
+            "MFP4": "I2C4_SDA",
+            "MFP6": "SD1_DAT0/eMMC1_DAT0",
+            "VDDIO_GROUP": "VDDIO3 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1F"
+        },
+        "88": {
+            "MFP0": "PJ.9",
+            "MFP4": "I2C4_SCL",
+            "MFP6": "SD1_DAT1/eMMC1_DAT1",
+            "VDDIO_GROUP": "VDDIO3 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1F"
+        },
+        "89": {
+            "MFP0": "PJ.10",
+            "MFP3": "CAN0_RXD",
+            "MFP6": "SD1_DAT2/eMMC1_DAT2",
+            "VDDIO_GROUP": "VDDIO3 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1F"
+        },
+        "90": {
+            "MFP0": "PJ.11",
+            "MFP3": "CAN0_TXD",
+            "MFP6": "SD1_DAT3/eMMC1_DAT3",
+            "VDDIO_GROUP": "VDDIO3 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1F"
+        },
+        "91": {
+            "MFP0": "PG.8",
+            "MFP1": "EPWM1_CH4",
+            "MFP2": "UART12_RXD",
+            "MFP3": "CAN3_RXD",
+            "MFP5": "SPI2_SS0",
+            "MFP6": "LCM_VSYNC/LCM_MPU_RD/EN",
+            "MFP7": "I2C3_SDA",
+            "MFP12": "EBI_AD7",
+            "MFP13": "EBI_nCS0",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "92": {
+            "MFP0": "PG.9",
+            "MFP1": "EPWM1_CH5",
+            "MFP2": "UART12_TXD",
+            "MFP3": "CAN3_TXD",
+            "MFP5": "SPI2_CLK",
+            "MFP6": "LCM_HSYNC/LCM_MPU_WR/RW",
+            "MFP7": "I2C3_SCL",
+            "MFP12": "EBI_AD8",
+            "MFP13": "EBI_nCS1",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "93": {
+            "MFP0": "PG.10",
+            "MFP2": "UART12_nRTS",
+            "MFP3": "UART13_TXD",
+            "MFP5": "SPI2_MOSI",
+            "MFP6": "LCM_CLK",
+            "MFP12": "EBI_AD9",
+            "MFP13": "EBI_nWRH",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "94": {
+            "MFP0": "PK.4",
+            "MFP2": "UART12_nCTS",
+            "MFP3": "UART13_RXD",
+            "MFP5": "SPI2_MISO",
+            "MFP6": "LCM_DEN/LCM_MPU_RS",
+            "MFP12": "EBI_AD10",
+            "MFP13": "EBI_nWRL",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "95": {
+            "MFP0": "PI.8",
+            "MFP2": "UART4_nCTS",
+            "MFP3": "UART3_RXD",
+            "MFP6": "LCM_DATA0/LCM_MPU_D0",
+            "MFP12": "EBI_AD11",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "96": {
+            "MFP0": "PI.9",
+            "MFP2": "UART4_nRTS",
+            "MFP3": "UART3_TXD",
+            "MFP6": "LCM_DATA1/LCM_MPU_D1",
+            "MFP12": "EBI_AD12",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "97": {
+            "MFP0": "PI.10",
+            "MFP2": "UART4_RXD",
+            "MFP6": "LCM_DATA2/LCM_MPU_D2",
+            "MFP12": "EBI_AD13",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "98": {
+            "MFP0": "PI.11",
+            "MFP2": "UART4_TXD",
+            "MFP6": "LCM_DATA3/LCM_MPU_D3",
+            "MFP12": "EBI_AD14",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "99": {
+            "MFP0": "PI.12",
+            "MFP2": "UART6_nCTS",
+            "MFP3": "UART5_RXD",
+            "MFP6": "LCM_DATA4/LCM_MPU_D4",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "100": {
+            "MFP0": "PI.13",
+            "MFP2": "UART6_nRTS",
+            "MFP3": "UART5_TXD",
+            "MFP6": "LCM_DATA5/LCM_MPU_D5",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "101": {
+            "MFP0": "PI.14",
+            "MFP2": "UART6_RXD",
+            "MFP6": "LCM_DATA6/LCM_MPU_D6",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "102": {
+            "MFP0": "PI.15",
+            "MFP2": "UART6_TXD",
+            "MFP6": "LCM_DATA7/LCM_MPU_D7",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "103": {
+            "MFP0": "PH.0",
+            "MFP2": "UART8_nCTS",
+            "MFP3": "UART7_RXD",
+            "MFP6": "LCM_DATA8/LCM_MPU_D8",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "104": {
+            "MFP0": "PH.1",
+            "MFP2": "UART8_nRTS",
+            "MFP3": "UART7_TXD",
+            "MFP6": "LCM_DATA9/LCM_MPU_D9",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "105": {
+            "MFP0": "PH.2",
+            "MFP2": "UART8_RXD",
+            "MFP6": "LCM_DATA10/LCM_MPU_D10",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "106": {
+            "MFP0": "VDDIO4",
+            "ORCAD_GROUP": "U1G"
+        },
+        "107": {
+            "MFP0": "PH.3",
+            "MFP2": "UART8_TXD",
+            "MFP6": "LCM_DATA11/LCM_MPU_D11",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "108": {
+            "MFP0": "PH.4",
+            "MFP2": "UART10_nCTS",
+            "MFP3": "UART9_RXD",
+            "MFP6": "LCM_DATA12/LCM_MPU_D12",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "109": {
+            "MFP0": "PH.5",
+            "MFP2": "UART10_nRTS",
+            "MFP3": "UART9_TXD",
+            "MFP6": "LCM_DATA13/LCM_MPU_D13",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "110": {
+            "MFP0": "PH.6",
+            "MFP2": "UART10_RXD",
+            "MFP6": "LCM_DATA14/LCM_MPU_D14",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "111": {
+            "MFP0": "PH.7",
+            "MFP2": "UART10_TXD",
+            "MFP6": "LCM_DATA15/LCM_MPU_D15",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "112": {
+            "MFP0": "PC.12",
+            "MFP2": "UART12_nCTS",
+            "MFP3": "UART11_RXD",
+            "MFP6": "LCM_DATA16/LCM_MPU_D16",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "113": {
+            "MFP0": "PC.13",
+            "MFP2": "UART12_nRTS",
+            "MFP3": "UART11_TXD",
+            "MFP6": "LCM_DATA17/LCM_MPU_D17",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "114": {
+            "MFP0": "PC.14",
+            "MFP2": "UART12_RXD",
+            "MFP6": "LCM_DATA18/LCM_MPU_CS",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "115": {
+            "MFP0": "PC.15",
+            "MFP2": "UART12_TXD",
+            "MFP6": "LCM_DATA19",
+            "MFP7": "LCM_MPU_TE",
+            "MFP8": "LCM_MPU_VSYNC",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "116": {
+            "MFP0": "PH.12",
+            "MFP2": "UART14_nCTS",
+            "MFP3": "UART13_RXD",
+            "MFP6": "LCM_DATA20",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "117": {
+            "MFP0": "PH.13",
+            "MFP2": "UART14_nRTS",
+            "MFP3": "UART13_TXD",
+            "MFP6": "LCM_DATA21",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "118": {
+            "MFP0": "PH.14",
+            "MFP2": "UART14_RXD",
+            "MFP6": "LCM_DATA22",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "119": {
+            "MFP0": "PH.15",
+            "MFP2": "UART14_TXD",
+            "MFP6": "LCM_DATA23",
+            "VDDIO_GROUP": "VDDIO4 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1G"
+        },
+        "120": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "121": {
+            "MFP0": "VDDIO5",
+            "ORCAD_GROUP": "U1H"
+        },
+        "122": {
+            "MFP0": "PD.0",
+            "MFP2": "UART3_nCTS",
+            "MFP3": "UART4_RXD",
+            "MFP5": "QSPI0_SS0",
+            "VDDIO_GROUP": "VDDIO5 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1H"
+        },
+        "123": {
+            "MFP0": "PD.1",
+            "MFP2": "UART3_nRTS",
+            "MFP3": "UART4_TXD",
+            "MFP5": "QSPI0_CLK",
+            "VDDIO_GROUP": "VDDIO5 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1H"
+        },
+        "124": {
+            "MFP0": "PD.2",
+            "MFP2": "UART3_RXD",
+            "MFP5": "QSPI0_MOSI0",
+            "VDDIO_GROUP": "VDDIO5 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1H"
+        },
+        "125": {
+            "MFP0": "PD.3",
+            "MFP2": "UART3_TXD",
+            "MFP5": "QSPI0_MISO0",
+            "VDDIO_GROUP": "VDDIO5 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1H"
+        },
+        "126": {
+            "MFP0": "PD.4",
+            "MFP2": "UART1_nCTS",
+            "MFP3": "UART2_RXD",
+            "MFP4": "I2C2_SDA",
+            "MFP5": "QSPI0_MOSI1",
+            "VDDIO_GROUP": "VDDIO5 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1H"
+        },
+        "127": {
+            "MFP0": "PD.5",
+            "MFP2": "UART1_nRTS",
+            "MFP3": "UART2_TXD",
+            "MFP4": "I2C2_SCL",
+            "MFP5": "QSPI0_MISO1",
+            "VDDIO_GROUP": "VDDIO5 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1H"
+        },
+        "128": {
+            "MFP0": "VSS",
+            "ORCAD_GROUP": "U1O"
+        },
+        "129": {
+            "MFP0": "MVDD",
+            "ORCAD_GROUP": "U1N"
+        },
+        "131": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "132": {
+            "MFP0": "MVDD_DPHYPLL",
+            "ORCAD_GROUP": "U1N"
+        },
+        "130": {
+            "MFP0": "MVDD",
+            "ORCAD_GROUP": "U1N"
+        },
+        "136": {
+            "MFP0": [
+                "MVREF",
+                "MVREF_DQ"
+            ],
+            "ORCAD_GROUP": "U1N"
+        },
+        "133": {
+            "MFP0": "MZQ_SDRAM",
+            "ORCAD_GROUP": "U1N"
+        },
+        "134": {
+            "MFP0": "MZQ_DDRPHY",
+            "ORCAD_GROUP": "U1N"
+        },
+        "135": {
+            "MFP0": "MVDD",
+            "ORCAD_GROUP": "U1N"
+        },
+        "137": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "138": {
+            "MFP0": "MVDD",
+            "ORCAD_GROUP": "U1N"
+        },
+        "139": {
+            "MFP0": "MVDD_DPHYPLL",
+            "ORCAD_GROUP": "U1N"
+        },
+        "140": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "141": {
+            "MFP0": "MVDD",
+            "ORCAD_GROUP": "U1N"
+        },
+        "142": {
+            "MFP0": "PC.0",
+            "MFP4": "I2C4_SDA",
+            "MFP6": "SD0_CMD/eMMC0_CMD",
+            "VDDIO_GROUP": "VDDIO6 (3.3V)",
+            "ORCAD_GROUP": "U1I"
+        },
+        "143": {
+            "MFP0": "PC.1",
+            "MFP4": "I2C4_SCL",
+            "MFP6": "SD0_CLK/eMMC0_CLK",
+            "VDDIO_GROUP": "VDDIO6 (3.3V)",
+            "ORCAD_GROUP": "U1I"
+        },
+        "144": {
+            "MFP0": "PC.2",
+            "MFP3": "CAN0_RXD",
+            "MFP6": "SD0_DAT0/eMMC0_DAT0",
+            "VDDIO_GROUP": "VDDIO6 (3.3V)",
+            "ORCAD_GROUP": "U1I"
+        },
+        "145": {
+            "MFP0": "PC.3",
+            "MFP3": "CAN0_TXD",
+            "MFP6": "SD0_DAT1/eMMC0_DAT1",
+            "VDDIO_GROUP": "VDDIO6 (3.3V)",
+            "ORCAD_GROUP": "U1I"
+        },
+        "146": {
+            "MFP0": "PC.4",
+            "MFP4": "I2C5_SDA",
+            "MFP6": "SD0_DAT2/eMMC0_DAT2",
+            "VDDIO_GROUP": "VDDIO6 (3.3V)",
+            "ORCAD_GROUP": "U1I"
+        },
+        "147": {
+            "MFP0": "PC.5",
+            "MFP4": "I2C5_SCL",
+            "MFP6": "SD0_DAT3/eMMC0_DAT3",
+            "VDDIO_GROUP": "VDDIO6 (3.3V)",
+            "ORCAD_GROUP": "U1I"
+        },
+        "148": {
+            "MFP0": "VDDIO6",
+            "ORCAD_GROUP": "U1I"
+        },
+        "149": {
+            "MFP0": "PC.6",
+            "MFP3": "CAN1_RXD",
+            "MFP6": "SD0_nCD",
+            "VDDIO_GROUP": "VDDIO6 (3.3V)",
+            "ORCAD_GROUP": "U1I"
+        },
+        "150": {
+            "MFP0": "PC.7",
+            "MFP3": "CAN1_TXD",
+            "MFP6": "SD0_WP",
+            "VDDIO_GROUP": "VDDIO6 (3.3V)",
+            "ORCAD_GROUP": "U1I"
+        },
+        "151": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "152": {
+            "MFP0": "PN.0",
+            "MFP4": "I2C2_SDA",
+            "MFP6": "CCAP1_DATA0",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "153": {
+            "MFP0": "PN.1",
+            "MFP4": "I2C2_SCL",
+            "MFP6": "CCAP1_DATA1",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "154": {
+            "MFP0": "PN.2",
+            "MFP3": "CAN0_RXD",
+            "MFP6": "CCAP1_DATA2",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "155": {
+            "MFP0": "PN.3",
+            "MFP3": "CAN0_TXD",
+            "MFP6": "CCAP1_DATA3",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "156": {
+            "MFP0": "PN.4",
+            "MFP4": "I2C1_SDA",
+            "MFP6": "CCAP1_DATA4",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "157": {
+            "MFP0": "PN.5",
+            "MFP4": "I2C1_SCL",
+            "MFP6": "CCAP1_DATA5",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "158": {
+            "MFP0": "VDDIO7",
+            "ORCAD_GROUP": "U1J"
+        },
+        "159": {
+            "MFP0": "PN.6",
+            "MFP3": "CAN1_RXD",
+            "MFP6": "CCAP1_DATA6",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "160": {
+            "MFP0": "PN.7",
+            "MFP3": "CAN1_TXD",
+            "MFP6": "CCAP1_DATA7",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "161": {
+            "MFP0": "PN.10",
+            "MFP3": "CAN2_RXD",
+            "MFP6": "CCAP1_SCLK",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "162": {
+            "MFP0": "PN.11",
+            "MFP3": "CAN2_TXD",
+            "MFP6": "CCAP1_PIXCLK",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "163": {
+            "MFP0": "PN.12",
+            "MFP2": "UART6_nCTS",
+            "MFP3": "UART12_RXD",
+            "MFP4": "I2C5_SDA",
+            "MFP6": "CCAP1_HSYNC",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "164": {
+            "MFP0": "PN.13",
+            "MFP2": "UART6_nRTS",
+            "MFP3": "UART12_TXD",
+            "MFP4": "I2C5_SCL",
+            "MFP6": "CCAP1_VSYNC",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "165": {
+            "MFP0": "PN.14",
+            "MFP2": "UART6_RXD",
+            "MFP3": "CAN3_RXD",
+            "MFP5": "SPI1_SS1",
+            "MFP6": "CCAP1_SFIELD",
+            "MFP7": "SPI1_I2SMCLK",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "166": {
+            "MFP0": "PN.15",
+            "MFP1": "EPWM2_CH4",
+            "MFP2": "UART6_TXD",
+            "MFP3": "CAN3_TXD",
+            "MFP5": "I2S0_MCLK",
+            "MFP6": "SPI1_SS1",
+            "MFP7": "SPI1_I2SMCLK",
+            "MFP8": "SC0_nCD",
+            "MFP9": "EADC0_ST",
+            "MFP10": "CLKO",
+            "MFP11": "TM6",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "167": {
+            "MFP0": "PK.12",
+            "MFP1": "EPWM2_CH0",
+            "MFP2": "UART1_nCTS",
+            "MFP3": "UART13_RXD",
+            "MFP4": "I2C4_SDA",
+            "MFP5": "I2S0_LRCK",
+            "MFP6": "SPI1_SS0",
+            "MFP8": "SC0_CLK",
+            "MFP11": "TM10",
+            "MFP13": "INT2",
+            "VDDIO_GROUP": "VDDIO7 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1J"
+        },
+        "168": {
+            "MFP0": [
+                "AVDDL_PLL0",
+                "VDD_CORE"
+            ],
+            "ORCAD_GROUP": "U1O"
+        },
+        "169": {
+            "MFP0": "XT1_IN",
+            "VDDIO_GROUP": "VDDIO10 (3.3V)",
+            "ORCAD_GROUP": "U1A"
+        },
+        "170": {
+            "MFP0": "XT1_OUT",
+            "VDDIO_GROUP": "VDDIO10 (3.3V)",
+            "ORCAD_GROUP": "U1A"
+        },
+        "171": {
+            "MFP0": [
+                "VDDIO10",
+                "AVDDH_PLL1"
+            ],
+            "ORCAD_GROUP": "U1A"
+        },
+        "172": {
+            "MFP0": [
+                "AVDDL_PLL1",
+                "VDD_PLL1"
+            ],
+            "ORCAD_GROUP": "U1O"
+        },
+        "173": {
+            "MFP0": [
+                "VDD_PLL1",
+                "AVDDL_PLL2"
+            ],
+            "ORCAD_GROUP": "U1O"
+        },
+        "174": {
+            "MFP0": "AVDDH_PLL2",
+            "ORCAD_GROUP": "U1O"
+        },
+        "175": {
+            "MFP0": "PE.0",
+            "MFP2": "UART9_nCTS",
+            "MFP3": "UART8_RXD",
+            "MFP7": "CCAP1_DATA0",
+            "MFP8": "RGMII0_MDC",
+            "MFP9": "RMII0_MDC",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "176": {
+            "MFP0": "PE.1",
+            "MFP2": "UART9_nRTS",
+            "MFP3": "UART8_TXD",
+            "MFP7": "CCAP1_DATA1",
+            "MFP8": "RGMII0_MDIO",
+            "MFP9": "RMII0_MDIO",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "177": {
+            "MFP0": "PE.2",
+            "MFP2": "UART9_RXD",
+            "MFP7": "CCAP1_DATA2",
+            "MFP8": "RGMII0_TXCTL",
+            "MFP9": "RMII0_TXEN",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "178": {
+            "MFP0": "PE.3",
+            "MFP2": "UART9_TXD",
+            "MFP7": "CCAP1_DATA3",
+            "MFP8": "RGMII0_TXD0",
+            "MFP9": "RMII0_TXD0",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "179": {
+            "MFP0": "VDDIO8",
+            "ORCAD_GROUP": "U1K"
+        },
+        "180": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "181": {
+            "MFP0": "PE.4",
+            "MFP2": "UART4_nCTS",
+            "MFP3": "UART3_RXD",
+            "MFP7": "CCAP1_DATA4",
+            "MFP8": "RGMII0_TXD1",
+            "MFP9": "RMII0_TXD1",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "182": {
+            "MFP0": "PE.5",
+            "MFP2": "UART4_nRTS",
+            "MFP3": "UART3_TXD",
+            "MFP7": "CCAP1_DATA5",
+            "MFP8": "RGMII0_RXCLK",
+            "MFP9": "RMII0_REFCLK",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "183": {
+            "MFP0": "PE.6",
+            "MFP2": "UART4_RXD",
+            "MFP7": "CCAP1_DATA6",
+            "MFP8": "RGMII0_RXCTL",
+            "MFP9": "RMII0_CRSDV",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "184": {
+            "MFP0": "PE.7",
+            "MFP2": "UART4_TXD",
+            "MFP7": "CCAP1_DATA7",
+            "MFP8": "RGMII0_RXD0",
+            "MFP9": "RMII0_RXD0",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "185": {
+            "MFP0": "PE.8",
+            "MFP2": "UART13_nCTS",
+            "MFP3": "UART12_RXD",
+            "MFP7": "CCAP1_SCLK",
+            "MFP8": "RGMII0_RXD1",
+            "MFP9": "RMII0_RXD1",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "186": {
+            "MFP0": "PE.9",
+            "MFP2": "UART13_nRTS",
+            "MFP3": "UART12_TXD",
+            "MFP7": "CCAP1_PIXCLK",
+            "MFP8": "RGMII0_RXD2",
+            "MFP9": "RMII0_RXERR",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "187": {
+            "MFP0": "PE.10",
+            "MFP2": "UART15_nCTS",
+            "MFP3": "UART14_RXD",
+            "MFP5": "SPI1_SS0",
+            "MFP7": "CCAP1_HSYNC",
+            "MFP8": "RGMII0_RXD3",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "188": {
+            "MFP0": "PE.11",
+            "MFP2": "UART15_nRTS",
+            "MFP3": "UART14_TXD",
+            "MFP5": "SPI1_CLK",
+            "MFP7": "CCAP1_VSYNC",
+            "MFP8": "RGMII0_TXCLK",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "189": {
+            "MFP0": "PE.12",
+            "MFP2": "UART15_RXD",
+            "MFP5": "SPI1_MOSI",
+            "MFP7": "CCAP1_DATA8",
+            "MFP8": "RGMII0_TXD2",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "190": {
+            "MFP0": "PE.13",
+            "MFP2": "UART15_TXD",
+            "MFP5": "SPI1_MISO",
+            "MFP7": "CCAP1_DATA9",
+            "MFP8": "RGMII0_TXD3",
+            "VDDIO_GROUP": "VDDIO8 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1K"
+        },
+        "191": {
+            "MFP0": "VDDIO9",
+            "ORCAD_GROUP": "U1L"
+        },
+        "192": {
+            "MFP0": "PF.0",
+            "MFP2": "UART2_nCTS",
+            "MFP3": "UART1_RXD",
+            "MFP6": "RGMII0_RXD3",
+            "MFP8": "RGMII1_MDC",
+            "MFP9": "RMII1_MDC",
+            "MFP14": "KPI_COL0",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "193": {
+            "MFP0": "PF.1",
+            "MFP2": "UART2_nRTS",
+            "MFP3": "UART1_TXD",
+            "MFP6": "RGMII0_TXCLK",
+            "MFP8": "RGMII1_MDIO",
+            "MFP9": "RMII1_MDIO",
+            "MFP14": "KPI_COL1",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "194": {
+            "MFP0": "PF.2",
+            "MFP2": "UART2_RXD",
+            "MFP6": "RGMII0_TXD2",
+            "MFP8": "RGMII1_TXCTL",
+            "MFP9": "RMII1_TXEN",
+            "MFP14": "KPI_COL2",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "195": {
+            "MFP0": "PF.3",
+            "MFP2": "UART2_TXD",
+            "MFP6": "RGMII0_TXD3",
+            "MFP8": "RGMII1_TXD0",
+            "MFP9": "RMII1_TXD0",
+            "MFP14": "KPI_COL3",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "196": {
+            "MFP0": "PF.4",
+            "MFP2": "UART11_nCTS",
+            "MFP3": "UART10_RXD",
+            "MFP4": "I2S0_LRCK",
+            "MFP5": "SPI1_SS0",
+            "MFP8": "RGMII1_TXD1",
+            "MFP9": "RMII1_TXD1",
+            "MFP13": "CAN2_RXD",
+            "MFP14": "KPI_ROW0",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "197": {
+            "MFP0": "PF.5",
+            "MFP2": "UART11_nRTS",
+            "MFP3": "UART10_TXD",
+            "MFP4": "I2S0_BCLK",
+            "MFP5": "SPI1_CLK",
+            "MFP8": "RGMII1_RXCLK",
+            "MFP9": "RMII1_REFCLK",
+            "MFP13": "CAN2_TXD",
+            "MFP14": "KPI_ROW1",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "198": {
+            "MFP0": "PF.6",
+            "MFP2": "UART11_RXD",
+            "MFP4": "I2S0_DI",
+            "MFP5": "SPI1_MOSI",
+            "MFP8": "RGMII1_RXCTL",
+            "MFP9": "RMII1_CRSDV",
+            "MFP10": "I2C4_SDA",
+            "MFP13": "SC0_CLK",
+            "MFP14": "KPI_ROW2",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "199": {
+            "MFP0": "PF.7",
+            "MFP2": "UART11_TXD",
+            "MFP4": "I2S0_DO",
+            "MFP5": "SPI1_MISO",
+            "MFP8": "RGMII1_RXD0",
+            "MFP9": "RMII1_RXD0",
+            "MFP10": "I2C4_SCL",
+            "MFP13": "SC0_DAT",
+            "MFP14": "KPI_ROW3",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "200": {
+            "MFP0": "PF.8",
+            "MFP2": "UART13_RXD",
+            "MFP4": "I2C5_SDA",
+            "MFP5": "SPI0_SS0",
+            "MFP8": "RGMII1_RXD1",
+            "MFP9": "RMII1_RXD1",
+            "MFP13": "SC0_RST",
+            "MFP14": "KPI_COL4",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "201": {
+            "MFP0": "PF.9",
+            "MFP2": "UART13_TXD",
+            "MFP4": "I2C5_SCL",
+            "MFP5": "SPI0_SS1",
+            "MFP8": "RGMII1_RXD2",
+            "MFP9": "RMII1_RXERR",
+            "MFP13": "SC0_PWR",
+            "MFP14": "KPI_COL5",
+            "VDDIO_GROUP": "VDDIO9 (1.8V ~ 3.3V)",
+            "ORCAD_GROUP": "U1L"
+        },
+        "202": {
+            "MFP0": [
+                "VDD_CORE",
+                "AVDDL_ROSC"
+            ],
+            "ORCAD_GROUP": "U1O"
+        },
+        "203": {
+            "MFP0": [
+                [
+                    "AVDD_ADC0",
+                    "AVDD_EADC0"
+                ],
+                "VREF_EADC0"
+            ],
+            "ORCAD_GROUP": "U1M"
+        },
+        "204": {
+            "MFP0": "PB.8",
+            "MFP1": "EPWM2_BRAKE0",
+            "MFP2": "UART2_nCTS",
+            "MFP3": "UART1_RXD",
+            "MFP4": "I2C2_SDA",
+            "MFP5": "SPI0_SS1",
+            "MFP6": "SPI0_I2SMCLK",
+            "MFP8": "ADC0_CH0",
+            "MFP9": "EBI_nCS0",
+            "MFP11": "TM4",
+            "MFP14": "QEI2_INDEX",
+            "MFP15": "KPI_ROW6",
+            "VDDIO_GROUP": "AVDD_ADC0 (3.3V)",
+            "ORCAD_GROUP": "U1M"
+        },
+        "205": {
+            "MFP0": "PB.9",
+            "MFP1": "EPWM2_CH4",
+            "MFP2": "UART2_nRTS",
+            "MFP3": "UART1_TXD",
+            "MFP4": "I2C2_SCL",
+            "MFP5": "SPI0_CLK",
+            "MFP6": "I2S0_MCLK",
+            "MFP7": "CCAP1_HSYNC",
+            "MFP8": "ADC0_CH1",
+            "MFP9": "EBI_ALE",
+            "MFP10": "EBI_AD13",
+            "MFP11": "TM0_EXT",
+            "MFP12": "I2S1_MCLK",
+            "MFP13": "SC0_nCD",
+            "MFP14": "QEI2_A",
+            "MFP15": "KPI_ROW7",
+            "VDDIO_GROUP": "AVDD_ADC0 (3.3V)",
+            "ORCAD_GROUP": "U1M"
+        },
+        "206": {
+            "MFP0": "PB.10",
+            "MFP1": "EPWM2_CH5",
+            "MFP2": "UART2_RXD",
+            "MFP3": "CAN0_RXD",
+            "MFP5": "SPI0_MOSI",
+            "MFP6": "EBI_MCLK",
+            "MFP7": "CCAP1_VSYNC",
+            "MFP8": "ADC0_CH2",
+            "MFP9": "EBI_ADR15",
+            "MFP10": "EBI_AD14",
+            "MFP11": "TM5",
+            "MFP12": "I2C1_SDA",
+            "MFP13": "INT1",
+            "MFP14": "QEI2_B",
+            "VDDIO_GROUP": "AVDD_ADC0 (3.3V)",
+            "ORCAD_GROUP": "U1M"
+        },
+        "207": {
+            "MFP0": "PB.11",
+            "MFP1": "EPWM2_BRAKE1",
+            "MFP2": "UART2_TXD",
+            "MFP3": "CAN0_TXD",
+            "MFP5": "SPI0_MISO",
+            "MFP6": "I2S1_MCLK",
+            "MFP7": "CCAP1_SFIELD",
+            "MFP8": "ADC0_CH3",
+            "MFP9": "EBI_nCS2",
+            "MFP10": "EBI_ALE",
+            "MFP11": "TM5_EXT",
+            "MFP12": "I2C1_SCL",
+            "MFP13": "INT2",
+            "MFP14": "QEI2_INDEX",
+            "VDDIO_GROUP": "AVDD_ADC0 (3.3V)",
+            "ORCAD_GROUP": "U1M"
+        },
+        "208": {
+            "MFP0": "AVDD_ADC0",
+            "ORCAD_GROUP": "U1M"
+        },
+        "209": {
+            "MFP0": "AVSS",
+            "ORCAD_GROUP": "U1M"
+        },
+        "210": {
+            "MFP0": "VDD_CORE",
+            "ORCAD_GROUP": "U1O"
+        },
+        "211": {
+            "MFP0": "PB.12",
+            "MFP1": "EPWM2_CH0",
+            "MFP2": "UART4_nCTS",
+            "MFP3": "UART3_RXD",
+            "MFP4": "I2C3_SDA",
+            "MFP5": "CAN2_RXD",
+            "MFP6": "I2S1_LRCK",
+            "MFP8": "ADC0_CH4",
+            "MFP9": "EBI_ADR16",
+            "MFP14": "ECAP2_IC0",
+            "VDDIO_GROUP": "AVDD_ADC0 (3.3V)",
+            "ORCAD_GROUP": "U1M"
+        },
+        "212": {
+            "MFP0": "PB.13",
+            "MFP1": "EPWM2_CH1",
+            "MFP2": "UART4_nRTS",
+            "MFP3": "UART3_TXD",
+            "MFP4": "I2C3_SCL",
+            "MFP5": "CAN2_TXD",
+            "MFP6": "I2S1_BCLK",
+            "MFP8": "ADC0_CH5",
+            "MFP9": "EBI_ADR17",
+            "MFP14": "ECAP2_IC1",
+            "VDDIO_GROUP": "AVDD_ADC0 (3.3V)",
+            "ORCAD_GROUP": "U1M"
+        }
+    }
+}

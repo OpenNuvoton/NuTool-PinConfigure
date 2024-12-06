@@ -1,7 +1,7 @@
 NUTOOL_PIN.g_cfg_chips = [
     { name: "M2003FC1AE", pkg: "TSSOP20" },
-    { name: "M2003XC1AE", pkg: "QFN20(AQ20)" },
-    { name: "M2003XC1BE", pkg: "QFN20(BQ20)" }
+    { name: "M2003XC1AE", pkg: "QFN20" },
+    // { name: "M2003XC1BE", pkg: "QFN20" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -203,16 +203,17 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'M2003FC1AE(TSSOP20)': {
         'ALL': ['BPWM0', 'CAN', 'RTC', 'SPI0', 'SPI1', 'I2C1', 'USCI1', 'TAMPER0', 'ACMP0', 'ACMP1', 'VREF', 'HXT', 'LXT']
     },
-    'M2003XC1AE(QFN20(AQ20))': {
+    'M2003XC1AE': {
         'ALL': ['BPWM0', 'CAN', 'RTC', 'SPI0', 'SPI1', 'I2C1', 'USCI1', 'TAMPER0', 'ACMP0', 'ACMP1', 'VREF', 'HXT', 'LXT']
     },
-    'M2003XC1BE(QFN20(BQ20))': {
+    'M2003XC1BE': {
         'ALL': ['BPWM0', 'CAN', 'RTC', 'SPI0', 'SPI1', 'I2C1', 'USCI1', 'TAMPER0', 'ACMP0', 'ACMP1', 'VREF', 'HXT', 'LXT']
     }
 };
 
 NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
-    var partNumber_package;
+    var partNumber_package,
+        partNumber;
 
     if (typeof given_partNumber_package === 'undefined') {
         partNumber_package = NUTOOL_PIN.getg_partNumber_package();
@@ -223,6 +224,19 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
 
     NUTOOL_PIN.g_packageNumber = partNumber_package.substring(partNumber_package.indexOf('(') + 1);
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.g_packageNumber.substring(0, NUTOOL_PIN.g_packageNumber.lastIndexOf(')'));
-    NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;
+    partNumber = partNumber_package.substring(0, partNumber_package.indexOf('('));
+    switch (partNumber) {
+        case 'M2003XC1AE':
+            NUTOOL_PIN.g_packageNumberIndex = "QFN20(AQ20)";
+            break;
+        case 'M2003XC1BE':
+            NUTOOL_PIN.g_packageNumberIndex = "QFN20(BQ20)";
+            break;
+        default:
+            NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;
+            break;
+    }
+
     partNumber_package = null;
+    partNumber = null;
 };

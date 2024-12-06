@@ -1,4 +1,5 @@
 NUTOOL_PIN.g_cfg_chips = [
+    { name: "N9H31K41IFC", pkg: "LQFP128" },
     { name: "N9H31K51IFC", pkg: "LQFP128" }
 ];
 
