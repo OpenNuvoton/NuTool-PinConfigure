@@ -14,7 +14,14 @@ NUTOOL_PIN.g_cfg_chips = [
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
-    "QFN48(PIN:D10R14U10L14)": [
+    "QFN48(5*5)(PIN:D10R14U10L14)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 
+        'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
+        'PC.1', 'PC.0', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PC.14', 
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
+    ],
+    "QFN48(7*7)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 
         'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 
         'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
@@ -261,46 +268,53 @@ NUTOOL_PIN.g_cfg_gpioMatrix = [];
 NUTOOL_PIN.g_cfg_shareBits = [];
 NUTOOL_PIN.g_cfg_addGPIO = {};
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'M2A23YG5AC(QFN48)': {
+    'M2A23YG5AC': {
         'ALL': []
     },
-    'M2A23YE5AC(QFN48)': {
+    'M2A23YE5AC': {
         'ALL': []
     },
-    'M2A23LG5AC(LQFP48)': {
+    'M2A23LG5AC': {
         'ALL': []
     },
-    'M2A23LE5AC(LQFP48)': {
+    'M2A23LE5AC': {
         'ALL': []
     },
-    'M2A23SG5AC(LQFP64)': {
+    'M2A23SG5AC': {
         'ALL': []
     },
-    'M2A23SE5AC(LQFP64)': {
+    'M2A23SE5AC': {
         'ALL': []
     },
-    'M2A23NG5ACU(QFN48)': {
+    'M2A23NG5ACU': {
         'ALL': []
     },
-    'M2A23NE5ACU(QFN48)': {
+    'M2A23NE5ACU': {
         'ALL': []
     },
-    'M2A23LG5ACU(LQFP48)': {
+    'M2A23LG5ACU': {
         'ALL': []
     },
-    'M2A23LE5ACU(LQFP48)': {
+    'M2A23LE5ACU': {
         'ALL': []
     },
-    'M2A23SG5ACU(LQFP64)': {
+    'M2A23SG5ACU': {
         'ALL': []
     },
-    'M2A23SE5ACU(LQFP64)': {
+    'M2A23SE5ACU': {
         'ALL': []
     }
 };
 
 NUTOOL_PIN.g_cfg_OrCAD = {
-    "QFN48": [
+    "QFN48(5*5)(PIN:D10R14U10L14)": [
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', ''
+    ],
+    "QFN48(7*7)": [
         '', '', '', '', '', '', '', '', '', '', 
         '', '', '', '', '', '', '', '', '', '', 
         '', '', '', '', '', '', '', '', '', '', 
@@ -327,6 +341,7 @@ NUTOOL_PIN.g_cfg_OrCAD = {
 
 NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     var partNumber_package;
+    var partNumber;
 
     if (typeof given_partNumber_package === 'undefined') {
         partNumber_package = NUTOOL_PIN.getg_partNumber_package();
@@ -338,9 +353,15 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     NUTOOL_PIN.g_packageNumber = partNumber_package.substring(partNumber_package.indexOf('(') + 1);
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.g_packageNumber.substring(0, NUTOOL_PIN.g_packageNumber.lastIndexOf(')'));
 
-    switch (NUTOOL_PIN.g_packageNumber) {
-        case 'QFN48':
-            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
+    partNumber = partNumber_package.substring(0, partNumber_package.indexOf('('));
+    switch (partNumber) {
+        case 'M2A23YE5AC':
+        case 'M2A23YG5AC':
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(5*5)(PIN:D10R14U10L14)";
+            break;
+        case 'M2A23NE5ACU':
+        case 'M2A23NG5ACU':
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(7*7)";
             break;
         default:
             NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;

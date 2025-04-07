@@ -1409,19 +1409,19 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
         "ALL": ["TSI"]
     },
     'MA35D14F884(LQFP216)': {
-        'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'TAMPER', 'TRACE']
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', "KPI_ROW6", "KPI_ROW7", 'TAMPER', 'TRACE']
     },
     'MA35D14F984(LQFP216)': {
-        'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'TAMPER', 'TRACE']
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', "KPI_ROW6", "KPI_ROW7", 'TAMPER', 'TRACE']
     },
     "MA35D16F787C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
+        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "KPI_ROW6", "KPI_ROW7", "TAMPER", "TRACE"]
     },
     "MA35D16F887C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
+        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "KPI_ROW6", "KPI_ROW7", "TAMPER", "TRACE"]
     },
     "MA35D16F987C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "TAMPER", "TRACE"]
+        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "KPI_ROW6", "KPI_ROW7", "TAMPER", "TRACE"]
     },
     "MA35D16A087C(BGA364)": {
         "ALL": ["TSI"]

@@ -1,14 +1,14 @@
 // chip content
 NUTOOL_PIN.g_cfg_chips = [
-	// M2351
-	{ name: "M2351ZIAAE", pkg: "QFN33" },
-    { name: "M2351CIAAE", pkg: "WLCSP49" },
-	{ name: "M2351SIAAE", pkg: "LQFP64" },
-	{ name: "M2351KIAAE", pkg: "LQFP128" },
 	// M2354
 	{ name: "M2354LJFAE", pkg: "LQFP48" },
+	{ name: "M2354LJFBE", pkg: "LQFP48" },
 	{ name: "M2354SJFAE", pkg: "LQFP64" },
-	{ name: "M2354KJFAE", pkg: "LQFP128" }
+	{ name: "M2354SJFBE", pkg: "LQFP64" },
+	{ name: "M2354KJFAE", pkg: "LQFP128" },
+	{ name: "M2354KJFBE", pkg: "LQFP128" },
+	{ name: "M2354CJFAE", pkg: "WLCSP49" },
+	{ name: "M2354CJFBE", pkg: "WLCSP49" },
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -49,6 +49,15 @@ NUTOOL_PIN.g_cfg_pkgs = {
 		'PH.8', 'PH.9', 'PH.10', 'PH.11', 'PD.14', 'VSS', 'Vsw', 'VDD', 'LDO_CAP', 'PB.15',
 		'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8',
 		'PB.7', 'PB.6'
+	],
+	"WLCSP49": [
+		'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PA.15', 'PA.13', 'VDD',
+		'PA.2', 'PA.0', 'PC.0', 'PB.14', 'PB.15', 'PA.12', 'VSS',
+		'PA.6', 'PA.1', 'PA.4', 'PB.9', 'PB.11', 'PA.14', 'Vsw',
+		'PC.6', 'PA.3', 'PA.8', 'PB.8', 'PB.10', 'PB.12', 'VDD',
+		'PC.7', 'PA.7', 'PD.10', 'PB.5', 'PB.6', 'PB.13', 'AVDD',
+		'PF.2', 'PF.6', 'PD.11', 'PB.2', 'PB.4', 'PB.7', 'AVSS',
+		'PF.3', 'PF.4', 'PF.5', 'PB.1', 'PB.0', 'PB.3', 'VREF'
 	]
 };
 
@@ -688,7 +697,80 @@ NUTOOL_PIN.g_cfg_addGPIO = {
 		"PD.2": ['LCD_SEG1:15'],
 		"PD.3": ['LCD_SEG2:15']
 	},
+	"M2354SJFBE(LQFP64)": {
+		"PA.0": ['LCD_COM6:5', 'LCD_SEG14:5'],
+		"PA.1": ['LCD_COM7:5', 'LCD_SEG13:5'],
+		"PA.2": ['LCD_SEG3:5'],
+		"PA.3": ['LCD_SEG4:5'],
+		"PA.4": ['LCD_SEG5:5'],
+		"PA.5": ['LCD_SEG6:5'],
+		"PA.6": ['LCD_SEG7:9'],
+		"PA.7": ['LCD_SEG8:9'],
+		"PA.8": ['LCD_SEG11:14'],
+		"PA.9": ['LCD_SEG12:14'],
+		"PC.0": ['LCD_COM0:13'],
+		"PC.1": ['LCD_COM1:13'],
+		"PC.2": ['LCD_COM2:15'],
+		"PC.3": ['LCD_COM3:15'],
+		"PC.4": ['LCD_SEG16:14', 'LCD_COM4:15'],
+		"PC.5": ['LCD_SEG15:14', 'LCD_COM5:15'],
+		"PC.6": ['LCD_SEG9:13'],
+		"PC.7": ['LCD_SEG10:13'],
+		"PD.1": ['LCD_SEG0:15'],
+		"PD.2": ['LCD_SEG1:15'],
+		"PD.3": ['LCD_SEG2:15']
+	},
 	"M2354KJFAE(LQFP128)": {
+		"PA.0": ['LCD_SEG24:11'],
+		"PA.1": ['LCD_SEG25:11'],
+		"PA.2": ['LCD_SEG26:11'],
+		"PA.3": ['LCD_SEG27:11'],
+		"PA.4": ['LCD_SEG28:15'],
+		"PA.5": ['LCD_SEG29:15'],
+		"PC.0": ['LCD_COM0:13'],
+		"PC.1": ['LCD_COM1:13'],
+		"PC.2": ['LCD_COM2:15'],
+		"PC.3": ['LCD_COM3:15'],
+		"PC.4": ['LCD_SEG43:15', 'LCD_COM4:15'],
+		"PC.5": ['LCD_SEG42:15', 'LCD_COM5:15'],
+		"PD.6": ['LCD_SEG13:15'],
+		"PD.7": ['LCD_SEG14:15'],
+		"PD.8": ['LCD_SEG41:15', 'LCD_COM6:15'],
+		"PD.9": ['LCD_SEG40:15', 'LCD_COM7:15'],
+		"PD.14": ['LCD_SEG0:15'],
+		"PE.0": ['LCD_SEG5:15'],
+		"PE.1": ['LCD_SEG6:15'],
+		"PE.2": ['LCD_SEG7:15'],
+		"PE.3": ['LCD_SEG8:15'],
+		"PE.4": ['LCD_SEG9:15'],
+		"PE.5": ['LCD_SEG10:15'],
+		"PE.6": ['LCD_SEG11:15'],
+		"PE.7": ['LCD_SEG12:15'],
+		"PE.8": ['LCD_SEG32:15'],
+		"PE.9": ['LCD_SEG31:15'],
+		"PE.10": ['LCD_SEG30:15'],
+		"PE.14": ['LCD_SEG23:15'],
+		"PE.15": ['LCD_SEG22:15'],
+		"PG.2": ['LCD_SEG39:15'],
+		"PG.3": ['LCD_SEG38:15'],
+		"PG.4": ['LCD_SEG37:15'],
+		"PG.9": ['LCD_SEG21:15'],
+		"PG.10": ['LCD_SEG20:15'],
+		"PG.11": ['LCD_SEG19:15'],
+		"PG.12": ['LCD_SEG18:15'],
+		"PG.13": ['LCD_SEG17:15'],
+		"PG.14": ['LCD_SEG16:15'],
+		"PG.15": ['LCD_SEG15:13'],
+		"PH.4": ['LCD_SEG36:15'],
+		"PH.5": ['LCD_SEG35:15'],
+		"PH.6": ['LCD_SEG34:15'],
+		"PH.7": ['LCD_SEG33:15'],
+		"PH.8": ['LCD_SEG4:15'],
+		"PH.9": ['LCD_SEG3:15'],
+		"PH.10": ['LCD_SEG2:15'],
+		"PH.11": ['LCD_SEG1:15']
+	},
+	"M2354KJFBE(LQFP128)": {
 		"PA.0": ['LCD_SEG24:11'],
 		"PA.1": ['LCD_SEG25:11'],
 		"PA.2": ['LCD_SEG26:11'],
@@ -740,14 +822,29 @@ NUTOOL_PIN.g_cfg_addGPIO = {
 	}
 };
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-	"LQFP48": {
+	"M2354LJFAE": {
 		"ALL": ["ECAP1", "ETM", "SWDH", "SPI3", "LCD"]
 	},
-	"LQFP64": {
+	"M2354LJFBE": {
+		"ALL": ["ECAP1", "ETM", "SWDH", "SPI3", "LCD"]
+	},
+	"M2354SJFAE": {
 		"ALL": ["ECAP1", "ETM", "SWDH"]
 	},
-	"LQFP128": {
+	"M2354SJFBE": {
+		"ALL": ["ECAP1", "ETM", "SWDH"]
+	},
+	"M2354KJFAE": {
 		"ALL": ["SWDH"]
+	},
+	"M2354KJFBE": {
+		"ALL": ["SWDH"]
+	},
+	'M2354CJFAE': {
+		'ALL': ['ECAP1', 'ETM', 'SWDH', 'SPI3', 'LCD']
+	},
+	'M2354CJFBE': {
+		'ALL': ['ECAP1', 'ETM', 'SWDH', 'SPI3', 'LCD']
 	}
 };
 NUTOOL_PIN.g_cfg_WPPin = [];

@@ -743,7 +743,7 @@ NUTOOL_PIN.g_cfg_wppin = {
         'PB.2', 'PC.1', 'PC.0'
     ],
     "UQFN33(USB1.1)(5*5)": [
-        'PB.2', 'PC.1', 'PC.0'
+        'PB.2'
     ],
     "QFN48(PIN:D10R14U10L14)": [
         'PB.2', 'PA.6', 'PC.3', 'PC.2', 'PC.14'

@@ -5,10 +5,6 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "M2351CIAAE", pkg: "WLCSP49" },
 	{ name: "M2351SIAAE", pkg: "LQFP64" },
 	{ name: "M2351KIAAE", pkg: "LQFP128" },
-	// M2354
-	{ name: "M2354LJFAE", pkg: "LQFP48" },
-	{ name: "M2354SJFAE", pkg: "LQFP64" },
-	{ name: "M2354KJFAE", pkg: "LQFP128" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {

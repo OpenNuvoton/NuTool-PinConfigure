@@ -16,6 +16,9 @@ NUTOOL_PIN.g_cfg_chips = [
 	{ name: "M452LG6AE", pkg: "LQFP48" },
 	{ name: "M452LE6AE", pkg: "LQFP48" },
 
+	{ name: "M452VE6AE", pkg: "LQFP100" },
+	{ name: "M452VG6AE", pkg: "LQFP100" },
+
 	//{ name: "M4LEDRG6AE", pkg: "LQFP64" },
 	//{ name: "M4LEDRE6AE", pkg: "LQFP64" },
 
@@ -688,6 +691,12 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
 		"PD.5": ["TK14"],
 		"PE.3": ["TK15"],
 		"PD.6": ["TK16"]
+	},
+	"M452VG6AE(LQFP100)": function () {
+		return this["M453VG6AE(LQFP100)"];
+	},
+	"M453VE6AE(LQFP100)": function () {
+		return this["M453VG6AE(LQFP100)"];
 	},
 	"M453VE6AE(LQFP100)": function () {
 		return this["M453VG6AE(LQFP100)"];

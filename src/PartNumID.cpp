@@ -12,6 +12,118 @@ static char THIS_FILE[]=__FILE__;
 #define new DEBUG_NEW
 #endif
 
+#ifdef __WASM__
+#define _countof(array)                               (sizeof(array) / sizeof(array[0]))
+#define _snprintf_s(buf, size, count, format, ...)    snprintf(buf, size, format, __VA_ARGS__)
+#define _stricmp(string1, string2)                    strncasecmp(string1, string2, strlen(string1))
+#endif
+
+
+#define PROJS \
+	_E(NUC100AN)   /* "DA8230" */   \
+	_E(NUC100BN)   /* "DA8232" */   \
+	_E(M051AN)     /* "DA8233" */   \
+	_E(NUC100CN)   /* "DA8245" */   \
+	_E(NUC122AN)   /* "FA8236" */   \
+	_E(NUC100DN)   /* "FA8239" */   \
+	_E(NANO100AN)  /* "FA8240" */   \
+	_E(M051BN)     /* "FA8243" */   \
+	_E(MINI51AN)   /* "FA8244" */   \
+	_E(NUC123AN)   /* "FA8248" */   \
+	_E(NUC400AE)   /* "FA8249" */   \
+	_E(M058SAN)    /* "FA8252" */   \
+	_E(NANO102AN)  /* "FA8253" */   \
+	_E(MINI55)     /* "FA8255" */   \
+	_E(M451HD)     /* "FA8256" */   \
+	_E(M0518)      /* "FA8258" */   \
+	_E(MINI58)     /* "FA8260" */   \
+	_E(M0564)      /* "FA8262" */   \
+	_E(NANO103)    /* "FA8263" */   \
+	_E(NUC121)     /* "FA8266" */   \
+	_E(NUC2201)    /* "FA8267" */   \
+	_E(M4521)      /* "FA8268" */   \
+	_E(M031_32K)   /* "FA8269" */   \
+	_E(M031_128K)  /* "FA8270" */   \
+	_E(M031_64K)   /* "FA8271" */   \
+	_E(M031_16K)   /* "FA8272" */   \
+	_E(NUC1261)    /* "FA8273" */   \
+	_E(M031_512K)  /* "FA8274" */   \
+	_E(M031_256K)  /* "FA8275" */   \
+	_E(NUC1311)    /* "FA8276" */   \
+	_E(M032D)      /* "FA8277" */   \
+	_E(M0A21)      /* "FA8279" */   \
+	_E(M030G)      /* "FA8280" */   \
+	_E(M471)       /* "FA8281" */   \
+	_E(NUC122DN)   /* "FB8236" */   \
+	_E(NUC200AE)   /* "FB8239" */   \
+	_E(NANO100BN)  /* "FB8240" */   \
+	_E(M051DN)     /* "FB8243" */   \
+	_E(NUC123AE)   /* "FB8248" */   \
+	_E(NM1500AE)   /* "FC8238" */   \
+	_E(M051DE)     /* "FC8243" */   \
+	_E(MINI51DE)   /* "FC8244" */   \
+	_E(NM1120)     /* "GAG014" */   \
+	_E(NUC505)     /* "HAD009" */   \
+	_E(NM1230)     /* "HAG025" */   \
+	_E(M252_G)     /* "HAG026" */   \
+	_E(M252_E)     /* "HAG027" */   \
+	_E(M252_D)     /* "HAG028" */   \
+	_E(M252_C)     /* "HAG029" */   \
+	_E(NM1240)     /* "HAG039" */   \
+	_E(M258)       /* "HAG040" */   \
+	_E(M480)       /* "LAG018" */   \
+	_E(M2351)      /* "LAG021" */   \
+	_E(M480LD)     /* "LAG033" */   \
+	_E(M2354)      /* "LAG043" */   \
+	_E(M2354ES)    /* "TC8250" */   \
+	_E(M253)       /* "HAG046" */   \
+	_E(M031GPON)   /* "FA8284" */   \
+	_E(NUC1262)    /* "FA8283" */   \
+	_E(M451LD)     /* "FA8259" */   \
+	_E(M460HD)     /* "LAG048" */   \
+	_E(M256D)      /* "HAG050" */   \
+	_E(M258G)      /* "HAG051" */   \
+	_E(M460LD)     /* "LAG052" */   \
+	_E(NUC1263)    /* "FA8285" */   \
+	_E(M2L31_512K) /* "MAD025" */   \
+	_E(M2L31_256K) /* "MAD026" */   \
+	_E(M55M1)      /* "MAD000" */   \
+	_E(M2003)      /* "KAG062" */   \
+	_E(M2A23)      /* "FA8286" */   \
+	_E(M2U51G)     /* "KAG066" */   \
+	_E(M2U51C)     /* "KAG067" */   \
+                                    \
+	_E(N76E885)    /* "FA8251" */   \
+	_E(N76E616)    /* "FA8261" */   \
+	_E(N76E003)    /* "FA8265" */   \
+	_E(ML51_32K)   /* "HAG023" */   \
+	_E(ML51_16K)   /* "HAG024" */   \
+	_E(MS51_16K)   /* "HAG030" */   \
+	_E(MS51_8K)    /* "HAG034" */   \
+	_E(MS51_32K)   /* "HAG035" */   \
+	_E(ML56)       /* "HAG037" */   \
+	_E(MUG51)      /* "HAG049" */   \
+	_E(MG51)       /* "KAG056" */   \
+	_E(MG51D)      /* "KAG065" */   \
+                                    \
+	_E(MA35D1)                      \
+                                    \
+	_E(KM1M7AB)                     \
+	_E(KM1M4B)                      \
+	_E(KM1M7C)                      \
+	_E(KM1M0D)                      \
+	_E(KM1M0G)
+
+
+#define _E(Name) PROJ_##Name,
+enum ProjsList { PROJS };
+#undef _E
+
+#define _E(Name) "PROJ_" #Name,
+static const char *g_sProjsName[] = { PROJS };
+#undef _E
+
+
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -1875,6 +1987,7 @@ struct CPartNumID g_PartNumIDs[] =
 	//M0564 series
 	{"M0564LE4AE", 0x00C56405, PROJ_M0564},
 	{"M0564LG4AE", 0x00C56404, PROJ_M0564},
+	{"M0564SSAE", 0x00C56415, PROJ_M0564},
 	{"M0564SE4AE", 0x00C56413, PROJ_M0564},
 	{"M0564SG4AE", 0x00C56412, PROJ_M0564},
 	{"M0564VG4AE", 0x00C56431, PROJ_M0564},
@@ -1909,7 +2022,12 @@ struct CPartNumID g_PartNumIDs[] =
 	{"NUC1263LD4AE", 0x01D12600, PROJ_NUC1263},
 	{"NUC1263ND4AE", 0x01D12690, PROJ_NUC1263},
 	{"NUC1263ZD4AE", 0x01D126E0, PROJ_NUC1263},
-
+	{"NUC1263SD4CE", 0x21D12610, PROJ_NUC1263},
+	{"NUC1263LD4CE", 0x21D12600, PROJ_NUC1263},
+	{"NUC1263ND4CE", 0x21D12690, PROJ_NUC1263},
+	{"NUC1263ZD4CE", 0x21D126E0, PROJ_NUC1263},
+	{"NSPD5ZD4AE",   0x21D126E1, PROJ_NUC1263},
+	
 	/* NUC4xx series*/
 	{"NUC472HI8AE", 0x00047201, PROJ_NUC400AE},
 	{"NUC472HH8AE", 0x00047202, PROJ_NUC400AE}, //old chip
@@ -2013,7 +2131,17 @@ struct CPartNumID g_PartNumIDs[] =
 	{"NUC400RG8AE", 0x00040012, PROJ_NUC400AE}, //old chip
 
 	/* M55M1 */
-	//{"M55M1TC", 0x00551000, PROJ_M55M1}, //not release, TC8263
+	{"M55M1ES", 0x00551000, PROJ_M55M1}, //not release, TC8263
+	{"M55M1H3H2LJAE", 0xA2000260, PROJ_M55M1},
+	{"M55M1H3K2LJAE", 0xA2000240, PROJ_M55M1},
+	{"M55M1H3R2LJAE", 0xA2000220, PROJ_M55M1},
+	{"M55M1H2LJAE", 0xA2000160, PROJ_M55M1},
+	{"M55M1K2LJAE", 0xA2000140, PROJ_M55M1},
+	{"M55M1R2LJAE", 0xA2000120, PROJ_M55M1},
+	{"M5531H2LJAE", 0xA2000060, PROJ_M55M1},
+	{"M5531K2LJAE", 0xA2000040, PROJ_M55M1},
+	{"M5531R2LJAE", 0xA2000020, PROJ_M55M1},
+	{"M5531R2JIAE", 0xA2000021, PROJ_M55M1},
 
 	/* M451 series */
 	{"M451VG6AE", 0x00845130, PROJ_M451HD},
@@ -2175,6 +2303,7 @@ struct CPartNumID g_PartNumIDs[] =
 	{"M481SGCAE2A", 0x01348114, PROJ_M480LD},
 	{"M481SG8AE2A", 0x01348115, PROJ_M480LD}, //not release
 	{"M481LGCAE", 0x01348100, PROJ_M480LD},
+	{"M481LGCAEU", 0x0134810F, PROJ_M480LD},
 	{"M481LG8AE", 0x01348101, PROJ_M480LD}, //not release
 	{"M481LE8AE", 0x01348102, PROJ_M480LD},
 	{"M481ZGCAE", 0x013481E0, PROJ_M480LD},
@@ -2200,6 +2329,8 @@ struct CPartNumID g_PartNumIDs[] =
 	{"M483KG8AE2A", 0x01348345, PROJ_M480LD}, //not release
 	{"M483SGCAE2A", 0x01348314, PROJ_M480LD},
 	{"M483SG8AE2A", 0x01348315, PROJ_M480LD}, //not release
+	{"M433SE8AE", 0x01343312, PROJ_M480LD},
+	{"M433LE8AE", 0x01343302, PROJ_M480LD},
 
 	/* M479 series */
 	{"M479SG8AEE", 0x01347911, PROJ_M480LD},
@@ -2231,7 +2362,8 @@ struct CPartNumID g_PartNumIDs[] =
 
 	{"NDA102SD2", 0x00F25112, PROJ_M252_D},
 	//{"NDA102ED2", 0x00F251A1, PROJ_M252_C},
-	//{"NDA102TD2", 0x00F251C3, PROJ_M252_D},
+	{"NDA102UD2", 0x00F25170, PROJ_M252_C},
+	{"NDA102TD2", 0x00F251C5, PROJ_M252_D},
 	{"NDA102SE3", 0x00F25116, PROJ_M252_E},
 
 	/* M252_E series */
@@ -2327,40 +2459,81 @@ struct CPartNumID g_PartNumIDs[] =
 	/* M2354 series */
 	{"M2354ES", 0x00235500, PROJ_M2354ES}, //TC8250
 	{"M2354ALPHA", 0xA173544F, PROJ_M2354}, //not release
+	{"M2354CJFBE", 0xB17354E0, PROJ_M2354},
+	{"M2354CJFAE", 0xA17354E0, PROJ_M2354},
+	{"M2354KJFBE", 0xB1735440, PROJ_M2354},
 	{"M2354KJFAE", 0xA1735440, PROJ_M2354},
+	{"M2354SJFBE", 0xB1735410, PROJ_M2354},
 	{"M2354SJFAE", 0xA1735410, PROJ_M2354},
+	{"M2354LJFBE", 0xB1735400, PROJ_M2354},
 	{"M2354LJFAE", 0xA1735400, PROJ_M2354},
 	{"M2354LJFCE", 0xA173540C, PROJ_M2354},
 
 	/* M2L31 */
-	//{"M2L31TC", 0x01D23140, PROJ_M2L31}, //not release, TC8260
-	{"M2L31KIDAE", 0x01F31040, PROJ_M2L31},
-	{"M2L31KGDAE", 0x01F31041, PROJ_M2L31},
-	{"M2L31SIDAE", 0x01F31010, PROJ_M2L31},
-	{"M2L31SGDAE", 0x01F31011, PROJ_M2L31},
-	{"M2L31SG4AE", 0x01F31012, PROJ_M2L31}, //not release
-	{"M2L31SE4AE", 0x01F31013, PROJ_M2L31}, //not release
-	{"M2L31LIDAE", 0x01F31000, PROJ_M2L31}, 
-	{"M2L31LGDAE", 0x01F31001, PROJ_M2L31},
-	{"M2L31LG4AE", 0x01F31002, PROJ_M2L31}, //not release
-	{"M2L31LE4AE", 0x01F31003, PROJ_M2L31}, //not release
-	{"M2L31LD4AE", 0x01F31004, PROJ_M2L31}, //not release
-	{"M2L31YIDAE", 0x01F31090, PROJ_M2L31},
-	{"M2L31YGDAE", 0x01F31091, PROJ_M2L31},
-	{"M2L31YG4AE", 0x01F31092, PROJ_M2L31}, //not release
-	{"M2L31YE4AE", 0x01F31093, PROJ_M2L31}, //not release
-	{"M2L31YD4AE", 0x01F31094, PROJ_M2L31}, //not release
-	{"M2L31ZE4AE", 0x01F310C3, PROJ_M2L31}, //not release
-	{"M2L31ZD4AE", 0x01F310C4, PROJ_M2L31}, //not release
-	{"M2L31CIDAE", 0x01F310A0, PROJ_M2L31},
-	{"M2L31CGDAE", 0x01F310A1, PROJ_M2L31},
-	{"M2L31XD4AE", 0x01F310B4, PROJ_M2L31}, //not release
+	//{"M2L31TC", 0x01D23140, PROJ_M2L31_512K}, //not release, TC8260
+	{"M2L31KIDAE", 0x01F31040, PROJ_M2L31_512K},
+	{"M2L31KGDAE", 0x01F31041, PROJ_M2L31_512K},
+	{"M2L31SIDAE", 0x01F31010, PROJ_M2L31_512K},
+	{"M2L31SGDAE", 0x01F31011, PROJ_M2L31_512K},
+	{"M2L31SG4AE", 0x01F31012, PROJ_M2L31_256K},
+	{"M2L31SE4AE", 0x01F31013, PROJ_M2L31_256K},
+	{"M2L31LIDAE", 0x01F31000, PROJ_M2L31_512K},
+	{"M2L31LGDAE", 0x01F31001, PROJ_M2L31_512K},
+	{"M2L31LG4AE", 0x01F31002, PROJ_M2L31_256K},
+	{"M2L31LE4AE", 0x01F31003, PROJ_M2L31_256K},
+	{"M2L31LD4AE", 0x01F31004, PROJ_M2L31_256K},
+	{"M2L31YIDAE", 0x01F31090, PROJ_M2L31_512K},
+	{"M2L31YGDAE", 0x01F31091, PROJ_M2L31_512K},
+	{"M2L31YG4AE", 0x01F31092, PROJ_M2L31_256K},
+	{"M2L31YE4AE", 0x01F31093, PROJ_M2L31_256K},
+	{"M2L31YD4AE", 0x01F31094, PROJ_M2L31_256K},
+	{"M2L31ZE4AE", 0x01F310C3, PROJ_M2L31_256K},
+	{"M2L31ZD4AE", 0x01F310C4, PROJ_M2L31_256K},
+	{"M2L31CIDAE", 0x01F310A0, PROJ_M2L31_512K},
+	{"M2L31CGDAE", 0x01F310A1, PROJ_M2L31_512K},
+	{"M2L31XD4AE", 0x01F310B4, PROJ_M2L31_256K},
 
 	/* M2003 */
 	{"M2003FC1AE", 0x01F03CB0, PROJ_M2003},
 	{"M2003XC1AE", 0x01F03C80, PROJ_M2003},
 	{"M2P481QC1AE", 0x01F03C9F, PROJ_M2003},
 	{"KN44490A", 0x01F03CFF, PROJ_M2003},
+
+	/* M2U51 */
+	{"M2U54KG6AE", 0x03200140, PROJ_M2U51G},
+	{"M2U54KE4AE", 0x03200141, PROJ_M2U51G},
+	{"M2U54AG6AE", 0x03200150, PROJ_M2U51G},
+	{"M2U54AE4AE", 0x03200151, PROJ_M2U51G},
+	{"M2U54SG6AE", 0x03200110, PROJ_M2U51G},
+	{"M2U54SE4AE", 0x03200111, PROJ_M2U51G},
+	{"M2U54YG6AE", 0x03200190, PROJ_M2U51G},
+	{"M2U54YE4AE", 0x03200191, PROJ_M2U51G},
+	{"M2U51YD3AE", 0x03200092, PROJ_M2U51G},
+	{"M2U51YC2AE", 0x03201093, PROJ_M2U51C},
+	{"M2U51TC2AE", 0x032010C3, PROJ_M2U51C},
+	{"M2U51EC2AE", 0x032010A3, PROJ_M2U51C},
+	{"M2U51FC2AE", 0x032010B3, PROJ_M2U51C},
+
+	/* NTNJ */
+	{"CM2003CF2AE", 0x01F03CB1, PROJ_M2003},
+	{"CM2003CF3AE", 0x01F03C81, PROJ_M2003},
+
+	/* M2A23 */
+	{"M2A23SG5ACU", 0x02100010, PROJ_M2A23},
+	{"M2A23SG5AC", 0x02100011, PROJ_M2A23},
+	{"M2A23LG5ACU", 0x02100000, PROJ_M2A23},
+	{"M2A23LG5AC", 0x02100001, PROJ_M2A23},
+	{"M2A23NG5ACU", 0x02100090, PROJ_M2A23},
+	{"M2A23YG5AC", 0x02100091, PROJ_M2A23},
+	{"M2A23SE5ACU", 0x02100110, PROJ_M2A23},
+	{"M2A23SE5AC", 0x02100111, PROJ_M2A23},
+	{"M2A23LE5ACU", 0x02100100, PROJ_M2A23},
+	{"M2A23LE5AC", 0x02100101, PROJ_M2A23},
+	{"M2A23NE5ACU", 0x02100190, PROJ_M2A23},
+	{"M2A23YE5AC", 0x02100191, PROJ_M2A23},
+	{"M2A23SD5AC", 0x02100211, PROJ_M2A23},
+	{"M2A23LD5AC", 0x02100201, PROJ_M2A23},
+	{"M2A23YD5AC", 0x02100291, PROJ_M2A23},
 
 	/* M0A21 */
 	{"M0A21OB1AC", 0x015A2121, PROJ_M0A21},
@@ -2458,8 +2631,8 @@ struct CPartNumID g_PartNumIDs[] =
 	{"M460LGCAE", 0x01C46000, PROJ_M460LD},
 	{"M460YGCAE", 0x01C46090, PROJ_M460LD},
 	{"M463K2GCAC", 0x01C4634E, PROJ_M460LD},
-	{"M463S2GCAC", 0x01C4631E, PROJ_M460LD}, //not release
-	{"M463L2GCAC", 0x01C4630E, PROJ_M460LD}, //not release
+	{"M463S2GCAC", 0x01C4631E, PROJ_M460LD},
+	{"M463L2GCAC", 0x01C4630E, PROJ_M460LD},
 
 	/* M471 */
 	{"M471KI8AE", 0x01647140, PROJ_M471},
@@ -2609,6 +2782,30 @@ struct CPartNumID_51 g_PartNumIDs_51[] =
 	{"N76S003AQ20", 0x05006750, PROJ_MG51},
 	//{"N76S003BQ20", 0x0E006750, PROJ_MG51},
 	{"N76S003AT20", 0x0B006750, PROJ_MG51},
+
+	/* KAG065 */
+	{"MG51LD1AE", 0x00007244, PROJ_MG51D},
+	{"MG51TD1AE", 0x0C007244, PROJ_MG51D},
+	{"MG51PD1AE", 0x01007244, PROJ_MG51D},
+	{"MG51LC1AE", 0x00007234, PROJ_MG51D},
+	{"MG51TC1AE", 0x0C007234, PROJ_MG51D},
+	{"MG51PC1AE", 0x01007234, PROJ_MG51D},
+	{"MG51EC1AE", 0x02007234, PROJ_MG51D},
+
+	/* FA8235 */
+	{"N79E815/855/715", 0x00001252, 0xFFFFFFFF},
+
+	/* NTNJ */
+	{"CM1003BF3AE", 0x25006721, PROJ_MG51},
+	{"CM1003BF2AE", 0x2B006721, PROJ_MG51},
+	{"CM1003CF3AE", 0x25006731, PROJ_MG51},
+	{"CM1003CF2AE", 0x2B006731, PROJ_MG51},
+
+	{"CM1003DL8AE", 0x20007244, PROJ_MG51D},
+	{"CM1003DJ3AE", 0x2C007244, PROJ_MG51D},
+	{"CM1003DJ8AE", 0x21007244, PROJ_MG51D},
+	{"CM1003CJ3AE", 0x2C007234, PROJ_MG51D},
+	{"CM1003CH2AE", 0x22007234, PROJ_MG51D},
 };
 
 // Do not release
@@ -2738,6 +2935,11 @@ struct CPartNumID g_PartNumIDs_KM1Mx[] =
 	{"KM1M4BF55GXY", 0x08401358, PROJ_KM1M4B},
 	{"KM1M4BF55GXG", 0x08401359, PROJ_KM1M4B},
 
+	{"KM1M4BF64GXW", 0x08402231, PROJ_KM1M4B},
+	{"KM1M4BF65GXW", 0x08402233, PROJ_KM1M4B},
+	{"KM1M4BF66GXW", 0x08402234, PROJ_KM1M4B},
+	{"KM1M4BF67GXW", 0x08402235, PROJ_KM1M4B},
+
 	/* KM1M7C */
 	{"KM1M7CF03N", 0x08700100, PROJ_KM1M7C},
 	{"KM1M7CF03K", 0x08700000, PROJ_KM1M7C},
@@ -2765,6 +2967,28 @@ struct CPartNumID g_PartNumIDs_KM1Mx[] =
 	{"KM1M0DF04NXX", 0x08001005, PROJ_KM1M0D},
 	{"KM1M0DF13NXW", 0x08002000, PROJ_KM1M0D},
 	{"KM1M0DF13NXX", 0x08002003, PROJ_KM1M0D},
+
+	/* KM1M0G */
+	{"KM1M0GF01KUB", 0x08003000, PROJ_KM1M0G},
+	{"KM1M0GF02KUB", 0x08003001, PROJ_KM1M0G},
+	{"KM1M0GF03KUB", 0x08003002, PROJ_KM1M0G},
+	{"KM1M0GF04KUB", 0x08003003, PROJ_KM1M0G},
+	{"KM1M0GF01ZUB", 0x08003010, PROJ_KM1M0G},
+	{"KM1M0GF02ZUB", 0x08003011, PROJ_KM1M0G},
+	{"KM1M0GF03ZUB", 0x08003012, PROJ_KM1M0G},
+	{"KM1M0GF04ZUB", 0x08003013, PROJ_KM1M0G},
+	{"KM1M0GF11ZUB", 0x08004010, PROJ_KM1M0G},
+	{"KM1M0GF12ZUB", 0x08004011, PROJ_KM1M0G},
+	{"KM1M0GF13ZUB", 0x08004012, PROJ_KM1M0G},
+	{"KM1M0GF14ZUB", 0x08004013, PROJ_KM1M0G},
+	{"KM1M0GF01YUB", 0x08005010, PROJ_KM1M0G},
+	{"KM1M0GF02YUB", 0x08005011, PROJ_KM1M0G},
+	{"KM1M0GF03YUB", 0x08005012, PROJ_KM1M0G},
+	{"KM1M0GF04YUB", 0x08005013, PROJ_KM1M0G},
+	{"KM1M0GF11YUB", 0x08006010, PROJ_KM1M0G},
+	{"KM1M0GF12YUB", 0x08006011, PROJ_KM1M0G},
+	{"KM1M0GF13YUB", 0x08006012, PROJ_KM1M0G},
+	{"KM1M0GF14YUB", 0x08006013, PROJ_KM1M0G},
 };
 
 CPartNum::CPartNum()
@@ -2830,7 +3054,7 @@ std::string CPartNum::GetPartNumber(unsigned int auUCID[], unsigned int uDefault
 		}
 		else if(((auUCID[3] >> 28) & 0x3) == 0) //Show PDID
 		{
-			_snprintf(szBuf, sizeof(szBuf), "[%08X]", uDefaultID);
+			_snprintf_s(szBuf, sizeof(szBuf), _TRUNCATE, "[%08X]", uDefaultID);
 		}
 		else //Show special part no.
 		{
@@ -2883,7 +3107,7 @@ std::string CPartNum::GetPartNumber_KM1Mx(unsigned int uID0, unsigned int uID1, 
 	{
 		for (i = 0; i < _countof(g_PartNumIDs_KM1Mx); ++i)
 		{
-			if ((g_PartNumIDs_KM1Mx[i].uID == uID0))
+			if (g_PartNumIDs_KM1Mx[i].uID == uID0)
 			{
 				if (puProjectCode != NULL)
 					*puProjectCode =  g_PartNumIDs_KM1Mx[i].uProjectCode;
@@ -2975,6 +3199,10 @@ NUC_CHIP_TYPE_E CPartNum::GetChipType(const char *sPartNo) const
 				{
 					return NUC_CHIP_TYPE_M0A21;
 				}
+				case PROJ_M2A23:
+				{
+					return NUC_CHIP_TYPE_M2A23;
+				}
 				case PROJ_M030G:
 				case PROJ_M031GPON:
 				{
@@ -2997,6 +3225,11 @@ NUC_CHIP_TYPE_E CPartNum::GetChipType(const char *sPartNo) const
 				case PROJ_M2354ES:
 				{
 					return NUC_CHIP_TYPE_M2354;
+				}
+				case PROJ_M2U51C:
+				case PROJ_M2U51G:
+				{
+					return NUC_CHIP_TYPE_M2U51;
 				}
 				case PROJ_NUC400AE:
 				{
@@ -3043,3 +3276,77 @@ NUC_CHIP_TYPE_E CPartNum::GetChipType(const char *sPartNo) const
 
 	return NUC_CHIP_TYPE_GENERAL_V7M;
 }
+
+bool CPartNum::IsSupportedPID_8051(unsigned int uSID) const
+{
+	switch(uSID)
+	{
+		case OT8051_SID_ML51_16K:
+		case OT8051_SID_ML51_32K:
+		case OT8051_SID_ML51_64K:
+		case OT8051_SID_MS51_16K:
+		case OT8051_SID_MS51_8K:
+		case OT8051_SID_MS51_32K:
+		case OT8051_SID_ML56_64K:
+		case OT8051_SID_MUG51_16K:
+		case OT8051_SID_N76S003_MG51:
+		case OT8051_SID_MG51_64K:
+			return true;
+	}
+
+	return false;
+}
+
+
+unsigned int CPartNum_GetProjectCount()
+{
+	return _countof(g_sProjsName);
+}
+
+const char * CPartNum_GetProjectName(int index)
+{
+	static char szBuf[64];
+	memset(szBuf, 0, sizeof(szBuf));
+
+	if(index < _countof(g_sProjsName))
+		_snprintf_s(szBuf, sizeof(szBuf), _TRUNCATE, "%s", g_sProjsName[index]);
+
+	return szBuf;
+}
+
+#ifdef __WASM__
+const char * CPartNum_GetPartNumber(unsigned int uID, unsigned int uCoreType, unsigned int *puProjectCode)
+{
+	static char szBuf[64];
+	memset(szBuf, 0, sizeof(szBuf));
+
+	_snprintf_s(szBuf, sizeof(szBuf), _TRUNCATE, "%s", CPartNum().GetPartNumber(uID, uCoreType, puProjectCode).c_str());
+
+	return szBuf;
+}
+
+const char * CPartNum_GetPartNumber_UCID(unsigned int auUCID[], unsigned int uDefaultID)
+{
+	static char szBuf[64];
+	memset(szBuf, 0, sizeof(szBuf));
+
+	_snprintf_s(szBuf, sizeof(szBuf), _TRUNCATE, "%s", CPartNum().GetPartNumber(auUCID, uDefaultID).c_str());
+
+	return szBuf;
+}
+
+const char * CPartNum_GetPartNumber_KM1Mx(unsigned int uID0, unsigned int uID1, unsigned int *puProjectCode)
+{
+	static char szBuf[64];
+	memset(szBuf, 0, sizeof(szBuf));
+
+	_snprintf_s(szBuf, sizeof(szBuf), _TRUNCATE, "%s", CPartNum().GetPartNumber_KM1Mx(uID0, uID1, puProjectCode).c_str());
+
+	return szBuf;
+}
+
+bool CPartNum_IsSupportedPID_8051(unsigned int uSID)
+{
+	return CPartNum().IsSupportedPID_8051(uSID);
+}
+#endif

@@ -1,39 +1,17 @@
 // chip content from M480HD_pin assignment_V1.47
 NUTOOL_PIN.g_cfg_chips = [
-    // M460HD
-    //{ name: "M463H3SJHAN", pkg: "LQFP64" },
-    //{ name: "M463H3SIHAN", pkg: "LQFP64" },
-    { name: "M467SJHAE", pkg: "LQFP64" },
-    //{ name: "M463SJHAE", pkg: "LQFP64" },
-    //{ name: "M464SJHAE", pkg: "LQFP64" },
-    //{ name: "M467SIHAE", pkg: "LQFP64" },
-    //{ name: "M463SIHAE", pkg: "LQFP64" },
-    //{ name: "M464SIHAE", pkg: "LQFP64" },
-    //{ name: "M467H3SJHAE", pkg: "LQFP64" },
-    //{ name: "M463SJHAN", pkg: "LQFP64" },
+    // M460HD - General
     { name: "M467SJHAN", pkg: "LQFP64" },
-    //{ name: "M467VJHAE", pkg: "LQFP100" },
-    //{ name: "M467VIHAE", pkg: "LQFP100" },
-    //{ name: "M463H3KJHAN", pkg: "LQFP128" },
-    //{ name: "M463H3KIHAN", pkg: "LQFP128" },
-    { name: "M467KJHAE", pkg: "LQFP128" },
-    //{ name: "M463KJHAE", pkg: "LQFP128" },
-    //{ name: "M464KJHAE", pkg: "LQFP128" },
-    //{ name: "M467KIHAE", pkg: "LQFP128" },
-    //{ name: "M463KIHAE", pkg: "LQFP128" },
-    //{ name: "M464KIHAE", pkg: "LQFP128" },
-    { name: "M467H3KJHAE", pkg: "LQFP128" },
-    //{ name: "M463KJHAN", pkg: "LQFP128" },
     { name: "M467KJHAN", pkg: "LQFP128" },
-    { name: "M467JJHAE", pkg: "LQFP144" },
-    //{ name: "M467JIHAE", pkg: "LQFP144" },
-    //{ name: "M467H3JJHAN", pkg: "LQFP144" },
-    //{ name: "M467H3JJHAE", pkg: "LQFP144" },
+    { name: "M467H3JJHAN", pkg: "LQFP144" },
     { name: "M467JJHAN", pkg: "LQFP144" },
-    { name: "M467HJHAE", pkg: "LQFP176" },
-    //{ name: "M467HIHAE", pkg: "LQFP176" },
-    //{ name: "M467H3HJHAN", pkg: "LQFP176" },
+    { name: "M467H3HJHAN", pkg: "LQFP176" },
     { name: "M467HJHAN", pkg: "LQFP176" },
+    // M460HD - EPAD
+    { name: "M467S2JHAE", pkg: "LQFP64" },
+    { name: "M467K2JHAE", pkg: "LQFP128" },
+    { name: "M467J2JHAE", pkg: "LQFP144" },
+    { name: "M467H2JHAE", pkg: "LQFP176" },
     // M460LD
     { name: "M464YGCAE", pkg: "QFN48" },
     { name: "M464LGCAE", pkg: "LQFP48" },
@@ -58,164 +36,208 @@ NUTOOL_PIN.g_cfg_chips = [
 
 NUTOOL_PIN.g_cfg_pkgs = {
     "LQFP64_MCP(USB2.0)(7*7)": [
-        'PB.6','PB.5','PB.4','PB.3','PB.2','PB.1','PB.0','PA.11','PA.10','PA.9',
-        'PA.8','PF.6','VBAT','PF.5','PF.4','PF.3',
-        'PF.2','PC.7','PC.6','PA.7','PA.6','VSS','VDD','LDO_CAP','PA.5','PA.4',
-        'PA.3','PA.2','PA.1','PA.0','VDDIO','nRESET',
-        'PF.0','PF.1','PC.5','PC.4','PC.3','PC.2','HBI_PWR','HBI_PWR','HSUSB_VRES','HSUSB_VDD33',
-        'HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+','HSUSB_VDD12_CAP','HSUSB_ID',
-        'VSS','LDO_CAP','VDD','PC.14','PB.15','PB.14','PB.13','PB.12','AVDD','VREF',
-        'AVSS','PB.11','PB.10','PB.9','PB.8','PB.7'
+        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 
+        'PA.8', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7', 
+        'PA.6', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'HBI_PWR', 'HBI_PWR', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP', 
+        'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 
+        'PB.10', 'PB.9', 'PB.8', 'PB.7'
     ],
     "LQFP64(USB2.0)(7*7)": [
-        'PB.6','PB.5','PB.4','PB.3','PB.2','PB.1','PB.0','PA.11','PA.10','PA.9',
-        'PA.8','PF.6','VBAT','PF.5','PF.4','PF.3',
-        'PF.2','PC.7','PC.6','PA.7','PA.6','VSS','VDD','LDO_CAP','PA.5','PA.4',
-        'PA.3','PA.2','PA.1','PA.0','VDDIO','nRESET',
-        'PF.0','PF.1','PC.5','PC.4','PC.3','PC.2','PC.1','PC.0','HSUSB_VRES','HSUSB_VDD33',
-        'HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+','HSUSB_VDD12_CAP','HSUSB_ID',
-        'VSS','LDO_CAP','VDD','PC.14','PB.15','PB.14','PB.13','PB.12','AVDD','VREF',
-        'AVSS','PB.11','PB.10','PB.9','PB.8','PB.7'
+        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 
+        'PA.8', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7', 
+        'PA.6', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP', 
+        'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 
+        'PB.10', 'PB.9', 'PB.8', 'PB.7'
     ],
     "LQFP64_USB(USB1.1+USB2.0)(7*7)": [
-        'PB.6','PB.5','PB.4','PB.3','PB.2','PB.1','PB.0','PA.11','PA.10','PA.9',
-        'PA.8','PF.6','VBAT','PF.5','PF.4','PF.3',
-        'PF.2','PC.7','PC.6','PA.7','PA.6','VSS','VDD','LDO_CAP','PA.5','PA.4',
-        'PA.3','PA.2','PA.1','PA.0','VDDIO','nRESET',
-        'PF.0','PF.1','PC.5','PC.4','PA.12','PA.13','PA.14','PA.15','HSUSB_VRES','HSUSB_VDD33',
-        'HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+','HSUSB_VDD12_CAP','HSUSB_ID',
-        'VSS','LDO_CAP','VDD','PC.14','PB.15','PB.14','PB.13','PB.12','AVDD','VREF',
-        'AVSS','PB.11','PB.10','PB.9','PB.8','PB.7'
+        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 
+        'PA.8', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7', 
+        'PA.6', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP', 
+        'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 
+        'PB.10', 'PB.9', 'PB.8', 'PB.7'
+    ],
+    "LQFP64EP(USB1.1+USB2.0)(7*7)": [
+        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 
+        'PA.8', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7', 
+        'PA.6', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP', 
+        'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 
+        'PB.10', 'PB.9', 'PB.8', 'PB.7', 'VSS'
     ],
     "LQFP100(USB2.0+1.1)(14*14)": [
-        'PB.5','PB.4','PB.3','PB.2','PC.12','PC.11','PC.10','PC.9','PB.1','PB.0',
-        'VSS','VDD','PA.11','PA.10','PA.9','PA.8','PD.12','PD.11','PD.10','PF.7',
-        'PF.6','VBAT','PF.5','PF.4','PF.3',
-        'PF.2','PE.8','PE.9','PE.10','PE.11','PE.12','PE.13','PC.8','PC.7','PC.6',
-        'PA.7','PA.6','VSS','VDD','LDO_CAP','PA.5','PA.4','PA.3','PA.2','PA.1',
-        'PA.0','VDDIO','PE.14','PE.15','nRESET',
-        'PF.0','PF.1','PD.9','PD.8','PC.5','PC.4','PC.3','PC.2','PC.1','PC.0',
-        'VSS','VDD','PD.13','PA.12','PA.13','PA.14','PA.15','HSUSB_VRES','HSUSB_VDD33','HSUSB_VBUS',
-        'HSUSB_D-','HSUSB_VSS','HSUSB_D+','HSUSB_VDD12_CAP','HSUSB_ID',
-        'PE.7','PE.6','PE.5','PE.4','PE.3','PE.2','PE.1','PE.0','VSS','LDO_CAP',
-        'VDD','PC.14','PB.15','PB.14','PB.13','PB.12','AVDD','VREF','AVSS','PB.11',
-        'PB.10','PB.9','PB.8','PB.7','PB.6'
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PD.12', 'PD.11', 'PD.10', 'PF.7', 
+        'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PE.8', 'PE.9', 'PE.10', 'PE.11', 
+        'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'VSS', 'VDD', 'LDO_CAP', 
+        'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO', 'PE.14', 'PE.15', 'nRESET', 
+        'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0', 
+        'VSS', 'VDD', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 
+        'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 
+        'PE.2', 'PE.1', 'PE.0', 'VSS', 'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 
+        'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6'
     ],
     "LQFP128(USB2.0+1.1)(14*14)": [
-        'PB.5','PB.4','PB.3','PB.2','PC.12','PC.11','PC.10','PC.9','PB.1','PB.0',
-        'VSS','VDD','PA.11','PA.10','PA.9','PA.8','PC.13','PD.12','PD.11','PD.10',
-        'PG.2','PG.3','PG.4','PF.11','PF.10','PF.9','PF.8','PF.7','PF.6','VBAT',
-        'PF.5','PF.4',
-        'PH.4','PH.5','PH.6','PH.7','PF.3','PF.2','VSS','VDD','PE.8','PE.9',
-        'PE.10','PE.11','PE.12','PE.13','PC.8','PC.7','PC.6','PA.7','PA.6','VSS',
-        'VDD','LDO_CAP','PA.5','PA.4','PA.3','PA.2','PA.1','PA.0','VDDIO','PE.14',
-        'PE.15','nRESET',
-        'PF.0','PF.1','PD.9','PD.8','PC.5','PC.4','PC.3','PC.2','PC.1','PC.0',
-        'VSS','VDD','PG.9','PG.10','PG.11','PG.12','PG.13','PG.14','PG.15','PD.13',
-        'PA.12','PA.13','PA.14','PA.15','HSUSB_VRES','HSUSB_VDD33','HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+',
-        'HSUSB_VDD12_CAP','HSUSB_ID',
-        'PE.7','PE.6','PE.5','PE.4','PE.3','PE.2','VSS','VDD','PE.1','PE.0',
-        'PH.8','PH.9','PH.10','PH.11','PD.14','VSS','LDO_CAP','VDD','PC.14','PB.15',
-        'PB.14','PB.13','PB.12','AVDD','VREF','AVSS','PB.11','PB.10','PB.9','PB.8',
-        'PB.7','PB.6'
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'PG.2', 'PG.3', 'PG.4', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VBAT', 
+        'PF.5', 'PF.4', 'PH.4', 'PH.5', 'PH.6', 'PH.7', 'PF.3', 'PF.2', 'VSS', 'VDD', 
+        'PE.8', 'PE.9', 'PE.10', 'PE.11', 'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 
+        'PA.6', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 
+        'PC.3', 'PC.2', 'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 
+        'PG.13', 'PG.14', 'PG.15', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 
+        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 
+        'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 
+        'PD.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 
+        'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6'
+    ],
+    "LQFP128EP(USB2.0+1.1)(14*14)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'PG.2', 'PG.3', 'PG.4', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VBAT', 
+        'PF.5', 'PF.4', 'PH.4', 'PH.5', 'PH.6', 'PH.7', 'PF.3', 'PF.2', 'VSS', 'VDD', 
+        'PE.8', 'PE.9', 'PE.10', 'PE.11', 'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 
+        'PA.6', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 
+        'PC.3', 'PC.2', 'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 
+        'PG.13', 'PG.14', 'PG.15', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 
+        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 
+        'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 
+        'PD.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 
+        'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6', 'NC'
     ],
     "LQFP128_MCP(USB2.0+1.1)(14*14)": [
-        'PB.5','PB.4','PB.3','PB.2','PC.12','PC.11','PC.10','PC.9','PB.1','PB.0',
-        'VSS','VDD','PA.11','PA.10','PA.9','PA.8','PC.13','PD.12','PD.11','PD.10',
-        'PG.2','PG.3','PG.4','PF.11','PF.10','PF.9','PF.8','PF.7','PF.6','VBAT',
-        'PF.5','PF.4',
-        'PH.4','PH.5','PH.6','PH.7','PF.3','PF.2','VSS','VDD','PE.8','PE.9',
-        'PE.10','PE.11','PE.12','PE.13','PC.8','PC.7','PC.6','PA.7','PA.6','VSS',
-        'VDD','LDO_CAP','PA.5','PA.4','PA.3','PA.2','PA.1','PA.0','VDDIO','PE.14',
-        'PE.15','nRESET',
-        'PF.0','PF.1','PD.9','PD.8','PC.5','PC.4','PC.3','PC.2','PC.1','PC.0',
-        'VSS','VDD','PG.9','PG.10','PG.11','PG.12','PG.13','HBI_PWR','HBI_PWR','PD.13',
-        'PA.12','PA.13','PA.14','PA.15','HSUSB_VRES','HSUSB_VDD33','HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+',
-        'HSUSB_VDD12_CAP','HSUSB_ID',
-        'PE.7','PE.6','PE.5','PE.4','PE.3','PE.2','VSS','VDD','PE.1','PE.0',
-        'PH.8','PH.9','PH.10','PH.11','PD.14','VSS','LDO_CAP','VDD','PC.14','PB.15',
-        'PB.14','PB.13','PB.12','AVDD','VREF','AVSS','PB.11','PB.10','PB.9','PB.8',
-        'PB.7','PB.6'
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'PG.2', 'PG.3', 'PG.4', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VBAT', 
+        'PF.5', 'PF.4', 'PH.4', 'PH.5', 'PH.6', 'PH.7', 'PF.3', 'PF.2', 'VSS', 'VDD', 
+        'PE.8', 'PE.9', 'PE.10', 'PE.11', 'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 
+        'PA.6', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 
+        'PC.3', 'PC.2', 'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 
+        'PG.13', 'HBI_PWR', 'HBI_PWR', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 
+        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 
+        'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 
+        'PD.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 
+        'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6'
     ],
     "LQFP144_MCP(USB2.0+1.1)(20*20)": [
-        'PB.5','PB.4','PB.3','PB.2','PC.12','PC.11','PC.10','PC.9','PB.1','PB.0',
-        'VSS','VDD','PA.11','PA.10','PA.9','PA.8','PC.13','PD.12','PD.11','PD.10',
-        'VSS','VDD','PG.0','PG.1','PG.2','PG.3','PG.4','PF.11','PF.10','PF.9',
-        'PF.8','PF.7','PF.6','VBAT','PF.5','PF.4',
-        'PH.0','PH.1','PH.2','PH.3','PH.4','PH.5','PH.6','PH.7','PF.3','PF.2',
-        'VSS','VDD','PE.8','PE.9','PE.10','PE.11','PE.12','PE.13','PC.8','PC.7',
-        'PC.6','PA.7','PA.6','VSS','VDD','LDO_CAP','PA.5','PA.4','PA.3','PA.2',
-        'PA.1','PA.0','VDDIO','PE.14','PE.15','nRESET',
-        'PF.0','PF.1','PD.9','PD.8','PC.5','PC.4','PC.3','PC.2','PC.1','PC.0',
-        'VSS','VDD','PG.9','PG.10','PG.11','PG.12','PG.13','HBI_PWR','HBI_PWR','PD.3',
-        'PD.2','PD.1','PD.0','PD.13','PA.12','PA.13','PA.14','PA.15','HSUSB_VRES','HSUSB_VDD33',
-        'HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+','HSUSB_VDD12_CAP','HSUSB_ID',
-        'PE.7','PE.6','PE.5','PE.4','PE.3','PE.2','VSS','VDD','PE.1','PE.0',
-        'PH.8','PH.9','PH.10','PH.11','PD.14','PG.5','PG.6','PG.7','PG.8','VSS',
-        'LDO_CAP','VDD','PC.14','PB.15','PB.14','PB.13','PB.12','AVDD','VREF','AVSS',
-        'PB.11','PB.10','PB.9','PB.8','PB.7','PB.6'
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'VSS', 'VDD', 'PG.0', 'PG.1', 'PG.2', 'PG.3', 'PG.4', 'PF.11', 'PF.10', 'PF.9', 
+        'PF.8', 'PF.7', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PH.0', 'PH.1', 'PH.2', 'PH.3', 
+        'PH.4', 'PH.5', 'PH.6', 'PH.7', 'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9', 
+        'PE.10', 'PE.11', 'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'VSS', 
+        'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO', 'PE.14', 
+        'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
+        'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 'PG.13', 'HBI_PWR', 
+        'HBI_PWR', 'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 
+        'PE.5', 'PE.4', 'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 
+        'PH.10', 'PH.11', 'PD.14', 'PG.5', 'PG.6', 'PG.7', 'PG.8', 'VSS', 'LDO_CAP', 'VDD', 
+        'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 'PB.10', 
+        'PB.9', 'PB.8', 'PB.7', 'PB.6'
     ],
     "LQFP144(USB2.0+1.1)(20*20)": [
-        'PB.5','PB.4','PB.3','PB.2','PC.12','PC.11','PC.10','PC.9','PB.1','PB.0',
-        'VSS','VDD','PA.11','PA.10','PA.9','PA.8','PC.13','PD.12','PD.11','PD.10',
-        'VSS','VDD','PG.0','PG.1','PG.2','PG.3','PG.4','PF.11','PF.10','PF.9',
-        'PF.8','PF.7','PF.6','VBAT','PF.5','PF.4',
-        'PH.0','PH.1','PH.2','PH.3','PH.4','PH.5','PH.6','PH.7','PF.3','PF.2',
-        'VSS','VDD','PE.8','PE.9','PE.10','PE.11','PE.12','PE.13','PC.8','PC.7',
-        'PC.6','PA.7','PA.6','VSS','VDD','LDO_CAP','PA.5','PA.4','PA.3','PA.2',
-        'PA.1','PA.0','VDDIO','PE.14','PE.15','nRESET',
-        'PF.0','PF.1','PD.9','PD.8','PC.5','PC.4','PC.3','PC.2','PC.1','PC.0',
-        'VSS','VDD','PG.9','PG.10','PG.11','PG.12','PG.13','PG.14','PG.15','PD.3',
-        'PD.2','PD.1','PD.0','PD.13','PA.12','PA.13','PA.14','PA.15','HSUSB_VRES','HSUSB_VDD33',
-        'HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+','HSUSB_VDD12_CAP','HSUSB_ID',
-        'PE.7','PE.6','PE.5','PE.4','PE.3','PE.2','VSS','VDD','PE.1','PE.0',
-        'PH.8','PH.9','PH.10','PH.11','PD.14','PG.5','PG.6','PG.7','PG.8','VSS',
-        'LDO_CAP','VDD','PC.14','PB.15','PB.14','PB.13','PB.12','AVDD','VREF','AVSS',
-        'PB.11','PB.10','PB.9','PB.8','PB.7','PB.6'
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'VSS', 'VDD', 'PG.0', 'PG.1', 'PG.2', 'PG.3', 'PG.4', 'PF.11', 'PF.10', 'PF.9', 
+        'PF.8', 'PF.7', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PH.0', 'PH.1', 'PH.2', 'PH.3', 
+        'PH.4', 'PH.5', 'PH.6', 'PH.7', 'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9', 
+        'PE.10', 'PE.11', 'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'VSS', 
+        'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO', 'PE.14', 
+        'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
+        'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 'PG.13', 'PG.14', 
+        'PG.15', 'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 
+        'PE.5', 'PE.4', 'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 
+        'PH.10', 'PH.11', 'PD.14', 'PG.5', 'PG.6', 'PG.7', 'PG.8', 'VSS', 'LDO_CAP', 'VDD', 
+        'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 'PB.10', 
+        'PB.9', 'PB.8', 'PB.7', 'PB.6'
+    ],
+    "LQFP144EP(USB2.0+1.1)(20*20)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'VSS', 'VDD', 'PG.0', 'PG.1', 'PG.2', 'PG.3', 'PG.4', 'PF.11', 'PF.10', 'PF.9', 
+        'PF.8', 'PF.7', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PH.0', 'PH.1', 'PH.2', 'PH.3', 
+        'PH.4', 'PH.5', 'PH.6', 'PH.7', 'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9', 
+        'PE.10', 'PE.11', 'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'VSS', 
+        'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO', 'PE.14', 
+        'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
+        'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 'PG.13', 'PG.14', 
+        'PG.15', 'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 
+        'PE.5', 'PE.4', 'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 
+        'PH.10', 'PH.11', 'PD.14', 'PG.5', 'PG.6', 'PG.7', 'PG.8', 'VSS', 'LDO_CAP', 'VDD', 
+        'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 'PB.10', 
+        'PB.9', 'PB.8', 'PB.7', 'PB.6', 'NC'
     ],
     "LQFP176_MCP(USB2.0+1.1)(24*24)": [
-        'PB.5','PB.4','PB.3','PB.2','PC.12','PC.11','PC.10','PC.9','PB.1','PB.0',
-        'VSS','VDD','PA.11','PA.10','PA.9','PA.8','PC.13','PD.12','PD.11','PD.10',
-        'VSS','VDD','PG.0','PG.1','PG.2','PG.3','PG.4','PI.6','PI.7','PI.8',
-        'PI.9','PI.10','PI.11','PF.11','PF.10','PF.9','PF.8','PF.7','PF.6','VBAT',
-        'PF.5','PF.4','PH.0','PH.1',
-        'PH.2','PH.3','PH.4','PH.5','PH.6','PH.7','PF.3','PF.2','VSS','VDD',
-        'PE.8','PE.9','PE.10','PE.11','PE.12','PE.13','PC.8','PC.7','PC.6','PA.7',
-        'PA.6','PI.12','PI.13','PI.14','PI.15','PJ.0','PJ.1','VSS','VDD','LDO_CAP',
-        'PA.5','PA.4','PA.3','PA.2','PA.1','PA.0','VDDIO','PE.14','PE.15','nRESET',
-        'PF.0','PF.1','PD.9','PD.8',
-        'PC.5','PC.4','PC.3','PC.2','PC.1','PC.0','VSS','VDD','PG.9','PG.10',
-        'PG.11','PG.12','PG.13','PG.14','PG.15','HBI_PWR','NC','NC','NC','NC',
-        'NC','NC','NC','NC','NC','NC','NC','PD.4','PD.3','PD.2',
-        'PD.1','PD.0','PD.13','PA.12','HBI_PWR','PA.13','PA.14','PA.15','HSUSB_VRES','HSUSB_VDD33',
-        'HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+',
-        'HSUSB_VDD12_CAP','HSUSB_ID','PE.7','PE.6','PE.5','PE.4','PE.3','PE.2','VSS','VDD',
-        'PE.1','PE.0','PH.8','PH.9','PH.10','PH.11','PD.14','PJ.8','PJ.9','PJ.10',
-        'PJ.11','PJ.12','PJ.13','PG.5','PG.6','PG.7','PG.8','VSS','LDO_CAP','VDD',
-        'PC.14','PB.15','PB.14','PB.13','PB.12','AVDD','VREF','AVSS','PB.11','PB.10',
-        'PB.9','PB.8','PB.7','PB.6'
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'VSS', 'VDD', 'PG.0', 'PG.1', 'PG.2', 'PG.3', 'PG.4', 'PI.6', 'PI.7', 'PI.8', 
+        'PI.9', 'PI.10', 'PI.11', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VBAT', 
+        'PF.5', 'PF.4', 'PH.0', 'PH.1', 'PH.2', 'PH.3', 'PH.4', 'PH.5', 'PH.6', 'PH.7', 
+        'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9', 'PE.10', 'PE.11', 'PE.12', 'PE.13', 
+        'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'PI.12', 'PI.13', 'PI.14', 'PI.15', 'PJ.0', 
+        'PJ.1', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 
+        'PC.3', 'PC.2', 'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 
+        'PG.13', 'PG.14', 'PG.15', 'HBI_PWR', 'HBI_PWR', 'NC', 'NC', 'NC', 'NC', 'NC', 
+        'NC', 'NC', 'NC', 'NC', 'NC', 'NC', 'PD.4', 'PD.3', 'PD.2', 'PD.1', 
+        'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 
+        'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 'PE.2', 
+        'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 'PD.14', 'PJ.8', 
+        'PJ.9', 'PJ.10', 'PJ.11', 'PJ.12', 'PJ.13', 'PG.5', 'PG.6', 'PG.7', 'PG.8', 'VSS', 
+        'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 
+        'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6'
     ],
     "LQFP176(USB2.0+1.1)(24*24)": [
-        'PB.5','PB.4','PB.3','PB.2','PC.12','PC.11','PC.10','PC.9','PB.1','PB.0',
-        'VSS','VDD','PA.11','PA.10','PA.9','PA.8','PC.13','PD.12','PD.11','PD.10',
-        'VSS','VDD','PG.0','PG.1','PG.2','PG.3','PG.4','PI.6','PI.7','PI.8',
-        'PI.9','PI.10','PI.11','PF.11','PF.10','PF.9','PF.8','PF.7','PF.6','VBAT',
-        'PF.5','PF.4','PH.0','PH.1',
-        'PH.2','PH.3','PH.4','PH.5','PH.6','PH.7','PF.3','PF.2','VSS','VDD',
-        'PE.8','PE.9','PE.10','PE.11','PE.12','PE.13','PC.8','PC.7','PC.6','PA.7',
-        'PA.6','PI.12','PI.13','PI.14','PI.15','PJ.0','PJ.1','VSS','VDD','LDO_CAP',
-        'PA.5','PA.4','PA.3','PA.2','PA.1','PA.0','VDDIO','PE.14','PE.15','nRESET',
-        'PF.0','PF.1','PD.9','PD.8',
-        'PC.5','PC.4','PC.3','PC.2','PC.1','PC.0','VSS','VDD','PG.9','PG.10',
-        'PG.11','PG.12','PG.13','PG.14','PG.15','PJ.2','PJ.3','PJ.4','PJ.5','PJ.6',
-        'PJ.7','PH.12','PH.13','PH.14','PH.15','PD.7','PD.6','PD.5','PD.4','PD.3',
-        'PD.2','PD.1','PD.0','PD.13','PA.12','PA.13','PA.14','PA.15','HSUSB_VRES','HSUSB_VDD33',
-        'HSUSB_VBUS','HSUSB_D-','HSUSB_VSS','HSUSB_D+',
-        'HSUSB_VDD12_CAP','HSUSB_ID','PE.7','PE.6','PE.5','PE.4','PE.3','PE.2','VSS','VDD',
-        'PE.1','PE.0','PH.8','PH.9','PH.10','PH.11','PD.14','PJ.8','PJ.9','PJ.10',
-        'PJ.11','PJ.12','PJ.13','PG.5','PG.6','PG.7','PG.8','VSS','LDO_CAP','VDD',
-        'PC.14','PB.15','PB.14','PB.13','PB.12','AVDD','VREF','AVSS','PB.11','PB.10',
-        'PB.9','PB.8','PB.7','PB.6'
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'VSS', 'VDD', 'PG.0', 'PG.1', 'PG.2', 'PG.3', 'PG.4', 'PI.6', 'PI.7', 'PI.8', 
+        'PI.9', 'PI.10', 'PI.11', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VBAT', 
+        'PF.5', 'PF.4', 'PH.0', 'PH.1', 'PH.2', 'PH.3', 'PH.4', 'PH.5', 'PH.6', 'PH.7', 
+        'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9', 'PE.10', 'PE.11', 'PE.12', 'PE.13', 
+        'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'PI.12', 'PI.13', 'PI.14', 'PI.15', 'PJ.0', 
+        'PJ.1', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 
+        'PC.3', 'PC.2', 'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 
+        'PG.13', 'PG.14', 'PG.15', 'PJ.2', 'PJ.3', 'PJ.4', 'PJ.5', 'PJ.6', 'PJ.7', 'PH.12', 
+        'PH.13', 'PH.14', 'PH.15', 'PD.7', 'PD.6', 'PD.5', 'PD.4', 'PD.3', 'PD.2', 'PD.1', 
+        'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 
+        'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 'PE.2', 
+        'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 'PD.14', 'PJ.8', 
+        'PJ.9', 'PJ.10', 'PJ.11', 'PJ.12', 'PJ.13', 'PG.5', 'PG.6', 'PG.7', 'PG.8', 'VSS', 
+        'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 
+        'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6'
+    ],
+    "LQFP176EP(USB2.0+1.1)(24*24)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0', 
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10', 
+        'VSS', 'VDD', 'PG.0', 'PG.1', 'PG.2', 'PG.3', 'PG.4', 'PI.6', 'PI.7', 'PI.8', 
+        'PI.9', 'PI.10', 'PI.11', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VBAT', 
+        'PF.5', 'PF.4', 'PH.0', 'PH.1', 'PH.2', 'PH.3', 'PH.4', 'PH.5', 'PH.6', 'PH.7', 
+        'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9', 'PE.10', 'PE.11', 'PE.12', 'PE.13', 
+        'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'PI.12', 'PI.13', 'PI.14', 'PI.15', 'PJ.0', 
+        'PJ.1', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
+        'VDDIO', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 
+        'PC.3', 'PC.2', 'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 
+        'PG.13', 'PG.14', 'PG.15', 'PJ.2', 'PJ.3', 'PJ.4', 'PJ.5', 'PJ.6', 'PJ.7', 'PH.12', 
+        'PH.13', 'PH.14', 'PH.15', 'PD.7', 'PD.6', 'PD.5', 'PD.4', 'PD.3', 'PD.2', 'PD.1', 
+        'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 
+        'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 'PE.2', 
+        'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 'PD.14', 'PJ.8', 
+        'PJ.9', 'PJ.10', 'PJ.11', 'PJ.12', 'PJ.13', 'PG.5', 'PG.6', 'PG.7', 'PG.8', 'VSS', 
+        'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 
+        'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6', 'NC'
     ]
 };
 
@@ -1034,152 +1056,75 @@ NUTOOL_PIN.g_cfg_gpioMatrix = [];
 NUTOOL_PIN.g_cfg_shareBits = [];
 NUTOOL_PIN.g_cfg_addGPIO = {};
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'M467SJHAE(LQFP64)': {
+    'M467SJHAN': {
         'ALL': ['UART9', 'HBI']
     },
-    'M463SJHAE(LQFP64)': {
-        'ALL': ['EMAC0', 'UART9', 'HBI']
+    'M467KJHAN': {
+        'ALL': []
     },
-    'M463H3SJHAN(LQFP64)': {
-        'ALL': ['EMAC0', 'UART9', 'EBI', 'HBI', 'USB']
+    'M467JJHAN': {
+        'ALL': []
     },
-    'M464SJHAE(LQFP64)': {
-        'ALL': ['EMAC0', 'UART9', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'HBI']
+    'M467H3JJHAN': {
+        'ALL': ['HBI']
     },
-    'M467SIHAE(LQFP64)': {
+    'M467H3HJHAN': {
+        'ALL': ['HBI']
+    },
+    'M467HJHAN': {
+        'ALL': []
+    },
+    'M467S2JHAE': {
         'ALL': ['UART9', 'HBI']
     },
-    'M463SIHAE(LQFP64)': {
-        'ALL': ['EMAC0', 'UART9', 'HBI']
+    'M467K2JHAE': {
+        'ALL': []
     },
-    'M464SIHAE(LQFP64)': {
-        'ALL': ['EMAC0', 'UART9', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'HBI']
+    'M467J2JHAE': {
+        'ALL': []
     },
-    'M463H3SIHAN(LQFP64)': {
-        'ALL': ['EMAC0', 'UART9', 'EBI', 'HBI', 'USB']
-    },
-    'M467H3SJHAE(LQFP64)': {
-        'ALL': ['UART9', 'EBI', 'HBI', 'USB']
-    },
-    'M463SJHAN(LQFP64)': {
-        'ALL': ['EMAC0', 'UART9', 'HBI']
-    },
-    'M467SJHAN(LQFP64)': {
-        'ALL': ['UART9', 'HBI']
-    },
-    'M467VJHAE(LQFP100)': {
-        'ALL': ['HBI']
-    },
-    'M467VIHAE(LQFP100)': {
-        'ALL': ['HBI']
-    },
-    'M463KJHAE(LQFP128)': {
-        'ALL': ['EMAC0']
-    },
-    'M464KJHAE(LQFP128)': {
-        'ALL': ['EMAC0', 'CAN0', 'CAN1', 'CAN2', 'CAN3']
-    },
-    'M463H3KJHAN(LQFP128)': {
-        'ALL': ['EMAC0', 'HBI']
-    },
-    'M463KIHAE(LQFP128)': {
-        'ALL': ['EMAC0']
-    },
-    'M464KIHAE(LQFP128)': {
-        'ALL': ['EMAC0', 'CAN0', 'CAN1', 'CAN2', 'CAN3']
-    },
-    'M463H3KIHAN(LQFP128)': {
-        'ALL': ['EMAC0', 'HBI']
-    },
-    'M467H3KJHAE(LQFP128)': {
-        'ALL': ['HBI']
-    },
-    'M463KJHAN(LQFP128)': {
-        'ALL': ['EMAC0']
-    },
-    'M467H3JJHAN(LQFP144)': {
-        'ALL': ['HBI']
-    },
-    'M467H3JJHAE(LQFP144)': {
-        'ALL': ['HBI']
-    },
-    'M467H3HJHAN(LQFP176)': {
-        'ALL': ['HBI']
+    'M467H2JHAE': {
+        'ALL': []
     }
 };
 NUTOOL_PIN.g_cfg_WPPin = [];
 
 NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
-    var partNumber_package,
-        partNumber;
-
-    if (typeof given_partNumber_package === 'undefined') {
-        partNumber_package = NUTOOL_PIN.getg_partNumber_package();
-    }
-    else {
-        partNumber_package = given_partNumber_package;
-    }
-
-    NUTOOL_PIN.g_packageNumber = partNumber_package.substring(partNumber_package.indexOf('(') + 1);
-    NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.g_packageNumber.substring(0, NUTOOL_PIN.g_packageNumber.indexOf(')'));
-
-    partNumber = partNumber_package.substring(0, partNumber_package.indexOf('('));
-    switch (NUTOOL_PIN.g_packageNumber) {
-    case 'LQFP64':
-        switch (partNumber) {
-        case "M463H3SJHAN":
-        case "M463H3SIHAN":
-        case "M467H3SJHAE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64_MCP(USB2.0)(7*7)";
-            break;
-        default:
+    NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.getPackageNumber(given_partNumber_package);
+    let partNumber = NUTOOL_PIN.getPartNumber(given_partNumber_package);
+    switch (partNumber) {
+        case "M467SJHAN":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP64_USB(USB1.1+USB2.0)(7*7)";
             break;
-        }
-        break;
-    case 'LQFP100':
-        switch (partNumber) {
-        default:
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP100(USB2.0+1.1)(14*14)";
-            break;
-        }
-        break;
-    case 'LQFP128':
-        switch (partNumber) {
-        case "M463H3KJHAN":
-        case "M463H3KIHAN":
-        case "M467H3KJHAE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP128_MCP(USB2.0+1.1)(14*14)";
-            break;
-        default:
+        case "M467KJHAN":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB2.0+1.1)(14*14)";
             break;
-        }
-        break;
-    case 'LQFP144':
-        switch (partNumber) {
-        case "M467H3JJHAN":
-        case "M467H3JJHAE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP144_MCP(USB2.0+1.1)(20*20)";
-            break;
-        default:
+        case "M467JJHAN":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP144(USB2.0+1.1)(20*20)";
             break;
-        }
-        break;
-    case 'LQFP176':
-        switch (partNumber) {
+        case "M467H3JJHAN":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP144_MCP(USB2.0+1.1)(20*20)";
+            break;
         case "M467H3HJHAN":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP176_MCP(USB2.0+1.1)(24*24)";
             break;
-        default:
+        case "M467HJHAN":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP176(USB2.0+1.1)(24*24)";
             break;
-        }
-        break;
-    default:
-        break;
-    }
-    partNumber_package = null;
-    partNumber = null;
+        case "M467S2JHAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP64EP(USB1.1+USB2.0)(7*7)";
+            break;
+        case "M467K2JHAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128EP(USB2.0+1.1)(14*14)";
+            break;
+        case "M467J2JHAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP144EP(USB2.0+1.1)(20*20)";
+            break;
+        case "M467H2JHAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP176EP(USB2.0+1.1)(24*24)";
+            break;
+        default:
+            NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;
+            break;
+    };
 };

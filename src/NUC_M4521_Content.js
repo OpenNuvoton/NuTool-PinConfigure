@@ -16,6 +16,9 @@ NUTOOL_PIN.g_cfg_chips = [
 	{ name: "M452LG6AE", pkg: "LQFP48" },
 	{ name: "M452LE6AE", pkg: "LQFP48" },
 
+	{ name: "M452VE6AE", pkg: "LQFP100" },
+	{ name: "M452VG6AE", pkg: "LQFP100" },
+
 	//{ name: "M4LEDRG6AE", pkg: "LQFP64" },
 	//{ name: "M4LEDRE6AE", pkg: "LQFP64" },
 

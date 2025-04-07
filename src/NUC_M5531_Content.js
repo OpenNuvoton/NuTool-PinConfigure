@@ -1,15 +1,15 @@
 NUTOOL_PIN.g_cfg_chips = [
     // M5531
-    // { name: "M5531R2LJAE", pkg: "LQFP64" },
-    // { name: "M5531K2LJAE", pkg: "LQFP128" },
-    // { name: "M5531H2LJAE", pkg: "LQFP176" },
+    { name: "M5531R2LJAE", pkg: "LQFP64" },
+    { name: "M5531K2LJAE", pkg: "LQFP128" },
+    { name: "M5531H2LJAE", pkg: "LQFP176" },
     // M55M1
-    { name: "M55M1R2LJAE", pkg: "LQFP64" },
-    { name: "M55M1H3R2LJAE", pkg: "LQFP64" },
-    { name: "M55M1K2LJAE", pkg: "LQFP128" },
-    { name: "M55M1H3K2LJAE", pkg: "LQFP128" },
-    { name: "M55M1H2LJAE", pkg: "LQFP176" },
-    { name: "M55M1H3H2LJAE", pkg: "LQFP176" }
+    // { name: "M55M1R2LJAE", pkg: "LQFP64" },
+    // { name: "M55M1H3R2LJAE", pkg: "LQFP64" },
+    // { name: "M55M1K2LJAE", pkg: "LQFP128" },
+    // { name: "M55M1H3K2LJAE", pkg: "LQFP128" },
+    // { name: "M55M1H2LJAE", pkg: "LQFP176" },
+    // { name: "M55M1H3H2LJAE", pkg: "LQFP176" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
