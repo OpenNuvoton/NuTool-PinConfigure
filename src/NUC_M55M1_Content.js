@@ -9,7 +9,9 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "M55M1K2LJAE", pkg: "LQFP128" },
     { name: "M55M1H3K2LJAE", pkg: "LQFP128" },
     { name: "M55M1H2LJAE", pkg: "LQFP176" },
-    { name: "M55M1H3H2LJAE", pkg: "LQFP176" }
+    { name: "M55M1H3H2LJAE", pkg: "LQFP176" },
+
+    { name: "M55M1H2ES", pkg: "LQFP176" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -18,7 +20,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PA.8', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7', 
         'PA.6', 'VSS', 'VDD', 'NC', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
         'VDDIO0', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.1', 'PC.0', 'VDDIO1', 'VDDIO1', 
-        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'VSS', 'VSS', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'VSS', 'VSS', 
         'NC', 'VDD', 'VDD', 'LDO_CAP', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 
         'PB.10', 'PB.9', 'PB.8', 'PB.7', 'VSS'
     ],
@@ -27,7 +29,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PA.8', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7', 
         'PA.6', 'VSS', 'VDD', 'NC', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
         'VDDIO0', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0', 
-        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'VSS', 'VSS', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'VSS', 'VSS', 
         'NC', 'VDD', 'VDD', 'LDO_CAP', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 
         'PB.10', 'PB.9', 'PB.8', 'PB.7', 'VSS'
     ],
@@ -36,7 +38,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PA.8', 'PF.6', 'VBAT', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7', 
         'PA.6', 'VSS', 'VDD', 'NC', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 
         'VDDIO0', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
-        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'VSS', 'VSS', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'VSS', 'VSS', 
         'NC', 'VDD', 'VDD', 'LDO_CAP', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 
         'PB.10', 'PB.9', 'PB.8', 'PB.7'
     ],
@@ -48,7 +50,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO0', 'PE.14', 'PE.15', 'nRESET', 
         'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0', 
         'VSS', 'VDD/VDDIO1', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 
-        'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 
+        'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 
         'PE.2', 'VSS', 'VSS', 'NC', 'VDD', 'VDD', 'LDO_CAP', 'PB.15', 'PB.14', 'PB.13', 
         'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6'
     ],
@@ -62,7 +64,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'VDDIO0', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0', 'PJ.2', 'PJ.3', 
         'PJ.4', 'PJ.5', 'PJ.6', 'PJ.7', 'VSS', 'VDDIO1', 'PH.12', 'PH.13', 'PH.14', 'PH.15', 
         'PG.13', 'PG.14', 'PG.15', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 
-        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 
+        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 
         'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'VSS', 
         'VSS', 'NC', 'VDD', 'VDD', 'LDO_CAP', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 
         'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6', 'VSS'
@@ -77,7 +79,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'VDDIO0', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 
         'PC.3', 'PC.2', 'PC.1', 'PC.0', 'VSS', 'VDD', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 
         'PD.7', 'VDDIO1', 'VDDIO1', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 
-        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 
+        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 
         'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'VSS', 
         'VSS', 'NC', 'VDD', 'VDD', 'LDO_CAP', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 
         'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6', 'VSS'
@@ -93,7 +95,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 
         'PC.1', 'PC.0', 'VSS', 'VDD/VDDIO1', 'PG.9', 'PG.10', 'PG.11', 'PG.12', 'PD.7', 'VDDIO1', 
         'VDDIO1', 'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
-        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'PE.7', 'PE.6', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'PE.7', 'PE.6', 
         'PE.5', 'PE.4', 'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 
         'PH.10', 'PH.11', 'PD.14', 'PG.5', 'PG.6', 'VSS', 'VSS', 'NC', 'VDD', 'VDD', 
         'LDO_CAP', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 'PB.10', 
@@ -110,7 +112,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PJ.2', 'PJ.3', 'PJ.4', 'PJ.5', 
         'PJ.6', 'PJ.7', 'VSS', 'VDD/VDDIO1', 'PH.12', 'PH.13', 'PH.14', 'PH.15', 'PG.13', 'PG.14', 
         'PG.15', 'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 
-        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'PE.7', 'PE.6', 
+        'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'PE.7', 'PE.6', 
         'PE.5', 'PE.4', 'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 
         'PH.10', 'PH.11', 'PD.14', 'PG.5', 'PG.6', 'VSS', 'VSS', 'NC', 'VDD', 'VDD', 
         'LDO_CAP', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11', 'PB.10', 
@@ -130,7 +132,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PD.7', 'PD.6', 'PD.5', 'VDDIO1', 'VDDIO1', 'NC', 'NC', 'NC', 'NC', 'NC', 
         'NC', 'NC', 'NC', 'NC', 'NC', 'NC', 'PD.4', 'PD.3', 'PD.2', 'PD.1', 
         'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 
-        'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 'PE.2', 
+        'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 'PE.2', 
         'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 'PD.14', 'PJ.8', 
         'PJ.9', 'PJ.10', 'PJ.11', 'PJ.12', 'PJ.13', 'PG.5', 'PG.6', 'VSS', 'VSS', 'NC', 
         'VDD', 'VDD', 'LDO_CAP', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 
@@ -150,11 +152,31 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PD.7', 'PD.6', 'PD.5', 'VDDIO1', 'PJ.2', 'PJ.3', 'PJ.4', 'PJ.5', 'PJ.6', 'PJ.7', 
         'PH.12', 'PH.13', 'PH.14', 'PH.15', 'PG.13', 'PG.14', 'PG.15', 'PD.3', 'PD.2', 'PD.1', 
         'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 
-        'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 'PE.2', 
+        'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD11', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 'PE.2', 
         'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 'PD.14', 'PJ.8', 
         'PJ.9', 'PJ.10', 'PJ.11', 'PJ.12', 'PJ.13', 'PG.5', 'PG.6', 'VSS', 'VSS', 'NC', 
         'VDD', 'VDD', 'LDO_CAP', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 
         'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6', 'VSS'
+    ],
+    "LQFP176(USB2.0+1.1)(24*24)_TEST": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0',
+        'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10',
+        'VSS', 'VDD', 'PG.0', 'PG.1', 'PG.2', 'PG.3', 'PG.4', 'PI.6', 'PI.7', 'PI.8',
+        'PI.9', 'PI.10', 'PI.11', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VBAT',
+        'PF.5', 'PF.4', 'PH.0', 'PH.1', 'PH.2', 'PH.3', 'PH.4', 'PH.5', 'PH.6', 'PH.7',
+        'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9', 'PE.10', 'PE.11', 'PE.12', 'PE.13',
+        'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'PI.12', 'PI.13', 'PI.14', 'PI.15', 'PJ.0',
+        'PJ.1', 'VSS', 'VDD', 'LDO_CAP', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0',
+        'VDDIO0', 'PE.14', 'PE.15', 'nRESET', 'PF.0', 'PF.1', 'PD.9', 'PD.8', 'PC.5', 'PC.4',
+        'PC.3', 'PC.2', 'PC.1', 'PC.0', 'VSS', 'VDDIO1', 'PG.9', 'PG.10', 'PG.11', 'PG.12',
+        'PG.13', 'PG.14', 'PG.15', 'PJ.2', 'PJ.3', 'PJ.4', 'PJ.5', 'PJ.6', 'PJ.7', 'PH.12',
+        'PH.13', 'PH.14', 'PH.15', 'PD.7', 'PD.6', 'PD.5', 'NC', 'NC', 'NC', 'NC',
+        'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-',
+        'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'PE.7', 'PE.6', 'PE.5', 'PE.4', 'PE.3', 'PE.2',
+        'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11', 'PD.14', 'PJ.8',
+        'PJ.9', 'PJ.10', 'PJ.11', 'PJ.12', 'PJ.13', 'PG.5', 'PG.6', 'VSS', 'VSS_BUCK', 'VSW',
+        'AVDD_BUCK', 'VDD', 'LDO_CAP', 'NC', 'NC', 'NC', 'PB.12', 'AVDD', 'VREF', 'AVSS',
+        'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6'
     ]
 };
 
@@ -1087,8 +1109,11 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         case 'M55M1H3H2LJAE':
             NUTOOL_PIN.g_packageNumberIndex = "LQFP176_MCP(USB2.0+1.1)(24*24)";
             break;
+        case 'M55M1H2ES':
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP176(USB2.0+1.1)(24*24)_TEST";
+            break;
         default:
             NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;
             break;
     };
-}
+};
