@@ -565,8 +565,8 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
                 case "NUC976DK63YC":
                     NUTOOL_PIN.g_packageNumberIndex = "LQFP128(NUC976DK63YC)";
                     break;
-                case "NUC975DK63YC":
-                    NUTOOL_PIN.g_packageNumberIndex = "LQFP128(NUC975DK63YC)";
+                case "NUC977DK63YC":
+                    NUTOOL_PIN.g_packageNumberIndex = "LQFP128(NUC977DK63YC)";
                     break;
                 default:
                     NUTOOL_PIN.g_packageNumberIndex = "LQFP128(NUC975DK63YC)";

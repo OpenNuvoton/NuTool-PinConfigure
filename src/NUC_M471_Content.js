@@ -11,7 +11,12 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "M471KI8AE", pkg: "LQFP128" },
 
     // M471CI8AE
-    { name: "M471CI8AE", pkg: "WLCSP100" }
+    { name: "M471CI8AE", pkg: "WLCSP100" },
+
+    // // Diff Resource
+    { name: "M471R1E6AE", pkg: "LQFP64" },
+    { name: "M471MD6AE", pkg: "LQFP44" },
+    { name: "M471SE6AE", pkg: "LQFP64" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
