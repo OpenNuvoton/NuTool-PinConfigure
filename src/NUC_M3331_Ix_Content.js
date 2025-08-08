@@ -2,46 +2,50 @@ NUTOOL_PIN.g_cfg_chips = [
     // Ix
     { name: "M3331KIGAE", pkg: "LQFP128" },
     // { name: "CM3031HS8AE", pkg: "LQFP128" },
-    { name: "M3331LIGAE", pkg: "LQFP48" },
-    // { name: "CM3031HL8AE", pkg: "LQFP48" },
-    { name: "M3331SIGAE", pkg: "LQFP64" },
-    // { name: "CM3031HN8AE", pkg: "LQFP64" },
-    { name: "M3331TIGAE", pkg: "QFN33" },
-    // { name: "CM3031HJ3AE", pkg: "QFN33" },
-    { name: "M3333KIGAE", pkg: "LQFP128" },
-    // { name: "CM3033HS8AE", pkg: "LQFP128" },
-    { name: "M3333LIGAE", pkg: "LQFP48" },
-    // { name: "CM3033HL8AE", pkg: "LQFP48" },
-    { name: "M3333SIGAE", pkg: "LQFP64" },
-    // { name: "CM3033HN8AE", pkg: "LQFP64" },
-    { name: "M3334KIGAE", pkg: "LQFP128" },
-    // { name: "CM3034HS8AE", pkg: "LQFP128" },
-    { name: "M3334LIGAE", pkg: "LQFP48" },
-    // { name: "CM3034HL8AE", pkg: "LQFP48" },
-    { name: "M3334SIGAE", pkg: "LQFP64" },
-    // { name: "CM3034HN8AE", pkg: "LQFP64" },
-    { name: "M3334TIGAE", pkg: "QFN33" },
-    // { name: "CM3034HJ3AE", pkg: "QFN33" },
     { name: "M3331KGGAE", pkg: "LQFP128" },
     // { name: "CM3031GS8AE", pkg: "LQFP128" },
+    { name: "M3331LIGAE", pkg: "LQFP48" },
+    // { name: "CM3031HL8AE", pkg: "LQFP48" },
     { name: "M3331LGGAE", pkg: "LQFP48" },
     // { name: "CM3031GL8AE", pkg: "LQFP48" },
+    { name: "M3331SIGAE", pkg: "LQFP64" },
+    // { name: "CM3031HN8AE", pkg: "LQFP64" },
     { name: "M3331SGGAE", pkg: "LQFP64" },
     // { name: "CM3031GN8AE", pkg: "LQFP64" },
+    { name: "M3331TIGAE", pkg: "QFN33" },
+    // { name: "CM3031HJ3AE", pkg: "QFN33" },
     { name: "M3331TGGAE", pkg: "QFN33" },
     // { name: "CM3031GJ3AE", pkg: "QFN33" },
+    { name: "M3333KIGAE", pkg: "LQFP128" },
+    // { name: "CM3033HS8AE", pkg: "LQFP128" },
     { name: "M3333KGGAE", pkg: "LQFP128" },
     // { name: "CM3033GS8AE", pkg: "LQFP128" },
+    { name: "M3333LIGAE", pkg: "LQFP48" },
+    // { name: "CM3033HL8AE", pkg: "LQFP48" },
     { name: "M3333LGGAE", pkg: "LQFP48" },
     // { name: "CM3033GL8AE", pkg: "LQFP48" },
+    { name: "M3333SIGAE", pkg: "LQFP64" },
+    // { name: "CM3033HN8AE", pkg: "LQFP64" },
     { name: "M3333SGGAE", pkg: "LQFP64" },
     // { name: "CM3033GN8AE", pkg: "LQFP64" },
+    { name: "M3333TIGAE", pkg: "QFN33" },
+    { name: "M3333TGGAE", pkg: "QFN33" },
+    // { name: "CM3033HJ3AE", pkg: "QFN33" },
+    // { name: "CM3033GJ3AE", pkg: "QFN33" },
+    { name: "M3334KIGAE", pkg: "LQFP128" },
+    // { name: "CM3034HS8AE", pkg: "LQFP128" },
     { name: "M3334KGGAE", pkg: "LQFP128" },
     // { name: "CM3034GS8AE", pkg: "LQFP128" },
+    { name: "M3334LIGAE", pkg: "LQFP48" },
+    // { name: "CM3034HL8AE", pkg: "LQFP48" },
     { name: "M3334LGGAE", pkg: "LQFP48" },
     // { name: "CM3034GL8AE", pkg: "LQFP48" },
+    { name: "M3334SIGAE", pkg: "LQFP64" },
+    // { name: "CM3034HN8AE", pkg: "LQFP64" },
     { name: "M3334SGGAE", pkg: "LQFP64" },
     // { name: "CM3034GN8AE", pkg: "LQFP64" },
+    { name: "M3334TIGAE", pkg: "QFN33" },
+    // { name: "CM3034HJ3AE", pkg: "QFN33" },
     { name: "M3334TGGAE", pkg: "QFN33" },
     // { name: "CM3034GJ3AE", pkg: "QFN33" },
     // Gx
@@ -742,70 +746,16 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'CM3031HS8AE': {
         'ALL': ['CANFD0', 'CANFD1', 'SPB']
     },
-    'M3331LIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HL8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331SIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HN8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331TIGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3333KIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033HS8AE': {
-        'ALL': ['SPB']
-    },
-    'M3333LIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033HL8AE': {
-        'ALL': ['SPB']
-    },
-    'M3333SIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033HN8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334KIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HS8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334LIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HL8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334SIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HN8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334TIGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'CM3034HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
     'M3331KGGAE': {
         'ALL': ['CANFD0', 'CANFD1', 'SPB']
     },
     'CM3031GS8AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331LIGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031HL8AE': {
         'ALL': ['CANFD0', 'CANFD1', 'SPB']
     },
     'M3331LGGAE': {
@@ -814,11 +764,23 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'CM3031GL8AE': {
         'ALL': ['CANFD0', 'CANFD1', 'SPB']
     },
+    'M3331SIGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031HN8AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
     'M3331SGGAE': {
         'ALL': ['CANFD0', 'CANFD1', 'SPB']
     },
     'CM3031GN8AE': {
         'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331TIGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031HJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
     },
     'M3331TGGAE': {
         'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
@@ -826,10 +788,22 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'CM3031GJ3AE': {
         'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
     },
+    'M3333KIGAE': {
+        'ALL': ['SPB']
+    },
+    'CM3033HS8AE': {
+        'ALL': ['SPB']
+    },
     'M3333KGGAE': {
         'ALL': ['SPB']
     },
     'CM3033GS8AE': {
+        'ALL': ['SPB']
+    },
+    'M3333LIGAE': {
+        'ALL': ['SPB']
+    },
+    'CM3033HL8AE': {
         'ALL': ['SPB']
     },
     'M3333LGGAE': {
@@ -838,10 +812,34 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'CM3033GL8AE': {
         'ALL': ['SPB']
     },
+    'M3333SIGAE': {
+        'ALL': ['SPB']
+    },
+    'CM3033HN8AE': {
+        'ALL': ['SPB']
+    },
     'M3333SGGAE': {
         'ALL': ['SPB']
     },
     'CM3033GN8AE': {
+        'ALL': ['SPB']
+    },
+    'M3333TIGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'M3333TGGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'CM3033HJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'CM3033GJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'M3334KIGAE': {
+        'ALL': ['SPB']
+    },
+    'CM3034HS8AE': {
         'ALL': ['SPB']
     },
     'M3334KGGAE': {
@@ -850,10 +848,22 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'CM3034GS8AE': {
         'ALL': ['SPB']
     },
+    'M3334LIGAE': {
+        'ALL': ['SPB']
+    },
+    'CM3034HL8AE': {
+        'ALL': ['SPB']
+    },
     'M3334LGGAE': {
         'ALL': ['SPB']
     },
     'CM3034GL8AE': {
+        'ALL': ['SPB']
+    },
+    'M3334SIGAE': {
+        'ALL': ['SPB']
+    },
+    'CM3034HN8AE': {
         'ALL': ['SPB']
     },
     'M3334SGGAE': {
@@ -861,6 +871,12 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     },
     'CM3034GN8AE': {
         'ALL': ['SPB']
+    },
+    'M3334TIGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'CM3034HJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
     },
     'M3334TGGAE': {
         'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
