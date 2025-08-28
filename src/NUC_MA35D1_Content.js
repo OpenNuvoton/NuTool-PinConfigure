@@ -1,24 +1,37 @@
 // chip content
 NUTOOL_PIN.g_cfg_chips = [
+    // { name: "MA35D03F764C", pkg: "LQFP216" },
+    // { name: "MA35D03F864C", pkg: "LQFP216" },
+    // { name: "MA35D03FH64C", pkg: "LQFP216" },
+    // { name: "MA35D03FI64C", pkg: "LQFP216" },
+    // { name: "MA35D03FJ64C", pkg: "LQFP216" },
     { name: "MA35D14F884", pkg: "LQFP216" },
     { name: "MA35D14F984", pkg: "LQFP216" },
-    //{ name: "MA35D15A087C", pkg: "BGA364" },  For PPC only
+    // { name: "MA35D15A087C", pkg: "BGA364" },  For PPC only
+    // { name: "MA35D15KH67C", pkg: "LQFP128" },  For internal version
+    // { name: "MA35D15KI67C", pkg: "LQFP128" },  For internal version
     { name: "MA35D16A087C", pkg: "BGA364" },
     { name: "MA35D16A887C", pkg: "BGA312" },
     { name: "MA35D16AH87C", pkg: "BGA312" },
     { name: "MA35D16AI87C", pkg: "BGA312" },
     { name: "MA35D16AJ87C", pkg: "BGA312" },
-    //{ name: "MA35D11K764C", pkg: "LQFP128" },
     { name: "MA35D16F787C", pkg: "LQFP216" },
     { name: "MA35D16F887C", pkg: "LQFP216" },
     { name: "MA35D16F987C", pkg: "LQFP216" },
-    //{ name: "MA35D16H0A7C", pkg: "BGA364" },
-    //{ name: "MA35D16H8A7C", pkg: "BGA312" },
+    { name: "MA35D16FI87C", pkg: "LQFP216" },
+    { name: "MA35D16FJ87C", pkg: "LQFP216" },
+    // { name: "MA35D16H0A7C", pkg: "BGA364" },
+    // { name: "MA35D16H8A7C", pkg: "BGA312" },
+    // { name: "MA35D26HJA7C", pkg: "BGA312" },
+    // { name: "MA35H04F764C", pkg: "LQFP216" },
+    // { name: "MA35H04FH64C", pkg: "LQFP216" },
+    // { name: "MA35H04FI64C", pkg: "LQFP216" },
+    // { name: "MA35H04FJ64C", pkg: "LQFP216" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
     /*"LQFP128": [
-        'VDD_CORE', 'nRESET', 'HSUSB0_ID ', 'PF.15', 'PL.12', 'PL.13', 'PL.14', 'PL.15', 'VDD_OTP/VBAT', 'VDD_HSUSB1', 
+        'VDD_CORE', 'nRESET', 'HSUSB0_ID', 'PF.15', 'PL.12', 'PL.13', 'PL.14', 'PL.15', 'VDD_OTP/VBAT', 'VDD_HSUSB1', 
         'HSUSB1_D-', 'HSUSB1_D+', 'VDD_CORE', 'VDD_HSUSB1/VDD_HSUSB0', 'HSUSB0_D-', 'HSUSB0_D+', 'VDD_CORE', 'VDD_HSUSB0', 'VDD_CORE/VDD_CPU', 'VDDIO1', 
         'PG.0', 'PA.15', 'PG.1', 'PG.2', 'PG.3', 'PG.4', 'PG.6', 'PG.7', 'PG.11', 'PG.12', 
         'PG.13', 'PG.14', 'PG.15', 'VDD_CORE/VDD_CPU', 'PE.14', 'PE.15', 'PD.6', 'PD.7', 'PD.8', 'PD.9', 
@@ -33,7 +46,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PB.8', 'PB.9', 'PB.10', 'PB.11', 'AVDD_ADC0', 'AVSS', 'VDD_CORE', 'VDDIO0/AVDD'
     ],*/
     "LQFP216": [
-        'nRESET', 'HSUSB0_ID ', 'PF.15', 'PL.12', 'PL.13', 'PL.14', 'PL.15', 'VDD_OTP', 'RTC_RPWR', 'VBAT', 
+        'nRESET', 'HSUSB0_ID', 'PF.15', 'PL.12', 'PL.13', 'PL.14', 'PL.15', 'VDD_OTP', 'RTC_RPWR', 'VBAT', 
         'RTC_nRWAKE', 'X32_IN', 'X32_OUT', 'VDD_HSUSB1', 'HSUSB1_D-', 'HSUSB1_D+', 'VDD_CORE', 'VDD_HSUSB1/VDD_HSUSB0', 'HSUSB0_D-', 'HSUSB0_D+', 
         'VDD_CORE', 'VDD_HSUSB0', 'VDD_CORE/VDD_CPU', 'PA.0', 'PA.1', 'PA.2', 'PA.3', 'PA.4', 'PA.5', 'PA.6', 
         'PA.7', 'PA.8', 'PA.9', 'PA.10', 'PA.11', 'PA.12', 'PA.13', 'VDDIO1', 'PA.14', 'PG.0', 
@@ -65,7 +78,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'VSS', 'VSS', 'PL.15', 'PA.3', 'NC_ToolNotShow', 'VDD_HSUSB1', 'VBAT', 'AVDD', 'VREF_EADC0', 'AVDDH_PLL2', 'AVDDL_PLL1', 'VDD_PLL1', 'VDDIO7', 'NC_ToolNotShow', 'PD.15', 'PI.6', 'PC.6', 'PC.0', 
         'X32_IN', 'X32_OUT', 'PA.0', 'PA.5', 'RTC_nRWAKE', 'VDD_OTP', 'VDD_HSUSB0', 'AVDD_ADC0', 'AVDD_EADC0', 'AVDDH_PLL1', 'AVDDL_PLL0', 'VDDIO10', 'VDDIO6', 'PD.13', 'PA.15', 'PK.1', 'PC.5', 'PC.3', 
         'HSUSB1_D+', 'HSUSB1_D-', 'PA.1', 'PA.7', 'nRESET', 'VDD_CORE', 'AVDDL_ROSC', 'VDD_CORE', 'AVSS', 'AVSS_PLL', 'VSS', 'VDD_CORE', 'MVDD', 'MVREF/MVREF_DQ', 'PI.1', 'PK.0', 'PL.6', 'PC.4', 
-        'HSUSB0_D+', 'HSUSB0_D-', 'PA.6', 'PA.8', 'HSUSB0_ID ', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_DDRPHY', 'PI.2', 'PK.3', 'PL.7', 'PL.5', 
+        'HSUSB0_D+', 'HSUSB0_D-', 'PA.6', 'PA.8', 'HSUSB0_ID', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_DDRPHY', 'PI.2', 'PK.3', 'PL.7', 'PL.5', 
         'PA.2', 'PA.4', 'PA.9', 'PA.12', 'PA.10', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_SDRAM', 'PI.0', 'PK.2', 'PL.8', 'PL.4', 
         'PA.13', 'PA.11', 'PG.2', 'PG.4', 'PG.6', 'VDDIO0', 'VDD_CPU', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'PD.14', 'PI.3', 'PJ.12', 'PL.9', 'PL.3', 
         'PG.1', 'PG.0', 'PG.5', 'PG.3', 'PA.14', 'VDDIO1', 'VDD_CPU', 'VSS', 'VSS', 'VSS', 'VSS', 'MVDD_DPHYPLL', 'VDDIO5', 'PD.12', 'PI.5', 'PJ.13', 'PL.10', 'PL.0', 
@@ -82,7 +95,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PB.15', 'PB.12', 'PB.9', 'PB.11', 'EADC0_CH5', 'EADC0_CH1', 'PF.8', 'PF.6', 'PF.4', 'PF.2', 'PE.10', 'PE.2', 'PK.14', 'PN.10', 'PN.5', 'VSS', 'VSS', 'PC.0', 'VSS', 'MD14', 
         'VSS', 'VSS', 'PL.12', 'PB.14', 'PB.13', 'PF.15', 'PL.15', 'PF.0', 'PE.6', 'PE.12', 'PE.4', 'PE.0', 'VSS', 'PN.3', 'PC.4', 'VSS', 'VSS', 'VSS', 'MD15', 'MD12', 
         'X32_IN', 'X32_OUT', 'RTC_RPWR', 'PL.14', 'PH.9', 'PL.13', 'nRESET', 'PB.10', 'PB.8', 'EADC0_CH4', 'EADC0_CH0', 'PN.14', 'PK.13', 'PN.15', 'PK.12', 'PC.7', 'MBA1', 'MBA2', 'MD13', 'MDMask1', 
-        'HSUSB1_D+', 'HSUSB1_D-', 'HSUSB0_ID ', 'RTC_nRWAKE', 'PH.8', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'PC.6', 'MA10', 'MA5', 'MDQS1_P', 'MDQS1_N', 
+        'HSUSB1_D+', 'HSUSB1_D-', 'HSUSB0_ID', 'RTC_nRWAKE', 'PH.8', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'NC_ToolNotShow', 'PC.6', 'MA10', 'MA5', 'MDQS1_P', 'MDQS1_N', 
         'HSUSB0_D+', 'HSUSB0_D-', 'PA.0', 'PA.5', 'PA.1', 'NC_ToolNotShow', 'VDDIO8', 'VDD_HSUSB1', 'VBAT', 'VREF_EADC0', 'AVDDH_PLL2', 'AVDDL_PLL2', 'VDDIO7', 'VDDIO6', 'NC_ToolNotShow', 'VSS', 'MA3', 'MA12', 'MD9', 'MD10', 
         'PA.2', 'PA.4', 'PA.9', 'PA.6', 'PA.3', 'NC_ToolNotShow', 'VDDIO9', 'VDD_HSUSB0', 'AVDD', 'AVDD_EADC0', 'AVDDH_PLL1', 'AVDDL_PLL1', 'AVDDL_PLL0', 'VDD_PLL1', 'NC_ToolNotShow', 'MCS1n', 'MA0', 'MA1', 'MD11', 'MD8', 
         'PA.11', 'PA.7', 'PA.13', 'PD.13', 'PA.8', 'NC_ToolNotShow', 'VDD_OTP', 'VDD_CORE', 'AVDD_ADC0', 'AVSS', 'AVSS_PLL', 'VSS', 'VDD_CORE', 'VDDIO10', 'NC_ToolNotShow', 'MCKE1', 'MBA0', 'MCASn', 'MDQS0_P', 'MDQS0_N', 
@@ -97,90 +110,6 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PK.0', 'PK.2', 'PD.9', 'PD.11', 'PL.3', 'PK.9', 'PM.7', 'PM.2', 'PM.4', 'PM.6', 'PJ.7', 'PI.8', 'PK.4', 'PI.12', 'PI.14', 'PH.5', 'PC.15', 'PD.2', 'PH.12', 'PD.1', 
         'PE.14', 'PL.6', 'PL.8', 'PD.6', 'PL.2', 'PL.4', 'PM.0', 'PM.10', 'PJ.1', 'PJ.11', 'PJ.6', 'PJ.10', 'PG.10', 'PC.14', 'PI.13', 'PH.1', 'PH.6', 'PC.13', 'PH.15', 'PH.14', 
         'VSS', 'PL.10', 'PD.7', 'PD.10', 'PK.8', 'PK.10', 'PM.8', 'PJ.3', 'PJ.0', 'PJ.2', 'PJ.8', 'PG.8', 'PH.2', 'PI.9', 'PI.11', 'PI.15', 'PH.3', 'PH.4', 'PD.4', 'VSS'
-    ]
-};
-
-NUTOOL_PIN.g_cfg_OrCAD = {
-    "LQFP128": [
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', '', '', '', 
-        '', '', '', '', '', '', '', ''
-    ],
-    "LQFP216": [
-        'U1C', 'U1C', 'U1C', 'U1C', 'U1C', 'U1C', 'U1C', 'U1O', 'U1A', 'U1A', 
-        'U1A', 'U1A', 'U1A', 'U1B', 'U1B', 'U1B', 'U1O', 'U1B', 'U1B', 'U1B', 
-        'U1O', 'U1B', 'U1O', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1O', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1O', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 
-        'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 
-        'U1O', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 
-        'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 
-        'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 
-        'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1O', 
-        'U1H', 'U1H', 'U1H', 'U1H', 'U1H', 'U1H', 'U1H', 'U1O', 'U1N', 'U1N', 
-        'U1O', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 'U1O', 'U1N', 'U1N', 'U1O', 
-        'U1N', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 
-        'U1O', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 
-        'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1O', 'U1A', 'U1A', 
-        'U1A', 'U1O', 'U1O', 'U1O', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1O', 
-        'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 
-        'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 
-        'U1L', 'U1O', 'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1O', 
-        'U1M', 'U1M', 'U1M', 'U1M', 'U1C', 'U1O'
-    ],
-    "BGA324": [
-        'U1O', 'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1A', 'U1J', 'U1J', 'U1J', 'U1J', 'U1O', 
-        'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1A', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 
-        'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 
-        'U1M', 'U1M', 'U1M', 'U1O', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1J', 'U1J', 'U1J', 'U1O', 'U1O', 'U1O', 'U1I', 
-        'U1C', 'U1C', 'U1C', 'U1C', '', '', 'U1A', 'U1A', 'U1A', 'U1L', 'U1K', 'U1O', '', '', 'U1O', 'U1O', 'U1I', 'U1I', 
-        'U1C', 'U1O', 'U1C', 'U1D', '', 'U1B', 'U1A', 'U1O', 'U1M', 'U1O', 'U1O', 'U1O', 'U1J', '', 'U1D', 'U1D', 'U1I', 'U1I', 
-        'U1A', 'U1A', 'U1D', 'U1D', 'U1A', 'U1O', 'U1B', 'U1M', 'U1M', 'U1O', 'U1O', 'U1A', 'U1I', 'U1D', 'U1D', 'U1D', 'U1I', 'U1I', 
-        'U1B', 'U1B', 'U1D', 'U1D', 'U1C', 'U1O', 'U1O', 'U1O', 'U1M', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', 'U1D', 'U1D', 'U1D', 'U1I', 
-        'U1B', 'U1B', 'U1D', 'U1D', 'U1C', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', 'U1D', 'U1D', 'U1D', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', 'U1D', 'U1D', 'U1D', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1C', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1H', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', '', 'U1E', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1F', 'U1G', '', 'U1D', 'U1D', 'U1D', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1D', '', '', 'U1E', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', '', '', 'U1D', 'U1D', 'U1E', 'U1D', 
-        'U1D', 'U1D', 'U1D', 'U1O', 'U1E', 'U1E', 'U1F', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1O', 'U1G', 'U1G', 'U1G', 
-        'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1G', 'U1G', 'U1G', 
-        'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1H', 'U1G', 'U1G', 
-        'U1O', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1H', 'U1H', 'U1O'
-    ],
-    "BGA400": [
-        'U1O', 'U1M', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1J', 'U1J', 'U1J', 'U1A', 'U1J', 'U1J', 'U1J', 'U1I', 'U1O', 
-        'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1J', 'U1J', 'U1A', 'U1J', 'U1J', 'U1I', 'U1I', 'U1I', 
-        'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1J', 'U1J', 'U1J', 'U1O', 'U1O', 'U1I', 'U1O', 'U1N', 
-        'U1C', 'U1O', 'U1C', 'U1M', 'U1M', 'U1C', 'U1C', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1O', 'U1J', 'U1I', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', 
-        'U1A', 'U1A', 'U1A', 'U1C', 'U1A', 'U1C', 'U1C', 'U1M', 'U1M', 'U1M', 'U1M', 'U1J', 'U1J', 'U1J', 'U1J', 'U1I', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1B', 'U1B', 'U1C', 'U1A', 'U1A', '', '', '', '', '', '', '', '', '', '', 'U1I', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1B', 'U1B', 'U1D', 'U1D', 'U1D', '', 'U1K', 'U1B', 'U1A', 'U1M', 'U1O', 'U1O', 'U1J', 'U1I', '', 'U1O', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1L', 'U1B', 'U1O', 'U1M', 'U1O', 'U1O', 'U1O', 'U1O', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1O', 'U1O', 'U1M', 'U1M', 'U1O', 'U1O', 'U1O', 'U1A', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1C', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1D', 'U1E', 'U1O', 'U1O', 'U1O', 'U1F', 'U1G', 'U1H', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', '', '', '', '', '', '', '', '', '', 'U1O', 'U1N', 'U1N', 'U1O', 'U1N', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1D', 'U1D', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1O', 'U1O', 'U1H', 'U1O', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1H', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1G', 'U1H', 
-        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1F', 'U1F', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 
-        'U1O', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1F', 'U1F', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1O'
     ]
 };
 
@@ -1371,7 +1300,193 @@ NUTOOL_PIN.g_cfg_gpiosDescriptions = [
     'PN.15:VDDIO7 (1.8V ~ 3.3V)',
 ];
 
-NUTOOL_PIN.g_cfg_regDescriptions = [];
+NUTOOL_PIN.g_cfg_wppin = {
+    "BGA312": [
+        
+    ],
+    "BGA364": [
+        
+    ],
+    "LQFP128": [
+        
+    ],
+    "LQFP216": [
+        
+    ],
+};
+
+NUTOOL_PIN.g_cfg_wppin_comment = {
+};
+
+NUTOOL_PIN.g_cfg_unusedGPIO = {
+    'MA35D03F764C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D03F864C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D03FH64C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D03FI64C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D03FJ64C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D14F884': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D14F984': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D15A087C': {
+        'ALL': ['TSI', 'LCM']
+    },
+    'MA35D15KH67C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'LCM', 'NAND', 'SC0', 'SPI1', 'ECAP0', 'ECAP2', 'QEI1', 'RTC', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D15KI67C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'LCM', 'NAND', 'SC0', 'SPI1', 'ECAP0', 'ECAP2', 'QEI1', 'RTC', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D16A087C': {
+        'ALL': ['TSI']
+    },
+    'MA35D16A887C': {
+        'ALL': ['TSI']
+    },
+    'MA35D16AH87C': {
+        'ALL': ['TSI']
+    },
+    'MA35D16AI87C': {
+        'ALL': ['TSI']
+    },
+    'MA35D16AJ87C': {
+        'ALL': ['TSI']
+    },
+    'MA35D16F787C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D16F887C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D16F987C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D16FI87C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D16FJ87C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35D16H0A7C': {
+        'ALL': ['TSI']
+    },
+    'MA35D16H8A7C': {
+        'ALL': ['TSI']
+    },
+    'MA35D26HJA7C': {
+        'ALL': ['TSI']
+    },
+    'MA35H04F764C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35H04FH64C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35H04FI64C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    },
+    'MA35H04FJ64C': {
+        'ALL': ['TSI', 'EADC0', 'RGMII1', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
+    }
+};
+
+NUTOOL_PIN.g_cfg_OrCAD = {
+    "BGA324": [
+        'U1O', 'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1A', 'U1J', 'U1J', 'U1J', 'U1J', 'U1O', 
+        'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1A', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 
+        'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 
+        'U1M', 'U1M', 'U1M', 'U1O', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1J', 'U1J', 'U1J', 'U1O', 'U1O', 'U1O', 'U1I', 
+        'U1C', 'U1C', 'U1C', 'U1C', '', '', 'U1A', 'U1A', 'U1A', 'U1L', 'U1K', 'U1O', '', '', 'U1O', 'U1O', 'U1I', 'U1I', 
+        'U1C', 'U1O', 'U1C', 'U1D', '', 'U1B', 'U1A', 'U1O', 'U1M', 'U1O', 'U1O', 'U1O', 'U1J', '', 'U1D', 'U1D', 'U1I', 'U1I', 
+        'U1A', 'U1A', 'U1D', 'U1D', 'U1A', 'U1O', 'U1B', 'U1M', 'U1M', 'U1O', 'U1O', 'U1A', 'U1I', 'U1D', 'U1D', 'U1D', 'U1I', 'U1I', 
+        'U1B', 'U1B', 'U1D', 'U1D', 'U1C', 'U1O', 'U1O', 'U1O', 'U1M', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', 'U1D', 'U1D', 'U1D', 'U1I', 
+        'U1B', 'U1B', 'U1D', 'U1D', 'U1C', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', 'U1D', 'U1D', 'U1D', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', 'U1D', 'U1D', 'U1D', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1C', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1H', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', '', 'U1E', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1F', 'U1G', '', 'U1D', 'U1D', 'U1D', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', '', '', 'U1E', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', '', '', 'U1D', 'U1D', 'U1E', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1O', 'U1E', 'U1E', 'U1F', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1O', 'U1G', 'U1G', 'U1G', 
+        'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1G', 'U1G', 'U1G', 
+        'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1H', 'U1G', 'U1G', 
+        'U1O', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1H', 'U1H', 'U1O'
+    ],
+    "BGA400": [
+        'U1O', 'U1M', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1J', 'U1J', 'U1J', 'U1A', 'U1J', 'U1J', 'U1J', 'U1I', 'U1O', 
+        'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1J', 'U1J', 'U1A', 'U1J', 'U1J', 'U1I', 'U1I', 'U1I', 
+        'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1L', 'U1L', 'U1L', 'U1L', 'U1K', 'U1K', 'U1J', 'U1J', 'U1J', 'U1O', 'U1O', 'U1I', 'U1O', 'U1N', 
+        'U1C', 'U1O', 'U1C', 'U1M', 'U1M', 'U1C', 'U1C', 'U1L', 'U1K', 'U1K', 'U1K', 'U1K', 'U1O', 'U1J', 'U1I', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', 
+        'U1A', 'U1A', 'U1A', 'U1C', 'U1A', 'U1C', 'U1C', 'U1M', 'U1M', 'U1M', 'U1M', 'U1J', 'U1J', 'U1J', 'U1J', 'U1I', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1B', 'U1B', 'U1C', 'U1A', 'U1A', '', '', '', '', '', '', '', '', '', '', 'U1I', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1B', 'U1B', 'U1D', 'U1D', 'U1D', '', 'U1K', 'U1B', 'U1A', 'U1M', 'U1O', 'U1O', 'U1J', 'U1I', '', 'U1O', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1L', 'U1B', 'U1O', 'U1M', 'U1O', 'U1O', 'U1O', 'U1O', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1O', 'U1O', 'U1M', 'U1M', 'U1O', 'U1O', 'U1O', 'U1A', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1C', 'U1O', 'U1O', 'U1O', 'U1O', 'U1O', 'U1N', 'U1N', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', 'U1D', 'U1E', 'U1O', 'U1O', 'U1O', 'U1F', 'U1G', 'U1H', '', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', '', '', '', '', '', '', '', '', '', '', 'U1O', 'U1N', 'U1N', 'U1O', 'U1N', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1D', 'U1D', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1O', 'U1O', 'U1H', 'U1O', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1H', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1G', 'U1H', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1F', 'U1F', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 
+        'U1O', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1F', 'U1F', 'U1F', 'U1F', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1H', 'U1O'
+    ],
+        "LQFP128": [
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', '', '', '', 
+        '', '', '', '', '', '', '', ''
+    ],
+    "LQFP216": [
+        'U1C', 'U1C', 'U1C', 'U1C', 'U1C', 'U1C', 'U1C', 'U1O', 'U1A', 'U1A', 
+        'U1A', 'U1A', 'U1A', 'U1B', 'U1B', 'U1B', 'U1O', 'U1B', 'U1B', 'U1B', 
+        'U1O', 'U1B', 'U1O', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 'U1O', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1O', 'U1D', 'U1D', 'U1D', 'U1D', 'U1D', 
+        'U1D', 'U1D', 'U1D', 'U1D', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 
+        'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 'U1E', 
+        'U1O', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 'U1F', 
+        'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 
+        'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 
+        'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1G', 'U1O', 
+        'U1H', 'U1H', 'U1H', 'U1H', 'U1H', 'U1H', 'U1H', 'U1O', 'U1N', 'U1N', 
+        'U1O', 'U1N', 'U1N', 'U1N', 'U1N', 'U1N', 'U1O', 'U1N', 'U1N', 'U1O', 
+        'U1N', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 'U1I', 
+        'U1O', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 
+        'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1J', 'U1O', 'U1A', 'U1A', 
+        'U1A', 'U1O', 'U1O', 'U1O', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1O', 
+        'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 'U1K', 
+        'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 'U1L', 
+        'U1L', 'U1O', 'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1M', 'U1O', 
+        'U1M', 'U1M', 'U1M', 'U1M', 'U1C', 'U1O'
+    ]
+};
+
+NUTOOL_PIN.g_cfg_regDescriptions = {};
 NUTOOL_PIN.g_cfg_regDescriptions.GPA_MFPL = '0x40460080';
 NUTOOL_PIN.g_cfg_regDescriptions.GPA_MFPH = '0x40460084';
 NUTOOL_PIN.g_cfg_regDescriptions.GPB_MFPL = '0x40460088';
@@ -1402,32 +1517,10 @@ NUTOOL_PIN.g_cfg_regDescriptions.GPN_MFPL = '0x404600E8';
 NUTOOL_PIN.g_cfg_regDescriptions.GPN_MFPH = '0x404600EC';
 
 NUTOOL_PIN.g_cfg_gpioMatrix = [];
+
 NUTOOL_PIN.g_cfg_shareBits = [];
+
 NUTOOL_PIN.g_cfg_addGPIO = {};
-NUTOOL_PIN.g_cfg_unusedGPIO = {
-    "BGA324": {
-        "ALL": ["TSI"]
-    },
-    'MA35D14F884(LQFP216)': {
-        'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', "KPI_ROW6", "KPI_ROW7", 'TAMPER', 'TRACE']
-    },
-    'MA35D14F984(LQFP216)': {
-        'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', "KPI_ROW6", "KPI_ROW7", 'TAMPER', 'TRACE']
-    },
-    "MA35D16F787C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "KPI_ROW6", "KPI_ROW7", "TAMPER", "TRACE"]
-    },
-    "MA35D16F887C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "KPI_ROW6", "KPI_ROW7", "TAMPER", "TRACE"]
-    },
-    "MA35D16F987C(LQFP216)": {
-        "ALL": ["TSI", "EADC0", "RGMII1", "QEI1", "KPI_ROW6", "KPI_ROW7", "TAMPER", "TRACE"]
-    },
-    "MA35D16A087C(BGA364)": {
-        "ALL": ["TSI"]
-    }
-};
-NUTOOL_PIN.g_cfg_WPPin = [];
 
 NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     var partNumber_package,

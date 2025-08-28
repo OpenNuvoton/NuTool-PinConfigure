@@ -1,108 +1,94 @@
 NUTOOL_PIN.g_cfg_chips = [
-    // Ix
-    { name: "M3331KIGAE", pkg: "LQFP128" },
-    // { name: "CM3031HS8AE", pkg: "LQFP128" },
-    { name: "M3331KGGAE", pkg: "LQFP128" },
-    // { name: "CM3031GS8AE", pkg: "LQFP128" },
-    { name: "M3331LIGAE", pkg: "LQFP48" },
-    // { name: "CM3031HL8AE", pkg: "LQFP48" },
-    { name: "M3331LGGAE", pkg: "LQFP48" },
-    // { name: "CM3031GL8AE", pkg: "LQFP48" },
-    { name: "M3331SIGAE", pkg: "LQFP64" },
-    // { name: "CM3031HN8AE", pkg: "LQFP64" },
-    { name: "M3331SGGAE", pkg: "LQFP64" },
-    // { name: "CM3031GN8AE", pkg: "LQFP64" },
-    { name: "M3331TIGAE", pkg: "QFN33" },
-    // { name: "CM3031HJ3AE", pkg: "QFN33" },
-    { name: "M3331TGGAE", pkg: "QFN33" },
-    // { name: "CM3031GJ3AE", pkg: "QFN33" },
-    { name: "M3333KIGAE", pkg: "LQFP128" },
-    // { name: "CM3033HS8AE", pkg: "LQFP128" },
-    { name: "M3333KGGAE", pkg: "LQFP128" },
-    // { name: "CM3033GS8AE", pkg: "LQFP128" },
-    { name: "M3333LIGAE", pkg: "LQFP48" },
-    // { name: "CM3033HL8AE", pkg: "LQFP48" },
-    { name: "M3333LGGAE", pkg: "LQFP48" },
-    // { name: "CM3033GL8AE", pkg: "LQFP48" },
-    { name: "M3333SIGAE", pkg: "LQFP64" },
-    // { name: "CM3033HN8AE", pkg: "LQFP64" },
-    { name: "M3333SGGAE", pkg: "LQFP64" },
-    // { name: "CM3033GN8AE", pkg: "LQFP64" },
-    { name: "M3333TIGAE", pkg: "QFN33" },
-    { name: "M3333TGGAE", pkg: "QFN33" },
-    // { name: "CM3033HJ3AE", pkg: "QFN33" },
-    // { name: "CM3033GJ3AE", pkg: "QFN33" },
-    { name: "M3334KIGAE", pkg: "LQFP128" },
-    // { name: "CM3034HS8AE", pkg: "LQFP128" },
-    { name: "M3334KGGAE", pkg: "LQFP128" },
-    // { name: "CM3034GS8AE", pkg: "LQFP128" },
-    { name: "M3334LIGAE", pkg: "LQFP48" },
-    // { name: "CM3034HL8AE", pkg: "LQFP48" },
-    { name: "M3334LGGAE", pkg: "LQFP48" },
-    // { name: "CM3034GL8AE", pkg: "LQFP48" },
-    { name: "M3334SIGAE", pkg: "LQFP64" },
-    // { name: "CM3034HN8AE", pkg: "LQFP64" },
-    { name: "M3334SGGAE", pkg: "LQFP64" },
-    // { name: "CM3034GN8AE", pkg: "LQFP64" },
-    { name: "M3334TIGAE", pkg: "QFN33" },
-    // { name: "CM3034HJ3AE", pkg: "QFN33" },
-    { name: "M3334TGGAE", pkg: "QFN33" },
-    // { name: "CM3034GJ3AE", pkg: "QFN33" },
-    // Gx
-    // { name: "M3331SGAAE", pkg: "LQFP64" },
-    // { name: "CM3021GN8AE", pkg: "LQFP64" },
-    // { name: "M3331TGAAE", pkg: "QFN33" },
+    // CM3031
     // { name: "CM3021GJ3AE", pkg: "QFN33" },
-    // { name: "M3331LGAAE", pkg: "LQFP48" },
     // { name: "CM3021GL8AE", pkg: "LQFP48" },
-    // { name: "M3334SGAAE", pkg: "LQFP64" },
-    // { name: "CM3024GN8AE", pkg: "LQFP64" },
-    // { name: "M3334TGAAE", pkg: "QFN33" },
+    // { name: "CM3021GN8AE", pkg: "LQFP64" },
     // { name: "CM3024GJ3AE", pkg: "QFN33" },
-    // { name: "M3334LGAAE", pkg: "LQFP48" },
-    // { name: "CM3024GL8AE", pkg: "LQFP48" }
+    // { name: "CM3024GL8AE", pkg: "LQFP48" },
+    // { name: "CM3024GN8AE", pkg: "LQFP64" },
+    // { name: "CM3031GJ3AE", pkg: "QFN33" },
+    // { name: "CM3031GL3AE", pkg: "QFN48" },
+    // { name: "CM3031GL8AE", pkg: "LQFP48" },
+    // { name: "CM3031GN8AE", pkg: "LQFP64" },
+    // { name: "CM3031GS8AE", pkg: "LQFP128" },
+    // { name: "CM3031HJ3AE", pkg: "QFN33" },
+    // { name: "CM3031HL3AE", pkg: "QFN48" },
+    // { name: "CM3031HL8AE", pkg: "LQFP48" },
+    // { name: "CM3031HN8AE", pkg: "LQFP64" },
+    // { name: "CM3031HS8AE", pkg: "LQFP128" },
+    // { name: "CM3033GJ3AE", pkg: "QFN33" },
+    // { name: "CM3033GL3AE", pkg: "QFN48" },
+    // { name: "CM3033GL8AE", pkg: "LQFP48" },
+    // { name: "CM3033GN8AE", pkg: "LQFP64" },
+    // { name: "CM3033GS8AE", pkg: "LQFP128" },
+    // { name: "CM3033HJ3AE", pkg: "QFN33" },
+    // { name: "CM3033HL3AE", pkg: "QFN48" },
+    // { name: "CM3033HL8AE", pkg: "LQFP48" },
+    // { name: "CM3033HN8AE", pkg: "LQFP64" },
+    // { name: "CM3033HS8AE", pkg: "LQFP128" },
+    // { name: "CM3034GJ3AE", pkg: "QFN33" },
+    // { name: "CM3034GL3AE", pkg: "QFN48" },
+    // { name: "CM3034GL8AE", pkg: "LQFP48" },
+    // { name: "CM3034GN8AE", pkg: "LQFP64" },
+    // { name: "CM3034GS8AE", pkg: "LQFP128" },
+    // { name: "CM3034HJ3AE", pkg: "QFN33" },
+    // { name: "CM3034HL3AE", pkg: "QFN48" },
+    // { name: "CM3034HL8AE", pkg: "LQFP48" },
+    // { name: "CM3034HN8AE", pkg: "LQFP64" },
+    // { name: "CM3034HS8AE", pkg: "LQFP128" },
+    // M3331
+    // { name: "M3331KGGAE", pkg: "LQFP128" },
+    // { name: "M3331KIGAE", pkg: "LQFP128" },
+    { name: "M3331LGAAE", pkg: "LQFP48" },
+    // { name: "M3331LGGAE", pkg: "LQFP48" },
+    // { name: "M3331LIGAE", pkg: "LQFP48" },
+    { name: "M3331SGAAE", pkg: "LQFP64" },
+    // { name: "M3331SGGAE", pkg: "LQFP64" },
+    // { name: "M3331SIGAE", pkg: "LQFP64" },
+    { name: "M3331TGAAE", pkg: "QFN33" },
+    // { name: "M3331TGGAE", pkg: "QFN33" },
+    // { name: "M3331TIGAE", pkg: "QFN33" },
+    // { name: "M3331YGGAE", pkg: "QFN48" },
+    // { name: "M3331YIGAE", pkg: "QFN48" },
+    // { name: "M3333KGGAE", pkg: "LQFP128" },
+    // { name: "M3333KIGAE", pkg: "LQFP128" },
+    // { name: "M3333LGGAE", pkg: "LQFP48" },
+    // { name: "M3333LIGAE", pkg: "LQFP48" },
+    // { name: "M3333SGGAE", pkg: "LQFP64" },
+    // { name: "M3333SIGAE", pkg: "LQFP64" },
+    // { name: "M3333TGGAE", pkg: "QFN33" },
+    // { name: "M3333TIGAE", pkg: "QFN33" },
+    // { name: "M3333YGGAE", pkg: "QFN48" },
+    // { name: "M3333YIGAE", pkg: "QFN48" },
+    // { name: "M3334KGGAE", pkg: "LQFP128" },
+    // { name: "M3334KIGAE", pkg: "LQFP128" },
+    { name: "M3334LGAAE", pkg: "LQFP48" },
+    // { name: "M3334LGGAE", pkg: "LQFP48" },
+    // { name: "M3334LIGAE", pkg: "LQFP48" },
+    { name: "M3334SGAAE", pkg: "LQFP64" },
+    // { name: "M3334SGGAE", pkg: "LQFP64" },
+    // { name: "M3334SIGAE", pkg: "LQFP64" },
+    { name: "M3334TGAAE", pkg: "QFN33" },
+    // { name: "M3334TGGAE", pkg: "QFN33" },
+    // { name: "M3334TIGAE", pkg: "QFN33" },
+    // { name: "M3334YGGAE", pkg: "QFN48" },
+    // { name: "M3334YIGAE", pkg: "QFN48" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
-    "QFN33": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
-        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
-        'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13',
-        'PB.12', 'AVDD/VREF', 'VSS'
-    ],
-    "QFN33(USB2.0)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
-        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'HSUSB_VRES', 'HSUSB_VDD33',
-        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13',
-        'PB.12', 'AVDD/VREF', 'HSUSB_VSS'
-    ],
-    "QFN48": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
-        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
-        'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
-        'PC.1', 'PC.0', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD/VREF', 'AVSS', 'PB.7', 'PB.6', 'VSS'
-    ],
-    "QFN48(USB2.0)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
-        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
-        'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0', 'HSUSB_VRES', 'HSUSB_VDD33',
-        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD/VREF', 'AVSS', 'PB.7', 'PB.6', 'VSS'
-    ],
     "LQFP48": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
         'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
         'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
         'PC.1', 'PC.0', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD/VREF', 'AVSS', 'PB.7', 'PB.6'
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6'
     ],
     "LQFP48(USB2.0)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
         'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
         'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0', 'HSUSB_VRES', 'HSUSB_VDD33',
         'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD/VREF', 'AVSS', 'PB.7', 'PB.6'
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6'
     ],
     "LQFP64": [
         'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9',
@@ -121,6 +107,48 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'HSUSB_VRES', 'HSUSB_VDD33', 'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP',
         'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11',
         'PB.10', 'PB.9', 'PB.8', 'PB.7'
+    ],
+    "QFN33": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
+        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
+        'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13',
+        'PB.12', 'AVDD', 'VSS'
+    ],
+    "QFN33(USB2.0)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
+        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'HSUSB_VRES', 'HSUSB_VDD33',
+        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13',
+        'PB.12', 'AVDD', 'HSUSB_VSS'
+    ],
+    "QFN48": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
+        'PC.1', 'PC.0', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
+    ],
+    // Clone from QFN48
+    "QFN48(PIN:D10R14U10L14)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
+        'PC.1', 'PC.0', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
+    ],
+    "QFN48(USB2.0)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0', 'HSUSB_VRES', 'HSUSB_VDD33',
+        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
+    ],
+    // Clone from QFN48(USB2.0)
+    "QFN48(USB2.0)(PIN:D10R14U10L14)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'PF.15', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0', 'HSUSB_VRES', 'HSUSB_VDD33',
+        'HSUSB_VBUS', 'HSUSB_D-', 'HSUSB_VSS', 'HSUSB_D+', 'HSUSB_VDD12_CAP', 'HSUSB_ID', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
     ]
 };
 
@@ -653,18 +681,6 @@ NUTOOL_PIN.g_cfg_gpiosDescriptions = [
 ];
 
 NUTOOL_PIN.g_cfg_wppin = {
-    "QFN33": [
-        'PB.2'
-    ],
-    "QFN33(USB2.0)": [
-        'PB.2'
-    ],
-    "QFN48": [
-        'PB.2', 'PA.6', 'PC.14'
-    ],
-    "QFN48(USB2.0)": [
-        'PB.2', 'PA.6', 'PC.14'
-    ],
     "LQFP48": [
         'PB.2', 'PA.6', 'PC.14'
     ],
@@ -675,6 +691,18 @@ NUTOOL_PIN.g_cfg_wppin = {
         'PB.2', 'PA.6', 'PC.14'
     ],
     "LQFP64(USB2.0)": [
+        'PB.2', 'PA.6', 'PC.14'
+    ],
+    "QFN33": [
+        'PB.2'
+    ],
+    "QFN33(USB2.0)": [
+        'PB.2'
+    ],
+    "QFN48": [
+        'PB.2', 'PA.6', 'PC.14'
+    ],
+    "QFN48(USB2.0)": [
         'PB.2', 'PA.6', 'PC.14'
     ],
 };
@@ -686,215 +714,225 @@ NUTOOL_PIN.g_cfg_wppin_comment = {
 };
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'M3331KIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    'CM3021GJ3AE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'CM3031HS8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331KGGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031GS8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331LIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HL8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331LGGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031GL8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331SIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HN8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331SGGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031GN8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331TIGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331TGGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031GJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3333KIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033HS8AE': {
-        'ALL': ['SPB']
-    },
-    'M3333KGGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033GS8AE': {
-        'ALL': ['SPB']
-    },
-    'M3333LIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033HL8AE': {
-        'ALL': ['SPB']
-    },
-    'M3333LGGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033GL8AE': {
-        'ALL': ['SPB']
-    },
-    'M3333SIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033HN8AE': {
-        'ALL': ['SPB']
-    },
-    'M3333SGGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3033GN8AE': {
-        'ALL': ['SPB']
-    },
-    'M3333TIGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'M3333TGGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'CM3033HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'CM3033GJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'M3334KIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HS8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334KGGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034GS8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334LIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HL8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334LGGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034GL8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334SIGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HN8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334SGGAE': {
-        'ALL': ['SPB']
-    },
-    'CM3034GN8AE': {
-        'ALL': ['SPB']
-    },
-    'M3334TIGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'CM3034HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'M3334TGGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'CM3034GJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'M3331SGAAE': {
+    'CM3021GL8AE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3021GN8AE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'M3331TGAAE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+    'CM3024GJ3AE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'CM3021GJ3AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'M3331LGAAE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'CM3021GL8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'M3334SGAAE': {
+    'CM3024GL8AE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3024GN8AE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'M3334TGAAE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+    'CM3031GJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
     },
-    'CM3024GJ3AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+    'CM3031GL3AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031GL8AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031GN8AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031GS8AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031HJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031HL3AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031HL8AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031HN8AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3031HS8AE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'CM3033GJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'CM3033GL3AE': {
+        'ALL': ['SPB']
+    },
+    'CM3033GL8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3033GN8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3033GS8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3033HJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'CM3033HL3AE': {
+        'ALL': ['SPB']
+    },
+    'CM3033HL8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3033HN8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3033HS8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3034GJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'CM3034GL3AE': {
+        'ALL': ['SPB']
+    },
+    'CM3034GL8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3034GN8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3034GS8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3034HJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'CM3034HL3AE': {
+        'ALL': ['SPB']
+    },
+    'CM3034HL8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3034HN8AE': {
+        'ALL': ['SPB']
+    },
+    'CM3034HS8AE': {
+        'ALL': ['SPB']
+    },
+    'M3331KGGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331KIGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331LGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+    },
+    'M3331LGGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331LIGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331SGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+    },
+    'M3331SGGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331SIGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331TGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+    },
+    'M3331TGGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331TIGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331YGGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3331YIGAE': {
+        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    },
+    'M3333KGGAE': {
+        'ALL': ['SPB']
+    },
+    'M3333KIGAE': {
+        'ALL': ['SPB']
+    },
+    'M3333LGGAE': {
+        'ALL': ['SPB']
+    },
+    'M3333LIGAE': {
+        'ALL': ['SPB']
+    },
+    'M3333SGGAE': {
+        'ALL': ['SPB']
+    },
+    'M3333SIGAE': {
+        'ALL': ['SPB']
+    },
+    'M3333TGGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'M3333TIGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'M3333YGGAE': {
+        'ALL': ['SPB']
+    },
+    'M3333YIGAE': {
+        'ALL': ['SPB']
+    },
+    'M3334KGGAE': {
+        'ALL': ['SPB']
+    },
+    'M3334KIGAE': {
+        'ALL': ['SPB']
     },
     'M3334LGAAE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'CM3024GL8AE': {
+    'M3334LGGAE': {
+        'ALL': ['SPB']
+    },
+    'M3334LIGAE': {
+        'ALL': ['SPB']
+    },
+    'M3334SGAAE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+    },
+    'M3334SGGAE': {
+        'ALL': ['SPB']
+    },
+    'M3334SIGAE': {
+        'ALL': ['SPB']
+    },
+    'M3334TGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+    },
+    'M3334TGGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'M3334TIGAE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+    },
+    'M3334YGGAE': {
+        'ALL': ['SPB']
+    },
+    'M3334YIGAE': {
+        'ALL': ['SPB']
     }
 };
 
 NUTOOL_PIN.g_cfg_OrCAD = {
-    "QFN33": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', ''
-    ],
-    "QFN33(USB2.0)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', ''
-    ],
-    "QFN48": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', ''
-    ],
-    "QFN48(USB2.0)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', ''
-    ],
     "LQFP48": [
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', '', '', '', '', '', '', '',
@@ -926,6 +964,32 @@ NUTOOL_PIN.g_cfg_OrCAD = {
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', ''
+    ],
+    "QFN33": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', ''
+    ],
+    "QFN33(USB2.0)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', ''
+    ],
+    "QFN48": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', ''
+    ],
+    "QFN48(USB2.0)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', ''
     ]
 };
 
@@ -973,26 +1037,32 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.getPackageNumber(given_partNumber_package);
     let partNumber = NUTOOL_PIN.getPartNumber(given_partNumber_package);
     switch (partNumber) {
-        case "M3334LGAAE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)";
+        case "CM3024GJ3AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
             break;
         case "CM3024GL8AE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)";
             break;
-        case "M3334SGAAE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)";
-            break;
         case "CM3024GN8AE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)";
             break;
-        case "M3334TGAAE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
+        case "CM3031GL3AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48";
             break;
-        case "CM3024GJ3AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
+        case "CM3031HL3AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48";
+            break;
+        case "CM3033GL3AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48";
+            break;
+        case "CM3033HL3AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48";
             break;
         case "CM3034GJ3AE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
+            break;
+        case "CM3034GL3AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB2.0)";
             break;
         case "CM3034GL8AE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)";
@@ -1006,6 +1076,9 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         case "CM3034HJ3AE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
             break;
+        case "CM3034HL3AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB2.0)";
+            break;
         case "CM3034HL8AE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)";
             break;
@@ -1015,11 +1088,26 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         case "CM3034HS8AE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB2.0)";
             break;
+        case "M3331YGGAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
+            break;
+        case "M3331YIGAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
+            break;
+        case "M3333YGGAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
+            break;
+        case "M3333YIGAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
+            break;
         case "M3334KGGAE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB2.0)";
             break;
         case "M3334KIGAE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB2.0)";
+            break;
+        case "M3334LGAAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)";
             break;
         case "M3334LGGAE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)";
@@ -1027,17 +1115,29 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         case "M3334LIGAE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)";
             break;
+        case "M3334SGAAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)";
+            break;
         case "M3334SGGAE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)";
             break;
         case "M3334SIGAE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)";
             break;
+        case "M3334TGAAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
+            break;
         case "M3334TGGAE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
             break;
         case "M3334TIGAE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
+            break;
+        case "M3334YGGAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB2.0)(PIN:D10R14U10L14)";
+            break;
+        case "M3334YIGAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB2.0)(PIN:D10R14U10L14)";
             break;
         default:
             NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;
