@@ -1,79 +1,21 @@
 NUTOOL_PIN.g_cfg_chips = [
-    { name: "M3351ZG6AE", pkg: "QFN33" },
-    { name: "M3351LG6AE", pkg: "LQFP48" },
-    { name: "M3351YG6AE", pkg: "QFN48" },
-    { name: "M3351SG6AE", pkg: "LQFP64" },
-    { name: "M3351LI8AE", pkg: "LQFP48" },
-    { name: "M3351YI8AE", pkg: "QFN48" },
-    { name: "M3351SI8AE", pkg: "LQFP64" },
-    { name: "M3351VI8AE", pkg: "LQFP100" },
-    { name: "M3351KI8AE", pkg: "LQFP128" },
-    { name: "M3351LJ8AE", pkg: "LQFP48" },
-    { name: "M3351YJ8AE", pkg: "QFN48" },
-    { name: "M3351SJ8AE", pkg: "LQFP64" },
-    { name: "M3351VJ8AE", pkg: "LQFP100" },
-    { name: "M3351KJ8AE", pkg: "LQFP128" }
+    { name: "M3351KICAE", pkg: "LQFP128" },
+    { name: "M3351KJCAE", pkg: "LQFP128" },
+    { name: "M3351LG7AE", pkg: "LQFP48" },
+    { name: "M3351LICAE", pkg: "LQFP48" },
+    { name: "M3351LJCAE", pkg: "LQFP48" },
+    { name: "M3351SG7AE", pkg: "LQFP64" },
+    { name: "M3351SICAE", pkg: "LQFP64" },
+    { name: "M3351SJCAE", pkg: "LQFP64" },
+    { name: "M3351VICAE", pkg: "LQFP100" },
+    { name: "M3351VJCAE", pkg: "LQFP100" },
+    { name: "M3351YG7AE", pkg: "QFN48" },
+    { name: "M3351YICAE", pkg: "QFN48" },
+    { name: "M3351YJCAE", pkg: "QFN48" },
+    { name: "M3351ZG7AE", pkg: "QFN33" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
-    "QFN33(5*5)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
-        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
-        'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13',
-        'PB.12', 'AVDD', 'VSS'
-    ],
-    "QFN33(USB1.1)(5*5)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
-        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
-        'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13',
-        'PB.12', 'AVDD', 'VSS'
-    ],
-    "QFN48(5*5)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
-        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
-        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
-        'PC.1', 'PC.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
-    ],
-    "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
-        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
-        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
-        'PC.1', 'PC.0', 'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
-    ],
-    "LQFP48(7*7)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
-        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
-        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
-        'PC.1', 'PC.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6'
-    ],
-    "LQFP48(USB1.1)(7*7)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
-        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
-        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
-        'PC.1', 'PC.0', 'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6'
-    ],
-    "LQFP64(7*7)": [
-        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9',
-        'PA.8', 'PF.6', 'PF.14', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7',
-        'PA.6', 'VSS', 'VDD', 'PD.15', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0',
-        'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0',
-        'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP',
-        'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11',
-        'PB.10', 'PB.9', 'PB.8', 'PB.7'
-    ],
-    "LQFP64(USB1.1)(7*7)": [
-        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9',
-        'PA.8', 'PF.6', 'PF.14', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7',
-        'PA.6', 'VSS', 'VDD', 'PD.15', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0',
-        'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0',
-        'PD.3', 'PD.2', 'PD.1', 'PD.0', 'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP',
-        'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11',
-        'PB.10', 'PB.9', 'PB.8', 'PB.7'
-    ],
     "LQFP100(USB1.1)(14*14)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0',
         'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PD.12', 'PD.11', 'PD.10', 'PF.7',
@@ -115,6 +57,80 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PE.3', 'PE.2', 'VSS', 'VDD', 'PE.1', 'PE.0', 'PH.8', 'PH.9', 'PH.10', 'PH.11',
         'PD.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD',
         'VREF', 'AVSS', 'PB.11', 'PB.10', 'PB.9', 'PB.8', 'PB.7', 'PB.6'
+    ],
+    "LQFP48(7*7)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
+        'PC.1', 'PC.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6'
+    ],
+    "LQFP48(USB1.1)(7*7)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
+        'PC.1', 'PC.0', 'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6'
+    ],
+    "LQFP64(7*7)": [
+        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9',
+        'PA.8', 'PF.6', 'PF.14', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7',
+        'PA.6', 'VSS', 'VDD', 'PD.15', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0',
+        'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0',
+        'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP',
+        'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11',
+        'PB.10', 'PB.9', 'PB.8', 'PB.7'
+    ],
+    "LQFP64(USB1.1)(7*7)": [
+        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9',
+        'PA.8', 'PF.6', 'PF.14', 'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PC.7', 'PC.6', 'PA.7',
+        'PA.6', 'VSS', 'VDD', 'PD.15', 'PA.5', 'PA.4', 'PA.3', 'PA.2', 'PA.1', 'PA.0',
+        'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2', 'PC.1', 'PC.0',
+        'PD.3', 'PD.2', 'PD.1', 'PD.0', 'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP',
+        'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'VREF', 'AVSS', 'PB.11',
+        'PB.10', 'PB.9', 'PB.8', 'PB.7'
+    ],
+    "QFN33(5*5)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
+        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
+        'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13',
+        'PB.12', 'AVDD', 'VSS'
+    ],
+    "QFN33(USB1.1)(5*5)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
+        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
+        'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PB.15', 'PB.14', 'PB.13',
+        'PB.12', 'AVDD', 'VSS'
+    ],
+    "QFN48(5*5)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
+        'PC.1', 'PC.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
+    ],
+    // Clone from QFN48(5*5)
+    "QFN48(5*5)(PIN:D10R14U10L14)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
+        'PC.1', 'PC.0', 'PD.13', 'PA.12', 'PA.13', 'PA.14', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
+    ],
+    "QFN48(USB1.1)(5*5)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
+        'PC.1', 'PC.0', 'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
+    ],
+    // Clone from QFN48(USB1.1)(5*5)
+    "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PA.11', 'PA.10', 'PA.9', 'PA.8',
+        'PF.5', 'PF.4', 'PF.3', 'PF.2', 'PA.7', 'PA.6', 'PA.5', 'PA.4', 'PA.3', 'PA.2',
+        'PA.1', 'PA.0', 'VDDIO', 'nRESET', 'PF.0', 'PF.1', 'PC.5', 'PC.4', 'PC.3', 'PC.2',
+        'PC.1', 'PC.0', 'USB_VBUS', 'USB_D-', 'USB_D+', 'USB_VCC3_CAP', 'VSS', 'LDO_CAP', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'AVDD', 'AVSS', 'PB.7', 'PB.6', 'VSS'
     ]
 };
 
@@ -122,18 +138,18 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['PA.0:0', 'QSPI0_MOSI0:3', 'SPI0_MOSI:4', 'UART0_RXD:7', 'UART1_nRTS:8', 'I2C2_SDA:9', 'I3C0_SDA:11', 'BPWM0_CH0:12', 'PWM0_CH5:13', 'DAC0_ST:15'] },
     { f: ['PA.1:0', 'QSPI0_MISO0:3', 'SPI0_MISO:4', 'LLSI6_OUT:5', 'UART0_TXD:7', 'UART1_nCTS:8', 'I2C2_SCL:9', 'I3C0_SCL:11', 'BPWM0_CH1:12', 'PWM0_CH4:13'] },
     { f: ['PA.2:0', 'QSPI0_CLK:3', 'SPI0_CLK:4', 'LLSI5_OUT:5', 'UART4_RXD:7', 'UART1_RXD:8', 'I2C1_SDA:9', 'I2C0_SMBSUS:10', 'BPWM0_CH2:12', 'PWM0_CH3:13', 'I3C0_PUPEN:15'] },
-    { f: ['PA.3:0', 'QSPI0_SS:3', 'SPI0_SS:4', 'LLSI4_OUT:5', 'UART4_TXD:7', 'UART1_TXD:8', 'I2C1_SCL:9', 'I2C0_SMBAL:10', 'BPWM0_CH3:12', 'PWM0_CH2:13', 'EQEI0_B:14', 'PWM1_BRAKE1:15'] },
-    { f: ['PA.4:0', 'QSPI0_MOSI1:3', 'SPI0_I2SMCLK:4', 'UART4_nCTS:5', 'UART0_nRTS:7', 'UART5_RXD:8', 'I2C0_SDA:9', 'CANFD0_RXD:10', 'UART0_RXD:11', 'BPWM0_CH4:12', 'PWM0_CH1:13', 'EQEI0_A:14', 'I3C0_SDA:15'] },
+    { f: ['PA.3:0', 'QSPI0_SS:3', 'SPI0_SS:4', 'LLSI4_OUT:5', 'UART0_RXD:6', 'UART4_TXD:7', 'UART1_TXD:8', 'I2C1_SCL:9', 'I2C0_SMBAL:10', 'BPWM0_CH3:12', 'PWM0_CH2:13', 'EQEI0_B:14', 'PWM1_BRAKE1:15'] },
+    { f: ['PA.4:0', 'QSPI0_MOSI1:3', 'SPI0_I2SMCLK:4', 'UART4_nCTS:5', 'UART0_TXD:6', 'UART0_nRTS:7', 'UART5_RXD:8', 'I2C0_SDA:9', 'CANFD0_RXD:10', 'UART0_RXD:11', 'BPWM0_CH4:12', 'PWM0_CH1:13', 'EQEI0_A:14', 'I3C0_SDA:15'] },
     { f: ['PA.5:0', 'QSPI0_MISO1:3', 'UART4_nRTS:5', 'CANFD0_TXH:6', 'UART0_nCTS:7', 'UART5_TXD:8', 'I2C0_SCL:9', 'CANFD0_TXD:10', 'UART0_TXD:11', 'BPWM0_CH5:12', 'PWM0_CH0:13', 'EQEI0_INDEX:14', 'I3C0_SCL:15'] },
     { f: ['PA.6:0', 'EBI_AD6:2', 'SPI1_SS:4', 'ELLSI1_OUT:5', 'CANFD0_TXL:6', 'UART0_RXD:7', 'I2C1_SDA:8', 'UART8_RXD:10', 'PWM1_CH5:11', 'BPWM1_CH3:12', 'ACMP1_WLAT:13', 'TM3:14', 'INT0:15'] },
     { f: ['PA.7:0', 'EBI_AD7:2', 'SPI1_CLK:4', 'ELLSI0_OUT:5', 'UART0_TXD:7', 'I2C1_SCL:8', 'UART8_TXD:10', 'PWM1_CH4:11', 'BPWM1_CH2:12', 'ACMP0_WLAT:13', 'TM2:14', 'INT1:15'] },
-    { f: ['PA.8:0', 'EADC0_CH20:1', 'EBI_ALE:2', 'USCI0_CTL1:6', 'UART1_RXD:7', 'CANFD1_TXL:8', 'BPWM0_CH3:9', 'EQEI1_A:10', 'ECAP0_IC2:11', 'TM3_EXT:13', 'INT4:15'] },
+    { f: ['PA.8:0', 'EADC0_CH20:1', 'EBI_ALE:2', 'UART1_TXD:4', 'USCI0_CTL1:6', 'UART1_RXD:7', 'CANFD1_TXL:8', 'BPWM0_CH3:9', 'EQEI1_A:10', 'ECAP0_IC2:11', 'TM3_EXT:13', 'INT4:15'] },
     { f: ['PA.9:0', 'EADC0_CH21:1', 'EBI_MCLK:2', 'USCI0_DAT1:6', 'UART1_TXD:7', 'BPWM0_CH2:9', 'EQEI1_INDEX:10', 'ECAP0_IC1:11', 'TM2_EXT:13'] },
     { f: ['PA.10:0', 'EADC0_CH22:1', 'ACMP1_P0:1', 'EBI_nWR:2', 'I2C2_SDA:5', 'USCI0_DAT0:6', 'UART4_nCTS:7', 'BPWM0_CH1:9', 'UART9_RXD:10', 'ECAP0_IC0:11', 'TM1_EXT:13', 'DAC0_ST:14'] },
     { f: ['PA.11:0', 'EADC0_CH23:1', 'ACMP0_P0:1', 'EBI_nRD:2', 'I2C2_SCL:5', 'USCI0_CLK:6', 'UART4_nRTS:7', 'BPWM0_CH0:9', 'UART9_TXD:10', 'PWM0_BRAKE1:11', 'TM0_EXT:13'] },
     { f: ['PA.12:0', 'UART4_TXD:2', 'I2C1_SCL:3', 'CANFD0_TXD:5', 'CANFD0_TXH:7', 'BPWM1_CH2:10', 'QEI1_INDEX:11'] },
-    { f: ['PA.13:0', 'UART4_RXD:2', 'I2C1_SDA:3', 'CANFD0_RXD:5', 'BPWM1_CH3:10', 'QEI1_A:11'] },
-    { f: ['PA.14:0', 'UART0_TXD:2', 'EBI_AD5:3', 'I2C2_SCL:5', 'BPWM1_CH4:10', 'QEI1_B:11'] },
+    { f: ['PA.13:0', 'UART4_RXD:2', 'I2C1_SDA:3', 'UART1_TXD:4', 'CANFD0_RXD:5', 'BPWM1_CH3:10', 'QEI1_A:11'] },
+    { f: ['PA.14:0', 'UART0_TXD:2', 'EBI_AD5:3', 'UART1_RXD:4', 'I2C2_SCL:5', 'BPWM1_CH4:10', 'QEI1_B:11'] },
     { f: ['PA.15:0', 'UART0_RXD:2', 'I2C2_SDA:5', 'BPWM1_CH5:10'] },
 
     { f: ['PB.0:0', 'EADC0_CH0:1', 'ELLSI1_OUT:2', 'EBI_ADR9:3', 'USCI0_CTL0:6', 'UART2_RXD:7', 'SPI0_I2SMCLK:8', 'I2C1_SDA:9', 'PWM0_CH5:11', 'PWM1_CH5:12', 'PWM0_BRAKE1:13', 'I3C0_SDA:14', 'QSPI0_MOSI1:15'] },
@@ -166,7 +182,7 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['PC.10:0', 'EBI_ADR6:2', 'UART6_nRTS:5', 'UART3_TXD:7', 'CANFD1_TXD:9', 'CANFD1_TXH:10', 'EADC1_ST:14'] },
     { f: ['PC.11:0', 'EBI_ADR5:2', 'UART0_RXD:3', 'I2C0_SDA:4', 'UART6_RXD:5', 'CANFD1_TXL:10', 'ACMP1_O:14'] },
     { f: ['PC.12:0', 'EBI_ADR4:2', 'UART0_TXD:3', 'I2C0_SCL:4', 'UART6_TXD:5', 'ACMP0_O:14'] },
-    { f: ['PC.13:0', 'EADC0_CH19:1', 'EBI_ADR10:2', 'CANFD1_TXD:5', 'USCI0_CTL0:6', 'UART2_TXD:7', 'CANFD1_TXH:8', 'BPWM0_CH4:9', 'EQEI1_B:10', 'CLKO:13', 'EADC0_ST:14'] },
+    { f: ['PC.13:0', 'EADC0_CH19:1', 'EBI_ADR10:2', 'UART1_RXD:4', 'CANFD1_TXD:5', 'USCI0_CTL0:6', 'UART2_TXD:7', 'CANFD1_TXH:8', 'BPWM0_CH4:9', 'EQEI1_B:10', 'CLKO:13', 'EADC0_ST:14'] },
     { f: ['PC.14:0', 'EADC1_CH8:1', 'EBI_AD11:3', 'SPI0_I2SMCLK:4', 'USCI0_CTL0:5', 'QSPI0_CLK:6', 'TM1:13', 'USB_VBUS_ST:14', 'TRACE_SWO:15'] },
     { f: ['PC.15:0'] },
 
@@ -192,8 +208,8 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['PE.2:0', 'EBI_ALE:2', 'USCI0_CLK:7', 'UART6_nCTS:8', 'UART7_RXD:9', 'EQEI0_B:11', 'BPWM0_CH0:13'] },
     { f: ['PE.3:0', 'EBI_MCLK:2', 'USCI0_DAT0:7', 'UART6_nRTS:8', 'UART7_TXD:9', 'EQEI0_A:11', 'BPWM0_CH1:13'] },
     { f: ['PE.4:0', 'EBI_nWR:2', 'USCI0_DAT1:7', 'UART6_RXD:8', 'UART7_nCTS:9', 'EQEI0_INDEX:11', 'BPWM0_CH2:13'] },
-    { f: ['PE.5:0', 'EBI_nRD:2', 'USCI0_CTL1:7', 'UART6_TXD:8', 'UART7_nRTS:9', 'CANFD1_TXL:10', 'EQEI1_B:11', 'BPWM0_CH3:13'] },
-    { f: ['PE.6:0', 'EBI_AD11:2', 'USCI0_CTL0:7', 'UART5_RXD:8', 'CANFD1_RXD:9', 'EQEI1_A:11', 'BPWM0_CH4:13'] },
+    { f: ['PE.5:0', 'EBI_nRD:2', 'UART1_RXD:4', 'USCI0_CTL1:7', 'UART6_TXD:8', 'UART7_nRTS:9', 'CANFD1_TXL:10', 'EQEI1_B:11', 'BPWM0_CH3:13'] },
+    { f: ['PE.6:0', 'EBI_AD11:2', 'UART1_TXD:4', 'USCI0_CTL0:7', 'UART5_RXD:8', 'CANFD1_RXD:9', 'EQEI1_A:11', 'BPWM0_CH4:13'] },
     { f: ['PE.7:0', 'EBI_AD10:2', 'UART5_TXD:8', 'CANFD1_TXD:9', 'CANFD1_TXH:10', 'EQEI1_INDEX:11', 'BPWM0_CH5:13'] },
     { f: ['PE.8:0', 'EBI_ADR10:2', 'USCI1_CTL1:6', 'UART2_TXD:7', 'ECAP0_IC0:12'] },
     { f: ['PE.9:0', 'EBI_ADR11:2', 'USCI1_CTL0:6', 'UART2_RXD:7', 'ECAP0_IC1:12'] },
@@ -700,30 +716,6 @@ NUTOOL_PIN.g_cfg_gpiosDescriptions = [
 ];
 
 NUTOOL_PIN.g_cfg_wppin = {
-    "QFN33(5*5)": [
-        'PB.2'
-    ],
-    "QFN33(USB1.1)(5*5)": [
-        'PB.2'
-    ],
-    "QFN48(5*5)": [
-        'PB.2', 'PC.14'
-    ],
-    "QFN48(USB1.1)(5*5)": [
-        'PB.2', 'PC.14'
-    ],
-    "LQFP48(7*7)": [
-        'PB.2', 'PC.14'
-    ],
-    "LQFP48(USB1.1)(7*7)": [
-        'PB.2', 'PC.14'
-    ],
-    "LQFP64(7*7)": [
-        'PB.2', 'PC.6', 'PC.14'
-    ],
-    "LQFP64(USB1.1)(7*7)": [
-        'PB.2', 'PC.6', 'PC.14'
-    ],
     "LQFP100(USB1.1)(14*14)": [
         'PB.2', 'PC.6', 'PC.14'
     ],
@@ -733,118 +725,92 @@ NUTOOL_PIN.g_cfg_wppin = {
     "LQFP128(USB1.1)(14*14)": [
         'PB.2', 'PC.6', 'PC.14'
     ],
+    "LQFP48(7*7)": [
+        'PB.2', 'PC.14'
+    ],
+    "LQFP48(USB1.1)(7*7)": [
+        'PB.2', 'PC.14'
+    ],
+    "LQFP64(7*7)": [
+        'PB.2', 'PC.6', 'PC.14'
+    ],
+    "LQFP64(USB1.1)(7*7)": [
+        'PB.2', 'PC.6', 'PC.14'
+    ],
+    "QFN33(5*5)": [
+        'PB.2'
+    ],
+    "QFN33(USB1.1)(5*5)": [
+        'PB.2'
+    ],
+    "QFN48(5*5)": [
+        'PB.2', 'PC.14'
+    ],
+    // Clone from QFN48(5*5)
+    "QFN48(5*5)(PIN:D10R14U10L14)": [
+        'PB.2', 'PC.14'
+    ],
+    "QFN48(USB1.1)(5*5)": [
+        'PB.2', 'PC.14'
+    ],
+    // Clone from QFN48(USB1.1)(5*5)
+    "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)": [
+        'PB.2', 'PC.14'
+    ],
 };
 
 NUTOOL_PIN.g_cfg_wppin_comment = {
     "PB.2": ['Can change function to  Write_Protect_Pin by chip configuration'],
-    "PC.14": ['Can change function to  Write_Protect_Pin by chip configuration'],
     "PC.6": ['Can change function to  Write_Protect_Pin by chip configuration'],
+    "PC.14": ['Can change function to  Write_Protect_Pin by chip configuration'],
 };
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'M3351ZG6AE': {
+    'M3351KICAE': {
+        'ALL': []
+    },
+    'M3351KJCAE': {
+        'ALL': []
+    },
+    'M3351LG7AE': {
         'ALL': ['I2C2', 'UART6', 'UART7', 'I3C0', 'EADC1', 'EQEI1', 'EBI', 'DAC0']
     },
-    'M3351LG6AE': {
+    'M3351LICAE': {
+        'ALL': []
+    },
+    'M3351LJCAE': {
+        'ALL': []
+    },
+    'M3351SG7AE': {
         'ALL': ['I2C2', 'UART6', 'UART7', 'I3C0', 'EADC1', 'EQEI1', 'EBI', 'DAC0']
     },
-    'M3351YG6AE': {
+    'M3351SICAE': {
+        'ALL': []
+    },
+    'M3351SJCAE': {
+        'ALL': []
+    },
+    'M3351VICAE': {
+        'ALL': []
+    },
+    'M3351VJCAE': {
+        'ALL': []
+    },
+    'M3351YG7AE': {
         'ALL': ['I2C2', 'UART6', 'UART7', 'I3C0', 'EADC1', 'EQEI1', 'EBI', 'DAC0']
     },
-    'M3351SG6AE': {
+    'M3351YICAE': {
+        'ALL': []
+    },
+    'M3351YJCAE': {
+        'ALL': []
+    },
+    'M3351ZG7AE': {
         'ALL': ['I2C2', 'UART6', 'UART7', 'I3C0', 'EADC1', 'EQEI1', 'EBI', 'DAC0']
-    },
-    'M3351LI8AE': {
-        'ALL': []
-    },
-    'M3351YI8AE': {
-        'ALL': []
-    },
-    'M3351SI8AE': {
-        'ALL': []
-    },
-    'M3351VI8AE': {
-        'ALL': []
-    },
-    'M3351KI8AE': {
-        'ALL': []
-    },
-    'M3351LJ8AE': {
-        'ALL': []
-    },
-    'M3351YJ8AE': {
-        'ALL': []
-    },
-    'M3351SJ8AE': {
-        'ALL': []
-    },
-    'M3351VJ8AE': {
-        'ALL': []
-    },
-    'M3351KJ8AE': {
-        'ALL': []
     }
 };
 
 NUTOOL_PIN.g_cfg_OrCAD = {
-    "QFN33(5*5)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', ''
-    ],
-    "QFN33(USB1.1)(5*5)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', ''
-    ],
-    "QFN48(5*5)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', ''
-    ],
-    "QFN48(USB1.1)(5*5)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', ''
-    ],
-    "LQFP48(7*7)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', ''
-    ],
-    "LQFP48(USB1.1)(7*7)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', ''
-    ],
-    "LQFP64(7*7)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', ''
-    ],
-    "LQFP64(USB1.1)(7*7)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', ''
-    ],
     "LQFP100(USB1.1)(14*14)": [
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', '', '', '', '', '', '', '',
@@ -886,6 +852,64 @@ NUTOOL_PIN.g_cfg_OrCAD = {
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', '', '', '', '', ''
+    ],
+    "LQFP48(7*7)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', ''
+    ],
+    "LQFP48(USB1.1)(7*7)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', ''
+    ],
+    "LQFP64(7*7)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', ''
+    ],
+    "LQFP64(USB1.1)(7*7)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', ''
+    ],
+    "QFN33(5*5)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', ''
+    ],
+    "QFN33(USB1.1)(5*5)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', ''
+    ],
+    "QFN48(5*5)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', ''
+    ],
+    "QFN48(USB1.1)(5*5)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', ''
     ]
 };
 
@@ -933,47 +957,47 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.getPackageNumber(given_partNumber_package);
     let partNumber = NUTOOL_PIN.getPartNumber(given_partNumber_package);
     switch (partNumber) {
-        case "M3351ZG6AE":
+        case "M3351KICAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB1.1)(14*14)";
+            break;
+        case "M3351KJCAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB1.1)(14*14)";
+            break;
+        case "M3351LG7AE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB1.1)(7*7)";
+            break;
+        case "M3351LICAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB1.1)(7*7)";
+            break;
+        case "M3351LJCAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB1.1)(7*7)";
+            break;
+        case "M3351SG7AE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB1.1)(7*7)";
+            break;
+        case "M3351SICAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB1.1)(7*7)";
+            break;
+        case "M3351SJCAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB1.1)(7*7)";
+            break;
+        case "M3351VICAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP100(USB1.1)(14*14)";
+            break;
+        case "M3351VJCAE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP100(USB1.1)(14*14)";
+            break;
+        case "M3351YG7AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)";
+            break;
+        case "M3351YICAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)";
+            break;
+        case "M3351YJCAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)";
+            break;
+        case "M3351ZG7AE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB1.1)(5*5)";
-            break;
-        case "M3351LG6AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB1.1)(7*7)";
-            break;
-        case "M3351YG6AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)";
-            break;
-        case "M3351SG6AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB1.1)(7*7)";
-            break;
-        case "M3351LI8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB1.1)(7*7)";
-            break;
-        case "M3351YI8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)";
-            break;
-        case "M3351SI8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB1.1)(7*7)";
-            break;
-        case "M3351VI8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP100(USB1.1)(14*14)";
-            break;
-        case "M3351KI8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB1.1)(14*14)";
-            break;
-        case "M3351LJ8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB1.1)(7*7)";
-            break;
-        case "M3351YJ8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB1.1)(5*5)(PIN:D10R14U10L14)";
-            break;
-        case "M3351SJ8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB1.1)(7*7)";
-            break;
-        case "M3351VJ8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP100(USB1.1)(14*14)";
-            break;
-        case "M3351KJ8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB1.1)(14*14)";
             break;
         default:
             NUTOOL_PIN.g_packageNumberIndex = NUTOOL_PIN.g_packageNumber;

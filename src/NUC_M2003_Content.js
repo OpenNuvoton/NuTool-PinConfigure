@@ -1,39 +1,17 @@
 NUTOOL_PIN.g_cfg_chips = [
-    // M2003G
-    { name: "M2003SG6AE", pkg: "LQFP64" },
-    { name: "M2003LG6AE", pkg: "LQFP48" },
-    // M2003E
-    { name: "M2003LE4AE", pkg: "LQFP48" },
-    { name: "M2003TE4AE", pkg: "QFN33" },
-    { name: "M2003LD4AE", pkg: "LQFP48" },
-    { name: "M2003TD4AE", pkg: "QFN33" },
     { name: "M2003ED4AE", pkg: "TSSOP28" },
-    // M2003C
     { name: "M2003FC1AE", pkg: "TSSOP20" },
+    { name: "M2003LD4AE", pkg: "LQFP48" },
+    { name: "M2003LE4AE", pkg: "LQFP48" },
+    { name: "M2003LG6AE", pkg: "LQFP48" },
+    { name: "M2003SG6AE", pkg: "LQFP64" },
+    { name: "M2003TD4AE", pkg: "QFN33" },
+    { name: "M2003TE4AE", pkg: "QFN33" },
     { name: "M2003XC1AE", pkg: "QFN20" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
-    "TSSOP20(4.4*6.5)": [
-        'PB.1', 'PB.2', 'PB.3', 'PE.15', 'PB.4', 'PB.5', 'VSS', 'PF.0', 'VDD', 'PC.14',
-        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'PB.7', 'PB.8', 'PB.9', 'PF.1', 'PB.11', 'PB.0'
-    ],
-    "QFN20(3*3)": [
-        'PB.3', 'PB.5', 'VSS', 'PF.0', 'VDD', 'PC.14', 'PB.7', 'PB.12', 'PB.13', 'PB.15',
-        'PB.14', 'PB.8', 'PB.9', 'PF.1', 'PB.11', 'PB.0', 'PB.4', 'PE.15', 'PB.2', 'PB.1'
-    ],
-    "TSSOP28(4.4*9.7)": [
-        'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'PG.9', 'VDD', 'PB.14', 'PB.13', 'PB.12',
-        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.3', 'PF.2', 'PA.3',
-        'PA.2', 'PA.1', 'PA.0', 'PE.15', 'PF.0', 'PF.1', 'PC.1', 'PC.0'
-    ],
     "LQFP32(7*7)": [
-        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
-        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'PF.15', 'PE.15', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
-        'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'PG.9', 'VDD', 'PB.15', 'PB.14', 'PB.13',
-        'PB.12', 'PG.11'
-    ],
-    "QFN33(4*4)": [
         'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
         'PA.3', 'PA.2', 'PA.1', 'PA.0', 'PF.15', 'PE.15', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
         'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'PG.9', 'VDD', 'PB.15', 'PB.14', 'PB.13',
@@ -63,6 +41,25 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'PD.3', 'PD.2', 'PD.1', 'PD.0', 'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'LDO_CAP',
         'VDD', 'PC.14', 'PB.15', 'PB.14', 'PB.13', 'PB.12', 'PG.10', 'PG.11', 'PG.12', 'PB.11',
         'PB.10', 'PB.9', 'PB.8', 'PB.7'
+    ],
+    "QFN20(3*3)": [
+        'PB.3', 'PB.5', 'VSS', 'PF.0', 'VDD', 'PC.14', 'PB.7', 'PB.12', 'PB.13', 'PB.15',
+        'PB.14', 'PB.8', 'PB.9', 'PF.1', 'PB.11', 'PB.0', 'PB.4', 'PE.15', 'PB.2', 'PB.1'
+    ],
+    "QFN33(4*4)": [
+        'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.5', 'PF.4', 'PF.3', 'PF.2',
+        'PA.3', 'PA.2', 'PA.1', 'PA.0', 'PF.15', 'PE.15', 'PF.0', 'PF.1', 'PC.1', 'PC.0',
+        'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'PG.9', 'VDD', 'PB.15', 'PB.14', 'PB.13',
+        'PB.12', 'PG.11'
+    ],
+    "TSSOP20(4.4*6.5)": [
+        'PB.1', 'PB.2', 'PB.3', 'PE.15', 'PB.4', 'PB.5', 'VSS', 'PF.0', 'VDD', 'PC.14',
+        'PB.15', 'PB.14', 'PB.13', 'PB.12', 'PB.7', 'PB.8', 'PB.9', 'PF.1', 'PB.11', 'PB.0'
+    ],
+    "TSSOP28(4.4*9.7)": [
+        'PA.12', 'PA.13', 'PA.14', 'PA.15', 'VSS', 'PG.9', 'VDD', 'PB.14', 'PB.13', 'PB.12',
+        'PB.6', 'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PB.1', 'PB.0', 'PF.3', 'PF.2', 'PA.3',
+        'PA.2', 'PA.1', 'PA.0', 'PE.15', 'PF.0', 'PF.1', 'PC.1', 'PC.0'
     ]
 };
 
@@ -264,19 +261,7 @@ NUTOOL_PIN.g_cfg_gpiosDescriptions = [
 ];
 
 NUTOOL_PIN.g_cfg_wppin = {
-    "TSSOP20(4.4*6.5)": [
-        
-    ],
-    "QFN20(3*3)": [
-        
-    ],
-    "TSSOP28(4.4*9.7)": [
-        
-    ],
     "LQFP32(7*7)": [
-        
-    ],
-    "QFN33(4*4)": [
         
     ],
     "LQFP48(7*7)": [
@@ -286,6 +271,18 @@ NUTOOL_PIN.g_cfg_wppin = {
         
     ],
     "LQFP64(Alpha)": [
+        
+    ],
+    "QFN20(3*3)": [
+        
+    ],
+    "QFN33(4*4)": [
+        
+    ],
+    "TSSOP20(4.4*6.5)": [
+        
+    ],
+    "TSSOP28(4.4*9.7)": [
         
     ],
 };
@@ -294,56 +291,37 @@ NUTOOL_PIN.g_cfg_wppin_comment = {
 };
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'M2003SG6AE': {
-        'ALL': []
+    'M2003ED4AE': {
+        'ALL': ['PWM1', 'QSPI0', 'USCI1', 'USCI2', 'USCI3', 'UART2']
+    },
+    'M2003FC1AE': {
+        'ALL': ['PWM1', 'CAN0', 'QSPI0', 'USCI1', 'USCI2', 'USCI3', 'UART2', 'HXT']
+    },
+    'M2003LD4AE': {
+        'ALL': ['PWM1', 'QSPI0', 'USCI1', 'USCI2', 'USCI3', 'UART2']
+    },
+    'M2003LE4AE': {
+        'ALL': ['PWM1', 'QSPI0', 'USCI1', 'USCI2', 'USCI3', 'UART2']
     },
     'M2003LG6AE': {
         'ALL': []
     },
-    'M2003LE4AE': {
-        'ALL': ['PWM1', 'QSPI', 'USCI1', 'USCI2', 'USCI3', 'UART2']
-    },
-    'M2003TE4AE': {
-        'ALL': ['PWM1', 'QSPI', 'USCI1', 'USCI2', 'USCI3', 'UART2']
-    },
-    'M2003LD4AE': {
-        'ALL': ['PWM1', 'QSPI', 'USCI1', 'USCI2', 'USCI3', 'UART2']
+    'M2003SG6AE': {
+        'ALL': []
     },
     'M2003TD4AE': {
-        'ALL': ['PWM1', 'QSPI', 'USCI1', 'USCI2', 'USCI3', 'UART2']
+        'ALL': ['PWM1', 'QSPI0', 'USCI1', 'USCI2', 'USCI3', 'UART2']
     },
-    'M2003ED4AE': {
-        'ALL': ['PWM1', 'QSPI', 'USCI1', 'USCI2', 'USCI3', 'UART2']
-    },
-    'M2003FC1AE': {
-        'ALL': ['PWM1', 'CAN', 'QSPI', 'USCI1', 'USCI2', 'USCI3', 'UART2', 'HXT']
+    'M2003TE4AE': {
+        'ALL': ['PWM1', 'QSPI0', 'USCI1', 'USCI2', 'USCI3', 'UART2']
     },
     'M2003XC1AE': {
-        'ALL': ['PWM1', 'CAN', 'QSPI', 'USCI1', 'USCI2', 'USCI3', 'UART2', 'HXT']
+        'ALL': ['PWM1', 'CAN0', 'QSPI0', 'USCI1', 'USCI2', 'USCI3', 'UART2', 'HXT']
     }
 };
 
 NUTOOL_PIN.g_cfg_OrCAD = {
-    "TSSOP20(4.4*6.5)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', ''
-    ],
-    "QFN20(3*3)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', ''
-    ],
-    "TSSOP28(4.4*9.7)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', ''
-    ],
     "LQFP32(7*7)": [
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', '', '', '', '', '', '', '', '', '',
-        '', ''
-    ],
-    "QFN33(4*4)": [
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', '', '', '', '', '', '', '',
@@ -373,6 +351,25 @@ NUTOOL_PIN.g_cfg_OrCAD = {
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', '', '', '', '', '', '', '',
         '', '', '', ''
+    ],
+    "QFN20(3*3)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', ''
+    ],
+    "QFN33(4*4)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', ''
+    ],
+    "TSSOP20(4.4*6.5)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', ''
+    ],
+    "TSSOP28(4.4*9.7)": [
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', ''
     ]
 };
 
@@ -401,29 +398,29 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.getPackageNumber(given_partNumber_package);
     let partNumber = NUTOOL_PIN.getPartNumber(given_partNumber_package);
     switch (partNumber) {
-        case "M2003SG6AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(7*7)";
-            break;
-        case "M2003LG6AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(7*7)";
-            break;
-        case "M2003LE4AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(7*7)";
-            break;
-        case "M2003TE4AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN33(4*4)";
-            break;
-        case "M2003LD4AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(7*7)";
-            break;
-        case "M2003TD4AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN33(4*4)";
-            break;
         case "M2003ED4AE":
             NUTOOL_PIN.g_packageNumberIndex = "TSSOP28(4.4*9.7)";
             break;
         case "M2003FC1AE":
             NUTOOL_PIN.g_packageNumberIndex = "TSSOP20(4.4*6.5)";
+            break;
+        case "M2003LD4AE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(7*7)";
+            break;
+        case "M2003LE4AE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(7*7)";
+            break;
+        case "M2003LG6AE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(7*7)";
+            break;
+        case "M2003SG6AE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(7*7)";
+            break;
+        case "M2003TD4AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN33(4*4)";
+            break;
+        case "M2003TE4AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN33(4*4)";
             break;
         case "M2003XC1AE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN20(3*3)";

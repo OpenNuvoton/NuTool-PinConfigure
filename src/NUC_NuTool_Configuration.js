@@ -138,6 +138,14 @@ String.method('restorePinTreeNodeName', function () {
 
     return returnValue; // Note: the type of returned result will be Object, not String
 });
+
+String.method('splitPrefixIndex', function () {
+    const match = this.toString().match(/^(.+?)(\d*)$/);
+    return match
+        ? { prefix: match[1], index: match[2] }
+        : { prefix: "", index: "" };
+});
+
 // attach the .compare method to Array's prototype to call it on any array
 Array.method('compare', function (array) {
     var i, l;

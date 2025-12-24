@@ -1,26 +1,9 @@
 NUTOOL_PIN.g_cfg_chips = [
     // CM3031
-    // { name: "CM3021GJ3AE", pkg: "QFN33" },
-    // { name: "CM3021GL8AE", pkg: "LQFP48" },
-    // { name: "CM3021GN8AE", pkg: "LQFP64" },
-    // { name: "CM3024GJ3AE", pkg: "QFN33" },
-    // { name: "CM3024GL8AE", pkg: "LQFP48" },
-    // { name: "CM3024GN8AE", pkg: "LQFP64" },
-    // { name: "CM3031GJ3AE", pkg: "QFN33" },
-    // { name: "CM3031GL3AE", pkg: "QFN48" },
-    // { name: "CM3031GL8AE", pkg: "LQFP48" },
-    // { name: "CM3031GN8AE", pkg: "LQFP64" },
-    // { name: "CM3031GS8AE", pkg: "LQFP128" },
-    // { name: "CM3031HJ3AE", pkg: "QFN33" },
-    // { name: "CM3031HL3AE", pkg: "QFN48" },
-    // { name: "CM3031HL8AE", pkg: "LQFP48" },
-    // { name: "CM3031HN8AE", pkg: "LQFP64" },
-    // { name: "CM3031HS8AE", pkg: "LQFP128" },
     // { name: "CM3033GJ3AE", pkg: "QFN33" },
     // { name: "CM3033GL3AE", pkg: "QFN48" },
     // { name: "CM3033GL8AE", pkg: "LQFP48" },
     // { name: "CM3033GN8AE", pkg: "LQFP64" },
-    // { name: "CM3033GS8AE", pkg: "LQFP128" },
     // { name: "CM3033HJ3AE", pkg: "QFN33" },
     // { name: "CM3033HL3AE", pkg: "QFN48" },
     // { name: "CM3033HL8AE", pkg: "LQFP48" },
@@ -30,49 +13,40 @@ NUTOOL_PIN.g_cfg_chips = [
     // { name: "CM3034GL3AE", pkg: "QFN48" },
     // { name: "CM3034GL8AE", pkg: "LQFP48" },
     // { name: "CM3034GN8AE", pkg: "LQFP64" },
-    // { name: "CM3034GS8AE", pkg: "LQFP128" },
     // { name: "CM3034HJ3AE", pkg: "QFN33" },
     // { name: "CM3034HL3AE", pkg: "QFN48" },
     // { name: "CM3034HL8AE", pkg: "LQFP48" },
     // { name: "CM3034HN8AE", pkg: "LQFP64" },
     // { name: "CM3034HS8AE", pkg: "LQFP128" },
     // M3331
-    // { name: "M3331KGGAE", pkg: "LQFP128" },
-    // { name: "M3331KIGAE", pkg: "LQFP128" },
-    { name: "M3331LGAAE", pkg: "LQFP48" },
-    // { name: "M3331LGGAE", pkg: "LQFP48" },
-    // { name: "M3331LIGAE", pkg: "LQFP48" },
-    { name: "M3331SGAAE", pkg: "LQFP64" },
-    // { name: "M3331SGGAE", pkg: "LQFP64" },
-    // { name: "M3331SIGAE", pkg: "LQFP64" },
-    { name: "M3331TGAAE", pkg: "QFN33" },
-    // { name: "M3331TGGAE", pkg: "QFN33" },
-    // { name: "M3331TIGAE", pkg: "QFN33" },
-    // { name: "M3331YGGAE", pkg: "QFN48" },
-    // { name: "M3331YIGAE", pkg: "QFN48" },
-    // { name: "M3333KGGAE", pkg: "LQFP128" },
-    // { name: "M3333KIGAE", pkg: "LQFP128" },
-    // { name: "M3333LGGAE", pkg: "LQFP48" },
-    // { name: "M3333LIGAE", pkg: "LQFP48" },
-    // { name: "M3333SGGAE", pkg: "LQFP64" },
-    // { name: "M3333SIGAE", pkg: "LQFP64" },
-    // { name: "M3333TGGAE", pkg: "QFN33" },
-    // { name: "M3333TIGAE", pkg: "QFN33" },
-    // { name: "M3333YGGAE", pkg: "QFN48" },
-    // { name: "M3333YIGAE", pkg: "QFN48" },
-    // { name: "M3334KGGAE", pkg: "LQFP128" },
-    // { name: "M3334KIGAE", pkg: "LQFP128" },
+    { name: "M3333KGGAE", pkg: "LQFP128" },
+    { name: "M3333KIGAE", pkg: "LQFP128" },
+    { name: "M3333LGAAE", pkg: "LQFP48" },
+    { name: "M3333LGGAE", pkg: "LQFP48" },
+    { name: "M3333LIGAE", pkg: "LQFP48" },
+    { name: "M3333SGAAE", pkg: "LQFP64" },
+    { name: "M3333SGGAE", pkg: "LQFP64" },
+    { name: "M3333SIGAE", pkg: "LQFP64" },
+    { name: "M3333TGAAE", pkg: "QFN33" },
+    { name: "M3333TGGAE", pkg: "QFN33" },
+    { name: "M3333TIGAE", pkg: "QFN33" },
+    { name: "M3333YGAAE", pkg: "QFN48" },
+    { name: "M3333YGGAE", pkg: "QFN48" },
+    { name: "M3333YIGAE", pkg: "QFN48" },
+    { name: "M3334KGGAE", pkg: "LQFP128" },
+    { name: "M3334KIGAE", pkg: "LQFP128" },
     { name: "M3334LGAAE", pkg: "LQFP48" },
-    // { name: "M3334LGGAE", pkg: "LQFP48" },
-    // { name: "M3334LIGAE", pkg: "LQFP48" },
+    { name: "M3334LGGAE", pkg: "LQFP48" },
+    { name: "M3334LIGAE", pkg: "LQFP48" },
     { name: "M3334SGAAE", pkg: "LQFP64" },
-    // { name: "M3334SGGAE", pkg: "LQFP64" },
-    // { name: "M3334SIGAE", pkg: "LQFP64" },
+    { name: "M3334SGGAE", pkg: "LQFP64" },
+    { name: "M3334SIGAE", pkg: "LQFP64" },
     { name: "M3334TGAAE", pkg: "QFN33" },
-    // { name: "M3334TGGAE", pkg: "QFN33" },
-    // { name: "M3334TIGAE", pkg: "QFN33" },
-    // { name: "M3334YGGAE", pkg: "QFN48" },
-    // { name: "M3334YIGAE", pkg: "QFN48" }
+    { name: "M3334TGGAE", pkg: "QFN33" },
+    { name: "M3334TIGAE", pkg: "QFN33" },
+    { name: "M3334YGAAE", pkg: "QFN48" },
+    { name: "M3334YGGAE", pkg: "QFN48" },
+    { name: "M3334YIGAE", pkg: "QFN48" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -153,29 +127,29 @@ NUTOOL_PIN.g_cfg_pkgs = {
 };
 
 NUTOOL_PIN.g_cfg_gpios = [
-    { f: ['PA.0:0', 'QSPI0_MOSI0:3', 'SPI0_MOSI:4', 'SPB_G4_TX3:5', 'UART1_nRTS:8', 'BPWM0_CH0:12', 'EPWM0_CH5:13', 'LLSI7_OUT:16'] },
-    { f: ['PA.1:0', 'QSPI0_MISO0:3', 'SPI0_MISO:4', 'SPB_G4_TX2:5', 'UART1_nCTS:8', 'BPWM0_CH1:12', 'EPWM0_CH4:13', 'LLSI6_OUT:16'] },
-    { f: ['PA.2:0', 'QSPI0_CLK:3', 'SPI0_CLK:4', 'SPB_G4_TX1:5', 'UART1_RXD:8', 'I2C1_SDA:9', 'I2C0_SMBSUS:10', 'BPWM0_CH2:12', 'EPWM0_CH3:13', 'LLSI5_OUT:16'] },
-    { f: ['PA.3:0', 'QSPI0_SS:3', 'SPI0_SS:4', 'SPB_G4_TX0:5', 'UART1_TXD:8', 'I2C1_SCL:9', 'I2C0_SMBAL:10', 'BPWM0_CH3:12', 'EPWM0_CH2:13', 'EQEI0_B:14', 'EPWM1_BRAKE1:15', 'LLSI4_OUT:16'] },
+    { f: ['PA.0:0', 'QSPI0_MOSI0:3', 'SPI0_MOSI:4', 'PDCI_G4_TX3:5', 'UART1_nRTS:8', 'BPWM0_CH0:12', 'EPWM0_CH5:13', 'LLSI7_OUT:16'] },
+    { f: ['PA.1:0', 'QSPI0_MISO0:3', 'SPI0_MISO:4', 'PDCI_G4_TX2:5', 'UART1_nCTS:8', 'BPWM0_CH1:12', 'EPWM0_CH4:13', 'LLSI6_OUT:16'] },
+    { f: ['PA.2:0', 'QSPI0_CLK:3', 'SPI0_CLK:4', 'PDCI_G4_TX1:5', 'UART1_RXD:8', 'I2C1_SDA:9', 'I2C0_SMBSUS:10', 'BPWM0_CH2:12', 'EPWM0_CH3:13', 'LLSI5_OUT:16'] },
+    { f: ['PA.3:0', 'QSPI0_SS:3', 'SPI0_SS:4', 'PDCI_G4_TX0:5', 'UART1_TXD:8', 'I2C1_SCL:9', 'I2C0_SMBAL:10', 'BPWM0_CH3:12', 'EPWM0_CH2:13', 'EQEI0_B:14', 'EPWM1_BRAKE1:15', 'LLSI4_OUT:16'] },
     { f: ['PA.4:0', 'SPI1_MOSI:2', 'QSPI0_MOSI1:3', 'SPI0_I2SMCLK:4', 'UART0_nRTS:7', 'I2C0_SDA:9', 'CANFD0_RXD:10', 'UART0_RXD:11', 'BPWM0_CH4:12', 'EPWM0_CH1:13', 'EQEI0_A:14'] },
     { f: ['PA.5:0', 'SPI1_MISO:2', 'QSPI0_MISO1:3', 'CANFD0_TXH:6', 'UART0_nCTS:7', 'I2C0_SCL:9', 'CANFD0_TXD:10', 'UART0_TXD:11', 'BPWM0_CH5:12', 'EPWM0_CH0:13', 'EQEI0_INDEX:14'] },
-    { f: ['PA.6:0', 'SPI1_SS:4', 'CANFD0_TXL:6', 'UART0_RXD:7', 'I2C1_SDA:8', 'SPB_G2_RX1:10', 'EPWM1_CH5:11', 'BPWM1_CH3:12', 'ACMP1_WLAT:13', 'TM3:14', 'INT0:15'] },
-    { f: ['PA.7:0', 'SPI1_CLK:4', 'UART0_TXD:7', 'I2C1_SCL:8', 'SPB_G2_CLK:9', 'SPB_G2_RX0:10', 'EPWM1_CH4:11', 'BPWM1_CH2:12', 'ACMP0_WLAT:13', 'TM2:14', 'INT1:15'] },
-    { f: ['PA.8:0', 'USCI0_CTL1:6', 'UART1_RXD:7', 'BPWM0_CH3:9', 'ECAP0_IC2:11', 'TM3_EXT:13', 'SPB_G1_RX1:14', 'INT4:15', 'SPB_G2_TX1:16'] },
-    { f: ['PA.9:0', 'USCI0_DAT1:6', 'UART1_TXD:7', 'BPWM0_CH2:9', 'ECAP0_IC1:11', 'TM2_EXT:13', 'SPB_G2_TX0:16'] },
-    { f: ['PA.10:0', 'USCI0_DAT0:6', 'BPWM0_CH1:9', 'ECAP0_IC0:11', 'TM1_EXT:13', 'SPB_G3_TX3:14', 'SPB_G4_RX1:15', 'SPB_G0_RX3:16'] },
-    { f: ['PA.11:0', 'USCI0_CLK:6', 'BPWM0_CH0:9', 'EPWM0_SYNC_OUT:10', 'EPWM0_BRAKE1:11', 'TM0_EXT:13', 'SPB_G3_TX2:14', 'SPB_G4_RX0:15', 'SPB_G0_RX2:16'] },
-    { f: ['PA.12:0', 'I2C1_SCL:4', 'CANFD0_TXD:6', 'CANFD0_TXH:7', 'BPWM1_CH2:11', 'SPB_G1_CLK:15', 'SPB_G1_RX0:16'] },
-    { f: ['PA.13:0', 'I2C1_SDA:4', 'CANFD0_RXD:6', 'BPWM1_CH3:11', 'SPB_G1_RX1:16'] },
-    { f: ['PA.14:0', 'UART0_TXD:3', 'BPWM1_CH4:11', 'SPB_G5_TX1:15', 'SPB_G1_RX2:16'] },
-    { f: ['PA.15:0', 'UART0_RXD:3', 'BPWM1_CH5:11', 'EPWM0_SYNC_IN:12', 'SPB_G5_TX2:15', 'SPB_G1_RX3:16'] },
+    { f: ['PA.6:0', 'SPI1_SS:4', 'CANFD0_TXL:6', 'UART0_RXD:7', 'I2C1_SDA:8', 'PDCI_G2_RX1:10', 'EPWM1_CH5:11', 'BPWM1_CH3:12', 'ACMP1_WLAT:13', 'TM3:14', 'INT0:15'] },
+    { f: ['PA.7:0', 'SPI1_CLK:4', 'UART0_TXD:7', 'I2C1_SCL:8', 'PDCI_G2_CLK:9', 'PDCI_G2_RX0:10', 'EPWM1_CH4:11', 'BPWM1_CH2:12', 'ACMP0_WLAT:13', 'TM2:14', 'INT1:15'] },
+    { f: ['PA.8:0', 'USCI0_CTL1:6', 'UART1_RXD:7', 'BPWM0_CH3:9', 'ECAP0_IC2:11', 'TM3_EXT:13', 'PDCI_G1_RX1:14', 'INT4:15', 'PDCI_G2_TX1:16'] },
+    { f: ['PA.9:0', 'USCI0_DAT1:6', 'UART1_TXD:7', 'BPWM0_CH2:9', 'ECAP0_IC1:11', 'TM2_EXT:13', 'PDCI_G2_TX0:16'] },
+    { f: ['PA.10:0', 'USCI0_DAT0:6', 'BPWM0_CH1:9', 'ECAP0_IC0:11', 'TM1_EXT:13', 'PDCI_G3_TX3:14', 'PDCI_G4_RX1:15', 'PDCI_G0_RX3:16'] },
+    { f: ['PA.11:0', 'USCI0_CLK:6', 'BPWM0_CH0:9', 'EPWM0_SYNC_OUT:10', 'EPWM0_BRAKE1:11', 'TM0_EXT:13', 'PDCI_G3_TX2:14', 'PDCI_G4_RX0:15', 'PDCI_G0_RX2:16'] },
+    { f: ['PA.12:0', 'I2C1_SCL:4', 'CANFD0_TXD:6', 'CANFD0_TXH:7', 'BPWM1_CH2:11', 'PDCI_G1_CLK:15', 'PDCI_G1_RX0:16'] },
+    { f: ['PA.13:0', 'I2C1_SDA:4', 'CANFD0_RXD:6', 'BPWM1_CH3:11', 'PDCI_G1_RX1:16'] },
+    { f: ['PA.14:0', 'UART0_TXD:3', 'BPWM1_CH4:11', 'PDCI_G5_TX1:15', 'PDCI_G1_RX2:16'] },
+    { f: ['PA.15:0', 'UART0_RXD:3', 'BPWM1_CH5:11', 'EPWM0_SYNC_IN:12', 'PDCI_G5_TX2:15', 'PDCI_G1_RX3:16'] },
 
-    { f: ['PB.0:0', 'EADC0_CH0:1', 'USCI0_CTL0:6', 'UART2_RXD:7', 'SPI0_I2SMCLK:8', 'I2C1_SDA:9', 'SPB_G3_TX1:10', 'EPWM0_CH5:11', 'EPWM1_CH5:12', 'EPWM0_BRAKE1:13', 'QSPI0_MOSI1:15', 'SPB_G0_RX1:16'] },
-    { f: ['PB.1:0', 'EADC0_CH1:1', 'SPB_G0_RX0:4', 'SPB_G0_CLK:6', 'UART2_TXD:7', 'I2C1_SCL:9', 'EPWM0_CH4:11', 'EPWM1_CH4:12', 'EPWM0_BRAKE0:13', 'QSPI0_MISO1:15'] },
-    { f: ['PB.2:0', 'EADC0_CH2:1', 'SPI1_SS:5', 'UART1_RXD:6', 'EPWM0_CH3:11', 'I2C1_SDA:12', 'SPB_G0_TX3:13', 'TM3:14', 'INT3:15', 'LLSI7_OUT:16'] },
-    { f: ['PB.3:0', 'EADC0_CH3:1', 'SPI1_CLK:5', 'UART1_TXD:6', 'EPWM0_CH2:11', 'I2C1_SCL:12', 'SPB_G0_TX2:13', 'TM2:14', 'INT2:15', 'LLSI6_OUT:16'] },
-    { f: ['PB.4:0', 'EADC0_CH4:1', 'SPI1_MOSI:5', 'I2C0_SDA:6', 'EPWM0_CH1:11', 'UART2_RXD:12', 'SPB_G0_TX1:13', 'TM1:14', 'INT1:15', 'LLSI5_OUT:16'] },
-    { f: ['PB.5:0', 'EADC0_CH5:1', 'SPI1_MISO:5', 'I2C0_SCL:6', 'EPWM0_CH0:11', 'UART2_TXD:12', 'SPB_G0_TX0:13', 'TM0:14', 'INT0:15', 'LLSI4_OUT:16'] },
+    { f: ['PB.0:0', 'EADC0_CH0:1', 'USCI0_CTL0:6', 'UART2_RXD:7', 'SPI0_I2SMCLK:8', 'I2C1_SDA:9', 'PDCI_G3_TX1:10', 'EPWM0_CH5:11', 'EPWM1_CH5:12', 'EPWM0_BRAKE1:13', 'QSPI0_MOSI1:15', 'PDCI_G0_RX1:16'] },
+    { f: ['PB.1:0', 'EADC0_CH1:1', 'PDCI_G0_RX0:4', 'PDCI_G0_CLK:6', 'UART2_TXD:7', 'I2C1_SCL:9', 'EPWM0_CH4:11', 'EPWM1_CH4:12', 'EPWM0_BRAKE0:13', 'QSPI0_MISO1:15'] },
+    { f: ['PB.2:0', 'EADC0_CH2:1', 'SPI1_SS:5', 'UART1_RXD:6', 'EPWM0_CH3:11', 'I2C1_SDA:12', 'PDCI_G0_TX3:13', 'TM3:14', 'INT3:15', 'LLSI7_OUT:16'] },
+    { f: ['PB.3:0', 'EADC0_CH3:1', 'SPI1_CLK:5', 'UART1_TXD:6', 'EPWM0_CH2:11', 'I2C1_SCL:12', 'PDCI_G0_TX2:13', 'TM2:14', 'INT2:15', 'LLSI6_OUT:16'] },
+    { f: ['PB.4:0', 'EADC0_CH4:1', 'SPI1_MOSI:5', 'I2C0_SDA:6', 'EPWM0_CH1:11', 'UART2_RXD:12', 'PDCI_G0_TX1:13', 'TM1:14', 'INT1:15', 'LLSI5_OUT:16'] },
+    { f: ['PB.5:0', 'EADC0_CH5:1', 'SPI1_MISO:5', 'I2C0_SCL:6', 'EPWM0_CH0:11', 'UART2_TXD:12', 'PDCI_G0_TX0:13', 'TM0:14', 'INT0:15', 'LLSI4_OUT:16'] },
     { f: ['PB.6:0', 'EADC0_CH6:1', 'EPWM0_SYNC_IN:3', 'UART1_RXD:6', 'HSUSB_VBUS_EN:7', 'SPI0_CLK:9', 'BPWM1_CH5:10', 'EPWM1_BRAKE1:11', 'EPWM1_CH5:12', 'INT4:13', 'ACMP1_O:15', 'TM1:16'] },
     { f: ['PB.7:0', 'EADC0_CH7:1', 'UART1_TXD:6', 'HSUSB_VBUS_ST:7', 'SPI0_SS:9', 'BPWM1_CH4:10', 'EPWM1_BRAKE0:11', 'EPWM1_CH4:12', 'INT5:13', 'ACMP0_O:15'] },
     { f: ['PB.8:0', 'EADC0_CH8:1', 'UART0_RXD:5', 'UART1_nRTS:6', 'I2C1_SMBSUS:7', 'I2C0_SDA:9', 'BPWM1_CH3:10', 'INT6:13'] },
@@ -184,24 +158,24 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['PB.11:0', 'EADC0_CH11:1', 'CANFD0_TXH:4', 'UART0_nCTS:5', 'I2C1_SCL:7', 'CANFD0_TXD:8', 'SPI0_I2SMCLK:9', 'BPWM1_CH0:10', 'HSUSB_VBUS_ST:14', 'LLSI8_OUT:16'] },
     { f: ['PB.12:0', 'EADC0_CH12:1', 'SPI0_MOSI:4', 'USCI0_CLK:5', 'UART0_RXD:6', 'UART3_nCTS:7', 'EPWM1_CH3:11', 'QSPI0_CLK:12', 'TM3_EXT:13', 'SPI0_I2SMCLK:15', 'LLSI3_OUT:16'] },
     { f: ['PB.13:0', 'EADC0_CH13:1', 'SPI0_MISO:4', 'USCI0_DAT0:5', 'UART0_TXD:6', 'UART3_nRTS:7', 'CLKO:9', 'EPWM1_CH2:11', 'USCI0_CTL0:12', 'TM2_EXT:13', 'HSUSB_VBUS_ST:15', 'LLSI2_OUT:16'] },
-    { f: ['PB.14:0', 'EADC0_CH14:1', 'SPB_G4_TX1:3', 'SPI0_CLK:4', 'USCI0_DAT1:5', 'UART0_nRTS:6', 'UART3_RXD:7', 'EPWM1_CH1:11', 'TM1_EXT:13', 'CLKO:14', 'LLSI1_OUT:16'] },
-    { f: ['PB.15:0', 'EADC0_CH15:1', 'SPB_G4_TX0:3', 'SPI0_SS:4', 'USCI0_CTL1:5', 'UART0_nCTS:6', 'UART3_TXD:7', 'EPWM0_BRAKE1:10', 'EPWM1_CH0:11', 'TM0_EXT:13', 'SPB_G4_CLK:14', 'HSUSB_VBUS_EN:15', 'LLSI0_OUT:16'] },
+    { f: ['PB.14:0', 'EADC0_CH14:1', 'PDCI_G4_TX1:3', 'SPI0_CLK:4', 'USCI0_DAT1:5', 'UART0_nRTS:6', 'UART3_RXD:7', 'EPWM1_CH1:11', 'TM1_EXT:13', 'CLKO:14', 'LLSI1_OUT:16'] },
+    { f: ['PB.15:0', 'EADC0_CH15:1', 'PDCI_G4_TX0:3', 'SPI0_SS:4', 'USCI0_CTL1:5', 'UART0_nCTS:6', 'UART3_TXD:7', 'EPWM0_BRAKE1:10', 'EPWM1_CH0:11', 'TM0_EXT:13', 'PDCI_G4_CLK:14', 'HSUSB_VBUS_EN:15', 'LLSI0_OUT:16'] },
 
-    { f: ['PC.0:0', 'QSPI0_MOSI0:4', 'SPI1_SS:7', 'UART2_RXD:8', 'I2C0_SDA:9', 'SPB_G5_RX1:10', 'EPWM1_CH5:12', 'ACMP1_O:14', 'LLSI9_OUT:16'] },
-    { f: ['PC.1:0', 'SPB_G5_CLK:3', 'QSPI0_MISO0:4', 'SPI1_CLK:7', 'UART2_TXD:8', 'I2C0_SCL:9', 'SPB_G5_RX0:10', 'EPWM1_CH4:12', 'ACMP0_O:14', 'EADC0_ST:15', 'LLSI8_OUT:16'] },
-    { f: ['PC.2:0', 'SPB_G1_TX3:3', 'QSPI0_CLK:4', 'SPI1_MOSI:7', 'UART2_nCTS:8', 'I2C0_SMBSUS:9', 'UART3_RXD:11', 'EPWM1_CH3:12', 'LLSI7_OUT:13', 'LLSI3_OUT:16'] },
-    { f: ['PC.3:0', 'SPB_G1_TX2:3', 'QSPI0_SS:4', 'SPI1_MISO:7', 'UART2_nRTS:8', 'I2C0_SMBAL:9', 'UART3_TXD:11', 'EPWM1_CH2:12', 'LLSI2_OUT:16'] },
-    { f: ['PC.4:0', 'SPB_G1_TX1:3', 'QSPI0_MOSI1:4', 'UART2_RXD:8', 'I2C1_SDA:9', 'CANFD0_RXD:10', 'EPWM1_CH1:12', 'LLSI1_OUT:16'] },
-    { f: ['PC.5:0', 'SPB_G1_TX0:3', 'QSPI0_MISO1:4', 'CANFD0_TXH:7', 'UART2_TXD:8', 'I2C1_SCL:9', 'CANFD0_TXD:10', 'EPWM1_CH0:12', 'LLSI0_OUT:16'] },
-    { f: ['PC.6:0', 'SPI1_MOSI:4', 'UART0_nRTS:7', 'I2C1_SMBSUS:8', 'EPWM1_CH3:11', 'BPWM1_CH1:12', 'TM1:14', 'INT2:15', 'SPB_G3_TX3:16'] },
-    { f: ['PC.7:0', 'SPI1_MISO:4', 'UART0_nCTS:7', 'I2C1_SMBAL:8', 'EPWM1_CH2:11', 'BPWM1_CH0:12', 'TM0:14', 'INT3:15', 'SPB_G3_TX2:16'] },
+    { f: ['PC.0:0', 'QSPI0_MOSI0:4', 'SPI1_SS:7', 'UART2_RXD:8', 'I2C0_SDA:9', 'PDCI_G5_RX1:10', 'EPWM1_CH5:12', 'ACMP1_O:14', 'LLSI9_OUT:16'] },
+    { f: ['PC.1:0', 'PDCI_G5_CLK:3', 'QSPI0_MISO0:4', 'SPI1_CLK:7', 'UART2_TXD:8', 'I2C0_SCL:9', 'PDCI_G5_RX0:10', 'EPWM1_CH4:12', 'ACMP0_O:14', 'EADC0_ST:15', 'LLSI8_OUT:16'] },
+    { f: ['PC.2:0', 'PDCI_G1_TX3:3', 'QSPI0_CLK:4', 'SPI1_MOSI:7', 'UART2_nCTS:8', 'I2C0_SMBSUS:9', 'UART3_RXD:11', 'EPWM1_CH3:12', 'LLSI7_OUT:13', 'LLSI3_OUT:16'] },
+    { f: ['PC.3:0', 'PDCI_G1_TX2:3', 'QSPI0_SS:4', 'SPI1_MISO:7', 'UART2_nRTS:8', 'I2C0_SMBAL:9', 'UART3_TXD:11', 'EPWM1_CH2:12', 'LLSI2_OUT:16'] },
+    { f: ['PC.4:0', 'PDCI_G1_TX1:3', 'QSPI0_MOSI1:4', 'UART2_RXD:8', 'I2C1_SDA:9', 'CANFD0_RXD:10', 'EPWM1_CH1:12', 'LLSI1_OUT:16'] },
+    { f: ['PC.5:0', 'PDCI_G1_TX0:3', 'QSPI0_MISO1:4', 'CANFD0_TXH:7', 'UART2_TXD:8', 'I2C1_SCL:9', 'CANFD0_TXD:10', 'EPWM1_CH0:12', 'LLSI0_OUT:16'] },
+    { f: ['PC.6:0', 'SPI1_MOSI:4', 'UART0_nRTS:7', 'I2C1_SMBSUS:8', 'EPWM1_CH3:11', 'BPWM1_CH1:12', 'TM1:14', 'INT2:15', 'PDCI_G3_TX3:16'] },
+    { f: ['PC.7:0', 'SPI1_MISO:4', 'UART0_nCTS:7', 'I2C1_SMBAL:8', 'EPWM1_CH2:11', 'BPWM1_CH0:12', 'TM0:14', 'INT3:15', 'PDCI_G3_TX2:16'] },
     { f: ['PC.8:0'] },
     { f: ['PC.9:0'] },
     { f: ['PC.10:0'] },
     { f: ['PC.11:0'] },
     { f: ['PC.12:0'] },
     { f: ['PC.13:0'] },
-    { f: ['PC.14:0', 'SPI0_I2SMCLK:4', 'USCI0_CTL0:5', 'QSPI0_CLK:6', 'TRACE_SWO:10', 'EPWM0_SYNC_IN:11', 'TM1:13', 'SPB_G5_TX3:14', 'HSUSB_VBUS_ST:15', 'SPB_G2_RX3:16'] },
+    { f: ['PC.14:0', 'SPI0_I2SMCLK:4', 'USCI0_CTL0:5', 'QSPI0_CLK:6', 'TRACE_SWO:10', 'EPWM0_SYNC_IN:11', 'TM1:13', 'PDCI_G5_TX3:14', 'HSUSB_VBUS_ST:15', 'PDCI_G2_RX3:16'] },
     { f: ['PC.15:0'] },
 
     { f: ['PD.0:0'] },
@@ -242,9 +216,9 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['PF.1:0', 'UART1_RXD:2', 'I2C1_SDA:3', 'UART0_RXD:4', 'SPI0_SS:5', 'USCI0_DAT1:7', 'UART2_RXD:8', 'I2C0_SDA:9', 'EPWM1_CH5:11', 'ACMP1_O:13', 'ICE_CLK:14'] },
     { f: ['PF.2:0', 'UART0_RXD:3', 'I2C0_SDA:4', 'QSPI0_CLK:5', 'SPI1_SS:6', 'EPWM1_CH1:9', 'XT1_OUT:10', 'BPWM1_CH1:11', 'TM1_EXT:15'] },
     { f: ['PF.3:0', 'UART0_TXD:3', 'I2C0_SCL:4', 'SPI1_CLK:6', 'EPWM1_CH0:9', 'XT1_IN:10', 'BPWM1_CH0:11', 'TM0_EXT:15'] },
-    { f: ['PF.4:0', 'UART2_TXD:2', 'UART2_nRTS:4', 'UART0_nRTS:5', 'UART3_RXD:6', 'EPWM0_CH1:7', 'BPWM0_CH5:8', 'X32_OUT:10', 'SPB_G2_TX3:16'] },
-    { f: ['PF.5:0', 'UART2_RXD:2', 'UART2_nCTS:4', 'UART0_nCTS:5', 'UART3_TXD:6', 'EPWM0_CH0:7', 'BPWM0_CH4:8', 'EPWM0_SYNC_OUT:9', 'X32_IN:10', 'EADC0_ST:11', 'SPB_G2_TX2:16'] },
-    { f: ['PF.6:0', 'SPI0_MOSI:5', 'TRACE_SWO:14', 'SPB_G3_TX0:15'] },
+    { f: ['PF.4:0', 'UART2_TXD:2', 'UART2_nRTS:4', 'UART0_nRTS:5', 'UART3_RXD:6', 'EPWM0_CH1:7', 'BPWM0_CH5:8', 'X32_OUT:10', 'PDCI_G2_TX3:16'] },
+    { f: ['PF.5:0', 'UART2_RXD:2', 'UART2_nCTS:4', 'UART0_nCTS:5', 'UART3_TXD:6', 'EPWM0_CH0:7', 'BPWM0_CH4:8', 'EPWM0_SYNC_OUT:9', 'X32_IN:10', 'EADC0_ST:11', 'PDCI_G2_TX2:16'] },
+    { f: ['PF.6:0', 'SPI0_MOSI:5', 'TRACE_SWO:14', 'PDCI_G3_TX0:15'] },
     { f: ['PF.7:0'] },
     { f: ['PF.8:0'] },
     { f: ['PF.9:0'] },
@@ -252,8 +226,8 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['PF.11:0'] },
     { f: ['PF.12:0'] },
     { f: ['PF.13:0'] },
-    { f: ['PF.14:0', 'SPB_G3_TX1:15', 'LLSI3_OUT:16'] },
-    { f: ['PF.15:0', 'SPB_G5_TX0:15', 'SPB_G2_RX2:16'] },
+    { f: ['PF.14:0', 'PDCI_G3_TX1:15', 'LLSI3_OUT:16'] },
+    { f: ['PF.15:0', 'PDCI_G5_TX0:15', 'PDCI_G2_RX2:16'] },
 
     { f: ['PG.0:0'] },
     { f: ['PG.1:0'] },
@@ -264,10 +238,10 @@ NUTOOL_PIN.g_cfg_gpios = [
     { f: ['PG.6:0'] },
     { f: ['PG.7:0'] },
     { f: ['PG.8:0'] },
-    { f: ['PG.9:0', 'BPWM0_CH5:12', 'SPB_G3_CLK:15', 'SPB_G3_RX0:16'] },
-    { f: ['PG.10:0', 'BPWM0_CH4:12', 'SPB_G3_RX1:16'] },
-    { f: ['PG.11:0', 'BPWM0_CH3:12', 'SPB_G4_TX2:15', 'SPB_G3_RX2:16'] },
-    { f: ['PG.12:0', 'BPWM0_CH2:12', 'SPB_G4_TX3:15', 'SPB_G3_RX3:16'] },
+    { f: ['PG.9:0', 'BPWM0_CH5:12', 'PDCI_G3_CLK:15', 'PDCI_G3_RX0:16'] },
+    { f: ['PG.10:0', 'BPWM0_CH4:12', 'PDCI_G3_RX1:16'] },
+    { f: ['PG.11:0', 'BPWM0_CH3:12', 'PDCI_G4_TX2:15', 'PDCI_G3_RX2:16'] },
+    { f: ['PG.12:0', 'BPWM0_CH2:12', 'PDCI_G4_TX3:15', 'PDCI_G3_RX3:16'] },
     { f: ['PG.13:0'] },
     { f: ['PG.14:0'] },
     { f: ['PG.15:0'] }
@@ -714,221 +688,143 @@ NUTOOL_PIN.g_cfg_wppin_comment = {
 };
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
-    'CM3021GJ3AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'CM3021GL8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'CM3021GN8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'CM3024GJ3AE': {
+    'CM3033GJ3AE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'CM3024GL8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'CM3024GN8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'CM3031GJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031GL3AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031GL8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031GN8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031GS8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HL3AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HL8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HN8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3031HS8AE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'CM3033GJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
     'CM3033GL3AE': {
-        'ALL': ['SPB']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3033GL8AE': {
-        'ALL': ['SPB']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3033GN8AE': {
-        'ALL': ['SPB']
-    },
-    'CM3033GS8AE': {
-        'ALL': ['SPB']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3033HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'PDCI']
     },
     'CM3033HL3AE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'CM3033HL8AE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'CM3033HN8AE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'CM3033HS8AE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'CM3034GJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'CM3034GL3AE': {
-        'ALL': ['SPB']
-    },
-    'CM3034GL8AE': {
-        'ALL': ['SPB']
-    },
-    'CM3034GN8AE': {
-        'ALL': ['SPB']
-    },
-    'CM3034GS8AE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
-    },
-    'CM3034HL3AE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HL8AE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HN8AE': {
-        'ALL': ['SPB']
-    },
-    'CM3034HS8AE': {
-        'ALL': ['SPB']
-    },
-    'M3331KGGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331KIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331LGAAE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'M3331LGGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331LIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331SGAAE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
-    },
-    'M3331SGGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331SIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
-    },
-    'M3331TGAAE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'M3331TGGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
+    'CM3034GL3AE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'M3331TIGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'SPB']
+    'CM3034GL8AE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'M3331YGGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    'CM3034GN8AE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
-    'M3331YIGAE': {
-        'ALL': ['CANFD0', 'CANFD1', 'SPB']
+    'CM3034HJ3AE': {
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'PDCI']
+    },
+    'CM3034HL3AE': {
+        'ALL': ['PDCI']
+    },
+    'CM3034HL8AE': {
+        'ALL': ['PDCI']
+    },
+    'CM3034HN8AE': {
+        'ALL': ['PDCI']
+    },
+    'CM3034HS8AE': {
+        'ALL': ['PDCI']
     },
     'M3333KGGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3333KIGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
+    },
+    'M3333LGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'M3333LGGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3333LIGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
+    },
+    'M3333SGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'M3333SGGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3333SIGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
+    },
+    'M3333TGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'M3333TGGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'PDCI']
     },
     'M3333TIGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'PDCI']
+    },
+    'M3333YGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'M3333YGGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3333YIGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3334KGGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3334KIGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3334LGAAE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'M3334LGGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3334LIGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3334SGAAE': {
         'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'M3334SGGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3334SIGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3334TGAAE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'M3334TGGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'PDCI']
     },
     'M3334TIGAE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'SPB']
+        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'PDCI']
+    },
+    'M3334YGAAE': {
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'M3334YGGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     },
     'M3334YIGAE': {
-        'ALL': ['SPB']
+        'ALL': ['PDCI']
     }
 };
 
@@ -1037,21 +933,6 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.getPackageNumber(given_partNumber_package);
     let partNumber = NUTOOL_PIN.getPartNumber(given_partNumber_package);
     switch (partNumber) {
-        case "CM3024GJ3AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
-            break;
-        case "CM3024GL8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP48(USB2.0)";
-            break;
-        case "CM3024GN8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)";
-            break;
-        case "CM3031GL3AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN48";
-            break;
-        case "CM3031HL3AE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN48";
-            break;
         case "CM3033GL3AE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN48";
             break;
@@ -1070,9 +951,6 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         case "CM3034GN8AE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP64(USB2.0)";
             break;
-        case "CM3034GS8AE":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB2.0)";
-            break;
         case "CM3034HJ3AE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
             break;
@@ -1088,10 +966,7 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         case "CM3034HS8AE":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP128(USB2.0)";
             break;
-        case "M3331YGGAE":
-            NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
-            break;
-        case "M3331YIGAE":
+        case "M3333YGAAE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN48(PIN:D10R14U10L14)";
             break;
         case "M3333YGGAE":
@@ -1132,6 +1007,9 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
             break;
         case "M3334TIGAE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN33(USB2.0)";
+            break;
+        case "M3334YGAAE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB2.0)(PIN:D10R14U10L14)";
             break;
         case "M3334YGGAE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN48(USB2.0)(PIN:D10R14U10L14)";
