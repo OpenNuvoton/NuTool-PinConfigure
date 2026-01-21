@@ -5,8 +5,10 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "KM1M2DF03R", pkg: "LQFP80" },
     { name: "KM1M2DF04N", pkg: "LQFP64" },
     { name: "KM1M2DF04R", pkg: "LQFP64" },
-    { name: "M2003RI7AE", pkg: "LQFP64" },
-    { name: "M2003RJ7AE", pkg: "LQFP64" }
+    { name: "M2003SI7AE", pkg: "LQFP64" },
+    { name: "M2003SJ7AE", pkg: "LQFP64" },
+    { name: "M2003VI7AE", pkg: "LQFP100" },
+    { name: "M2003VJ7AE", pkg: "LQFP100" }
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -268,10 +270,16 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'KM1M2DF04R': {
         'ALL': []
     },
-    'M2003RI7AE': {
+    'M2003SI7AE': {
         'ALL': []
     },
-    'M2003RJ7AE': {
+    'M2003SJ7AE': {
+        'ALL': []
+    },
+    'M2003VI7AE': {
+        'ALL': []
+    },
+    'M2003VJ7AE': {
         'ALL': []
     }
 };
@@ -346,10 +354,10 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.getPackageNumber(given_partNumber_package);
     let partNumber = NUTOOL_PIN.getPartNumber(given_partNumber_package);
     switch (partNumber) {
-        case "M2003RI7AE":
+        case "M2003SI7AE":
             NUTOOL_PIN.g_packageNumberIndex = "M2003_LQFP64";
             break;
-        case "M2003RJ7AE":
+        case "M2003SJ7AE":
             NUTOOL_PIN.g_packageNumberIndex = "M2003_LQFP64";
             break;
         default:
