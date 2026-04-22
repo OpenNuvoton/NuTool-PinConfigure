@@ -1,5 +1,9 @@
 NUTOOL_PIN.g_cfg_chips = [
     // CM3031
+    { name: "CM3031EJ3AE", pkg: "QFN33" },
+    { name: "CM3031EL3AE", pkg: "QFN48" },
+    { name: "CM3031EL8AE", pkg: "LQFP48" },
+    { name: "CM3031EN8AE", pkg: "LQFP64" },
     { name: "CM3033GJ3AE", pkg: "QFN33" },
     { name: "CM3033GL3AE", pkg: "QFN48" },
     { name: "CM3033GL8AE", pkg: "LQFP48" },
@@ -729,7 +733,15 @@ NUTOOL_PIN.g_cfg_wppin = {
     "QFN48": [
         'PB.2', 'PA.6', 'PC.14'
     ],
+    // Clone from QFN48
+    "QFN48(PIN:D10R14U10L14)": [
+        'PB.2', 'PA.6', 'PC.14'
+    ],
     "QFN48(USB2.0)": [
+        'PB.2', 'PA.6', 'PC.14'
+    ],
+    // Clone from QFN48(USB2.0)
+    "QFN48(USB2.0)(PIN:D10R14U10L14)": [
         'PB.2', 'PA.6', 'PC.14'
     ],
 };
@@ -742,59 +754,71 @@ NUTOOL_PIN.g_cfg_wppin_comment = {
 };
 
 NUTOOL_PIN.g_cfg_unusedGPIO = {
+    'CM3031EJ3AE': {
+        'ALL': ['SPI1', 'SPI2', 'UART2', 'UART3', 'UART4', 'I2C1', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'ECAP0', 'CANFD1', 'ELLSI0', 'LLSI2~LLSI9', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5', 'EPWM1', 'PDCI']
+    },
+    'CM3031EL3AE': {
+        'ALL': ['SPI1', 'SPI2', 'UART2', 'UART3', 'UART4', 'I2C1', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'LLSI2~LLSI9', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5', 'EPWM1', 'PDCI']
+    },
+    'CM3031EL8AE': {
+        'ALL': ['SPI1', 'SPI2', 'UART2', 'UART3', 'UART4', 'I2C1', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'LLSI2~LLSI9', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5', 'EPWM1', 'PDCI']
+    },
+    'CM3031EN8AE': {
+        'ALL': ['SPI1', 'SPI2', 'UART2', 'UART3', 'UART4', 'I2C1', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'LLSI2~LLSI9', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5', 'EPWM1', 'PDCI']
+    },
     'CM3033GJ3AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'USCI2', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'EQEI0', 'ECAP0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3033GL3AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'USCI2', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3033GL8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'USCI2', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3033GN8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'USCI2', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3033HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'PDCI']
+        'ALL': ['USCI2', 'EBI', 'EQEI0', 'ECAP0', 'PDCI']
     },
     'CM3033HL3AE': {
-        'ALL': ['PDCI']
+        'ALL': ['USCI2', 'PDCI']
     },
     'CM3033HL8AE': {
-        'ALL': ['PDCI']
+        'ALL': ['USCI2', 'PDCI']
     },
     'CM3033HN8AE': {
-        'ALL': ['PDCI']
+        'ALL': ['USCI2', 'PDCI']
     },
     'CM3033HS8AE': {
-        'ALL': ['PDCI']
+        'ALL': ['USCI2', 'PDCI']
     },
     'CM3034GJ3AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'USCI2', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3034GL3AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'USCI2', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3034GL8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'USCI2', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3034GN8AE': {
-        'ALL': ['SPI2', 'UART4', 'USCI1', 'I2C2', 'EBI', 'I2S0', 'SD0', 'I3C0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
+        'ALL': ['SPI2', 'UART4', 'USCI1', 'USCI2', 'I2C2', 'I3C0', 'I2S0', 'EBI', 'SD0', 'CANFD1', 'ELLSI0', 'ACMP0', 'ACMP1', 'BPWM2', 'BPWM3', 'BPWM4', 'BPWM5']
     },
     'CM3034HJ3AE': {
-        'ALL': ['EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'PDCI']
+        'ALL': ['USCI2', 'EBI', 'EQEI0', 'ECAP0', 'CANFD0', 'CANFD1', 'PDCI']
     },
     'CM3034HL3AE': {
-        'ALL': ['PDCI']
+        'ALL': ['USCI2', 'PDCI']
     },
     'CM3034HL8AE': {
-        'ALL': ['PDCI']
+        'ALL': ['USCI2', 'PDCI']
     },
     'CM3034HN8AE': {
-        'ALL': ['PDCI']
+        'ALL': ['USCI2', 'PDCI']
     },
     'CM3034HS8AE': {
-        'ALL': ['PDCI']
+        'ALL': ['USCI2', 'PDCI']
     },
     'M3333KGGAE': {
         'ALL': ['PDCI']
@@ -1017,6 +1041,12 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
     NUTOOL_PIN.g_packageNumber = NUTOOL_PIN.getPackageNumber(given_partNumber_package);
     let partNumber = NUTOOL_PIN.getPartNumber(given_partNumber_package);
     switch (partNumber) {
+        case "CM3031EL3AE":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP48";
+            break;
+        case "CM3031EL8AE":
+            NUTOOL_PIN.g_packageNumberIndex = "QFN48";
+            break;
         case "CM3033GL3AE":
             NUTOOL_PIN.g_packageNumberIndex = "QFN48";
             break;

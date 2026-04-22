@@ -18,7 +18,9 @@ NUTOOL_PIN.resetContent = function () {
     // KM1M7CF
     NUTOOL_PIN.g_cfg_gpios_FPS_key = {};
     NUTOOL_PIN.g_cfg_gpios_FPS_mapping = [];
-    NUTOOL_PIN.g_cfg_gpios_FPS_value = [];
+    NUTOOL_PIN.g_cfg_gpios_FPS_value = {};
     NUTOOL_PIN.g_cfg_gpios_FPSA_defines = [];
     NUTOOL_PIN.g_cfg_gpios_FPSB_defines = [];
+    NUTOOL_PIN.g_cfg_gpios_FPSC_defines = [];
+    NUTOOL_PIN.g_cfg_gpios_FPSD_defines = [];
 };

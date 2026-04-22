@@ -13,7 +13,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'VSS', 'VSS', 'PL.15', 'PA.3', 'NC_ToolNotShow', 'VDD_HSUSB1', 'VBAT', 'AVDD', 'VREF_EADC0', 'AVDDH_PLL2', 'AVDDL_PLL1', 'VDD_PLL1', 'VDDIO7', 'NC_ToolNotShow', 'PD.15', 'PI.6', 'PC.6', 'PC.0', 
         'X32_IN', 'X32_OUT', 'PA.0', 'PA.5', 'RTC_nRWAKE', 'VDD_OTP', 'VDD_HSUSB0', 'AVDD_ADC0', 'AVDD_EADC0', 'AVDDH_PLL1', 'AVDDL_PLL0', 'VDDIO10', 'VDDIO6', 'PD.13', 'PA.15', 'PK.1', 'PC.5', 'PC.3', 
         'HSUSB1_D+', 'HSUSB1_D-', 'PA.1', 'PA.7', 'nRESET', 'VDD_CORE', 'AVDDL_ROSC', 'VDD_CORE', 'AVSS', 'AVSS_PLL', 'VSS', 'VDD_CORE', 'MVDD', 'MVREF/MVREF_DQ', 'PI.1', 'PK.0', 'PL.6', 'PC.4', 
-        'HSUSB0_D+', 'HSUSB0_D-', 'PA.6', 'PA.8', 'HSUSB0_ID ', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_DDRPHY', 'PI.2', 'PK.3', 'PL.7', 'PL.5', 
+        'HSUSB0_D+', 'HSUSB0_D-', 'PA.6', 'PA.8', 'HSUSB0_ID', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_DDRPHY', 'PI.2', 'PK.3', 'PL.7', 'PL.5', 
         'PA.2', 'PA.4', 'PA.9', 'PA.12', 'PA.10', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_SDRAM', 'PI.0', 'PK.2', 'PL.8', 'PL.4', 
         'PA.13', 'PA.11', 'PG.2', 'PG.4', 'PG.6', 'VDDIO0', 'VDD_CPU', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'PD.14', 'PI.3', 'PJ.12', 'PL.9', 'PL.3', 
         'PG.1', 'PG.0', 'PG.5', 'PG.3', 'PA.14', 'VDDIO1', 'VDD_CPU', 'VSS', 'VSS', 'VSS', 'VSS', 'MVDD_DPHYPLL', 'VDDIO5', 'PD.12', 'PI.5', 'PJ.13', 'PL.10', 'PL.0', 

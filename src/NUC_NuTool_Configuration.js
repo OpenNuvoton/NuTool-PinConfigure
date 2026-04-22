@@ -50,15 +50,18 @@ String.method('toEquivalent', function () {
 });
 
 String.method('slicePriorToX', function (xChar) {
-    var returnValue;
-    if (this.indexOf(xChar) !== -1) {
-        returnValue = this.slice(0, this.indexOf(xChar));
-    }
-    else {
-        returnValue = this;
+    // Special case: if the string starts with "LCM_MPU",
+    // skip the prefix and slice up to the next occurrence of xChar.
+    if (this.startsWith("LCM_MPU")) {
+        const idx = this.indexOf(xChar, "LCM_MPU".length);
+        return idx !== -1 ? this.slice(0, idx) : this;
     }
 
-    return returnValue; // Note: the type of returned result will be Object, not String.
+    // General case: slice up to the first occurrence of xChar
+    const idx = this.indexOf(xChar);
+    return idx !== -1 ? this.slice(0, idx) : this;
+
+    // Note: the type of returned result will be Object, not String.
 });
 
 String.method('slicePriorToLastX', function (xChar) {

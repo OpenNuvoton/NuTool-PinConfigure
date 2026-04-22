@@ -392,6 +392,20 @@ function createWindow() {
         }
       });
     });
+    ipcMain.on('zoomIn', async (event, arg) => {
+      console.log('ipcMain: zoomIn');
+      const currentZoom = mainWindow.webContents.getZoomFactor();
+      mainWindow.webContents.setZoomFactor(currentZoom + 0.05);
+    });
+    ipcMain.on('zoomOut', async (event, arg) => {
+      console.log('ipcMain: zoomOut');
+      const currentZoom = mainWindow.webContents.getZoomFactor();
+      mainWindow.webContents.setZoomFactor(currentZoom - 0.05);
+    });
+    ipcMain.on('bestFit', async (event, arg) => {
+      console.log('ipcMain: bestFit');
+      mainWindow.webContents.setZoomFactor(1.0);
+    });
   });
 
   if (!isDebug) {

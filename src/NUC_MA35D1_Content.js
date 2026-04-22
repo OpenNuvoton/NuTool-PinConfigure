@@ -1322,6 +1322,24 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'MA35D03FJ64C': {
         'ALL': ['TSI', 'EADC0', 'RGMII0', 'RGMII1', 'CCAP0', 'CCAP1', 'QSPI1', 'SPI2', 'SPI3', 'I2C1', 'I2C2', 'I2C3', 'I2S1', 'CAN2', 'ECAP0', 'ECAP1', 'ECAP2', 'QEI0', 'QEI1', 'QEI2', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE', 'UART1', 'UART2', 'UART3', 'UART7', 'UART11', 'UART13']
     },
+    'MA35D05KH64C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KH67C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KI64C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KI67C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KJ64C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KJ67C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
     'MA35D14F884': {
         'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
     },
@@ -1522,6 +1540,24 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
             break;
         case "MA35D03FJ64C":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP216 (24*24)";
+            break;
+        case "MA35D05KH64C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KH67C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KI64C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KI67C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KJ64C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KJ67C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
             break;
         case "MA35D14F884":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP216 (24*24)";

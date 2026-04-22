@@ -5,6 +5,12 @@ NUTOOL_PIN.g_cfg_chips = [
     { name: "MA35D03FH64C", pkg: "LQFP216" },
     { name: "MA35D03FI64C", pkg: "LQFP216" },
     { name: "MA35D03FJ64C", pkg: "LQFP216" },
+    // { name: "MA35D05KH64C", pkg: "LQFP128" },
+    { name: "MA35D05KH67C", pkg: "LQFP128" },
+    // { name: "MA35D05KI64C", pkg: "LQFP128" },
+    { name: "MA35D05KI67C", pkg: "LQFP128" },
+    // { name: "MA35D05KJ64C", pkg: "LQFP128" },
+    { name: "MA35D05KJ67C", pkg: "LQFP128" },
 ];
 
 NUTOOL_PIN.g_cfg_pkgs = {
@@ -17,7 +23,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
         'VSS', 'VSS', 'PL.15', 'PA.3', 'NC_ToolNotShow', 'VDD_HSUSB1', 'VBAT', 'AVDD', 'VREF_EADC0', 'AVDDH_PLL2', 'AVDDL_PLL1', 'VDD_PLL1', 'VDDIO7', 'NC_ToolNotShow', 'PD.15', 'PI.6', 'PC.6', 'PC.0',
         'X32_IN', 'X32_OUT', 'PA.0', 'PA.5', 'RTC_nRWAKE', 'VDD_OTP', 'VDD_HSUSB0', 'AVDD_ADC0', 'AVDD_EADC0', 'AVDDH_PLL1', 'AVDDL_PLL0', 'VDDIO10', 'VDDIO6', 'PD.13', 'PA.15', 'PK.1', 'PC.5', 'PC.3',
         'HSUSB1_D+', 'HSUSB1_D-', 'PA.1', 'PA.7', 'nRESET', 'VDD_CORE', 'AVDDL_ROSC', 'VDD_CORE', 'AVSS', 'AVSS_PLL', 'VSS', 'VDD_CORE', 'MVDD', 'MVREF/MVREF_DQ', 'PI.1', 'PK.0', 'PL.6', 'PC.4',
-        'HSUSB0_D+', 'HSUSB0_D-', 'PA.6', 'PA.8', 'HSUSB0_ID ', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_DDRPHY', 'PI.2', 'PK.3', 'PL.7', 'PL.5',
+        'HSUSB0_D+', 'HSUSB0_D-', 'PA.6', 'PA.8', 'HSUSB0_ID', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_DDRPHY', 'PI.2', 'PK.3', 'PL.7', 'PL.5',
         'PA.2', 'PA.4', 'PA.9', 'PA.12', 'PA.10', 'VDD_CORE', 'VDD_CORE', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'MZQ_SDRAM', 'PI.0', 'PK.2', 'PL.8', 'PL.4',
         'PA.13', 'PA.11', 'PG.2', 'PG.4', 'PG.6', 'VDDIO0', 'VDD_CPU', 'VSS', 'VSS', 'VSS', 'VSS', 'VDD_CORE', 'MVDD', 'PD.14', 'PI.3', 'PJ.12', 'PL.9', 'PL.3',
         'PG.1', 'PG.0', 'PG.5', 'PG.3', 'PA.14', 'VDDIO1', 'VDD_CPU', 'VSS', 'VSS', 'VSS', 'VSS', 'MVDD_DPHYPLL', 'VDDIO5', 'PD.12', 'PI.5', 'PJ.13', 'PL.10', 'PL.0',
@@ -1312,6 +1318,24 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     'MA35D03FJ64C': {
         'ALL': ['TSI', 'EADC0', 'RGMII0', 'RGMII1', 'CCAP0', 'CCAP1', 'QSPI1', 'SPI2', 'SPI3', 'I2C1', 'I2C2', 'I2C3', 'I2S1', 'CAN2', 'ECAP0', 'ECAP1', 'ECAP2', 'QEI0', 'QEI1', 'QEI2', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE', 'UART1', 'UART2', 'UART3', 'UART7', 'UART11', 'UART13']
     },
+    'MA35D05KH64C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KH67C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KI64C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KI67C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KJ64C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
+    'MA35D05KJ67C': {
+        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'KPI_COL0', 'KPI_COL1', 'KPI_COL2', 'KPI_COL3', 'KPI_ROW6', 'TAMPER', 'TRACE', 'UART10', 'UART11']
+    },
     'MA35D14F884': {
         'ALL': ['TSI', 'EADC0', 'RGMII1', 'CAN0', 'CAN1', 'CAN2', 'CAN3', 'QEI1', 'KPI_ROW6', 'KPI_ROW7', 'TAMPER', 'TRACE']
     },
@@ -1320,12 +1344,6 @@ NUTOOL_PIN.g_cfg_unusedGPIO = {
     },
     'MA35D15A087C': {
         'ALL': ['TSI', 'LCM']
-    },
-    'MA35D15KH67C': {
-        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'TAMPER', 'TRACE', 'UART10', 'UART11']
-    },
-    'MA35D15KI67C': {
-        'ALL': ['TSI', 'EADC0', 'RMII1', 'RGMII1', 'CCAP0', 'CCAP1', 'LCM', 'NAND', 'SC0', 'SPI1', 'SPI3', 'ECAP0', 'ECAP2', 'QEI1', 'QEI2', 'TAMPER', 'TRACE', 'UART10', 'UART11']
     },
     'MA35D16A087C': {
         'ALL': ['TSI']
@@ -1513,6 +1531,24 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
         case "MA35D03FJ64C":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP216 (24*24)";
             break;
+        case "MA35D05KH64C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KH67C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KI64C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KI67C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KJ64C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
+        case "MA35D05KJ67C":
+            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
+            break;
         case "MA35D14F884":
             NUTOOL_PIN.g_packageNumberIndex = "LQFP216 (24*24)";
             break;
@@ -1521,12 +1557,6 @@ NUTOOL_PIN.decidepackageNumber = function (given_partNumber_package) {
             break;
         case "MA35D15A087C":
             NUTOOL_PIN.g_packageNumberIndex = "BGA364 (14*14)";
-            break;
-        case "MA35D15KH67C":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
-            break;
-        case "MA35D15KI67C":
-            NUTOOL_PIN.g_packageNumberIndex = "LQFP128 (14*14)";
             break;
         case "MA35D16A087C":
             NUTOOL_PIN.g_packageNumberIndex = "BGA364 (14*14)";

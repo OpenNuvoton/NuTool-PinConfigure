@@ -238,7 +238,7 @@ NUTOOL_PIN.g_cfg_pkgs = {
 	"LQFP128(2Mflash+USB2.0+1.1)(14*14)": [
 		'PB.5', 'PB.4', 'PB.3', 'PB.2', 'PC.12', 'PC.11', 'PC.10', 'PC.9', 'PB.1', 'PB.0',
 		'VSS', 'VDD', 'PA.11', 'PA.10', 'PA.9', 'PA.8', 'PC.13', 'PD.12', 'PD.11', 'PD.10',
-		'PG.2', 'PG.3', 'PG.4', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VBAT',
+		'PG.2', 'PG.3', 'PG.4', 'PF.11', 'PF.10', 'PF.9', 'PF.8', 'PF.7', 'PF.6', 'VDD',
 		'PF.5', 'PF.4',
 		'PH.4', 'PH.5', 'PH.6', 'PH.7', 'PF.3', 'PF.2', 'VSS', 'VDD', 'PE.8', 'PE.9',
 		'PE.10', 'PE.11', 'PE.12', 'PE.13', 'PC.8', 'PC.7', 'PC.6', 'PA.7', 'PA.6', 'VSS',
