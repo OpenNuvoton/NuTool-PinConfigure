@@ -1,75 +1,89 @@
 {
-  "name": "nutool-pinconfigure",
-  "version": "1.37.1",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "start": "gulp && cross-env NODE_ENV=development electron .",
-    "watch": "concurrently \"gulp watch\" \"cross-env NODE_ENV=development electronmon .\"",
-    "dir": "gulp && cross-env NODE_ENV=production electron-builder --win --x64 --dir",
-    "build": "gulp && cross-env NODE_ENV=production electron-builder --win --x64"
+  "name": "vscode-nutool-pinconfigure",
+  "displayName": "NuTool - PinConfigure",
+  "description": "The NuTool - PinConfigure is used to configure GPIO multi-functions of Nuvoton NuMicro® Family.",
+  "version": "2.0.0",
+  "homepage": "./",
+  "engines": {
+    "vscode": "^1.85.0"
   },
-  "author": "NUVOTON TECHNOLOGY CORPORATION",
-  "copyright": "Copyright ©2008-2023 Nuvoton Technology Corporation",
-  "license": "UNLICENSED",
-  "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.0",
-    "concurrently": "^8.2.1",
-    "cross-env": "^7.0.3",
-    "electron": "^24.3.0",
-    "electron-builder": "^24.4.0",
-    "electronmon": "^2.0.2",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-terser": "^2.1.0",
-    "vinyl-source-stream": "^2.0.0",
-    "worker-plugin": "^5.0.1"
+  "publisher": "Nuvoton",
+  "main": "./build/ext-src/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nuvoton-MS00/VSCode-NuTool-PinConfigure"
+  },
+  "icon": "Nuvoton_VSCode_icon.png",
+  "activationEvents": [
+    "onCommand:Nuvoton.nuvoton-openocd"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "pinconfigure-webview.start",
+        "title": "Open PinConfigure",
+        "category": "Nuvoton"
+      }
+    ]
   },
   "dependencies": {
-    "dapjs": "file:local_modules/dapjs-yc",
-    "usb": "^2.10.0"
+    "@ant-design/icons": "6.3.2",
+    "antd": "^6.3.2",
+    "deasync": "^0.1.31",
+    "file-saver": "^2.0.5",
+    "i18next": "^26.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^17.0.2",
+    "react-redux": "^9.2.0",
+    "usb": "^2.17.0"
   },
-  "build": {
-    "productName": "NuTool-PinConfigure",
-    "appId": "com.nuvoton.pinconfigure",
-    "npmRebuild": false,
-    "files": [
-      "index.htm",
-      "main.js",
-      "preload.js",
-      "src",
-      "local_modules",
-      "node_modules",
-      "package.json"
-    ],
-    "win": {
-      "target": [
-        {
-          "target": "nsis"
-        }
-      ],
-      "icon": "build/app.ico"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowElevation": true,
-      "allowToChangeInstallationDirectory": true,
-      "createDesktopShortcut": true,
-      "createStartMenuShortcut": true,
-      "shortcutName": "NuTool-PinConfigure",
-      "include": "release/script/installer.nsh"
-    },
-    "directories": {
-      "buildResources": "assets",
-      "output": "release/build"
-    },
-    "extraResources": [
-      "./src/res/**",
-      "./assets/**"
-    ]
-  }
+  "resolutions": {
+    "@ant-design/icons": "6.3.2"
+  },
+  "overrides": {
+    "@ant-design/icons": "6.3.2"
+  },
+  "scripts": {
+    "build": "node ./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
+    "eject": "react-scripts eject",
+    "obfuscate": "node obfuscate.js",
+    "package": "vsce package",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom",
+    "vscode:prepublish": "npm run build && npm run obfuscate && npm run sbom && npm run sbom:prod",
+    "watch": "tsc -p tsconfig.extension.json",
+    "electron:install": "cd electron-src && npm install  --verbose",
+    "electron:start": "npm run build && cd electron-src && npm start",
+    "start2": "cd electron-src && npm start",
+    "electron:dev": "npm run build && cd electron-src && npm run dev",
+    "electron:build": "npm run build && cd electron-src && npm run build",
+    "build2": "cd electron-src && npm run build",
+    "electron:build:win": "npm run build && cd electron-src && npm run build:win",
+    "electron:rebuild": "cd electron-src && npm run rebuild",
+    "sbom": "cyclonedx-npm --ignore-npm-errors --output-format JSON --output-file sbom.cdx.json",
+    "sbom:xml": "cyclonedx-npm --ignore-npm-errors --output-format XML --output-file sbom.cdx.xml",
+    "sbom:prod": "cyclonedx-npm --ignore-npm-errors --omit dev --output-format JSON --output-file sbom.prod.cdx.json",
+    "trivy:prod": "trivy sbom sbom.prod.cdx.json -f json -o trivy-report.json"
+  },
+  "devDependencies": {
+    "@cyclonedx/cyclonedx-npm": "^2.1.0",
+    "@reduxjs/toolkit": "^2.11.2",
+    "@types/deasync": "^0.1.5",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.5",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/vscode": "^1.85.0",
+    "javascript-obfuscator": "^4.1.1",
+    "react-scripts": "^5.0.1",
+    "rewire": "^7.0.0",
+    "typescript": "^5.0.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -1,9 +1,0 @@
-{
-    "name": "DAPjs API Documentation",
-    "entryPoints": [
-        "src"
-    ],
-    "excludeExternals": true,
-    "excludePrivate": true,
-    "hideGenerator": true
-}
