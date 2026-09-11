@@ -47,48 +47,54 @@ const P6MF76_addr = 0x20000000 + 0x95
  ****************************/
 
 const connect = async () => {
+    // 已經是connecting的話，直接回報connected
+    if (usbIsConnecting) {
+        postMessage({ 'action': 'connected' });
+        return;
+    }
+
     // 不是connecting的話，取得device instance
-    if (!usbIsConnecting) {
-        const transport = new DAPjs.WebUSB(connDevice, 0xFF, 0x03, 1, true, 1/*debug channel*/);
+    // 抓不到device的話，show disconnect info
+    if (connDevice == undefined) {
+        await disconnect();
+        return;
+    }
 
-        // 抓到device的話，先用Cortex-M的方式連接(NuMicroCM)
-        if (connDevice != undefined) {
-            /* Cortex-M */
-            try {
-                processor = new DAPjs.NuMicroCM(transport, 1000000, 3300);
+    // 抓到device的話，先用Cortex-M的方式連接(NuMicroCM)
+    const transport = new DAPjs.WebUSB(connDevice, 0xFF, 0x03, 1, true, 1/*debug channel*/);
 
-                await processor.connect();
+    /* Cortex-M */
+    try {
+        processor = new DAPjs.NuMicroCM(transport, 1000000, 3300);
 
-                console.log('Cortex-M is connected.');
-                usbIsConnecting = true;
-                bCortexMConnecting = true;
-                postMessage({ 'action': 'connected' });
-            } catch (error) {
-                console.log(error);
-            }
+        await processor.connect();
 
-            // 如果Cortex-M沒有連接成功的話，就用8051的方式連接(NuMicro51)
-            if (!bCortexMConnecting) {
-                /* 8051 */
-                try {
-                    processor = new DAPjs.NuMicro51(transport, 1, 3300);
-                    pidDec = await processor.connect();
+        console.log('Cortex-M is connected.');
+        usbIsConnecting = true;
+        bCortexMConnecting = true;
+        postMessage({ 'action': 'connected' });
+    } catch (error) {
+        console.log(error);
+    }
 
-                    console.log('8051 is connected.');
-                    usbIsConnecting = true;
-                    postMessage({ 'action': 'connected' });
-                } catch (error) {
-                    console.log(error);
-                }
-            }
+    // 如果Cortex-M沒有連接成功的話，就用8051的方式連接(NuMicro51)
+    if (!bCortexMConnecting) {
+        /* 8051 */
+        try {
+            processor = new DAPjs.NuMicro51(transport, 1, 3300);
+            pidDec = await processor.connect();
 
-            // 如果都沒連上，show disconnect info
-            if (!usbIsConnecting) {
-                await disconnect();
-            }
-        } else {
-            await disconnect();
+            console.log('8051 is connected.');
+            usbIsConnecting = true;
+            postMessage({ 'action': 'connected' });
+        } catch (error) {
+            console.log(error);
         }
+    }
+
+    // 如果都沒連上，show disconnect info
+    if (!usbIsConnecting) {
+        await disconnect();
     }
 }
 

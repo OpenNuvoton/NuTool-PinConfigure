@@ -2039,740 +2039,362 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 }
 
 },{}],5:[function(require,module,exports){
-"use strict";
+const DAPjs = require('dapjs');
+const PROCESSOR_TYPE_ARM_CM0 = 'PROCESSOR_TYPE_ARM_CM0';
+const PROCESSOR_TYPE_ARM_CM4 = 'PROCESSOR_TYPE_ARM_CM4';
+const PROCESSOR_TYPE_ARM_CM23 = 'PROCESSOR_TYPE_ARM_CM23'
+const PROCESSOR_TYPE_UNDEFINED = 'PROCESSOR_TYPE_UNDEFINED';
 
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-var DAPjs = require('dapjs');
-var PROCESSOR_TYPE_ARM_CM0 = 'PROCESSOR_TYPE_ARM_CM0';
-var PROCESSOR_TYPE_ARM_CM4 = 'PROCESSOR_TYPE_ARM_CM4';
-var PROCESSOR_TYPE_ARM_CM23 = 'PROCESSOR_TYPE_ARM_CM23';
-var PROCESSOR_TYPE_UNDEFINED = 'PROCESSOR_TYPE_UNDEFINED';
-var processor, proecssorType, baseAddr;
-var usbIsConnecting = false;
-var bCortexMConnecting = false;
-var refreshTimeMS = 0; // 初始值是0，對照html的select
-var connDevice;
-var addrs;
-var pidDec;
-var sfrs_addr = 0x20000000 + 0x91;
-var P0MF10_addr = 0x20000000 + 0xF9;
-var P0MF32_addr = 0x20000000 + 0xFA;
-var P0MF54_addr = 0x20000000 + 0xFB;
-var P0MF76_addr = 0x20000000 + 0xFC;
-var P1MF10_addr = 0x20000000 + 0xFD;
-var P1MF32_addr = 0x20000000 + 0xFE;
-var P1MF54_addr = 0x20000000 + 0xFF;
-var P1MF76_addr = 0x20000000 + 0xF1;
-var P2MF10_addr = 0x20000000 + 0xF2;
-var P2MF32_addr = 0x20000000 + 0xF3;
-var P2MF54_addr = 0x20000000 + 0xF4;
-var P2MF76_addr = 0x20000000 + 0xF5;
-var P3MF10_addr = 0x20000000 + 0xF6;
-var P3MF32_addr = 0x20000000 + 0xF7;
-var P3MF54_addr = 0x20000000 + 0xE9;
-var P3MF76_addr = 0x20000000 + 0xEA;
-var P4MF10_addr = 0x20000000 + 0xEB;
-var P4MF32_addr = 0x20000000 + 0xEC;
-var P4MF54_addr = 0x20000000 + 0xED;
-var P4MF76_addr = 0x20000000 + 0xEE;
-var P5MF10_addr = 0x20000000 + 0xEF;
-var P5MF32_addr = 0x20000000 + 0xE1;
-var P5MF54_addr = 0x20000000 + 0xE2;
-var P5MF76_addr = 0x20000000 + 0xE3;
-var P6MF10_addr = 0x20000000 + 0x92;
-var P6MF32_addr = 0x20000000 + 0x93;
-var P6MF54_addr = 0x20000000 + 0x94;
-var P6MF76_addr = 0x20000000 + 0x95;
+let processor, proecssorType, baseAddr;
+let usbIsConnecting = false;
+let bCortexMConnecting = false;
+let refreshTimeMS = 0;  // 初始值是0，對照html的select
+let connDevice;
+let addrs;
+let pidDec;
+
+const sfrs_addr = 0x20000000 + 0x91
+const P0MF10_addr = 0x20000000 + 0xF9
+const P0MF32_addr = 0x20000000 + 0xFA
+const P0MF54_addr = 0x20000000 + 0xFB
+const P0MF76_addr = 0x20000000 + 0xFC
+const P1MF10_addr = 0x20000000 + 0xFD
+const P1MF32_addr = 0x20000000 + 0xFE
+const P1MF54_addr = 0x20000000 + 0xFF
+const P1MF76_addr = 0x20000000 + 0xF1
+const P2MF10_addr = 0x20000000 + 0xF2
+const P2MF32_addr = 0x20000000 + 0xF3
+const P2MF54_addr = 0x20000000 + 0xF4
+const P2MF76_addr = 0x20000000 + 0xF5
+const P3MF10_addr = 0x20000000 + 0xF6
+const P3MF32_addr = 0x20000000 + 0xF7
+const P3MF54_addr = 0x20000000 + 0xE9
+const P3MF76_addr = 0x20000000 + 0xEA
+const P4MF10_addr = 0x20000000 + 0xEB
+const P4MF32_addr = 0x20000000 + 0xEC
+const P4MF54_addr = 0x20000000 + 0xED
+const P4MF76_addr = 0x20000000 + 0xEE
+const P5MF10_addr = 0x20000000 + 0xEF
+const P5MF32_addr = 0x20000000 + 0xE1
+const P5MF54_addr = 0x20000000 + 0xE2
+const P5MF76_addr = 0x20000000 + 0xE3
+const P6MF10_addr = 0x20000000 + 0x92
+const P6MF32_addr = 0x20000000 + 0x93
+const P6MF54_addr = 0x20000000 + 0x94
+const P6MF76_addr = 0x20000000 + 0x95
 
 /****************************
  * USB Related
  ****************************/
 
-var connect = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var transport;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          if (usbIsConnecting) {
-            _context.next = 37;
-            break;
-          }
-          transport = new DAPjs.WebUSB(connDevice, 0xFF, 0x03, 1, true, 1 /*debug channel*/); // 抓到device的話，先用Cortex-M的方式連接(NuMicroCM)
-          if (!(connDevice != undefined)) {
-            _context.next = 35;
-            break;
-          }
-          _context.prev = 3;
-          processor = new DAPjs.NuMicroCM(transport, 1000000, 3300);
-          _context.next = 7;
-          return processor.connect();
-        case 7:
-          console.log('Cortex-M is connected.');
-          usbIsConnecting = true;
-          bCortexMConnecting = true;
-          postMessage({
-            'action': 'connected'
-          });
-          _context.next = 16;
-          break;
-        case 13:
-          _context.prev = 13;
-          _context.t0 = _context["catch"](3);
-          console.log(_context.t0);
-        case 16:
-          if (bCortexMConnecting) {
-            _context.next = 30;
-            break;
-          }
-          _context.prev = 17;
-          processor = new DAPjs.NuMicro51(transport, 1, 3300);
-          _context.next = 21;
-          return processor.connect();
-        case 21:
-          pidDec = _context.sent;
-          console.log('8051 is connected.');
-          usbIsConnecting = true;
-          postMessage({
-            'action': 'connected'
-          });
-          _context.next = 30;
-          break;
-        case 27:
-          _context.prev = 27;
-          _context.t1 = _context["catch"](17);
-          console.log(_context.t1);
-        case 30:
-          if (usbIsConnecting) {
-            _context.next = 33;
-            break;
-          }
-          _context.next = 33;
-          return disconnect();
-        case 33:
-          _context.next = 37;
-          break;
-        case 35:
-          _context.next = 37;
-          return disconnect();
-        case 37:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee, null, [[3, 13], [17, 27]]);
-  }));
-  return function connect() {
-    return _ref.apply(this, arguments);
-  };
-}();
-var getPIDValue = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-    var pidValue;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.prev = 0;
-          if (!bCortexMConnecting) {
-            _context2.next = 12;
-            break;
-          }
-          _context2.next = 4;
-          return getProecssorType();
-        case 4:
-          proecssorType = _context2.sent;
-          _context2.next = 7;
-          return getBaseAddress(proecssorType);
-        case 7:
-          baseAddr = _context2.sent;
-          _context2.next = 10;
-          return getPID(baseAddr).then(function (result) {
-            var pidValue = '0x' + ('00000000' + result.toString(16).toUpperCase()).slice(-8);
-            postMessage({
-              'action': 'returnPIDValue',
-              'value': pidValue
-            });
-          });
-        case 10:
-          _context2.next = 22;
-          break;
-        case 12:
-          _context2.prev = 12;
-          pidValue = '0x' + ('00000000' + pidDec.toString(16).toUpperCase()).slice(-8);
-          postMessage({
-            'action': 'returnPIDValue',
-            'value': pidValue
-          });
-          _context2.next = 22;
-          break;
-        case 17:
-          _context2.prev = 17;
-          _context2.t0 = _context2["catch"](12);
-          console.log(_context2.t0);
-          _context2.next = 22;
-          return disconnect();
-        case 22:
-          _context2.next = 29;
-          break;
-        case 24:
-          _context2.prev = 24;
-          _context2.t1 = _context2["catch"](0);
-          console.log(_context2.t1);
-          _context2.next = 29;
-          return disconnect();
-        case 29:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2, null, [[0, 24], [12, 17]]);
-  }));
-  return function getPIDValue() {
-    return _ref2.apply(this, arguments);
-  };
-}();
-var getRegisterValue = /*#__PURE__*/function () {
-  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
-    var showing_buffer, result, i, value, obj, sfs_data, value_P0MF10, value_P0MF32, value_P0MF54, value_P0MF76, value_P1MF10, value_P1MF32, value_P1MF54, value_P1MF76, value_P2MF10, value_P2MF32, value_P2MF54, value_P2MF76, value_P3MF10, value_P3MF32, value_P3MF54, value_P3MF76, value_P4MF10, value_P4MF32, value_P4MF54, value_P4MF76, value_P5MF10, value_P5MF32, value_P5MF54, value_P5MF76, value_P6MF10, value_P6MF32, value_P6MF54, value_P6MF76;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
-        case 0:
-          _context3.prev = 0;
-          showing_buffer = [];
-          if (!bCortexMConnecting) {
-            _context3.next = 32;
-            break;
-          }
-          _context3.prev = 3;
-          _context3.next = 6;
-          return processor.resume();
-        case 6:
-          result = [];
-          i = 0;
-        case 8:
-          if (!(i < addrs.length)) {
-            _context3.next = 20;
-            break;
-          }
-          _context3.next = 11;
-          return processor.readBlock(0x00000000 + Number(addrs[i]), 1);
-        case 11:
-          showing_buffer = _context3.sent;
-          value = ('00000000' + showing_buffer[0].toString(16)).slice(-8);
-          obj = {};
-          obj["".concat(addrs[i])] = value;
-          console.log("".concat(addrs[i], ", ").concat(value));
-          result.push(obj);
-        case 17:
-          i++;
-          _context3.next = 8;
-          break;
-        case 20:
-          postMessage({
-            'action': 'returnRegisterValue',
-            'result': result,
-            'type': 'CortexM'
-          });
-          _context3.next = 23;
-          return disconnect();
-        case 23:
-          _context3.next = 30;
-          break;
-        case 25:
-          _context3.prev = 25;
-          _context3.t0 = _context3["catch"](3);
-          console.log(_context3.t0);
-          _context3.next = 30;
-          return disconnect();
-        case 30:
-          _context3.next = 205;
-          break;
-        case 32:
-          _context3.prev = 32;
-          sfs_data = [0, 2];
-          _context3.next = 36;
-          return processor.resume();
-        case 36:
-          _context3.next = 38;
-          return new Promise(function (r) {
-            return setTimeout(r, 1000);
-          });
-        case 38:
-          _context3.next = 40;
-          return processor.halt();
-        case 40:
-          _context3.next = 42;
-          return processor.readMem8(sfrs_addr);
-        case 42:
-          sfs_data[0] = _context3.sent;
-          _context3.next = 45;
-          return processor.writeMem8(sfrs_addr, sfs_data[1]);
-        case 45:
-          _context3.t1 = registerValueToHex;
-          _context3.next = 48;
-          return processor.readMem8(P0MF10_addr);
-        case 48:
-          _context3.t2 = _context3.sent;
-          value_P0MF10 = (0, _context3.t1)(_context3.t2);
-          _context3.t3 = registerValueToHex;
-          _context3.next = 53;
-          return processor.readMem8(P0MF32_addr);
-        case 53:
-          _context3.t4 = _context3.sent;
-          value_P0MF32 = (0, _context3.t3)(_context3.t4);
-          _context3.t5 = registerValueToHex;
-          _context3.next = 58;
-          return processor.readMem8(P0MF54_addr);
-        case 58:
-          _context3.t6 = _context3.sent;
-          value_P0MF54 = (0, _context3.t5)(_context3.t6);
-          _context3.t7 = registerValueToHex;
-          _context3.next = 63;
-          return processor.readMem8(P0MF76_addr);
-        case 63:
-          _context3.t8 = _context3.sent;
-          value_P0MF76 = (0, _context3.t7)(_context3.t8);
-          _context3.t9 = registerValueToHex;
-          _context3.next = 68;
-          return processor.readMem8(P1MF10_addr);
-        case 68:
-          _context3.t10 = _context3.sent;
-          value_P1MF10 = (0, _context3.t9)(_context3.t10);
-          _context3.t11 = registerValueToHex;
-          _context3.next = 73;
-          return processor.readMem8(P1MF32_addr);
-        case 73:
-          _context3.t12 = _context3.sent;
-          value_P1MF32 = (0, _context3.t11)(_context3.t12);
-          _context3.t13 = registerValueToHex;
-          _context3.next = 78;
-          return processor.readMem8(P1MF54_addr);
-        case 78:
-          _context3.t14 = _context3.sent;
-          value_P1MF54 = (0, _context3.t13)(_context3.t14);
-          _context3.t15 = registerValueToHex;
-          _context3.next = 83;
-          return processor.readMem8(P1MF76_addr);
-        case 83:
-          _context3.t16 = _context3.sent;
-          value_P1MF76 = (0, _context3.t15)(_context3.t16);
-          _context3.t17 = registerValueToHex;
-          _context3.next = 88;
-          return processor.readMem8(P2MF10_addr);
-        case 88:
-          _context3.t18 = _context3.sent;
-          value_P2MF10 = (0, _context3.t17)(_context3.t18);
-          _context3.t19 = registerValueToHex;
-          _context3.next = 93;
-          return processor.readMem8(P2MF32_addr);
-        case 93:
-          _context3.t20 = _context3.sent;
-          value_P2MF32 = (0, _context3.t19)(_context3.t20);
-          _context3.t21 = registerValueToHex;
-          _context3.next = 98;
-          return processor.readMem8(P2MF54_addr);
-        case 98:
-          _context3.t22 = _context3.sent;
-          value_P2MF54 = (0, _context3.t21)(_context3.t22);
-          _context3.t23 = registerValueToHex;
-          _context3.next = 103;
-          return processor.readMem8(P2MF76_addr);
-        case 103:
-          _context3.t24 = _context3.sent;
-          value_P2MF76 = (0, _context3.t23)(_context3.t24);
-          _context3.t25 = registerValueToHex;
-          _context3.next = 108;
-          return processor.readMem8(P3MF10_addr);
-        case 108:
-          _context3.t26 = _context3.sent;
-          value_P3MF10 = (0, _context3.t25)(_context3.t26);
-          _context3.t27 = registerValueToHex;
-          _context3.next = 113;
-          return processor.readMem8(P3MF32_addr);
-        case 113:
-          _context3.t28 = _context3.sent;
-          value_P3MF32 = (0, _context3.t27)(_context3.t28);
-          _context3.t29 = registerValueToHex;
-          _context3.next = 118;
-          return processor.readMem8(P3MF54_addr);
-        case 118:
-          _context3.t30 = _context3.sent;
-          value_P3MF54 = (0, _context3.t29)(_context3.t30);
-          _context3.t31 = registerValueToHex;
-          _context3.next = 123;
-          return processor.readMem8(P3MF76_addr);
-        case 123:
-          _context3.t32 = _context3.sent;
-          value_P3MF76 = (0, _context3.t31)(_context3.t32);
-          _context3.t33 = registerValueToHex;
-          _context3.next = 128;
-          return processor.readMem8(P4MF10_addr);
-        case 128:
-          _context3.t34 = _context3.sent;
-          value_P4MF10 = (0, _context3.t33)(_context3.t34);
-          _context3.t35 = registerValueToHex;
-          _context3.next = 133;
-          return processor.readMem8(P4MF32_addr);
-        case 133:
-          _context3.t36 = _context3.sent;
-          value_P4MF32 = (0, _context3.t35)(_context3.t36);
-          _context3.t37 = registerValueToHex;
-          _context3.next = 138;
-          return processor.readMem8(P4MF54_addr);
-        case 138:
-          _context3.t38 = _context3.sent;
-          value_P4MF54 = (0, _context3.t37)(_context3.t38);
-          _context3.t39 = registerValueToHex;
-          _context3.next = 143;
-          return processor.readMem8(P4MF76_addr);
-        case 143:
-          _context3.t40 = _context3.sent;
-          value_P4MF76 = (0, _context3.t39)(_context3.t40);
-          _context3.t41 = registerValueToHex;
-          _context3.next = 148;
-          return processor.readMem8(P5MF10_addr);
-        case 148:
-          _context3.t42 = _context3.sent;
-          value_P5MF10 = (0, _context3.t41)(_context3.t42);
-          _context3.t43 = registerValueToHex;
-          _context3.next = 153;
-          return processor.readMem8(P5MF32_addr);
-        case 153:
-          _context3.t44 = _context3.sent;
-          value_P5MF32 = (0, _context3.t43)(_context3.t44);
-          _context3.t45 = registerValueToHex;
-          _context3.next = 158;
-          return processor.readMem8(P5MF54_addr);
-        case 158:
-          _context3.t46 = _context3.sent;
-          value_P5MF54 = (0, _context3.t45)(_context3.t46);
-          _context3.t47 = registerValueToHex;
-          _context3.next = 163;
-          return processor.readMem8(P5MF76_addr);
-        case 163:
-          _context3.t48 = _context3.sent;
-          value_P5MF76 = (0, _context3.t47)(_context3.t48);
-          _context3.t49 = registerValueToHex;
-          _context3.next = 168;
-          return processor.readMem8(P6MF10_addr);
-        case 168:
-          _context3.t50 = _context3.sent;
-          value_P6MF10 = (0, _context3.t49)(_context3.t50);
-          _context3.t51 = registerValueToHex;
-          _context3.next = 173;
-          return processor.readMem8(P6MF32_addr);
-        case 173:
-          _context3.t52 = _context3.sent;
-          value_P6MF32 = (0, _context3.t51)(_context3.t52);
-          _context3.t53 = registerValueToHex;
-          _context3.next = 178;
-          return processor.readMem8(P6MF54_addr);
-        case 178:
-          _context3.t54 = _context3.sent;
-          value_P6MF54 = (0, _context3.t53)(_context3.t54);
-          _context3.t55 = registerValueToHex;
-          _context3.next = 183;
-          return processor.readMem8(P6MF76_addr);
-        case 183:
-          _context3.t56 = _context3.sent;
-          value_P6MF76 = (0, _context3.t55)(_context3.t56);
-          _context3.next = 187;
-          return processor.writeMem8(sfrs_addr, sfs_data[0]);
-        case 187:
-          _context3.next = 189;
-          return processor.resume();
-        case 189:
-          postMessage({
-            'action': 'returnRegisterValue',
-            'register': 'P0MF76543210',
-            'type': '8051',
-            'value': "".concat(value_P0MF76).concat(value_P0MF54).concat(value_P0MF32).concat(value_P0MF10)
-          });
-          postMessage({
-            'action': 'returnRegisterValue',
-            'register': 'P1MF76543210',
-            'type': '8051',
-            'value': "".concat(value_P1MF76).concat(value_P1MF54).concat(value_P1MF32).concat(value_P1MF10)
-          });
-          postMessage({
-            'action': 'returnRegisterValue',
-            'register': 'P2MF76543210',
-            'type': '8051',
-            'value': "".concat(value_P2MF76).concat(value_P2MF54).concat(value_P2MF32).concat(value_P2MF10)
-          });
-          postMessage({
-            'action': 'returnRegisterValue',
-            'register': 'P3MF76543210',
-            'type': '8051',
-            'value': "".concat(value_P3MF76).concat(value_P3MF54).concat(value_P3MF32).concat(value_P3MF10)
-          });
-          postMessage({
-            'action': 'returnRegisterValue',
-            'register': 'P4MF76543210',
-            'type': '8051',
-            'value': "".concat(value_P4MF76).concat(value_P4MF54).concat(value_P4MF32).concat(value_P4MF10)
-          });
-          postMessage({
-            'action': 'returnRegisterValue',
-            'register': 'P5MF76543210',
-            'type': '8051',
-            'value': "".concat(value_P5MF76).concat(value_P5MF54).concat(value_P5MF32).concat(value_P5MF10)
-          });
-          postMessage({
-            'action': 'returnRegisterValue',
-            'register': 'P6MF76543210',
-            'type': '8051',
-            'value': "".concat(value_P6MF76).concat(value_P6MF54).concat(value_P6MF32).concat(value_P6MF10)
-          });
-          _context3.next = 198;
-          return disconnect();
-        case 198:
-          _context3.next = 205;
-          break;
-        case 200:
-          _context3.prev = 200;
-          _context3.t57 = _context3["catch"](32);
-          console.log(_context3.t57);
-          _context3.next = 205;
-          return disconnect();
-        case 205:
-          _context3.next = 207;
-          return new Promise(function (r) {
-            return setTimeout(r, refreshTimeMS);
-          });
-        case 207:
-          _context3.next = 212;
-          break;
-        case 209:
-          _context3.prev = 209;
-          _context3.t58 = _context3["catch"](0);
-          console.log(_context3.t58);
-        case 212:
-        case "end":
-          return _context3.stop();
-      }
-    }, _callee3, null, [[0, 209], [3, 25], [32, 200]]);
-  }));
-  return function getRegisterValue() {
-    return _ref3.apply(this, arguments);
-  };
-}();
-var disconnect = /*#__PURE__*/function () {
-  var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4() {
-    return _regeneratorRuntime().wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
-        case 0:
-          processor = undefined;
-          proecssorType = undefined;
-          baseAddr = undefined;
-          usbIsConnecting = false;
-          bCortexMConnecting = false;
-          postMessage({
-            'action': 'disconnect'
-          });
-        case 6:
-        case "end":
-          return _context4.stop();
-      }
-    }, _callee4);
-  }));
-  return function disconnect() {
-    return _ref4.apply(this, arguments);
-  };
-}();
-var getProecssorType = /*#__PURE__*/function () {
-  var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5() {
-    var uPartNo;
-    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
-        case 0:
-          _context5.next = 2;
-          return processor.readMem32(0xE000ED00).then(function (result) {
-            uPartNo = (('0x' + result.toString(16) & 0x0000FFF0) >> 4).toString(16).toUpperCase();
-          });
-        case 2:
-          _context5.t0 = uPartNo;
-          _context5.next = _context5.t0 === 'C20' ? 5 : _context5.t0 === 'C24' ? 6 : _context5.t0 === 'D20' ? 7 : 8;
-          break;
-        case 5:
-          return _context5.abrupt("return", PROCESSOR_TYPE_ARM_CM0);
-        case 6:
-          return _context5.abrupt("return", PROCESSOR_TYPE_ARM_CM4);
-        case 7:
-          return _context5.abrupt("return", PROCESSOR_TYPE_ARM_CM23);
-        case 8:
-          return _context5.abrupt("return", PROCESSOR_TYPE_UNDEFINED);
-        case 9:
-        case "end":
-          return _context5.stop();
-      }
-    }, _callee5);
-  }));
-  return function getProecssorType() {
-    return _ref5.apply(this, arguments);
-  };
-}();
-var getBaseAddress = /*#__PURE__*/function () {
-  var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee6(proecssorType) {
-    var baseAddr;
-    return _regeneratorRuntime().wrap(function _callee6$(_context6) {
-      while (1) switch (_context6.prev = _context6.next) {
-        case 0:
-          _context6.t0 = proecssorType;
-          _context6.next = _context6.t0 === PROCESSOR_TYPE_ARM_CM0 ? 3 : _context6.t0 === PROCESSOR_TYPE_ARM_CM4 ? 12 : _context6.t0 === PROCESSOR_TYPE_ARM_CM23 ? 14 : 23;
-          break;
-        case 3:
-          baseAddr = 0x50000000;
-          _context6.prev = 4;
-          _context6.next = 7;
-          return processor.readMem32(0x40003FFC).then(function (result) {
-            if (result.toString(16) == '20171011') {
-              baseAddr = 0x40000000;
-            }
-          });
-        case 7:
-          _context6.next = 11;
-          break;
-        case 9:
-          _context6.prev = 9;
-          _context6.t1 = _context6["catch"](4);
-        case 11:
-          return _context6.abrupt("break", 24);
-        case 12:
-          baseAddr = 0x40000000;
-          return _context6.abrupt("break", 24);
-        case 14:
-          baseAddr = 0x40000000;
-          _context6.prev = 15;
-          _context6.next = 18;
-          return processor.readMem32(0x50003FFC).then(function (result) {
-            if (result.toString(16) == '20201130') {
-              baseAddr = 0x50000000;
-            }
-          });
-        case 18:
-          _context6.next = 22;
-          break;
-        case 20:
-          _context6.prev = 20;
-          _context6.t2 = _context6["catch"](15);
-        case 22:
-          return _context6.abrupt("break", 24);
-        case 23:
-          throw 'getBaseAddress() Unsupported processor type!';
-        case 24:
-          return _context6.abrupt("return", baseAddr);
-        case 25:
-        case "end":
-          return _context6.stop();
-      }
-    }, _callee6, null, [[4, 9], [15, 20]]);
-  }));
-  return function getBaseAddress(_x) {
-    return _ref6.apply(this, arguments);
-  };
-}();
-var getPID = /*#__PURE__*/function () {
-  var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee7(baseAddr) {
-    return _regeneratorRuntime().wrap(function _callee7$(_context7) {
-      while (1) switch (_context7.prev = _context7.next) {
-        case 0:
-          return _context7.abrupt("return", processor.readMem32(REG_SYS_PDID_ADDR(baseAddr)));
-        case 1:
-        case "end":
-          return _context7.stop();
-      }
-    }, _callee7);
-  }));
-  return function getPID(_x2) {
-    return _ref7.apply(this, arguments);
-  };
-}();
-function REG_SYS_PDID_ADDR(BASE) {
-  return BASE + 0x00000;
+const connect = async () => {
+    // 已經是connecting的話，直接回報connected
+    if (usbIsConnecting) {
+        postMessage({ 'action': 'connected' });
+        return;
+    }
+
+    // 不是connecting的話，取得device instance
+    // 抓不到device的話，show disconnect info
+    if (connDevice == undefined) {
+        await disconnect();
+        return;
+    }
+
+    // 抓到device的話，先用Cortex-M的方式連接(NuMicroCM)
+    const transport = new DAPjs.WebUSB(connDevice, 0xFF, 0x03, 1, true, 1/*debug channel*/);
+
+    /* Cortex-M */
+    try {
+        processor = new DAPjs.NuMicroCM(transport, 1000000, 3300);
+
+        await processor.connect();
+
+        console.log('Cortex-M is connected.');
+        usbIsConnecting = true;
+        bCortexMConnecting = true;
+        postMessage({ 'action': 'connected' });
+    } catch (error) {
+        console.log(error);
+    }
+
+    // 如果Cortex-M沒有連接成功的話，就用8051的方式連接(NuMicro51)
+    if (!bCortexMConnecting) {
+        /* 8051 */
+        try {
+            processor = new DAPjs.NuMicro51(transport, 1, 3300);
+            pidDec = await processor.connect();
+
+            console.log('8051 is connected.');
+            usbIsConnecting = true;
+            postMessage({ 'action': 'connected' });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // 如果都沒連上，show disconnect info
+    if (!usbIsConnecting) {
+        await disconnect();
+    }
 }
+
+const getPIDValue = async () => {
+    try {
+        if (bCortexMConnecting) {
+            proecssorType = await getProecssorType();
+            baseAddr = await getBaseAddress(proecssorType);
+            await getPID(baseAddr).then(function (result) {
+                let pidValue = '0x' + ('00000000' + result.toString(16).toUpperCase()).slice(-8);
+                postMessage({ 'action': 'returnPIDValue', 'value': pidValue });
+            });
+        } else {
+            /* 8051 */
+            try {
+                let pidValue = '0x' + ('00000000' + pidDec.toString(16).toUpperCase()).slice(-8);
+                postMessage({ 'action': 'returnPIDValue', 'value': pidValue });
+            } catch (error) {
+                console.log(error);
+                await disconnect();
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        await disconnect();
+    }
+}
+
+const getRegisterValue = async () => {
+    // 目前已經是connecting狀態，所以直接讀值
+    try {
+        let showing_buffer = [];
+
+        if (bCortexMConnecting) {
+            /* Cortex-M */
+            try {
+                await processor.resume();
+
+                let result = [];
+                for (let i = 0; i < addrs.length; i++) {
+                    showing_buffer = await processor.readBlock(0x00000000 + Number(addrs[i]), 1);
+                    let value = ('00000000' + showing_buffer[0].toString(16)).slice(-8);
+                    var obj = {};
+                    obj[`${addrs[i]}`] = value;
+                    console.log(`${addrs[i]}, ${value}`);
+                    result.push(obj);
+                }
+                postMessage({ 'action': 'returnRegisterValue', 'result': result, 'type': 'CortexM' });
+                await disconnect();
+            } catch (error) {
+                console.log(error);
+                await disconnect();
+            }
+        } else {
+            /* 8051 */
+            try {
+                let sfs_data = [0, 2];
+
+                await processor.resume();
+                await new Promise(r => setTimeout(r, 1000));
+                await processor.halt();
+
+                // 先記錄原先sfrs的值
+                sfs_data[0] = await processor.readMem8(sfrs_addr);
+                // 因為要讀取GPIO register，所以要改成2 (詳見TRM - 6.2 SFRs Memory Mapping)
+                await processor.writeMem8(sfrs_addr, sfs_data[1]);
+
+                let value_P0MF10 = registerValueToHex(await processor.readMem8(P0MF10_addr));
+                let value_P0MF32 = registerValueToHex(await processor.readMem8(P0MF32_addr));
+                let value_P0MF54 = registerValueToHex(await processor.readMem8(P0MF54_addr));
+                let value_P0MF76 = registerValueToHex(await processor.readMem8(P0MF76_addr));
+                // console.log("P0M:" + value_P0MF76 + value_P0MF54 + value_P0MF32 + value_P0MF10);
+                let value_P1MF10 = registerValueToHex(await processor.readMem8(P1MF10_addr));
+                let value_P1MF32 = registerValueToHex(await processor.readMem8(P1MF32_addr));
+                let value_P1MF54 = registerValueToHex(await processor.readMem8(P1MF54_addr));
+                let value_P1MF76 = registerValueToHex(await processor.readMem8(P1MF76_addr));
+                // console.log("P1M:" + value_P1MF76 + value_P1MF54 + value_P1MF32 + value_P1MF10);
+                let value_P2MF10 = registerValueToHex(await processor.readMem8(P2MF10_addr));
+                let value_P2MF32 = registerValueToHex(await processor.readMem8(P2MF32_addr));
+                let value_P2MF54 = registerValueToHex(await processor.readMem8(P2MF54_addr));
+                let value_P2MF76 = registerValueToHex(await processor.readMem8(P2MF76_addr));
+                // console.log("P2M:" + value_P2MF76 + value_P2MF54 + value_P2MF32 + value_P2MF10);
+                let value_P3MF10 = registerValueToHex(await processor.readMem8(P3MF10_addr));
+                let value_P3MF32 = registerValueToHex(await processor.readMem8(P3MF32_addr));
+                let value_P3MF54 = registerValueToHex(await processor.readMem8(P3MF54_addr));
+                let value_P3MF76 = registerValueToHex(await processor.readMem8(P3MF76_addr));
+                // console.log("P3M:" + value_P3MF76 + value_P3MF54 + value_P3MF32 + value_P3MF10);
+                let value_P4MF10 = registerValueToHex(await processor.readMem8(P4MF10_addr));
+                let value_P4MF32 = registerValueToHex(await processor.readMem8(P4MF32_addr));
+                let value_P4MF54 = registerValueToHex(await processor.readMem8(P4MF54_addr));
+                let value_P4MF76 = registerValueToHex(await processor.readMem8(P4MF76_addr));
+                // console.log("P4M:" + value_P4MF76 + value_P4MF54 + value_P4MF32 + value_P4MF10);
+                let value_P5MF10 = registerValueToHex(await processor.readMem8(P5MF10_addr));
+                let value_P5MF32 = registerValueToHex(await processor.readMem8(P5MF32_addr));
+                let value_P5MF54 = registerValueToHex(await processor.readMem8(P5MF54_addr));
+                let value_P5MF76 = registerValueToHex(await processor.readMem8(P5MF76_addr));
+                // console.log("P5M:" + value_P5MF76 + value_P5MF54 + value_P5MF32 + value_P5MF10);
+                let value_P6MF10 = registerValueToHex(await processor.readMem8(P6MF10_addr));
+                let value_P6MF32 = registerValueToHex(await processor.readMem8(P6MF32_addr));
+                let value_P6MF54 = registerValueToHex(await processor.readMem8(P6MF54_addr));
+                let value_P6MF76 = registerValueToHex(await processor.readMem8(P6MF76_addr));
+                // console.log("P6M:" + value_P6MF76 + value_P6MF54 + value_P6MF32 + value_P6MF10);
+
+                // 把sfrs原先的值寫回去
+                await processor.writeMem8(sfrs_addr, sfs_data[0]);
+
+                await processor.resume();
+
+                postMessage({
+                    'action': 'returnRegisterValue', 'register': 'P0MF76543210', 'type': '8051',
+                    'value': `${value_P0MF76}${value_P0MF54}${value_P0MF32}${value_P0MF10}`
+                });
+                postMessage({
+                    'action': 'returnRegisterValue', 'register': 'P1MF76543210', 'type': '8051',
+                    'value': `${value_P1MF76}${value_P1MF54}${value_P1MF32}${value_P1MF10}`
+                });
+                postMessage({
+                    'action': 'returnRegisterValue', 'register': 'P2MF76543210', 'type': '8051',
+                    'value': `${value_P2MF76}${value_P2MF54}${value_P2MF32}${value_P2MF10}`
+                });
+                postMessage({
+                    'action': 'returnRegisterValue', 'register': 'P3MF76543210', 'type': '8051',
+                    'value': `${value_P3MF76}${value_P3MF54}${value_P3MF32}${value_P3MF10}`
+                });
+                postMessage({
+                    'action': 'returnRegisterValue', 'register': 'P4MF76543210', 'type': '8051',
+                    'value': `${value_P4MF76}${value_P4MF54}${value_P4MF32}${value_P4MF10}`
+                });
+                postMessage({
+                    'action': 'returnRegisterValue', 'register': 'P5MF76543210', 'type': '8051',
+                    'value': `${value_P5MF76}${value_P5MF54}${value_P5MF32}${value_P5MF10}`
+                });
+                postMessage({
+                    'action': 'returnRegisterValue', 'register': 'P6MF76543210', 'type': '8051',
+                    'value': `${value_P6MF76}${value_P6MF54}${value_P6MF32}${value_P6MF10}`
+                });
+
+                await disconnect();
+                // 因為需要處理halt/resume，所以8051不能像Cortex一樣頻繁存取
+                // await new Promise(r => setTimeout(r, refreshTimeMS > 200 ? 0 : 200 - refreshTimeMS)); // refreshTimeMS超過200ms，則不用特別再等200ms
+            } catch (error) {
+                console.log(error);
+                await disconnect();
+            }
+        }
+        // Setting from renderer Main.js
+        await new Promise(r => setTimeout(r, refreshTimeMS));
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+const disconnect = async () => {
+    processor = undefined;
+    proecssorType = undefined;
+    baseAddr = undefined;
+    usbIsConnecting = false;
+    bCortexMConnecting = false;
+    postMessage({ 'action': 'disconnect' });
+}
+
+const getProecssorType = async () => {
+    let uPartNo;
+    await processor.readMem32(0xE000ED00).then(function (result) {
+        uPartNo = ((('0x' + result.toString(16)) & 0x0000FFF0) >> 4).toString(16).toUpperCase();
+    });
+    switch (uPartNo) {
+        case 'C20':
+            return PROCESSOR_TYPE_ARM_CM0;
+        case 'C24':
+            return PROCESSOR_TYPE_ARM_CM4;
+        case 'D20':
+            return PROCESSOR_TYPE_ARM_CM23;
+    }
+
+    return PROCESSOR_TYPE_UNDEFINED;
+}
+
+const getBaseAddress = async (proecssorType) => {
+    let baseAddr;
+    switch (proecssorType) {
+        case PROCESSOR_TYPE_ARM_CM0:
+            baseAddr = 0x50000000;
+            try {
+                await processor.readMem32(0x40003FFC).then(function (result) {
+                    if ((result).toString(16) == '20171011') {
+                        baseAddr = 0x40000000;
+                    }
+                  });
+            }
+            catch (error) {
+            }
+            break;
+        case PROCESSOR_TYPE_ARM_CM4:
+            baseAddr = 0x40000000;
+            break;
+        case PROCESSOR_TYPE_ARM_CM23:
+            baseAddr = 0x40000000;
+            try {
+                await processor.readMem32(0x50003FFC).then(function (result) {
+                    if ((result).toString(16) == '20201130') {
+                        baseAddr = 0x50000000;
+                    }
+                });
+            }
+            catch (error) {
+            }
+            break;
+        default:
+            throw ('getBaseAddress() Unsupported processor type!')
+    }
+    return baseAddr;
+}
+
+const getPID = async (baseAddr) => {
+    return processor.readMem32(REG_SYS_PDID_ADDR(baseAddr));
+}
+
+function REG_SYS_PDID_ADDR(BASE) {
+    return (BASE) + 0x00000;
+}
+
 function registerValueToHex(value) {
-  return ('00' + value.toString(16)).slice(-2);
+    return ('00' + value.toString(16)).slice(-2);
 }
 
 /*******************************************
  * message Related
  *******************************************/
 
-onmessage = /*#__PURE__*/function () {
-  var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(e) {
-    var action, data;
-    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
-      while (1) switch (_context8.prev = _context8.next) {
-        case 0:
-          action = e.data.action;
-          data = e.data.data;
-          if (!(action == 'connect')) {
-            _context8.next = 9;
-            break;
-          }
-          console.log('worker: connect');
-          // 因為connDevice無法透過message傳過來，所以在這邊重新get
-          _context8.next = 6;
-          return navigator.usb.getDevices().then(function (devices) {
-            console.log("Total devices: ".concat(devices.length));
-            devices.forEach(function (device) {
-              connDevice = device;
+onmessage = async (e) => {
+    let action = e.data.action;
+    let data = e.data.data;
+    if (action == 'connect') {
+        console.log('worker: connect');
+        // 因為connDevice無法透過message傳過來，所以在這邊重新get
+        await navigator.usb.getDevices().then((devices) => {
+            console.log(`Total devices: ${devices.length}`);
+            devices.forEach((device) => {
+                connDevice = device;
             });
-          })["catch"](function (error) {
+        }).catch(error => {
             console.log(error);
             connDevice = undefined;
-          });
-        case 6:
-          connect();
-          _context8.next = 27;
-          break;
-        case 9:
-          if (!(action == 'getPIDValue')) {
-            _context8.next = 14;
-            break;
-          }
-          console.log('worker: getPIDValue');
-          getPIDValue();
-          _context8.next = 27;
-          break;
-        case 14:
-          if (!(action == 'getMFPValues')) {
-            _context8.next = 20;
-            break;
-          }
-          console.log('worker: getMFPValues');
-          getRegisterValue();
-          addrs = data;
-          _context8.next = 27;
-          break;
-        case 20:
-          if (!(action == 'connectComplete')) {
-            _context8.next = 26;
-            break;
-          }
-          console.log('worker: connectComplete');
-          _context8.next = 24;
-          return disconnect();
-        case 24:
-          _context8.next = 27;
-          break;
-        case 26:
-          if (action == 'setRefreshTime') {
-            // TODO: not checked yet
-            console.log('setRefreshTime');
-            refreshTimeMS = data;
-          }
-        case 27:
-        case "end":
-          return _context8.stop();
-      }
-    }, _callee8);
-  }));
-  return function onmessage(_x3) {
-    return _ref8.apply(this, arguments);
-  };
-}();
-
+        });
+        connect();
+    } else if (action == 'getPIDValue') {
+        console.log('worker: getPIDValue');
+        getPIDValue();
+    } else if (action == 'getMFPValues') {
+        console.log('worker: getMFPValues');
+        getRegisterValue();
+        addrs = data;
+    } else if (action == 'connectComplete') {
+        console.log('worker: connectComplete');
+        await disconnect();
+    } else if (action == 'setRefreshTime') {    // TODO: not checked yet
+        console.log('setRefreshTime');
+        refreshTimeMS = data;
+    }
+}
 },{"dapjs":1}]},{},[5]);
