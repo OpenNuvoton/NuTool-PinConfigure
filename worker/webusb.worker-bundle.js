@@ -2042,7 +2042,9 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 const DAPjs = require('dapjs');
 const PROCESSOR_TYPE_ARM_CM0 = 'PROCESSOR_TYPE_ARM_CM0';
 const PROCESSOR_TYPE_ARM_CM4 = 'PROCESSOR_TYPE_ARM_CM4';
-const PROCESSOR_TYPE_ARM_CM23 = 'PROCESSOR_TYPE_ARM_CM23'
+const PROCESSOR_TYPE_ARM_CM55 = 'PROCESSOR_TYPE_ARM_CM55';
+const PROCESSOR_TYPE_ARM_CM23 = 'PROCESSOR_TYPE_ARM_CM23';
+const PROCESSOR_TYPE_ARM_CM33 = 'PROCESSOR_TYPE_ARM_CM33';
 const PROCESSOR_TYPE_UNDEFINED = 'PROCESSOR_TYPE_UNDEFINED';
 
 let processor, proecssorType, baseAddr;
@@ -2088,54 +2090,48 @@ const P6MF76_addr = 0x20000000 + 0x95
  ****************************/
 
 const connect = async () => {
-    // 已經是connecting的話，直接回報connected
-    if (usbIsConnecting) {
-        postMessage({ 'action': 'connected' });
-        return;
-    }
-
     // 不是connecting的話，取得device instance
-    // 抓不到device的話，show disconnect info
-    if (connDevice == undefined) {
-        await disconnect();
-        return;
-    }
-
-    // 抓到device的話，先用Cortex-M的方式連接(NuMicroCM)
-    const transport = new DAPjs.WebUSB(connDevice, 0xFF, 0x03, 1, true, 1/*debug channel*/);
-
-    /* Cortex-M */
-    try {
-        processor = new DAPjs.NuMicroCM(transport, 1000000, 3300);
-
-        await processor.connect();
-
-        console.log('Cortex-M is connected.');
-        usbIsConnecting = true;
-        bCortexMConnecting = true;
-        postMessage({ 'action': 'connected' });
-    } catch (error) {
-        console.log(error);
-    }
-
-    // 如果Cortex-M沒有連接成功的話，就用8051的方式連接(NuMicro51)
-    if (!bCortexMConnecting) {
-        /* 8051 */
-        try {
-            processor = new DAPjs.NuMicro51(transport, 1, 3300);
-            pidDec = await processor.connect();
-
-            console.log('8051 is connected.');
-            usbIsConnecting = true;
-            postMessage({ 'action': 'connected' });
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    // 如果都沒連上，show disconnect info
     if (!usbIsConnecting) {
-        await disconnect();
+        const transport = new DAPjs.WebUSB(connDevice, 0xFF, 0x03, 1, true, 1/*debug channel*/);
+
+        // 抓到device的話，先用Cortex-M的方式連接(NuMicroCM)
+        if (connDevice != undefined) {
+            /* Cortex-M */
+            try {
+                processor = new DAPjs.NuMicroCM(transport, 1000000, 3300);
+
+                await processor.connect();
+
+                console.log('Cortex-M is connected.');
+                usbIsConnecting = true;
+                bCortexMConnecting = true;
+                postMessage({ 'action': 'connected' });
+            } catch (error) {
+                console.log(error);
+            }
+
+            // 如果Cortex-M沒有連接成功的話，就用8051的方式連接(NuMicro51)
+            if (!bCortexMConnecting) {
+                /* 8051 */
+                try {
+                    processor = new DAPjs.NuMicro51(transport, 1, 3300);
+                    pidDec = await processor.connect();
+
+                    console.log('8051 is connected.');
+                    usbIsConnecting = true;
+                    postMessage({ 'action': 'connected' });
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+
+            // 如果都沒連上，show disconnect info
+            if (!usbIsConnecting) {
+                await disconnect();
+            }
+        } else {
+            await disconnect();
+        }
     }
 }
 
@@ -2309,6 +2305,10 @@ const getProecssorType = async () => {
             return PROCESSOR_TYPE_ARM_CM4;
         case 'D20':
             return PROCESSOR_TYPE_ARM_CM23;
+        case 'D22':
+            return PROCESSOR_TYPE_ARM_CM55;
+        case 'D21':
+            return PROCESSOR_TYPE_ARM_CM33;
     }
 
     return PROCESSOR_TYPE_UNDEFINED;
@@ -2343,6 +2343,10 @@ const getBaseAddress = async (proecssorType) => {
             }
             catch (error) {
             }
+            break;
+        case PROCESSOR_TYPE_ARM_CM55:
+        case PROCESSOR_TYPE_ARM_CM33:
+            baseAddr = 0x40000000;
             break;
         default:
             throw ('getBaseAddress() Unsupported processor type!')
