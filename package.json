@@ -2,7 +2,7 @@
   "name": "vscode-nutool-pinconfigure",
   "displayName": "NuTool - PinConfigure",
   "description": "The NuTool - PinConfigure is used to configure GPIO multi-functions of Nuvoton NuMicro® Family.",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "homepage": "./",
   "engines": {
     "vscode": "^1.85.0"
@@ -46,6 +46,7 @@
   },
   "scripts": {
     "build": "node ./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
+    "build:worker": "browserify public/worker/webusb.worker.js -o public/worker/webusb.worker-bundle.js",
     "eject": "react-scripts eject",
     "obfuscate": "node obfuscate.js",
     "package": "vsce package",
@@ -75,6 +76,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@types/vscode": "^1.85.0",
+    "browserify": "^17.0.1",
     "javascript-obfuscator": "^4.1.1",
     "react-scripts": "^5.0.1",
     "rewire": "^7.0.0",
