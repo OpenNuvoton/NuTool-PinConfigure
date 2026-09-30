@@ -176,6 +176,14 @@ NUTOOL_PIN.g_cfg_OrCAD = {
 };
 
 NUTOOL_PIN.g_cfg_regDescriptions = {};
+NUTOOL_PIN.g_cfg_regDescriptions.GPA_MFPL = '0x40000030';
+NUTOOL_PIN.g_cfg_regDescriptions.GPA_MFPH = '0x40000034';
+NUTOOL_PIN.g_cfg_regDescriptions.GPB_MFPL = '0x40000038';
+NUTOOL_PIN.g_cfg_regDescriptions.GPB_MFPH = '0x4000003C';
+NUTOOL_PIN.g_cfg_regDescriptions.GPC_MFPL = '0x40000040';
+NUTOOL_PIN.g_cfg_regDescriptions.GPC_MFPH = '0x40000044';
+NUTOOL_PIN.g_cfg_regDescriptions.GPD_MFPL = '0x40000048';
+NUTOOL_PIN.g_cfg_regDescriptions.GPD_MFPH = '0x4000004C';
 
 NUTOOL_PIN.g_cfg_gpioMatrix = [];
 

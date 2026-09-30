@@ -144,6 +144,9 @@ NUTOOL_PIN.g_cfg_OrCAD = {
 };
 
 NUTOOL_PIN.g_cfg_regDescriptions = {};
+NUTOOL_PIN.g_cfg_regDescriptions.GPA_MFP = '0x50000030';
+NUTOOL_PIN.g_cfg_regDescriptions.GPB_MFP = '0x50000034';
+NUTOOL_PIN.g_cfg_regDescriptions.GPC_MFP = '0x5000003C';
 
 NUTOOL_PIN.g_cfg_gpioMatrix = [];
 
